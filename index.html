@@ -12,45 +12,98 @@
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
       rel="stylesheet"
     />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
     <style>
       :root {
-        --cor-principal: #1f2937;
+        --cor-principal: #ffffff;
         --cor-secundaria: #f9fafb;
         --cor-destaque: #174f83;
+        --texto-principal: #1f2937;
+      }
+
+      html {
+        scroll-behavior: smooth;
       }
 
       body {
         background-color: var(--cor-secundaria);
-        color: #000;
+        color: var(--texto-principal);
+        font-family: "Poppins", sans-serif;
+        transition: background-color 0.3s, color 0.3s;
+      }
+
+      #particles-js {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        top: 0;
+        left: 0;
       }
 
       .navbar {
         background-color: var(--cor-principal);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      .navbar-brand img {
+        border-radius: 8px;
+        width: 60px;
+        height: auto;
+        object-fit: contain;
+        padding: 0;
+        margin: 0;
+        display: block;
       }
 
       .navbar-brand,
       .navbar-nav .nav-link {
-        color: white !important;
+        color: var(--texto-principal) !important;
+        font-weight: 500;
       }
 
-      /* Ícone do menu hamburguer com traços brancos */
+      .navbar-nav .nav-link:hover {
+        color: var(--cor-destaque) !important;
+      }
+
       .navbar-toggler {
-        border-color: rgba(255, 255, 255, 0.5);
+        border-color: rgba(0, 0, 0, 0.5);
       }
 
       .navbar-toggler-icon {
-        background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba(255, 255, 255, 0.9)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+        background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba(31, 41, 55, 0.9)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
       }
 
       .parallax-header {
-        background-image: url("./img/header.png");
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+          url("./img/header.png");
         background-size: cover;
         background-position: center;
         background-attachment: fixed;
+        color: white;
         height: 60vh;
         min-height: 500px;
-        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
         position: relative;
+      }
+
+      @keyframes gradientBG {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
       }
 
       .parallax-header::before {
@@ -60,7 +113,7 @@
         left: 0;
         bottom: 0;
         right: 0;
-        background: rgba(0, 0, 0, 0.5);
+        background: rgba(0, 0, 0, 0.4);
       }
 
       .parallax-header .container {
@@ -68,12 +121,51 @@
         z-index: 1;
       }
 
+      .parallax-header h1 {
+        font-size: 4rem;
+        font-weight: 700;
+      }
+
       section h2 {
         color: var(--cor-destaque);
+        font-weight: 600;
+        margin-bottom: 20px;
+      }
+
+      .card-custom {
+        background-color: white;
+        border: none;
+        border-radius: 16px;
+        padding: 30px;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+        margin-bottom: 50px;
+        opacity: 0;
+        transform: translateY(20px);
+        transition: all 0.6s ease;
+      }
+
+      .card-custom.show {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .card-custom:hover {
+        transform: scale(1.02);
+      }
+
+      .btn-primary {
+        background-color: var(--cor-destaque);
+        border: none;
+      }
+
+      .btn-primary:hover {
+        background-color: #123a62;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
       }
 
       footer {
-        background-color: #000;
+        background-color: var(--texto-principal);
         color: white;
         padding: 20px 0;
       }
@@ -89,10 +181,15 @@
     </style>
   </head>
   <body>
+    <div id="particles-js"></div>
+
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg">
       <div class="container">
-        <a class="navbar-brand" href="#">C. E. Gomes</a>
+        <a class="navbar-brand d-flex align-items-center" href="#">
+          <img src="./img/logo-ceg.png" alt="Logo C.E.G" width="40" height="40" class="me-2">
+          C. E. Gomes
+        </a>
         <button
           class="navbar-toggler"
           type="button"
@@ -124,11 +221,9 @@
     </nav>
 
     <!-- Header -->
-    <header
-      class="parallax-header d-flex align-items-center justify-content-center text-center"
-    >
+    <header class="parallax-header">
       <div class="container">
-        <h1 class="display-4">C. E. Gomes</h1>
+        <h1>C. E. Gomes</h1>
         <p class="lead">
           Autor de <strong>Cânticos de Machina – Primavera Artificial</strong>
         </p>
@@ -138,7 +233,7 @@
     <!-- Conteúdo principal -->
     <main class="container my-5">
       <!-- Sobre -->
-      <section id="sobre" class="mb-5">
+      <section id="sobre" class="card-custom">
         <h2><i class="bi bi-person-fill"></i> Sobre</h2>
         <p>
           Sou <strong>C. E. Gomes / Cadu Gomes</strong>, escritor, desenvolvedor
@@ -155,7 +250,7 @@
       </section>
 
       <!-- Livro -->
-      <section id="livro" class="mb-5">
+      <section id="livro" class="card-custom">
         <h2><i class="bi bi-journal-bookmark-fill"></i> O Livro</h2>
         <h4>Cânticos de Machina – Primavera Artificial</h4>
         <p>
@@ -183,7 +278,7 @@
       </section>
 
       <!-- Publicações -->
-      <section id="publicacoes" class="mb-5">
+      <section id="publicacoes" class="card-custom">
         <h2><i class="bi bi-journal-text"></i> Publicações Acadêmicas</h2>
         <p>Confira alguns dos meus principais trabalhos acadêmicos:</p>
         <ul class="list-group">
@@ -214,8 +309,7 @@
             ><br />
             <em
               >In: 2013 17th IEEE International Conference on Computer Supported
-              Cooperative Work in Design (CSCWD), Whistler, British Columbia,
-              Canadá.</em
+              Cooperative Work in Design (CSCWD), Whistler, Canadá.</em
             >
           </li>
           <li class="list-group-item">
@@ -237,7 +331,7 @@
       </section>
 
       <!-- Contato -->
-      <section id="contato" class="mb-5">
+      <section id="contato" class="card-custom">
         <h2><i class="bi bi-envelope-fill"></i> Contato</h2>
         <p>
           <i class="bi bi-instagram"></i>
@@ -274,6 +368,28 @@
       </div>
     </footer>
 
+    <script>
+      particlesJS.load(
+        "particles-js",
+        "https://cdn.jsdelivr.net/gh/VincentGarreau/particles.js/particles.json"
+      );
+
+      const cards = document.querySelectorAll(".card-custom");
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("show");
+            }
+          });
+        },
+        { threshold: 0.1 }
+      );
+
+      cards.forEach((card) => {
+        observer.observe(card);
+      });
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>
