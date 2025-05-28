@@ -185,11 +185,11 @@
       }
 
       .avatar {
-        width: 150px;
-        height: 150px;
-        border-radius: 50%;
+        width: 250px;
+        height: 250px;
+        border-radius: 20%;
         object-fit: cover;
-        border: 4px solid var(--cor-destaque); /* Borda no tom azul da identidade visual */
+        border: 0px solid var(--cor-destaque); /* Borda no tom azul da identidade visual */
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
       }
 
@@ -227,6 +227,16 @@
       @media (max-width: 768px) {
         .social-menu {
           display: none;
+        }
+      }
+
+      .capa-livro {
+        width: 50%;
+      }
+
+      @media (min-width: 992px) {
+        .capa-livro {
+          width: 70%;
         }
       }
     </style>
@@ -305,16 +315,17 @@
     <!-- Conteúdo principal -->
     <main class="container my-5">
       <!-- Sobre -->
-
       <section id="sobre" class="card-custom">
         <h2><i class="bi bi-person-fill"></i> Sobre</h2>
-        <div class="d-flex flex-wrap align-items-center gap-4">
-          <img
-            src="./img/foto-perfil.jpg"
-            alt="Foto de C. E. Gomes"
-            class="avatar"
-          />
-          <div>
+        <div class="row align-items-center">
+          <div class="col-md-5 col-lg-4 col-xl-3 text-center mb-4 mb-md-0">
+            <img
+              src="./img/foto-perfil.jpg"
+              alt="Foto de C. E. Gomes"
+              class="avatar mx-auto"
+            />
+          </div>
+          <div class="col-md-7 col-lg-8 col-xl-9">
             <p>
               Sou <strong>Carlos E. Gomes / Cadu Gomes</strong>, escritor,
               mestre em Engenharia de Sistemas e Computação, e entusiasta de
@@ -332,54 +343,63 @@
           </div>
         </div>
       </section>
+
       <!-- Livro -->
       <section id="livro" class="card-custom">
         <h2><i class="bi bi-journal-bookmark-fill"></i> O Livro</h2>
-        <h4>Cânticos de Machina – Primavera Artificial</h4>
-        <p>
-          É o primeiro volume de uma série que combina
-          <strong>ficção científica e reflexão espiritual</strong> para discutir
-          como a tecnologia transforma o presente e pode redefinir o futuro da
-          humanidade.
-        </p>
+        <div class="row align-items-center">
+          <!-- Texto à esquerda -->
+          <div class="col-lg-8 order-1 order-lg-1">
+            <h4>Cânticos de Machina – Primavera Artificial</h4>
+            <p>
+              É o primeiro volume de uma série que combina
+              <strong>ficção científica e reflexão espiritual</strong> para
+              discutir como a tecnologia transforma o presente e pode redefinir
+              o futuro da humanidade.
+            </p>
 
-        <h5>Sinopse</h5>
-        <p>
-          Em um mundo onde a tecnologia redefine os limites da humanidade, a
-          Neurarchy lidera a inovação com o implante neural Solomon — um
-          dispositivo que amplia capacidades cognitivas e oferece tratamentos
-          revolucionários. Celebrado por uns como o prenúncio de uma nova era e
-          temido por outros como ameaça à liberdade, Solomon divide a sociedade.
-        </p>
-        <p>
-          Quando Daniel Killian, dado como morto, retorna à vida em
-          circunstâncias inexplicáveis, o mundo se vê diante de um possível
-          milagre — ou algo além. Guiados por sonhos e visões, três jovens se
-          conectam a ele e logo descobrem que compartilham algo em comum: o
-          mesmo implante neural.
-        </p>
-        <p>
-          Unidos por uma conexão que desafia a lógica, são arrastados para um
-          conflito que transcende a tecnologia, enfrentando segredos, dilemas
-          éticos e os custos da evolução. Cânticos de Machina – Primavera
-          Artificial é uma jornada de ação, mistério e reflexão sobre os limites
-          entre fé, tecnologia e humanidade. A tecnologia conduz o mundo a uma
-          nova estação. Você está preparado?
-        </p>
-        <p>
-          <strong>Temas:</strong> fé, inteligência artificial, transumanismo,
-          dilemas éticos, esperança e humanidade.
-        </p>
-        <img
-          src="./img/capa_livro.png"
-          alt="Capa do Livro"
-          class="img-fluid rounded my-3 w-25"
-        />
-        <p>
-          <a href="#" class="btn btn-primary"
-            ><i class="bi bi-cart-fill"></i> Comprar Agora</a
-          >
-        </p>
+            <h5>Sinopse</h5>
+            <p>
+              Em um mundo onde a tecnologia redefine os limites da humanidade, a
+              Neurarchy lidera a inovação com o implante neural Solomon — um
+              dispositivo que amplia capacidades cognitivas e oferece
+              tratamentos revolucionários. Celebrado por uns como o prenúncio de
+              uma nova era e temido por outros como ameaça à liberdade, Solomon
+              divide a sociedade.
+            </p>
+            <p>
+              Quando Daniel Killian, dado como morto, retorna à vida em
+              circunstâncias inexplicáveis, o mundo se vê diante de um possível
+              milagre — ou algo além. Guiados por sonhos e visões, três jovens
+              se conectam a ele e logo descobrem que compartilham algo em comum:
+              o mesmo implante neural.
+            </p>
+            <p>
+              Unidos por uma conexão que desafia a lógica, são arrastados para
+              um conflito que transcende a tecnologia, enfrentando segredos,
+              dilemas éticos e os custos da evolução. Cânticos de Machina –
+              Primavera Artificial é uma jornada de ação, mistério e reflexão
+              sobre os limites entre fé, tecnologia e humanidade. A tecnologia
+              conduz o mundo a uma nova estação. Você está preparado?
+            </p>
+            <p>
+              <strong>Temas:</strong> fé, inteligência artificial,
+              transumanismo, dilemas éticos, esperança e humanidade.
+            </p>
+          </div>
+
+          <div class="col-lg-4 text-center order-2 order-lg-2 mt-4 mt-lg-0">
+            <img
+              src="./img/capa_livro.png"
+              alt="Capa do Livro"
+              class="img-fluid rounded capa-livro mb-3"
+            />
+            <p>
+              <a href="#" class="btn btn-primary">
+                <i class="bi bi-cart-fill"></i> Comprar Agora
+              </a>
+            </p>
+          </div>
       </section>
 
       <!-- Publicações -->
@@ -459,7 +479,8 @@
     <footer class="text-center">
       <div class="container p-3">
         <p class="mb-2">
-          &copy; 2025 <span class="text-info">Carlos E. Gomes</span> - Todos os direitos reservados.
+          &copy; 2025 <span class="text-info">Carlos E. Gomes</span> - Todos os
+          direitos reservados.
         </p>
         <div>
           <a href="https://www.instagram.com/carlosgomes85" target="_blank"
