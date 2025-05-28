@@ -53,7 +53,7 @@
 
       .navbar-brand img {
         border-radius: 8px;
-        width: 60px;
+        width: 200px;
         height: auto;
         object-fit: contain;
         padding: 0;
@@ -196,23 +196,71 @@
       strong {
         font-weight: 600; /* Negrito médio */
       }
+      /* Menu flutuante lateral de redes sociais (lado direito) */
+      .social-menu {
+        position: fixed;
+        top: 50%;
+        right: 0;
+        transform: translateY(-50%);
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        padding: 10px;
+        background-color: rgba(255, 255, 255, 0.9);
+        border-radius: 8px 0 0 8px;
+        box-shadow: -2px 4px 12px rgba(0, 0, 0, 0.2);
+        z-index: 999;
+      }
+
+      .social-menu a {
+        color: var(--texto-principal);
+        font-size: 22px;
+        transition: all 0.3s;
+      }
+
+      .social-menu a:hover {
+        color: var(--cor-destaque);
+        transform: scale(1.2);
+      }
+
+      /* Esconder o menu em telas pequenas */
+      @media (max-width: 768px) {
+        .social-menu {
+          display: none;
+        }
+      }
     </style>
   </head>
   <body>
     <div id="particles-js"></div>
 
+    <div class="social-menu">
+      <a href="https://www.instagram.com/carlosgomes85" target="_blank"
+        ><i class="bi bi-instagram"></i
+      ></a>
+      <a href="mailto:carlosgomes85@gmail.com"
+        ><i class="bi bi-envelope"></i
+      ></a>
+      <a
+        href="https://scholar.google.com.br/citations?user=11ORDMIAAAAJ"
+        target="_blank"
+        ><i class="bi bi-google"></i
+      ></a>
+      <a href="https://www.linkedin.com/in/carlosgomes85/" target="_blank"
+        ><i class="bi bi-linkedin"></i
+      ></a>
+    </div>
+
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg">
       <div class="container">
         <a class="navbar-brand d-flex align-items-center" href="#">
-          <img
-            src="./img/logo-ceg.png"
-            alt="Logo C.E.G"
-            width="40"
-            height="40"
+           <img
+            src="./img/logo-nome.png"
+            alt="Logo Carlos Gomes"
+            height="800"
             class="me-2"
           />
-          <span class="texto-destaque">Carlos E. Gomes</span>
         </a>
         <button
           class="navbar-toggler"
