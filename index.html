@@ -81,6 +81,7 @@
 
       .navbar-nav .nav-link:hover {
         color: var(--cor-destaque) !important;
+        font-weight: 550;
       }
 
       .navbar-toggler {
@@ -139,6 +140,12 @@
         font-weight: 600;
       }
 
+      .parallax-header h2 {
+        font-size: 1.2rem;
+        font-weight: 400;
+        margin-top: 10px;
+      }
+
       section h2 {
         color: var(--cor-destaque);
         font-weight: 600;
@@ -173,6 +180,9 @@
       .btn-primary {
         background-color: var(--cor-destaque);
         border: none;
+        font-size: 1.1rem;
+        padding: 12px 28px;
+        font-weight: 600;
       }
 
       .btn-primary:hover {
@@ -244,6 +254,9 @@
 
       .capa-livro {
         width: 50%;
+        border: 2px solid #e0e0e0;
+        box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+        border-radius: 12px;
       }
 
       @media (min-width: 992px) {
@@ -318,9 +331,9 @@
     <header class="parallax-header">
       <div class="container">
         <h1>Carlos E. Gomes</h1>
-        <h2 class="lead">
+        <h2>
           Autor de <strong>Cânticos de Machina – Primavera Artificial</strong>
-        </p>
+        </h2>
       </div>
     </header>
 
@@ -333,14 +346,14 @@
           <div class="col-md-5 col-lg-4 col-xl-3 text-center mb-4 mb-md-0">
             <img
               src="./img/foto-perfil.jpg"
-              alt="Foto de C. E. Gomes"
+              alt="Foto do autor Carlos E. Gomes"
               class="avatar mx-auto"
             />
           </div>
           <div class="col-md-7 col-lg-8 col-xl-9">
+            <h4><strong class="text-dark text-opacity-75">C. E. Gomes / Carlos Gomes</strong></h4>
             <p>
-              Sou <strong>Carlos E. Gomes / Cadu Gomes</strong>, escritor,
-              mestre em Engenharia de Sistemas e Computação, e entusiasta de
+              Escritor, mestre em Engenharia de Sistemas e Computação, e entusiasta de
               tecnologia e música. Minha missão é contar histórias que explorem
               os dilemas da humanidade no encontro entre
               <strong>fé, tecnologia e futuro</strong>.
@@ -362,7 +375,7 @@
         <div class="row align-items-center">
           <!-- Texto à esquerda -->
           <div class="col-lg-8 order-1 order-lg-1">
-            <h4>Cânticos de Machina – Primavera Artificial</h4>
+            <h4><strong class="text-dark text-opacity-75">Cânticos de Machina – Primavera Artificial</strong></h4>
             <p>
               É o primeiro volume de uma série que combina
               <strong>ficção científica e reflexão espiritual</strong> para
@@ -373,14 +386,14 @@
             <h5>Sinopse</h5>
             <p>
               Em um mundo onde a tecnologia redefine os limites da humanidade, a
-              Neurarchy lidera a inovação com o implante neural Solomon — um
+              Neurarchy lidera a inovação com o implante neural <strong>Solomon</strong> — um
               dispositivo que amplia capacidades cognitivas e oferece
               tratamentos revolucionários. Celebrado por uns como o prenúncio de
               uma nova era e temido por outros como ameaça à liberdade, Solomon
               divide a sociedade.
             </p>
             <p>
-              Quando Daniel Killian, dado como morto, retorna à vida em
+              Quando <strong>Daniel Killian</strong>, dado como morto, retorna à vida em
               circunstâncias inexplicáveis, o mundo se vê diante de um possível
               milagre — ou algo além. Guiados por sonhos e visões, três jovens
               se conectam a ele e logo descobrem que compartilham algo em comum:
@@ -389,20 +402,20 @@
             <p>
               Unidos por uma conexão que desafia a lógica, são arrastados para
               um conflito que transcende a tecnologia, enfrentando segredos,
-              dilemas éticos e os custos da evolução. Cânticos de Machina –
-              Primavera Artificial é uma jornada de ação, mistério e reflexão
-              sobre os limites entre fé, tecnologia e humanidade. A tecnologia
-              conduz o mundo a uma nova estação. Você está preparado?
+              dilemas éticos e os custos da evolução. <i>Cânticos de Machina –
+              Primavera Artificial</i> é uma jornada de ação, mistério e reflexão
+              sobre os limites entre fé, tecnologia e humanidade. <strong>A tecnologia
+              conduz o mundo a uma nova estação. Você está preparado?</strong>
             </p>
             <p>
-              <strong>Temas:</strong> fé, inteligência artificial,
-              transumanismo, dilemas éticos, esperança e humanidade.
+              <strong>Temas:</strong> <span class="text-secondary">fé, inteligência artificial,
+              transumanismo, dilemas éticos, esperança e humanidade.</span>
             </p>
           </div>
 
           <div class="col-lg-4 text-center order-2 order-lg-2 mt-4 mt-lg-0">
             <img
-              src="./img/capa_livro.png"
+              src="./img/capa_livro.png" loading="lazy"
               alt="Capa do livro Cânticos de Machina – Primavera Artificial"
               class="img-fluid rounded capa-livro mb-3"
             />
@@ -424,7 +437,7 @@
               >Evaluation of a GWAP for social recruitment and measurement of
               musical talent.</strong
             ><br />
-            <em
+            <em class="text-secondary"
               >In: 2019 23rd IEEE International Conference on Computer Supported
               Cooperative Work in Design (CSCWD), Porto, Portugal.</em
             >
@@ -434,7 +447,7 @@
               >Towards a Framework for Crowdsourced Collection, Cleaning and
               Measurement of Digital Content.</strong
             ><br />
-            <em
+            <em class="text-secondary"
               >In: 2013 IEEE International Conference on Systems, Man, and
               Cybernetics (SMC), Manchester, Reino Unido.</em
             >
@@ -444,14 +457,14 @@
               >Cassino Musical: A game with a purpose for social recruitment and
               measurement of musical talent.</strong
             ><br />
-            <em
+            <em class="text-secondary"
               >In: 2013 17th IEEE International Conference on Computer Supported
               Cooperative Work in Design (CSCWD), Whistler, Canadá.</em
             >
           </li>
           <li class="list-group-item">
             <strong>Crowdsourcing for music: Survey and taxonomy.</strong><br />
-            <em
+            <em class="text-secondary"
               >In: 2012 IEEE International Conference on Systems, Man, and
               Cybernetics (SMC), Seoul, Coreia do Sul.</em
             >
@@ -470,21 +483,23 @@
       <!-- Contato -->
       <section id="contato" class="card-custom">
         <h2><i class="bi bi-envelope-fill"></i> Contato</h2>
-        <p>
+        <p class="small">
           <i class="bi bi-instagram"></i>
           <a href="https://www.instagram.com/carlosgomes85" target="_blank"
             >@carlosgomes85</a
           >
         </p>
-        <p>
+        <p class="small">
           <i class="bi bi-instagram"></i>
           <a href="https://www.instagram.com/canticosdemachina" target="_blank"
             >@canticosdemachina</a
           >
         </p>
-        <p><i class="bi bi-envelope"></i> escritorcarlosgomes85@gmail.com</p>
-        <p><i class="bi bi-globe"></i> www.canticosdemachina.com</p>
+        <p class="small"><i class="bi bi-envelope"></i> <a href="mailto:escritorcarlosgomes85@gmail.com"
+        >escritorcarlosgomes85@gmail.com</a></p>
+        <p class="small"><i class="bi bi-globe"></i> <a href="https://canticosdemachina.com.br" target="_blank">canticosdemachina.com.br</a></p>
       </section>
+
     </main>
 
     <!-- Rodapé -->
