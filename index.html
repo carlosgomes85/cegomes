@@ -1,545 +1,540 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="icon" type="image/x-icon" href="favicon.ico" />
-    <title>C. E. Gomes - Escritor de Ficção Cristã</title>
-<meta name="description" content="Site oficial de C. E. Gomes, autor de 'Cânticos de Machina – Primavera Artificial', explorando fé, tecnologia e dilemas do futuro.">
-	
-	<!-- Open Graph -->
-<meta property="og:title" content="C. E. Gomes | Autor de Ficção Científica Cristã">
-<meta property="og:description" content="Autor de 'Cânticos de Machina – Primavera Artificial', onde fé e tecnologia se entrelaçam.">
-<meta property="og:image" content="https://www.canticosdemachina.com.br/img/capa_livro.png">
-<meta property="og:url" content="https://www.canticosdemachina.com.br/">
-<meta property="og:type" content="website">
 
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
-    <style>
-      :root {
-        --cor-principal: #ffffff;
-        --cor-secundaria: #f9fafb;
-        --cor-destaque: #004d96;
-        --texto-principal: #1f2937;
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  <title>C. E. Gomes | Escritor de Ficção Científica Cristã | Cânticos de Machina</title>
+  <meta name="description"
+    content="Site oficial de C. E. Gomes, autor de 'Cânticos de Machina – Primavera Artificial', explorando fé, tecnologia e dilemas do futuro.">
+
+  <!-- Palavras-chave -->
+  <meta name="keywords"
+    content="C. E. Gomes, Carlos Eduardo Gomes, escritor cristão, ficção cristã científica, Cânticos de Machina, livro de ficção cristã, fé e tecnologia, literatura cristã futurista, implante neural, inteligência artificial, romance cristão, escritor brasileiro de ficção científica">
+
+  <!-- Autor -->
+  <meta name="author" content="C. E. Gomes" />
+
+  <!-- Robots -->
+  <meta name="robots" content="index, follow" />
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://www.canticosdemachina.com.br/" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="C. E. Gomes | Autor de Ficção Científica Cristã">
+  <meta property="og:description"
+    content="Autor de 'Cânticos de Machina – Primavera Artificial', onde fé e tecnologia se entrelaçam.">
+  <meta property="og:image" content="https://www.canticosdemachina.com.br/img/capa_livro.png">
+  <meta property="og:url" content="https://www.canticosdemachina.com.br/">
+  <meta property="og:type" content="website">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+  <style>
+    :root {
+      --cor-principal: #ffffff;
+      --cor-secundaria: #f9fafb;
+      --cor-destaque: #004d96;
+      --texto-principal: #1f2937;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background-color: var(--cor-secundaria);
+      color: var(--texto-principal);
+      font-family: "Poppins", sans-serif;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    #particles-js {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      top: 0;
+      left: 0;
+    }
+
+    .navbar {
+      background-color: var(--cor-principal);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .navbar-brand img {
+      border-radius: 8px;
+      width: 170px;
+      height: auto;
+      object-fit: contain;
+      padding: 0;
+      margin-left: 0;
+      margin-right: 0;
+      margin-top: 0;
+      margin-bottom: 0;
+      display: block;
+    }
+
+    .navbar-brand,
+    .navbar-nav .nav-link {
+      color: var(--texto-principal) !important;
+      font-weight: 500;
+    }
+
+    .navbar-nav .nav-link:hover {
+      color: var(--cor-destaque) !important;
+      font-weight: 550;
+    }
+
+    .navbar-toggler {
+      border-color: rgba(0, 0, 0, 0.5);
+    }
+
+    .navbar-toggler-icon {
+      background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba(31, 41, 55, 0.9)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+    }
+
+    .parallax-header {
+      background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+        url("./img/header.png");
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      color: white;
+      height: 60vh;
+      min-height: 500px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+    }
+
+    @keyframes gradientBG {
+      0% {
+        background-position: 0% 50%;
       }
 
-      html {
-        scroll-behavior: smooth;
+      50% {
+        background-position: 100% 50%;
       }
 
-      body {
-        background-color: var(--cor-secundaria);
-        color: var(--texto-principal);
-        font-family: "Poppins", sans-serif;
-        transition: background-color 0.3s, color 0.3s;
+      100% {
+        background-position: 0% 50%;
       }
+    }
 
-      #particles-js {
-        position: fixed;
-        width: 100%;
-        height: 100%;
-        z-index: -1;
-        top: 0;
-        left: 0;
-      }
+    .parallax-header::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      background: rgba(0, 0, 0, 0.4);
+    }
 
-      .navbar {
-        background-color: var(--cor-principal);
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-      }
+    .parallax-header .container {
+      position: relative;
+      z-index: 1;
+    }
 
-      .navbar-brand img {
-        border-radius: 8px;
-        width: 170px;
-        height: auto;
-        object-fit: contain;
-        padding: 0;
-        margin-left: 0;
-        margin-right: 0;
-        margin-top: 0;
-        margin-bottom: 0;
-        display: block;
-      }
+    .parallax-header h1 {
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 600;
+    }
 
-      .navbar-brand,
-      .navbar-nav .nav-link {
-        color: var(--texto-principal) !important;
-        font-weight: 500;
-      }
+    .parallax-header h2 {
+      font-size: 1.2rem;
+      font-weight: 400;
+      margin-top: 10px;
+    }
 
-      .navbar-nav .nav-link:hover {
-        color: var(--cor-destaque) !important;
-        font-weight: 550;
-      }
+    section h2 {
+      color: var(--cor-destaque);
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
 
-      .navbar-toggler {
-        border-color: rgba(0, 0, 0, 0.5);
-      }
+    .texto-destaque {
+      color: var(--cor-destaque);
+    }
 
-      .navbar-toggler-icon {
-        background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba(31, 41, 55, 0.9)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
-      }
+    .card-custom {
+      background-color: white;
+      border: none;
+      border-radius: 16px;
+      padding: 30px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+      margin-bottom: 50px;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.6s ease;
+    }
 
-      .parallax-header {
-        background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
-          url("./img/header.png");
-        background-size: cover;
-        background-position: center;
-        background-attachment: fixed;
-        color: white;
-        height: 60vh;
-        min-height: 500px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        position: relative;
-      }
+    .card-custom.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
 
-      @keyframes gradientBG {
-        0% {
-          background-position: 0% 50%;
-        }
-        50% {
-          background-position: 100% 50%;
-        }
-        100% {
-          background-position: 0% 50%;
-        }
-      }
+    .card-custom:hover {
+      transform: scale(1.02);
+    }
 
-      .parallax-header::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        bottom: 0;
-        right: 0;
-        background: rgba(0, 0, 0, 0.4);
-      }
+    .btn-primary {
+      background-color: var(--cor-destaque);
+      border: none;
+      font-size: 1.1rem;
+      padding: 12px 28px;
+      font-weight: 600;
+    }
 
-      .parallax-header .container {
-        position: relative;
-        z-index: 1;
-      }
+    .btn-primary:hover {
+      background-color: #123a62;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
 
-      .parallax-header h1 {
-        font-size: clamp(2rem, 5vw, 3rem);
-        font-weight: 600;
-      }
+    footer {
+      background-color: var(--texto-principal);
+      color: white;
+      padding: 20px 0;
+    }
 
-      .parallax-header h2 {
-        font-size: 1.2rem;
-        font-weight: 400;
-        margin-top: 10px;
-      }
+    footer a {
+      color: #d4d4d4;
+      text-decoration: none;
+    }
 
-      section h2 {
-        color: var(--cor-destaque);
-        font-weight: 600;
-        margin-bottom: 20px;
-      }
+    footer a:hover {
+      color: #0dcaf0;
+    }
 
-      .texto-destaque {
-        color: var(--cor-destaque);
-      }
+    .avatar {
+      width: 250px;
+      height: 250px;
+      border-radius: 20%;
+      object-fit: cover;
+      border: 0px solid var(--cor-destaque);
+      /* Borda no tom azul da identidade visual */
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
 
-      .card-custom {
-        background-color: white;
-        border: none;
-        border-radius: 16px;
-        padding: 30px;
-        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
-        margin-bottom: 50px;
-        opacity: 0;
-        transform: translateY(20px);
-        transition: all 0.6s ease;
-      }
+    strong {
+      font-weight: 600;
+      /* Negrito médio */
+    }
 
-      .card-custom.show {
-        opacity: 1;
-        transform: translateY(0);
-      }
+    /* Menu flutuante lateral de redes sociais (lado direito) */
+    .social-menu {
+      position: fixed;
+      top: 50%;
+      right: 0;
+      transform: translateY(-50%);
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      padding: 10px;
+      background-color: rgba(255, 255, 255, 0.9);
+      border-radius: 8px 0 0 8px;
+      box-shadow: -2px 4px 12px rgba(0, 0, 0, 0.2);
+      z-index: 999;
+    }
 
-      .card-custom:hover {
-        transform: scale(1.02);
-      }
+    .social-menu a {
+      color: var(--texto-principal);
+      font-size: 22px;
+      transition: all 0.3s;
+    }
 
-      .btn-primary {
-        background-color: var(--cor-destaque);
-        border: none;
-        font-size: 1.1rem;
-        padding: 12px 28px;
-        font-weight: 600;
-      }
+    .social-menu a:hover {
+      color: var(--cor-destaque);
+      transform: scale(1.2);
+    }
 
-      .btn-primary:hover {
-        background-color: #123a62;
-        transform: translateY(-2px);
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-      }
-
-      footer {
-        background-color: var(--texto-principal);
-        color: white;
-        padding: 20px 0;
-      }
-
-      footer a {
-        color: #d4d4d4;
-        text-decoration: none;
-      }
-
-      footer a:hover {
-        color: #0dcaf0;
-      }
-
-      .avatar {
-        width: 250px;
-        height: 250px;
-        border-radius: 20%;
-        object-fit: cover;
-        border: 0px solid var(--cor-destaque); /* Borda no tom azul da identidade visual */
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-      }
-
-      strong {
-        font-weight: 600; /* Negrito médio */
-      }
-      /* Menu flutuante lateral de redes sociais (lado direito) */
+    /* Esconder o menu em telas pequenas */
+    @media (max-width: 768px) {
       .social-menu {
-        position: fixed;
-        top: 50%;
-        right: 0;
-        transform: translateY(-50%);
-        display: flex;
-        flex-direction: column;
-        gap: 15px;
-        padding: 10px;
-        background-color: rgba(255, 255, 255, 0.9);
-        border-radius: 8px 0 0 8px;
-        box-shadow: -2px 4px 12px rgba(0, 0, 0, 0.2);
-        z-index: 999;
+        display: none;
       }
+    }
 
-      .social-menu a {
-        color: var(--texto-principal);
-        font-size: 22px;
-        transition: all 0.3s;
-      }
+    .capa-livro {
+      width: 50%;
+      border: 2px solid #e0e0e0;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+      border-radius: 12px;
+    }
 
-      .social-menu a:hover {
-        color: var(--cor-destaque);
-        transform: scale(1.2);
-      }
-
-      /* Esconder o menu em telas pequenas */
-      @media (max-width: 768px) {
-        .social-menu {
-          display: none;
-        }
-      }
-
+    @media (min-width: 992px) {
       .capa-livro {
-        width: 50%;
-        border: 2px solid #e0e0e0;
-        box-shadow: 0 8px 24px rgba(0,0,0,0.1);
-        border-radius: 12px;
+        width: 70%;
       }
+    }
+  </style>
+</head>
 
-      @media (min-width: 992px) {
-        .capa-livro {
-          width: 70%;
-        }
-      }
-    </style>
-  </head>
-  <body>
-    <div id="particles-js"></div>
+<body>
+  <div id="particles-js"></div>
 
-    <div class="social-menu">
-      <a href="https://www.instagram.com/carlosgomes85" target="_blank"
-        ><i class="bi bi-instagram"></i
-      ></a>
-      <a href="https://www.facebook.com/kdugomes" target="_blank"
-        ><i class="bi bi-facebook"></i>
+  <div class="social-menu">
+    <a href="https://www.instagram.com/carlosgomes85" target="_blank"><i class="bi bi-instagram"></i></a>
+    <a href="https://www.facebook.com/kdugomes" target="_blank"><i class="bi bi-facebook"></i>
+    </a>
+    <a href="mailto:escritorcarlosgomes85@gmail.com"><i class="bi bi-envelope"></i></a>
+    <a href="https://scholar.google.com.br/citations?user=11ORDMIAAAAJ" target="_blank"><i class="bi bi-google"></i></a>
+    <a href="https://www.linkedin.com/in/carlosgomes85/" target="_blank"><i class="bi bi-linkedin"></i></a>
+  </div>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="#">
+        <img src="./img/logo-nome.png" alt="Logo Carlos Gomes - autor de Cânticos de Machina – Primavera Artificial"
+          height="800" class="me-2" />
       </a>
-      <a href="mailto:escritorcarlosgomes85@gmail.com"
-        ><i class="bi bi-envelope"></i
-      ></a>
-      <a
-        href="https://scholar.google.com.br/citations?user=11ORDMIAAAAJ"
-        target="_blank"
-        ><i class="bi bi-google"></i
-      ></a>
-      <a href="https://www.linkedin.com/in/carlosgomes85/" target="_blank"
-        ><i class="bi bi-linkedin"></i
-      ></a>
-    </div>
-
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg">
-      <div class="container">
-        <a class="navbar-brand d-flex align-items-center" href="#">
-          <img
-            src="./img/logo-nome.png"
-            alt="Logo Carlos Gomes - autor de Cânticos de Machina – Primavera Artificial"
-            height="800"
-            class="me-2"
-          />
-        </a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div
-          class="collapse navbar-collapse justify-content-end"
-          id="navbarNav"
-        >
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link" href="#sobre">Sobre</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#livro">Livro</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#publicacoes">Artigos</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#contato">Contato</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-
-    <!-- Header -->
-    <header class="parallax-header">
-      <div class="container">
-        <h1>C. E. Gomes</h1>
-        <h2>
-          Autor de <strong>Cânticos de Machina – Primavera Artificial</strong>
-        </h2>
-      </div>
-    </header>
-
-    <!-- Conteúdo principal -->
-    <main class="container my-5">
-      <!-- Sobre -->
-      <section id="sobre" class="card-custom">
-        <h2><i class="bi bi-person-fill"></i> Sobre</h2>
-        <div class="row align-items-center">
-          <div class="col-md-5 col-lg-4 col-xl-3 text-center mb-4 mb-md-0">
-            <img
-              src="./img/foto-perfil.jpg"
-              alt="Foto do autor Carlos E. Gomes"
-              class="avatar mx-auto"
-            />
-          </div>
-          <div class="col-md-7 col-lg-8 col-xl-9">
-            <h4><strong class="text-dark text-opacity-75">C. E. Gomes</strong></h4>
-            <p>
-              Sou escritor, mestre em Engenharia de Sistemas e Computação, apaixonado por tecnologia e música. Através das palavras, busco explorar os dilemas da humanidade no encontro entre <strong>fé, tecnologia e futuro</strong>.
-            </p>
-            <p>
-              Nascido no Rio de Janeiro, trilhei minha carreira no universo da tecnologia, mas foi na escrita que encontrei um espaço genuíno para refletir sobre os desafios da nossa geração diante dos avanços tecnológicos e das grandes questões existenciais do nosso tempo.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <!-- Livro -->
-      <section id="livro" class="card-custom">
-        <h2><i class="bi bi-journal-bookmark-fill"></i> O Livro</h2>
-        <div class="row align-items-center">
-          <!-- Texto à esquerda -->
-          <div class="col-lg-8 order-1 order-lg-1">
-           <h4><strong class="text-dark text-opacity-75">Cânticos de Machina – Primavera Artificial</strong></h4>
-            <p>
-              Primeiro volume de uma série que une <strong>ficção científica e reflexão espiritual</strong> para explorar como os avanços tecnológicos estão moldando o presente — e redesenhando o futuro da humanidade.
-            </p>
-
-            <h5>Sinopse</h5>
-            <p>
-              Em um mundo onde a tecnologia redefine os limites do ser humano, a Neurarchy lidera a inovação com o implante neural <strong>Solomon</strong> — um dispositivo capaz de expandir as capacidades cognitivas e oferecer tratamentos revolucionários. Aclamado por muitos como o marco de uma nova era e temido por outros como uma ameaça à liberdade, Solomon polariza a sociedade.
-            </p>
-            <p>
-              Quando <strong>Daniel Killian</strong>, dado como morto, retorna à vida em circunstâncias misteriosas, o mundo se depara com um possível milagre — ou algo ainda mais inquietante. Guiados por sonhos e visões, três jovens se conectam a ele e logo descobrem um elo invisível: todos compartilham o mesmo implante neural.
-            </p>
-            <p>
-              Unidos por uma conexão que desafia a razão, são levados a um conflito que ultrapassa os limites da tecnologia, enfrentando verdades ocultas, dilemas morais e os custos da evolução humana. <i>Cânticos de Machina – Primavera Artificial</i> é uma jornada intensa de ação, mistério e introspecção sobre os delicados limites entre fé, tecnologia e humanidade.
-            </p>
-            <p>
-              <strong>A tecnologia está conduzindo o mundo a uma nova estação. Você está preparado?</strong>
-            </p>
-            <p>
-              <strong>Temas:</strong> <span class="text-secondary">fé, avanços tecnológicos, implantes neurais, realidades virtuais, dilemas éticos, esperança e humanidade.</span>
-            </p>
-
-          </div>
-
-          <div class="col-lg-4 text-center order-2 order-lg-2 mt-4 mt-lg-0">
-            <img
-              src="./img/capa_livro.png" loading="lazy"
-              alt="Capa do livro Cânticos de Machina – Primavera Artificial"
-              class="img-fluid rounded capa-livro mb-3"
-            />
-            <p>
-              <a href="#" class="btn btn-primary">
-                <i class="bi bi-cart-fill"></i> Comprar Agora
-              </a>
-            </p>
-          </div>
-      </section>
-
-      <!-- Publicações -->
-      <section id="publicacoes" class="card-custom">
-        <h2><i class="bi bi-journal-text"></i> Publicações Acadêmicas</h2>
-        <p>Confira alguns dos meus principais trabalhos acadêmicos:</p>
-        <ul class="list-group">
-          <li class="list-group-item">
-            <strong
-              >Evaluation of a GWAP for social recruitment and measurement of
-              musical talent.</strong
-            ><br />
-            <em class="text-secondary"
-              >In: 2019 23rd IEEE International Conference on Computer Supported
-              Cooperative Work in Design (CSCWD), Porto, Portugal.</em
-            >
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="#sobre">Sobre</a>
           </li>
-          <li class="list-group-item">
-            <strong
-              >Towards a Framework for Crowdsourced Collection, Cleaning and
-              Measurement of Digital Content.</strong
-            ><br />
-            <em class="text-secondary"
-              >In: 2013 IEEE International Conference on Systems, Man, and
-              Cybernetics (SMC), Manchester, Reino Unido.</em
-            >
+          <li class="nav-item">
+            <a class="nav-link" href="#livro">Livro</a>
           </li>
-          <li class="list-group-item">
-            <strong
-              >Cassino Musical: A game with a purpose for social recruitment and
-              measurement of musical talent.</strong
-            ><br />
-            <em class="text-secondary"
-              >In: 2013 17th IEEE International Conference on Computer Supported
-              Cooperative Work in Design (CSCWD), Whistler, Canadá.</em
-            >
+          <li class="nav-item">
+            <a class="nav-link" href="#publicacoes">Artigos</a>
           </li>
-          <li class="list-group-item">
-            <strong>Crowdsourcing for music: Survey and taxonomy.</strong><br />
-            <em class="text-secondary"
-              >In: 2012 IEEE International Conference on Systems, Man, and
-              Cybernetics (SMC), Seoul, Coreia do Sul.</em
-            >
+          <li class="nav-item">
+            <a class="nav-link" href="#contato">Contato</a>
           </li>
         </ul>
-        <a
-          class="btn btn-outline-primary mt-3"
-          href="https://scholar.google.com.br/citations?user=11ORDMIAAAAJ"
-          target="_blank"
-        >
-          <i class="bi bi-box-arrow-up-right"></i> Ver perfil completo no Google
-          Acadêmico
-        </a>
-      </section>
+      </div>
+    </div>
+  </nav>
 
-      <!-- Contato -->
-      <section id="contato" class="card-custom">
-        <h2><i class="bi bi-envelope-fill"></i> Contato</h2>
-        <p class="small">
-          <i class="bi bi-instagram"></i>
-          <a href="https://www.instagram.com/carlosgomes85" target="_blank"
-            >@carlosgomes85</a
-          >
-        </p>
-        <p class="small">
-          <i class="bi bi-instagram"></i>
-          <a href="https://www.instagram.com/canticosdemachina" target="_blank"
-            >@canticosdemachina</a
-          >
-        </p>
-        <p class="small"><i class="bi bi-envelope"></i> <a href="mailto:escritorcarlosgomes85@gmail.com"
-        >escritorcarlosgomes85@gmail.com</a></p>
-        <p class="small"><i class="bi bi-globe"></i> <a href="https://canticosdemachina.com.br" target="_blank">canticosdemachina.com.br</a></p>
-      </section>
+  <!-- Header -->
+  <header class="parallax-header">
+    <div class="container">
+      <h1>C. E. Gomes</h1>
+      <h2>
+        Autor de <strong>Cânticos de Machina – Primavera Artificial</strong>
+      </h2>
+    </div>
+  </header>
 
-    </main>
-
-    <!-- Rodapé -->
-    <footer class="text-center">
-      <div class="container p-3">
-        <p class="mb-2">
-          &copy; 2025 <span class="text-info">Carlos Eduardo Gomes</span> - Todos os
-          direitos reservados.
-        </p>
-        <div>
-          <a href="https://www.instagram.com/carlosgomes85" target="_blank" style="margin-right: 5px;"
-            ><i class="bi bi-instagram"></i> Instagram</a
-          >
-          |
-          <a href="https://www.facebook.com/kdugomes" target="_blank" style="margin-right: 5px; margin-left: 5px;"
-            ><i class="bi bi-facebook"></i> Facebook</a
-          >
-          |
-          <a href="mailto:escritorcarlosgomes85@gmail.com" style="margin-right: 5px; margin-left: 5px;">
-            <i class="bi bi-envelope"></i> E-mail
-          </a>
-          |
-          <a
-            href="https://scholar.google.com.br/citations?user=11ORDMIAAAAJ" style="margin-right: 5px; margin-left: 5px;"
-            target="_blank"
-          >
-            <i class="bi bi-google"></i> Acadêmico
-          </a>
-          |
-          <a href="https://www.linkedin.com/in/carlosgomes85/" target="_blank" style="margin-right: 5px; margin-left: 5px;">
-            <i class="bi bi-linkedin"></i> LinkedIn
-          </a>
+  <!-- Conteúdo principal -->
+  <main class="container my-5">
+    <!-- Sobre -->
+    <section id="sobre" class="card-custom">
+      <h2><i class="bi bi-person-fill"></i> Sobre</h2>
+      <div class="row align-items-center">
+        <div class="col-md-5 col-lg-4 col-xl-3 text-center mb-4 mb-md-0">
+          <img src="./img/foto-perfil.jpg" alt="Foto do autor Carlos E. Gomes" class="avatar mx-auto" />
+        </div>
+        <div class="col-md-7 col-lg-8 col-xl-9">
+          <h4><strong class="text-dark text-opacity-75">C. E. Gomes</strong></h4>
+          <p>
+            Sou um escritor brasileiro de ficção cristã, mestre em Engenharia de Sistemas e Computação, apaixonado por
+            tecnologia e música. Através das palavras, busco explorar os dilemas da humanidade no encontro entre
+            <strong>fé, tecnologia e futuro</strong>.
+          </p>
+          <p>
+            Nascido no Rio de Janeiro, trilhei minha carreira no universo da tecnologia, mas foi na escrita que
+            encontrei um espaço genuíno para refletir sobre os desafios da nossa geração diante dos avanços tecnológicos
+            e das grandes questões existenciais do nosso tempo.
+          </p>
         </div>
       </div>
-    </footer>
+    </section>
 
-    <script>
-      particlesJS.load(
-        "particles-js",
-        "https://cdn.jsdelivr.net/gh/VincentGarreau/particles.js/particles.json"
-      );
+    <!-- Livro -->
+    <section id="livro" class="card-custom">
+      <h2><i class="bi bi-journal-bookmark-fill"></i> O Livro</h2>
+      <div class="row align-items-center">
+        <!-- Texto à esquerda -->
+        <div class="col-lg-8 order-1 order-lg-1">
+          <h4><strong class="text-dark text-opacity-75">Cânticos de Machina – Primavera Artificial</strong></h4>
+          <p>
+            Primeiro volume de uma série que une <strong>ficção científica e reflexão espiritual</strong> para explorar
+            como os avanços tecnológicos estão moldando o presente — e redesenhando o futuro da humanidade.
+          </p>
 
-      const cards = document.querySelectorAll(".card-custom");
-      const observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add("show");
-            }
-          });
-        },
-        { threshold: 0.1 }
-      );
+          <h5>Sinopse</h5>
+          <p>
+            Em um mundo onde a tecnologia redefine os limites do ser humano, a Neurarchy lidera a inovação com o
+            implante neural <strong>Solomon</strong> — um dispositivo capaz de expandir as capacidades cognitivas e
+            oferecer tratamentos revolucionários. Aclamado por muitos como o marco de uma nova era e temido por outros
+            como uma ameaça à liberdade, Solomon polariza a sociedade.
+          </p>
+          <p>
+            Quando <strong>Daniel Killian</strong>, dado como morto, retorna à vida em circunstâncias misteriosas, o
+            mundo se depara com um possível milagre — ou algo ainda mais inquietante. Guiados por sonhos e visões, três
+            jovens se conectam a ele e logo descobrem um elo invisível: todos compartilham o mesmo implante neural.
+          </p>
+          <p>
+            Unidos por uma conexão que desafia a razão, são levados a um conflito que ultrapassa os limites da
+            tecnologia, enfrentando verdades ocultas, dilemas morais e os custos da evolução humana. <i>Cânticos de
+              Machina – Primavera Artificial</i> é uma jornada intensa de ação, mistério e introspecção sobre os
+            delicados limites entre fé, tecnologia e humanidade.
+          </p>
+          <p>
+            <strong>A tecnologia está conduzindo o mundo a uma nova estação. Você está preparado?</strong>
+          </p>
+          <p>
+            <strong>Temas:</strong> <span class="text-secondary">fé, avanços tecnológicos, implantes neurais, realidades
+              virtuais, dilemas éticos, esperança e humanidade.</span>
+          </p>
 
-      cards.forEach((card) => {
-        observer.observe(card);
-      });
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  </body>
+        </div>
+
+        <div class="col-lg-4 text-center order-2 order-lg-2 mt-4 mt-lg-0">
+          <img src="./img/capa_livro.png" loading="lazy" alt="Capa do livro Cânticos de Machina – Primavera Artificial"
+            class="img-fluid rounded capa-livro mb-3" />
+          <p>
+            <a href="#" class="btn btn-primary">
+              <i class="bi bi-cart-fill"></i> Comprar Agora
+            </a>
+          </p>
+        </div>
+    </section>
+
+    <!-- Publicações -->
+    <section id="publicacoes" class="card-custom">
+      <h2><i class="bi bi-journal-text"></i> Publicações Acadêmicas</h2>
+      <p>Confira alguns dos meus principais trabalhos acadêmicos:</p>
+      <ul class="list-group">
+        <li class="list-group-item">
+          <strong>Evaluation of a GWAP for social recruitment and measurement of
+            musical talent.</strong><br />
+          <em class="text-secondary">In: 2019 23rd IEEE International Conference on Computer Supported
+            Cooperative Work in Design (CSCWD), Porto, Portugal.</em>
+        </li>
+        <li class="list-group-item">
+          <strong>Towards a Framework for Crowdsourced Collection, Cleaning and
+            Measurement of Digital Content.</strong><br />
+          <em class="text-secondary">In: 2013 IEEE International Conference on Systems, Man, and
+            Cybernetics (SMC), Manchester, Reino Unido.</em>
+        </li>
+        <li class="list-group-item">
+          <strong>Cassino Musical: A game with a purpose for social recruitment and
+            measurement of musical talent.</strong><br />
+          <em class="text-secondary">In: 2013 17th IEEE International Conference on Computer Supported
+            Cooperative Work in Design (CSCWD), Whistler, Canadá.</em>
+        </li>
+        <li class="list-group-item">
+          <strong>Crowdsourcing for music: Survey and taxonomy.</strong><br />
+          <em class="text-secondary">In: 2012 IEEE International Conference on Systems, Man, and
+            Cybernetics (SMC), Seoul, Coreia do Sul.</em>
+        </li>
+      </ul>
+      <a class="btn btn-outline-primary mt-3" href="https://scholar.google.com.br/citations?user=11ORDMIAAAAJ"
+        target="_blank">
+        <i class="bi bi-box-arrow-up-right"></i> Ver perfil completo no Google
+        Acadêmico
+      </a>
+    </section>
+
+    <!-- Contato -->
+    <section id="contato" class="card-custom">
+      <h2><i class="bi bi-envelope-fill"></i> Contato</h2>
+      <p class="small">
+        <i class="bi bi-instagram"></i>
+        <a href="https://www.instagram.com/carlosgomes85" target="_blank">@carlosgomes85</a>
+      </p>
+      <p class="small">
+        <i class="bi bi-instagram"></i>
+        <a href="https://www.instagram.com/canticosdemachina" target="_blank">@canticosdemachina</a>
+      </p>
+      <p class="small"><i class="bi bi-envelope"></i> <a
+          href="mailto:escritorcarlosgomes85@gmail.com">escritorcarlosgomes85@gmail.com</a></p>
+      <p class="small"><i class="bi bi-globe"></i> <a href="https://canticosdemachina.com.br"
+          target="_blank">canticosdemachina.com.br</a></p>
+    </section>
+
+  </main>
+
+  <!-- Rodapé -->
+  <footer class="text-center">
+    <div class="container p-3">
+      <p class="mb-2">
+        &copy; 2025 <span class="text-info">Carlos Eduardo Gomes</span> - Todos os
+        direitos reservados.
+      </p>
+      <div>
+        <a href="https://www.instagram.com/carlosgomes85" target="_blank" style="margin-right: 5px;"><i
+            class="bi bi-instagram"></i> Instagram</a>
+        |
+        <a href="https://www.facebook.com/kdugomes" target="_blank" style="margin-right: 5px; margin-left: 5px;"><i
+            class="bi bi-facebook"></i> Facebook</a>
+        |
+        <a href="mailto:escritorcarlosgomes85@gmail.com" style="margin-right: 5px; margin-left: 5px;">
+          <i class="bi bi-envelope"></i> E-mail
+        </a>
+        |
+        <a href="https://scholar.google.com.br/citations?user=11ORDMIAAAAJ" style="margin-right: 5px; margin-left: 5px;"
+          target="_blank">
+          <i class="bi bi-google"></i> Acadêmico
+        </a>
+        |
+        <a href="https://www.linkedin.com/in/carlosgomes85/" target="_blank"
+          style="margin-right: 5px; margin-left: 5px;">
+          <i class="bi bi-linkedin"></i> LinkedIn
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Book",
+  "name": "Cânticos de Machina – Primavera Artificial",
+  "author": {
+    "@type": "Person",
+    "name": "C. E. Gomes",
+    "sameAs": [
+      "https://www.instagram.com/carlosgomes85",
+      "https://www.facebook.com/kdugomes",
+      "https://www.linkedin.com/in/carlosgomes85/"
+    ]
+  },
+  "description": "Um romance cristão de ficção científica que mistura fé, implantes neurais, tecnologia e esperança em um futuro incerto.",
+  "image": "https://www.canticosdemachina.com.br/img/capa_livro.png",
+  "url": "https://www.canticosdemachina.com.br/"
+}
+</script>
+
+  <script>
+    particlesJS.load(
+      "particles-js",
+      "https://cdn.jsdelivr.net/gh/VincentGarreau/particles.js/particles.json"
+    );
+
+    const cards = document.querySelectorAll(".card-custom");
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("show");
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    cards.forEach((card) => {
+      observer.observe(card);
+    });
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
 </html>
