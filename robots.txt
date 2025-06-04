@@ -1,4 +1,5 @@
 User-agent: *
+Allow: /favicon.ico
 Disallow:
 
 Sitemap: https://www.canticosdemachina.com.br/sitemap.xml
