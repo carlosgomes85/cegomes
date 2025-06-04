@@ -21,6 +21,7 @@
 
   <!-- Canonical URL -->
   <link rel="canonical" href="https://www.canticosdemachina.com.br/" />
+  <link rel="preload" as="image" href="./img/logo-nome.png" />
 
   <!-- Open Graph -->
   <meta property="og:title" content="C. E. Gomes | Autor de Ficção Científica Cristã">
@@ -186,6 +187,14 @@
       transform: scale(1.02);
     }
 
+    .card-custom:nth-child(1) {
+      transition-delay: 0.2s;
+    }
+
+    .card-custom:nth-child(2) {
+      transition-delay: 0.4s;
+    }
+
     .btn-primary {
       background-color: var(--cor-destaque);
       border: none;
@@ -283,12 +292,17 @@
   <div id="particles-js"></div>
 
   <div class="social-menu">
-    <a href="https://www.instagram.com/carlosgomes85" target="_blank"><i class="bi bi-instagram"></i></a>
-    <a href="https://www.facebook.com/kdugomes" target="_blank"><i class="bi bi-facebook"></i>
+    <a href="https://www.instagram.com/carlosgomes85" target="_blank" aria-label="Instagram de Carlos Gomes"><i
+        class="bi bi-instagram"></i></a>
+    <a href="https://www.facebook.com/kdugomes" target="_blank" aria-label="Facebook de Carlos Gomes"><i
+        class="bi bi-facebook"></i>
     </a>
-    <a href="mailto:escritorcarlosgomes85@gmail.com"><i class="bi bi-envelope"></i></a>
-    <a href="https://scholar.google.com.br/citations?user=11ORDMIAAAAJ" target="_blank"><i class="bi bi-google"></i></a>
-    <a href="https://www.linkedin.com/in/carlosgomes85/" target="_blank"><i class="bi bi-linkedin"></i></a>
+    <a href="mailto:escritorcarlosgomes85@gmail.com" aria-label="Enviar e-mail para o escritor Carlos Gomes"><i
+        class="bi bi-envelope"></i></a>
+    <a href="https://scholar.google.com.br/citations?user=11ORDMIAAAAJ" target="_blank"
+      aria-label="Perfil no Google Acadêmico de Carlos Gomes"><i class="bi bi-google"></i></a>
+    <a href="https://www.linkedin.com/in/carlosgomes85/" target="_blank" aria-label="LinkedIn de Carlos Gomes"><i
+        class="bi bi-linkedin"></i></a>
   </div>
 
   <!-- Navbar -->
@@ -337,7 +351,8 @@
       <h2><i class="bi bi-person-fill"></i> Sobre</h2>
       <div class="row align-items-center">
         <div class="col-md-5 col-lg-4 col-xl-3 text-center mb-4 mb-md-0">
-          <img src="./img/foto-perfil.jpg" alt="Foto do autor Carlos E. Gomes" class="avatar mx-auto" />
+          <img loading="lazy" src="./img/foto-perfil.jpg" alt="Foto do escritor de ficção cristã Carlos E. Gomes"
+            class="avatar mx-auto" />
         </div>
         <div class="col-md-7 col-lg-8 col-xl-9">
           <h4><strong class="text-dark text-opacity-75">C. E. Gomes</strong></h4>
@@ -396,7 +411,8 @@
         </div>
 
         <div class="col-lg-4 text-center order-2 order-lg-2 mt-4 mt-lg-0">
-          <img src="./img/capa_livro.png" loading="lazy" alt="Capa do livro Cânticos de Machina – Primavera Artificial"
+          <img src="./img/capa_livro.png" loading="lazy"
+            alt="Capa do livro de ficção cristã Cânticos de Machina – Primavera Artificial"
             class="img-fluid rounded capa-livro mb-3" />
           <p>
             <a href="#" class="btn btn-primary">
