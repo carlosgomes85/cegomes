@@ -25,7 +25,8 @@
   <meta property="og:type" content="website">
 
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
+  <!-- Bootstrap Icons (atualizado p/ ícones do TikTok/Threads) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&display=swap" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
@@ -90,16 +91,14 @@
       align-items: center;
       overflow: hidden;
     }
-    /* Fundo com a capa + blur */
     .parallax-header::before {
       content: "";
       position: absolute; inset: 0;
       background: url("./img/banner.jpg") center/cover no-repeat;
       filter: blur(0px);
-      transform: scale(1.08); /* evita bordas após blur */
+      transform: scale(1.08);
       z-index: -2;
     }
-    /* Overlay escuro para contraste */
     .parallax-header::after {
       content: "";
       position: absolute; inset: 0;
@@ -122,9 +121,6 @@
     .card-custom:hover { transform: scale(1.02); }
     .card-custom:nth-child(1){transition-delay:.2s}
     .card-custom:nth-child(2){transition-delay:.4s}
-
-    .btn-primary { background-color: var(--cor-destaque); border: none; font-size: 1.1rem; padding: 12px 28px; font-weight: 600; }
-    .btn-primary:hover { background-color: #123a62; transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.15); }
 
     .btn-primary { background-color: var(--cor-destaque); border: none; font-size: 1.1rem; padding: 12px 28px; font-weight: 600; }
     .btn-primary:hover { background-color: #123a62; transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.15); }
@@ -164,26 +160,31 @@
       display: none;
     }
     .mobile-cta .btn-outline-primary {
-      width: 40px;   /* largura fixa */
-      height: 40px;  /* altura fixa */
+      width: 40px;
+      height: 40px;
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 0;    /* remove espaçamento interno desigual */
+      padding: 0;
     }
     .mobile-cta .btn { width: 100%; }
     @media (max-width: 768px) {
       .mobile-cta { display: block; }
-      body { padding-bottom: 88px; } /* espaço para a barra fixa */
-      .cta-wrap { display: none; }   /* evita CTA duplicada no header em telas pequenas */
+      body { padding-bottom: 88px; }
+      .cta-wrap { display: none; }
     }
   </style>
 </head>
 <body>
   <div id="particles-js"></div>
 
+  <!-- Menu social flutuante -->
   <div class="social-menu">
     <a href="https://www.instagram.com/carlosgomes85" target="_blank" rel="noopener" data-bs-toggle="tooltip" title="Instagram"><i class="bi bi-instagram"></i></a>
+    <!-- Novos: TikTok e Threads -->
+    <a href="https://www.tiktok.com/@cadugomes85" target="_blank" rel="noopener" data-bs-toggle="tooltip" title="TikTok"><i class="bi bi-tiktok"></i></a>
+    <a href="https://www.threads.com/@canticosdemachina" target="_blank" rel="noopener" data-bs-toggle="tooltip" title="Threads"><i class="bi bi-threads"></i></a>
+    <!-- /Novos -->
     <a href="https://www.facebook.com/kdugomes" target="_blank" rel="noopener" data-bs-toggle="tooltip" title="Facebook"><i class="bi bi-facebook"></i></a>
     <a href="mailto:escritorcarlosgomes85@gmail.com" data-bs-toggle="tooltip" title="E-mail"><i class="bi bi-envelope"></i></a>
     <a href="https://scholar.google.com.br/citations?user=11ORDMIAAAAJ" target="_blank" rel="noopener" data-bs-toggle="tooltip" title="Google Scholar"><i class="bi bi-google"></i></a>
@@ -213,25 +214,26 @@
       </div>
     </div>
   </nav>
-<!-- Header com capa em blur -->
-<header class="parallax-header">
-  <div class="container text-center">
-    <h1><strong>Cânticos de Machina</strong></h1>
-    <h2><strong>Primavera Artificial</strong></h2>
-    <h3>Uma jornada intensa de ação e reflexão sobre fé, tecnologia e humanidade — por C. E. Gomes</h3>
 
-    <div class="cta-wrap d-flex justify-content-center flex-wrap gap-3 mt-3 d-none d-md-block">
-      <a href="https://clubedeautores.com.br/livro/canticos-de-machina" 
-         target="_blank" rel="noopener" class="btn btn-primary">
-        <i class="bi bi-cart-fill"></i> Comprar livro impresso
-      </a>
-      <a href="https://a.co/d/7uYBpvn" 
-         target="_blank" rel="noopener" class="btn btn-primary">
-        <i class="bi bi-book"></i> Ler no Kindle / Kindle Unlimited
-      </a>
+  <!-- Header com capa em blur -->
+  <header class="parallax-header">
+    <div class="container text-center">
+      <h1><strong>Cânticos de Machina</strong></h1>
+      <h2><strong>Primavera Artificial</strong></h2>
+      <h3>Uma jornada intensa de ação e reflexão sobre fé, tecnologia e humanidade — por C. E. Gomes</h3>
+
+      <div class="cta-wrap d-flex justify-content-center flex-wrap gap-3 mt-3 d-none d-md-block">
+        <a href="https://clubedeautores.com.br/livro/canticos-de-machina" 
+           target="_blank" rel="noopener" class="btn btn-primary">
+          <i class="bi bi-cart-fill"></i> Comprar livro impresso
+        </a>
+        <a href="https://a.co/d/7uYBpvn" 
+           target="_blank" rel="noopener" class="btn btn-primary">
+          <i class="bi bi-book"></i> Ler no Kindle / Kindle Unlimited
+        </a>
+      </div>
     </div>
-  </div>
-</header>
+  </header>
 
   <main class="container my-5">
     <!-- LIVRO -->
@@ -276,22 +278,20 @@
             class="img-fluid rounded capa-livro mb-3" />
           <p class="text-secondary small mb-0">Disponível em versão <strong>impressa</strong> e <strong>e-book</strong>.</p>
         </div>
-		
       </div>
-		<div class="row align-items-center p-2">
-		  <div class="col-12 d-flex flex-column flex-sm-row justify-content-center mt-4 mt-lg-0">
-			<a href="https://clubedeautores.com.br/livro/canticos-de-machina" target="_blank" rel="noopener" 
-			   class="btn btn-primary me-0 me-sm-2 mb-2">
-			  <i class="bi bi-cart-fill"></i> Comprar o livro impresso
-			</a>
-			<a href="https://a.co/d/7uYBpvn" target="_blank" rel="noopener" 
-			   class="btn btn-primary mb-2">
-			  <i class="bi bi-book"></i> Ler no Kindle / Kindle Unlimited
-			</a>        
-		  </div>
-		</div>
 
-	  </div>
+      <div class="row align-items-center p-2">
+        <div class="col-12 d-flex flex-column flex-sm-row justify-content-center mt-4 mt-lg-0">
+          <a href="https://clubedeautores.com.br/livro/canticos-de-machina" target="_blank" rel="noopener" 
+             class="btn btn-primary me-0 me-sm-2 mb-2">
+            <i class="bi bi-cart-fill"></i> Comprar o livro impresso
+          </a>
+          <a href="https://a.co/d/7uYBpvn" target="_blank" rel="noopener" 
+             class="btn btn-primary mb-2">
+            <i class="bi bi-book"></i> Ler no Kindle / Kindle Unlimited
+          </a>        
+        </div>
+      </div>
     </section>
 
     <!-- AVALIAÇÕES -->
@@ -339,6 +339,7 @@
       </div>
     </section>
 
+    <!-- Instagram -->
     <section id="instagram" class="card-custom">
       <h2><i class="bi bi-instagram"></i> Instagram</h2>
       <p>Siga nosso perfil no Instagram para ficar sempre atualizado sobre as novidades da saga <i>Cânticos de Machina</i>:</p>
@@ -350,6 +351,7 @@
       </div>
     </section>
 
+    <!-- Publicações -->
     <section id="publicacoes" class="card-custom">
       <h2><i class="bi bi-journal-text"></i> Publicações Acadêmicas</h2>
       <p>Confira alguns dos meus principais trabalhos acadêmicos:</p>
@@ -377,8 +379,19 @@
       </a>
     </section>
 
+    <!-- Contato -->
     <section id="contato" class="card-custom">
       <h2><i class="bi bi-envelope-fill"></i> Contato</h2>
+
+      <!-- Novos: TikTok e Threads -->
+      <p class="small"><i class="bi bi-tiktok"></i>
+        <a href="https://www.tiktok.com/@cadugomes85" target="_blank" rel="noopener">@cadugomes85</a>
+      </p>
+      <p class="small"><i class="bi bi-threads"></i>
+        <a href="https://www.threads.com/@canticosdemachina" target="_blank" rel="noopener">@canticosdemachina</a>
+      </p>
+      <!-- /Novos -->
+
       <p class="small"><i class="bi bi-instagram"></i> <a href="https://www.instagram.com/carlosgomes85" target="_blank" rel="noopener">@carlosgomes85</a></p>
       <p class="small"><i class="bi bi-instagram"></i> <a href="https://www.instagram.com/canticosdemachina" target="_blank" rel="noopener">@canticosdemachina</a></p>
       <p class="small"><i class="bi bi-envelope"></i> <a href="mailto:escritorcarlosgomes85@gmail.com">escritorcarlosgomes85@gmail.com</a></p>
@@ -399,35 +412,37 @@
         <hr class="my-1">
         <p class="text-center small mb-0">Gostou? Deixe sua avaliação:</p>
         <div class="d-flex justify-content-center gap-2">
-            <a href="https://a.co/d/7uYBpvn" target="_blank" rel="noopener" class="btn btn-outline-primary btn-sm" title="Avaliar na Amazon">
-              <i class="bi bi-chat-square-text"></i>
-            </a>
-            <a href="https://clubedeautores.com.br/livro/canticos-de-machina" target="_blank" rel="noopener" class="btn btn-outline-primary btn-sm" title="Avaliar no Clube de Autores">
-              <i class="bi bi-chat-square-text-fill"></i>
-            </a>
-            <a href="https://www.skoob.com.br/share/book/277773475/122598175" target="_blank" rel="noopener" class="btn btn-outline-primary btn-sm" title="Avaliar no Skoob">
-              <i class="bi bi-chat-quote"></i>
-            </a>
-            <a href="https://www.goodreads.com/book/show/239675050-c-nticos-de-machina" target="_blank" rel="noopener" class="btn btn-outline-primary btn-sm" title="Avaliar no Goodreads">
-              <i class="bi bi-chat-quote-fill"></i>
-            </a>
+          <a href="https://a.co/d/7uYBpvn" target="_blank" rel="noopener" class="btn btn-outline-primary btn-sm" title="Avaliar na Amazon">
+            <i class="bi bi-chat-square-text"></i>
+          </a>
+          <a href="https://clubedeautores.com.br/livro/canticos-de-machina" target="_blank" rel="noopener" class="btn btn-outline-primary btn-sm" title="Avaliar no Clube de Autores">
+            <i class="bi bi-chat-square-text-fill"></i>
+          </a>
+          <a href="https://www.skoob.com.br/share/book/277773475/122598175" target="_blank" rel="noopener" class="btn btn-outline-primary btn-sm" title="Avaliar no Skoob">
+            <i class="bi bi-chat-quote"></i>
+          </a>
+          <a href="https://www.goodreads.com/book/show/239675050-c-nticos-de-machina" target="_blank" rel="noopener" class="btn btn-outline-primary btn-sm" title="Avaliar no Goodreads">
+            <i class="bi bi-chat-quote-fill"></i>
+          </a>
         </div>
       </div>
     </div>
   </div>
 
+  <!-- Rodapé -->
   <footer class="text-center">
     <div class="container p-4">
       <p class="mb-2">&copy; 2025 <span class="text-info">Carlos Eduardo Gomes</span> - Todos os direitos reservados.</p>
       <div>
         <a href="https://www.instagram.com/carlosgomes85" target="_blank" rel="noopener" style="margin-right: 5px;"><i class="bi bi-instagram"></i> Instagram</a> |
         <a href="https://www.facebook.com/kdugomes" target="_blank" rel="noopener" style="margin: 0 5px;"><i class="bi bi-facebook"></i> Facebook</a> |
+        <a href="https://www.tiktok.com/@cadugomes85" target="_blank" rel="noopener" style="margin: 0 5px;"><i class="bi bi-tiktok"></i> TikTok</a> |
+        <a href="https://www.threads.com/@canticosdemachina" target="_blank" rel="noopener" style="margin: 0 5px;"><i class="bi bi-threads"></i> Threads</a> |
         <a href="mailto:escritorcarlosgomes85@gmail.com" style="margin: 0 5px;"><i class="bi bi-envelope"></i> E-mail</a> |
         <a href="https://scholar.google.com.br/citations?user=11ORDMIAAAAJ" target="_blank" rel="noopener" style="margin: 0 5px;"><i class="bi bi-google"></i> Acadêmico</a> |
         <a href="https://www.linkedin.com/in/carlosgomes85/" target="_blank" rel="noopener" style="margin: 0 5px;"><i class="bi bi-linkedin"></i> LinkedIn</a>
       </div>
-      <br>
-      <br>
+      <br><br>
     </div>
   </footer>
 
@@ -437,11 +452,15 @@
     "@context": "https://schema.org",
     "@type": "Book",
     "name": "Cânticos de Machina – Primavera Artificial",
-    "author": { "@type": "Person", "name": "C. E. Gomes",
+    "author": {
+      "@type": "Person",
+      "name": "C. E. Gomes",
       "sameAs": [
         "https://www.instagram.com/carlosgomes85",
         "https://www.facebook.com/kdugomes",
-        "https://www.linkedin.com/in/carlosgomes85/"
+        "https://www.linkedin.com/in/carlosgomes85/",
+        "https://www.tiktok.com/@cadugomes85",
+        "https://www.threads.com/@canticosdemachina"
       ]
     },
     "description": "Uma jornada intensa de ação e reflexão sobre fé, tecnologia e humanidade.",
