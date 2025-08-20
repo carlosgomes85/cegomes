@@ -163,8 +163,15 @@
       z-index: 1050;
       display: none;
     }
+    .mobile-cta .btn-outline-primary {
+      width: 40px;   /* largura fixa */
+      height: 40px;  /* altura fixa */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0;    /* remove espaçamento interno desigual */
+    }
     .mobile-cta .btn { width: 100%; }
-    .mobile-cta .btn + .btn { margin-top: 8px; }
     @media (max-width: 768px) {
       .mobile-cta { display: block; }
       body { padding-bottom: 88px; } /* espaço para a barra fixa */
@@ -176,11 +183,13 @@
   <div id="particles-js"></div>
 
   <div class="social-menu">
-    <a href="https://www.instagram.com/carlosgomes85" target="_blank" rel="noopener"><i class="bi bi-instagram"></i></a>
-    <a href="https://www.facebook.com/kdugomes" target="_blank" rel="noopener"><i class="bi bi-facebook"></i></a>
-    <a href="mailto:escritorcarlosgomes85@gmail.com"><i class="bi bi-envelope"></i></a>
-    <a href="https://scholar.google.com.br/citations?user=11ORDMIAAAAJ" target="_blank" rel="noopener"><i class="bi bi-google"></i></a>
-    <a href="https://www.linkedin.com/in/carlosgomes85/" target="_blank" rel="noopener"><i class="bi bi-linkedin"></i></a>
+    <a href="https://www.instagram.com/carlosgomes85" target="_blank" rel="noopener" data-bs-toggle="tooltip" title="Instagram"><i class="bi bi-instagram"></i></a>
+    <a href="https://www.facebook.com/kdugomes" target="_blank" rel="noopener" data-bs-toggle="tooltip" title="Facebook"><i class="bi bi-facebook"></i></a>
+    <a href="mailto:escritorcarlosgomes85@gmail.com" data-bs-toggle="tooltip" title="E-mail"><i class="bi bi-envelope"></i></a>
+    <a href="https://scholar.google.com.br/citations?user=11ORDMIAAAAJ" target="_blank" rel="noopener" data-bs-toggle="tooltip" title="Google Scholar"><i class="bi bi-google"></i></a>
+    <a href="https://www.linkedin.com/in/carlosgomes85/" target="_blank" rel="noopener" data-bs-toggle="tooltip" title="LinkedIn"><i class="bi bi-linkedin"></i></a>
+    <a href="https://www.skoob.com.br/share/book/277773475/122598175" target="_blank" rel="noopener" data-bs-toggle="tooltip" title="Avaliar no Skoob"><i class="bi bi-chat-quote"></i></a>
+    <a href="https://www.goodreads.com/book/show/239675050-c-nticos-de-machina" target="_blank" rel="noopener" data-bs-toggle="tooltip" title="Avaliar no Goodreads"><i class="bi bi-chat-quote-fill"></i></a>
   </div>
 
   <!-- Navbar -->
@@ -195,6 +204,7 @@
       <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
         <ul class="navbar-nav">
           <li class="nav-item"><a class="nav-link" href="#livro">Livro</a></li>
+          <li class="nav-item"><a class="nav-link" href="#avaliacoes">Avaliações</a></li>
           <li class="nav-item"><a class="nav-link" href="#sobre">Autor</a></li>
           <li class="nav-item"><a class="nav-link" href="#instagram">Instagram</a></li>
           <li class="nav-item"><a class="nav-link" href="#publicacoes">Artigos</a></li>
@@ -284,6 +294,28 @@
 	  </div>
     </section>
 
+    <!-- AVALIAÇÕES -->
+    <section id="avaliacoes" class="card-custom">
+      <h2><i class="bi bi-star-fill"></i> Avaliações</h2>
+      <p>
+        Gostou do livro? Sua avaliação é muito importante para que outros leitores conheçam a obra e para aumentar a visibilidade do livro nas plataformas digitais. Por favor, considere deixar sua avaliação nos links abaixo:
+      </p>
+      <div class="d-flex flex-wrap justify-content-center mt-4 gap-2">
+        <a href="https://a.co/d/7uYBpvn" target="_blank" rel="noopener" class="btn btn-primary">
+          <i class="bi bi-chat-left-quote"></i> Avaliar na Amazon
+        </a>
+        <a href="https://clubedeautores.com.br/livro/canticos-de-machina" target="_blank" rel="noopener" class="btn btn-primary">
+          <i class="bi bi-chat-left-quote-fill"></i> Avaliar no Clube de Autores
+        </a>
+        <a href="https://www.skoob.com.br/share/book/277773475/122598175" target="_blank" rel="noopener" class="btn btn-primary">
+          <i class="bi bi-chat-quote"></i> Avaliar no Skoob
+        </a>
+        <a href="https://www.goodreads.com/book/show/239675050-c-nticos-de-machina" target="_blank" rel="noopener" class="btn btn-primary">
+          <i class="bi bi-chat-quote-fill"></i> Avaliar no Goodreads
+        </a>
+      </div>
+    </section>
+
     <!-- SOBRE -->
     <section id="sobre" class="card-custom">
       <h2><i class="bi bi-person-fill"></i> Sobre o Autor</h2>
@@ -357,13 +389,29 @@
   <!-- CTA fixa no mobile -->
   <div class="mobile-cta">
     <div class="container">
-      <div class="d-grid">
-        <a href="https://a.co/d/7uYBpvn" target="_blank" rel="noopener" class="btn btn-primary">
+      <div class="d-grid gap-2">
+        <a href="https://a.co/d/7uYBpvn" target="_blank" rel="noopener" class="btn btn-primary btn-sm">
           <i class="bi bi-book me-1"></i> Ler no Kindle / Kindle Unlimited
         </a>
-        <a href="https://clubedeautores.com.br/livro/canticos-de-machina" target="_blank" rel="noopener" class="btn btn-primary">
+        <a href="https://clubedeautores.com.br/livro/canticos-de-machina" target="_blank" rel="noopener" class="btn btn-primary btn-sm">
           <i class="bi bi-cart-fill me-1"></i> Comprar Livro Impresso
         </a>
+        <hr class="my-1">
+        <p class="text-center small mb-0">Gostou? Deixe sua avaliação:</p>
+        <div class="d-flex justify-content-center gap-2">
+            <a href="https://a.co/d/7uYBpvn" target="_blank" rel="noopener" class="btn btn-outline-primary btn-sm" title="Avaliar na Amazon">
+              <i class="bi bi-chat-square-text"></i>
+            </a>
+            <a href="https://clubedeautores.com.br/livro/canticos-de-machina" target="_blank" rel="noopener" class="btn btn-outline-primary btn-sm" title="Avaliar no Clube de Autores">
+              <i class="bi bi-chat-square-text-fill"></i>
+            </a>
+            <a href="https://www.skoob.com.br/share/book/277773475/122598175" target="_blank" rel="noopener" class="btn btn-outline-primary btn-sm" title="Avaliar no Skoob">
+              <i class="bi bi-chat-quote"></i>
+            </a>
+            <a href="https://www.goodreads.com/book/show/239675050-c-nticos-de-machina" target="_blank" rel="noopener" class="btn btn-outline-primary btn-sm" title="Avaliar no Goodreads">
+              <i class="bi bi-chat-quote-fill"></i>
+            </a>
+        </div>
       </div>
     </div>
   </div>
@@ -421,6 +469,9 @@
       entries.forEach((entry) => { if (entry.isIntersecting) entry.target.classList.add("show"); });
     }, { threshold: 0.1 });
     cards.forEach((card) => observer.observe(card));
+
+    const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
+    const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl));
   </script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
