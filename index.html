@@ -3,203 +3,195 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+
   <link rel="icon" href="https://www.canticosdemachina.com.br/favicon.ico" type="image/x-icon">
   <link rel="shortcut icon" href="https://www.canticosdemachina.com.br/favicon.ico" type="image/x-icon">
 
   <title>Cânticos de Machina — Primavera Artificial | por C. E. Gomes</title>
-  <meta name="description"
-    content="Cânticos de Machina — Primavera Artificial: ficção cristã que entrelaça fé e tecnologia. Conheça o livro de C. E. Gomes e adquira sua cópia.">
-
-  <meta name="keywords"
-    content="Cânticos de Machina, ficção cristã, ficção científica cristã, fé e tecnologia, romance cristão, implante neural, inteligência artificial, C. E. Gomes, livro cristão futurista">
+  <meta name="description" content="Cânticos de Machina — Primavera Artificial: ficção cristã que entrelaça fé e tecnologia. Conheça o livro de C. E. Gomes e adquira sua cópia.">
+  <meta name="keywords" content="Cânticos de Machina, ficção cristã, ficção científica cristã, fé e tecnologia, romance cristão, implante neural, inteligência artificial, C. E. Gomes, livro cristão futurista">
   <meta name="author" content="C. E. Gomes" />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://www.canticosdemachina.com.br/" />
+  <meta name="theme-color" content="#004d96">
+
+  <!-- Performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preload" as="image" href="./img/logo-nome.png" />
+  <link rel="preload" as="image" href="./img/banner.jpg" />
 
   <!-- Open Graph -->
   <meta property="og:title" content="Cânticos de Machina — Primavera Artificial">
   <meta property="og:description" content="Uma ficção cristã sobre fé, inteligência artificial, implantes cerebrais e os dilemas da humanidade.">
   <meta property="og:image" content="https://www.canticosdemachina.com.br/img/capa_livro.jpg">
+  <meta property="og:image:alt" content="Capa do livro Cânticos de Machina — Primavera Artificial">
   <meta property="og:url" content="https://www.canticosdemachina.com.br/">
   <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Cânticos de Machina">
+  <meta property="og:locale" content="pt_BR">
 
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Cânticos de Machina — Primavera Artificial">
+  <meta name="twitter:description" content="Fé, IA, implantes neurais e os dilemas da humanidade.">
+  <meta name="twitter:image" content="https://www.canticosdemachina.com.br/img/capa_livro.jpg">
+
+  <!-- Bootstrap / Icons / Fonts -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
-  <!-- Bootstrap Icons (atualizado p/ ícones do TikTok/Threads) -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&display=swap" rel="stylesheet">
-  <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Orbitron:wght@400;500;700&display=swap" rel="stylesheet" />
+
   <style>
-    :root {
-      --cor-principal: #ffffff;
-      --cor-secundaria: #f9fafb;
-      --cor-destaque: #004d96;
-      --texto-principal: #1f2937;
+    :root{
+      --cor-principal:#ffffff;
+      --cor-secundaria:#f9fafb;
+      --cor-destaque:#004d96;
+      --texto-principal:#1f2937;
+    }
+    html{scroll-behavior:smooth;}
+    body{
+      background-color:var(--cor-secundaria);
+      color:var(--texto-principal);
+      font-family:"Poppins",sans-serif;
+      transition:background-color .3s,color .3s;
     }
 
-    html { scroll-behavior: smooth; }
+    .skip-link{position:absolute;left:-999px;top:auto;width:1px;height:1px;overflow:hidden;}
+    .skip-link:focus{left:16px;top:10px;width:auto;height:auto;padding:8px 10px;z-index:2000;background:#fff;border-radius:8px;box-shadow:0 4px 12px rgba(0,0,0,.15);}
 
-    body {
-      background-color: var(--cor-secundaria);
-      color: var(--texto-principal);
-      font-family: "Poppins", sans-serif;
-      transition: background-color 0.3s, color 0.3s;
+    h1,h2,h3,h4,h5,h6,section h2{font-family:'Orbitron',sans-serif;letter-spacing:.5px;}
+    .navbar-brand,.navbar-nav .nav-link{font-family:'Orbitron',sans-serif;letter-spacing:.5px;}
+
+    /* Fundo leve */
+    .bg-pattern{
+      position:fixed;inset:0;z-index:-3;
+      background:
+        radial-gradient(circle at 1px 1px, rgba(0,0,0,.06) 1.2px, transparent 1.2px) 0 0/22px 22px,
+        linear-gradient(180deg,#f1f5f9 0%,#f9fafb 60%,#ffffff 100%);
+      will-change:background-position;opacity:.9;
     }
-
-    h1, h2, h3, h4, h5, h6, section h2 {
-      font-family: 'Orbitron', sans-serif;
-      letter-spacing: 0.5px;
-    }
-
-    .navbar-brand,
-    .navbar-nav .nav-link {
-      font-family: 'Orbitron', sans-serif;
-      letter-spacing: 0.5px;
-    }
-
-    #particles-js {
-      position: fixed; width: 100%; height: 100%;
-      z-index: -1; top: 0; left: 0;
+    @media (prefers-reduced-motion:no-preference){
+      .bg-pattern{animation:gridShift 60s linear infinite;}
+      @keyframes gridShift{from{background-position:0 0,0 0;}to{background-position:200px 0,0 0;}}
     }
 
-    .navbar {
-      background-color: var(--cor-principal);
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    .navbar{background-color:var(--cor-principal);box-shadow:0 2px 8px rgba(0,0,0,0.1);}
+    .navbar-brand img{border-radius:8px;width:250px;height:auto;object-fit:contain;display:block;margin:10px;padding:0;}
+    .navbar-nav .nav-link{color:var(--texto-principal)!important;font-weight:500;}
+    .navbar-nav .nav-link:hover{color:var(--cor-destaque)!important;font-weight:550;}
+    .navbar-toggler{border-color:rgba(0,0,0,0.5);}
+    .navbar-toggler-icon{background-image:url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba(31,41,55,0.9)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");}
+
+    /* Header com a CAPA em blur 0px */
+    .parallax-header{
+      position:relative;color:white;min-height:520px;display:flex;align-items:center;overflow:hidden;z-index:0;
+    }
+    .parallax-header::before{
+      content:"";position:absolute;inset:0;background:url("./img/banner.jpg") center/cover no-repeat;
+      filter:blur(0px);transform:scale(1.08);z-index:-2;
+    }
+    .parallax-header::after{content:"";position:absolute;inset:0;background:rgba(0,0,0,0.38);z-index:-1;}
+    .parallax-header .container{position:relative;z-index:1;}
+    .parallax-header h1{font-size:clamp(2rem,5vw,3rem);font-weight:700;}
+    .parallax-header h2{font-size:clamp(1.5rem,3vw,2rem);font-weight:600;}
+    .parallax-header h3{font-size:1rem;font-weight:400;margin-top:10px;color:#e5e7eb;}
+    .cta-wrap{margin-top:18px;display:flex;gap:12px;flex-wrap:wrap;}
+
+    section h2{color:var(--cor-destaque);font-weight:600;margin-bottom:20px;}
+
+    .price-note{font-size:.95rem;color:#334155;background:#f1f5f9;border-left:4px solid var(--cor-destaque);padding:.6rem .8rem;border-radius:.25rem;}
+
+    .card-custom{
+      background-color:#fff;border:none;border-radius:16px;padding:30px;
+      box-shadow:0 8px 24px rgba(0,0,0,0.06);margin-bottom:50px;opacity:0;transform:translateY(20px);transition:all .6s ease;
+    }
+    .card-custom.show{opacity:1;transform:translateY(0);}
+    .card-custom:hover{transform:scale(1.02);}
+    .card-custom:nth-of-type(1){transition-delay:.2s}
+    .card-custom:nth-of-type(2){transition-delay:.4s}
+
+    .btn-primary{background-color:var(--cor-destaque);border:none;font-size:1.1rem;padding:12px 28px;font-weight:600;}
+    .btn-primary:hover{background-color:#123a62;transform:translateY(-2px);box-shadow:0 4px 12px rgba(0,0,0,0.15);}
+
+    footer{background-color:var(--texto-principal);color:#fff;padding:20px 0;}
+    footer a{color:#d4d4d4;text-decoration:none;}
+    footer a:hover{color:#0dcaf0;}
+
+    .avatar{width:250px;height:250px;border-radius:20%;object-fit:cover;border:0;box-shadow:0 4px 12px rgba(0,0,0,0.15);}
+
+    /* Menu social fixo (desktop) */
+    .social-menu{
+      position:fixed;top:50%;right:0;transform:translateY(-50%);
+      display:flex;flex-direction:column;gap:15px;padding:10px;background-color:rgba(255,255,255,0.9);
+      border-radius:8px 0 0 8px;box-shadow:-2px 4px 12px rgba(0,0,0,0.2);z-index:999;
+    }
+    .social-menu a{color:var(--texto-principal);font-size:22px;transition:all .3s;}
+    .social-menu a:hover{color:var(--cor-destaque);transform:scale(1.2);}
+    @media (max-width:768px){.social-menu{display:none;}}
+
+    .capa-livro{width:60%;border:2px solid #e0e0e0;box-shadow:0 8px 24px rgba(0,0,0,0.1);border-radius:12px;}
+    @media (min-width:992px){.capa-livro{width:85%;}}
+
+    /* ==== CTA FIXA no MOBILE (ajustada) ==== */
+    .mobile-cta{
+      position:fixed;left:0;right:0;bottom:0;background:rgba(255,255,255,0.96);
+      border-top:1px solid #e5e7eb;padding:10px 12px;
+      padding-bottom:calc(10px + env(safe-area-inset-bottom, 0px));
+      backdrop-filter:blur(8px);z-index:1100;display:none;
+      max-height:45vh;overflow:auto; /* evita cortar botões */
+    }
+    .mobile-cta .btn{width:100%;}
+    .mobile-cta .btn-outline-primary{
+      width:40px;height:40px;display:flex;align-items:center;justify-content:center;padding:0;
+    }
+    @media (max-width:768px){
+      .mobile-cta{display:block;}
+      body{padding-bottom:130px;} /* espaço para o bloco fixo no mobile */
+      .cta-wrap{display:none;}
     }
 
-    .navbar-brand img {
-      border-radius: 8px; width: 250px; height: auto; object-fit: contain; display: block;
-      margin: 10px; padding: 0;
+    /* Chips de contato */
+    .contact-chip{
+      display:flex;align-items:center;gap:10px;padding:12px 14px;border-radius:12px;text-decoration:none;
+      background:#fff;border:1px solid #e5e7eb;box-shadow:0 4px 14px rgba(0,0,0,0.04);
+      transition:transform .15s ease, box-shadow .15s ease, border-color .15s ease;color:var(--texto-principal);
     }
+    .contact-chip i{font-size:18px;}
+    .contact-chip .label{font-weight:600;letter-spacing:.2px;}
+    .contact-chip .sub{font-size:12px;color:#6b7280;margin-left:auto;}
+    .contact-chip:hover{transform:translateY(-2px);border-color:var(--cor-destaque);box-shadow:0 8px 20px rgba(0,0,0,0.08);color:var(--texto-principal);}
 
-    .navbar-brand, .navbar-nav .nav-link {
-      color: var(--texto-principal) !important; font-weight: 500;
-    }
-    .navbar-nav .nav-link:hover { color: var(--cor-destaque) !important; font-weight: 550; }
-    .navbar-toggler { border-color: rgba(0,0,0,0.5); }
-    .navbar-toggler-icon {
-      background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba(31, 41, 55, 0.9)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
-    }
-
-    /* Header com a CAPA em blur */
-    .parallax-header {
-      position: relative;
-      color: white;
-      min-height: 520px;
-      display: flex;
-      align-items: center;
-      overflow: hidden;
-    }
-    .parallax-header::before {
-      content: "";
-      position: absolute; inset: 0;
-      background: url("./img/banner.jpg") center/cover no-repeat;
-      filter: blur(0px);
-      transform: scale(1.08);
-      z-index: -2;
-    }
-    .parallax-header::after {
-      content: "";
-      position: absolute; inset: 0;
-      background: rgba(0,0,0,0.38);
-      z-index: -1;
-    }
-    .parallax-header .container { position: relative; z-index: 1; }
-    .parallax-header h1 { font-size: clamp(2rem, 5vw, 3rem); font-weight: 700; }
-    .parallax-header h2 { font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 600; }
-    .parallax-header h3 { font-size: 1.0rem; font-weight: 400; margin-top: 10px; color: #e5e7eb; }
-    .cta-wrap { margin-top: 18px; display: flex; gap: 12px; flex-wrap: wrap; }
-
-    section h2 { color: var(--cor-destaque); font-weight: 600; margin-bottom: 20px; }
-    .card-custom {
-      background-color: white; border: none; border-radius: 16px; padding: 30px;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.06); margin-bottom: 50px;
-      opacity: 0; transform: translateY(20px); transition: all 0.6s ease;
-    }
-    .card-custom.show { opacity: 1; transform: translateY(0); }
-    .card-custom:hover { transform: scale(1.02); }
-    .card-custom:nth-child(1){transition-delay:.2s}
-    .card-custom:nth-child(2){transition-delay:.4s}
-
-    .btn-primary { background-color: var(--cor-destaque); border: none; font-size: 1.1rem; padding: 12px 28px; font-weight: 600; }
-    .btn-primary:hover { background-color: #123a62; transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.15); }
-
-    footer { background-color: var(--texto-principal); color: white; padding: 20px 0; }
-    footer a { color: #d4d4d4; text-decoration: none; }
-    footer a:hover { color: #0dcaf0; }
-
-    .avatar {
-      width: 250px; height: 250px; border-radius: 20%; object-fit: cover;
-      border: 0; box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-    }
-
-    /* Menu social fixo */
-    .social-menu {
-      position: fixed; top: 50%; right: 0; transform: translateY(-50%);
-      display: flex; flex-direction: column; gap: 15px; padding: 10px;
-      background-color: rgba(255,255,255,0.9); border-radius: 8px 0 0 8px;
-      box-shadow: -2px 4px 12px rgba(0,0,0,0.2); z-index: 999;
-    }
-    .social-menu a { color: var(--texto-principal); font-size: 22px; transition: all 0.3s; }
-    .social-menu a:hover { color: var(--cor-destaque); transform: scale(1.2); }
-    @media (max-width: 768px) { .social-menu { display: none; } }
-
-    .capa-livro { width: 60%; border: 2px solid #e0e0e0; box-shadow: 0 8px 24px rgba(0,0,0,0.1); border-radius: 12px; }
-    @media (min-width: 992px) { .capa-livro { width: 85%; } }
-
-    /* ==== CTA FIXA no MOBILE ==== */
-    .mobile-cta {
-      position: fixed; left: 0; right: 0; bottom: 0;
-      background: rgba(255,255,255,0.96);
-      border-top: 1px solid #e5e7eb;
-      padding: 10px 12px;
-      padding-bottom: calc(10px + env(safe-area-inset-bottom, 0px));
-      backdrop-filter: blur(8px);
-      z-index: 1050;
-      display: none;
-    }
-    .mobile-cta .btn-outline-primary {
-      width: 40px;
-      height: 40px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 0;
-    }
-    .mobile-cta .btn { width: 100%; }
-    @media (max-width: 768px) {
-      .mobile-cta { display: block; }
-      body { padding-bottom: 88px; }
-      .cta-wrap { display: none; }
+    @media (prefers-reduced-motion:reduce){
+      .card-custom,.card-custom:hover{transition:none;transform:none;}
     }
   </style>
 </head>
 <body>
-  <div id="particles-js"></div>
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo principal</a>
 
-  <!-- Menu social flutuante -->
-  <div class="social-menu">
-    <a href="https://www.instagram.com/carlosgomes85" target="_blank" rel="noopener" data-bs-toggle="tooltip" title="Instagram"><i class="bi bi-instagram"></i></a>
-    <!-- Novos: TikTok e Threads -->
-    <a href="https://www.tiktok.com/@cadugomes85" target="_blank" rel="noopener" data-bs-toggle="tooltip" title="TikTok"><i class="bi bi-tiktok"></i></a>
-    <a href="https://www.threads.com/@canticosdemachina" target="_blank" rel="noopener" data-bs-toggle="tooltip" title="Threads"><i class="bi bi-threads"></i></a>
-    <!-- /Novos -->
-    <a href="https://www.facebook.com/kdugomes" target="_blank" rel="noopener" data-bs-toggle="tooltip" title="Facebook"><i class="bi bi-facebook"></i></a>
-    <a href="mailto:escritorcarlosgomes85@gmail.com" data-bs-toggle="tooltip" title="E-mail"><i class="bi bi-envelope"></i></a>
-    <a href="https://scholar.google.com.br/citations?user=11ORDMIAAAAJ" target="_blank" rel="noopener" data-bs-toggle="tooltip" title="Google Scholar"><i class="bi bi-google"></i></a>
-    <a href="https://www.linkedin.com/in/carlosgomes85/" target="_blank" rel="noopener" data-bs-toggle="tooltip" title="LinkedIn"><i class="bi bi-linkedin"></i></a>
-    <a href="https://www.skoob.com.br/share/book/277773475/122598175" target="_blank" rel="noopener" data-bs-toggle="tooltip" title="Avaliar no Skoob"><i class="bi bi-chat-quote"></i></a>
-    <a href="https://www.goodreads.com/book/show/239675050-c-nticos-de-machina" target="_blank" rel="noopener" data-bs-toggle="tooltip" title="Avaliar no Goodreads"><i class="bi bi-chat-quote-fill"></i></a>
+  <div class="bg-pattern" aria-hidden="true"></div>
+
+  <!-- Menu social (desktop) -->
+  <div class="social-menu" role="navigation" aria-label="Redes sociais">
+    <a href="https://www.instagram.com/carlosgomes85" target="_blank" rel="noopener" aria-label="Instagram"><i class="bi bi-instagram" aria-hidden="true"></i><span class="visually-hidden">Instagram</span></a>
+    <a href="https://www.tiktok.com/@cadugomes85" target="_blank" rel="noopener" aria-label="TikTok"><i class="bi bi-tiktok" aria-hidden="true"></i><span class="visually-hidden">TikTok</span></a>
+    <a href="https://www.threads.net/@canticosdemachina" target="_blank" rel="noopener" aria-label="Threads"><i class="bi bi-threads" aria-hidden="true"></i><span class="visually-hidden">Threads</span></a>
+    <a href="https://www.facebook.com/kdugomes" target="_blank" rel="noopener" aria-label="Facebook"><i class="bi bi-facebook" aria-hidden="true"></i><span class="visually-hidden">Facebook</span></a>
+    <a href="mailto:escritorcarlosgomes85@gmail.com" aria-label="E-mail"><i class="bi bi-envelope" aria-hidden="true"></i><span class="visually-hidden">E-mail</span></a>
+    <a href="https://scholar.google.com.br/citations?user=11ORDMIAAAAJ" target="_blank" rel="noopener" aria-label="Google Scholar"><i class="bi bi-google" aria-hidden="true"></i><span class="visually-hidden">Google Scholar</span></a>
+    <a href="https://www.linkedin.com/in/carlosgomes85/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="bi bi-linkedin" aria-hidden="true"></i><span class="visually-hidden">LinkedIn</span></a>
+    <a href="https://www.skoob.com.br/share/book/277773475/122598175" target="_blank" rel="noopener" aria-label="Avaliar no Skoob"><i class="bi bi-chat-quote" aria-hidden="true"></i><span class="visually-hidden">Avaliar no Skoob</span></a>
+    <a href="https://www.goodreads.com/book/show/239675050-c-nticos-de-machina" target="_blank" rel="noopener" aria-label="Avaliar no Goodreads"><i class="bi bi-chat-quote-fill" aria-hidden="true"></i><span class="visually-hidden">Avaliar no Goodreads</span></a>
   </div>
 
   <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg">
+  <nav class="navbar navbar-expand-lg" role="navigation" aria-label="Principal">
     <div class="container">
-      <a class="navbar-brand d-flex align-items-center" href="#">
-        <img src="./img/logo-nome.png" alt="Logo Carlos Gomes - autor de Cânticos de Machina – Primavera Artificial" height="1000" class="me-2" />
+      <a class="navbar-brand d-flex align-items-center" href="#" aria-label="Página inicial">
+        <img src="./img/logo-nome.png" alt="Logo Carlos Gomes — autor de Cânticos de Machina – Primavera Artificial" decoding="async" fetchpriority="high" />
       </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Alternar navegação">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
@@ -209,157 +201,129 @@
           <li class="nav-item"><a class="nav-link" href="#sobre">Autor</a></li>
           <li class="nav-item"><a class="nav-link" href="#instagram">Instagram</a></li>
           <li class="nav-item"><a class="nav-link" href="#publicacoes">Artigos</a></li>
+          <li class="nav-item"><a class="nav-link" href="#faq">FAQ</a></li>
           <li class="nav-item"><a class="nav-link" href="#contato">Contato</a></li>
         </ul>
       </div>
     </div>
   </nav>
 
-  <!-- Header com capa em blur -->
+  <!-- Header -->
   <header class="parallax-header">
     <div class="container text-center">
       <h1><strong>Cânticos de Machina</strong></h1>
       <h2><strong>Primavera Artificial</strong></h2>
       <h3>Uma jornada intensa de ação e reflexão sobre fé, tecnologia e humanidade — por C. E. Gomes</h3>
 
-      <div class="cta-wrap d-flex justify-content-center flex-wrap gap-3 mt-3 d-none d-md-block">
-        <a href="https://clubedeautores.com.br/livro/canticos-de-machina" 
-           target="_blank" rel="noopener" class="btn btn-primary">
+      <div class="cta-wrap d-flex justify-content-center flex-wrap gap-3 mt-3 d-none d-md-flex">
+        <a href="https://clubedeautores.com.br/livro/canticos-de-machina" target="_blank" rel="noopener" class="btn btn-primary">
           <i class="bi bi-cart-fill"></i> Comprar livro impresso
         </a>
-        <a href="https://a.co/d/7uYBpvn" 
-           target="_blank" rel="noopener" class="btn btn-primary">
-          <i class="bi bi-book"></i> Ler no Kindle / Kindle Unlimited
+        <a href="https://a.co/d/7uYBpvn" target="_blank" rel="noopener" class="btn btn-primary">
+          <i class="bi bi-book"></i> E-book Amazon
         </a>
       </div>
+      <p class="mt-3 mb-0 price-note d-none d-md-inline-block">
+        Impresso no Clube de Autores: <strong>R$ 66,81</strong> • E-book na Amazon: <strong>R$ 14,90</strong> ou
+        <strong>gratuito</strong> no Kindle Unlimited
+      </p>
     </div>
   </header>
 
-  <main class="container my-5">
+  <main id="conteudo" class="container my-5">
     <!-- LIVRO -->
-    <section id="livro" class="card-custom">
-      <h2><i class="bi bi-journal-bookmark-fill"></i> O Livro</h2>
+    <section id="livro" class="card-custom" aria-labelledby="titulo-livro">
+      <h2 id="titulo-livro"><i class="bi bi-journal-bookmark-fill" aria-hidden="true"></i> O Livro</h2>
       <div class="row align-items-center">
-        <div class="col-lg-8 order-1 order-lg-1">
+        <div class="col-lg-8">
           <h4><strong class="text-dark text-opacity-75">Cânticos de Machina — Primavera Artificial</strong></h4>
-          <p>
-            Primeiro volume de uma série que une <strong>ficção científica e reflexão espiritual</strong> para explorar
-            como os avanços tecnológicos estão moldando o presente — e redesenhando o futuro da humanidade.
-          </p>
+          <p>Primeiro volume de uma série que une <strong>ficção científica e reflexão espiritual</strong> para explorar como os avanços tecnológicos estão moldando o presente — e redesenhando o futuro da humanidade.</p>
 
           <h5>Sinopse</h5>
-          <p>
-            Em um mundo onde a tecnologia redefine os limites do ser humano, a Neurarchy lidera a inovação com o
-            implante neural <strong>Solomon</strong> — um dispositivo capaz de expandir as capacidades cognitivas e
-            oferecer tratamentos revolucionários. Aclamado por muitos como o marco de uma nova era e temido por outros
-            como uma ameaça à liberdade, Solomon polariza a sociedade.
-          </p>
-          <p>
-            Quando <strong>Daniel Killian</strong>, dado como morto, retorna à vida em circunstâncias misteriosas, o
-            mundo se depara com um possível milagre — ou algo ainda mais inquietante. Guiados por sonhos e visões, três
-            jovens se conectam a ele e logo descobrem um elo invisível: todos compartilham o mesmo implante neural.
-          </p>
-          <p>
-            Unidos por uma conexão que desafia a razão, são levados a um conflito que ultrapassa os limites da
-            tecnologia, enfrentando verdades ocultas, dilemas morais e os custos da evolução humana. <i>Cânticos de
-              Machina – Primavera Artificial</i> é uma jornada intensa de ação, mistério e introspecção sobre os
-            delicados limites entre fé, tecnologia e humanidade.
-          </p>
+          <p>Em um mundo onde a tecnologia redefine os limites do ser humano, a Neurarchy lidera a inovação com o implante neural <strong>Solomon</strong> — um dispositivo capaz de expandir as capacidades cognitivas e oferecer tratamentos revolucionários. Aclamado por muitos como o marco de uma nova era e temido por outros como uma ameaça à liberdade, Solomon polariza a sociedade.</p>
+          <p>Quando <strong>Daniel Killian</strong>, dado como morto, retorna à vida em circunstâncias misteriosas, o mundo se depara com um possível milagre — ou algo ainda mais inquietante. Guiados por sonhos e visões, três jovens se conectam a ele e logo descobrem um elo invisível: todos compartilham o mesmo implante neural.</p>
+          <p>Unidos por uma conexão que desafia a razão, são levados a um conflito que ultrapassa os limites da tecnologia, enfrentando verdades ocultas, dilemas morais e os custos da evolução humana. <i>Cânticos de Machina – Primavera Artificial</i> é uma jornada intensa de ação, mistério e introspecção sobre os delicados limites entre fé, tecnologia e humanidade.</p>
           <p><strong>A tecnologia está conduzindo o mundo a uma nova estação. Você está preparado?</strong></p>
-          <p>
-            <strong>Temas:</strong>
-            <span class="text-secondary">fé, avanços tecnológicos, inteligência artificial, implantes cerebrais, realidades virtuais, dilemas éticos e livre arbítrio.</span>
-          </p>
+          <p><strong>Temas:</strong> <span class="text-secondary">fé, avanços tecnológicos, inteligência artificial, implantes cerebrais, realidades virtuais, dilemas éticos e livre arbítrio.</span></p>
         </div>
 
-        <div class="col-lg-4 text-center order-2 order-lg-2 mt-4 mt-lg-0">
-          <img src="./img/capa_livro.jpg" loading="lazy"
-            alt="Capa do livro de ficção cristã Cânticos de Machina – Primavera Artificial"
-            class="img-fluid rounded capa-livro mb-3" />
-          <p class="text-secondary small mb-0">Disponível em versão <strong>impressa</strong> e <strong>e-book</strong>.</p>
+        <div class="col-lg-4 text-center mt-4 mt-lg-0">
+          <img src="./img/capa_livro.jpg" alt="Capa do livro de ficção cristã Cânticos de Machina – Primavera Artificial" class="img-fluid rounded capa-livro mb-3" loading="lazy" decoding="async" />
+          <p class="text-secondary small mb-1">Disponível em versão <strong>impressa</strong> e <strong>e-book</strong>.</p>
+          <p class="price-note mb-0">Impresso: <strong>R$ 66,81</strong> • E-book: <strong>R$ 14,90</strong> (Kindle Unlimited: <strong>gratuito</strong>)</p>
         </div>
       </div>
 
       <div class="row align-items-center p-2">
-        <div class="col-12 d-flex flex-column flex-sm-row justify-content-center mt-4 mt-lg-0">
-          <a href="https://clubedeautores.com.br/livro/canticos-de-machina" target="_blank" rel="noopener" 
-             class="btn btn-primary me-0 me-sm-2 mb-2">
-            <i class="bi bi-cart-fill"></i> Comprar o livro impresso
+        <div class="col-12 d-flex flex-column flex-sm-row justify-content-center mt-4 mt-lg-0" role="group" aria-label="Links de compra">
+          <a href="https://clubedeautores.com.br/livro/canticos-de-machina" target="_blank" rel="noopener" class="btn btn-primary me-0 me-sm-2 mb-2">
+            <i class="bi bi-cart-fill" aria-hidden="true"></i> Comprar o livro impresso — R$ 66,81
           </a>
-          <a href="https://a.co/d/7uYBpvn" target="_blank" rel="noopener" 
-             class="btn btn-primary mb-2">
-            <i class="bi bi-book"></i> Ler no Kindle / Kindle Unlimited
-          </a>        
+          <a href="https://a.co/d/7uYBpvn" target="_blank" rel="noopener" class="btn btn-primary mb-2">
+            <i class="bi bi-book" aria-hidden="true"></i> E-book R$ 14,90 (grátis no Kindle Unlimited)
+          </a>
         </div>
       </div>
     </section>
 
     <!-- AVALIAÇÕES -->
-    <section id="avaliacoes" class="card-custom">
-      <h2><i class="bi bi-star-fill"></i> Avaliações</h2>
-      <p>
-        Gostou do livro? Sua avaliação é muito importante para que outros leitores conheçam a obra e para aumentar a visibilidade do livro nas plataformas digitais. Por favor, considere deixar sua avaliação nos links abaixo:
-      </p>
-      <div class="d-flex flex-wrap justify-content-center mt-4 gap-2">
+    <section id="avaliacoes" class="card-custom" aria-labelledby="titulo-avaliacoes">
+      <h2 id="titulo-avaliacoes"><i class="bi bi-star-fill" aria-hidden="true"></i> Avaliações</h2>
+      <p>Gostou do livro? Sua avaliação é muito importante para que outros leitores conheçam a obra e para aumentar a visibilidade do livro nas plataformas digitais. Por favor, considere deixar sua avaliação nos links abaixo:</p>
+      <div class="d-flex flex-wrap justify-content-center mt-4 gap-2" role="group" aria-label="Plataformas para avaliar">
         <a href="https://a.co/d/7uYBpvn" target="_blank" rel="noopener" class="btn btn-primary">
-          <i class="bi bi-chat-left-quote"></i> Avaliar na Amazon
+          <i class="bi bi-chat-left-quote" aria-hidden="true"></i> Avaliar na Amazon
         </a>
         <a href="https://clubedeautores.com.br/livro/canticos-de-machina" target="_blank" rel="noopener" class="btn btn-primary">
-          <i class="bi bi-chat-left-quote-fill"></i> Avaliar no Clube de Autores
+          <i class="bi bi-chat-left-quote-fill" aria-hidden="true"></i> Avaliar no Clube de Autores
         </a>
         <a href="https://www.skoob.com.br/share/book/277773475/122598175" target="_blank" rel="noopener" class="btn btn-primary">
-          <i class="bi bi-chat-quote"></i> Avaliar no Skoob
+          <i class="bi bi-chat-quote" aria-hidden="true"></i> Avaliar no Skoob
         </a>
         <a href="https://www.goodreads.com/book/show/239675050-c-nticos-de-machina" target="_blank" rel="noopener" class="btn btn-primary">
-          <i class="bi bi-chat-quote-fill"></i> Avaliar no Goodreads
+          <i class="bi bi-chat-quote-fill" aria-hidden="true"></i> Avaliar no Goodreads
         </a>
       </div>
     </section>
 
     <!-- SOBRE -->
-    <section id="sobre" class="card-custom">
-      <h2><i class="bi bi-person-fill"></i> Sobre o Autor</h2>
+    <section id="sobre" class="card-custom" aria-labelledby="titulo-sobre">
+      <h2 id="titulo-sobre"><i class="bi bi-person-fill" aria-hidden="true"></i> Sobre o Autor</h2>
       <div class="row align-items-center">
         <div class="col-md-5 col-lg-4 col-xl-3 text-center mb-4 mb-md-0">
-          <img loading="lazy" src="./img/foto-perfil.jpg" alt="Foto do escritor de ficção cristã Carlos E. Gomes"
-            class="avatar mx-auto" />
+          <img src="./img/foto-perfil.jpg" alt="Foto do escritor de ficção cristã C. E. Gomes" class="avatar mx-auto" loading="lazy" decoding="async" />
         </div>
         <div class="col-md-7 col-lg-8 col-xl-9">
           <h4><strong class="text-dark text-opacity-75">C. E. Gomes</strong></h4>
-          <p>
-            Escritor brasileiro de ficção cristã, mestre em Engenharia de Sistemas e Computação pela UFRJ, apaixonado por
-            tecnologia e música. Na escrita, exploro os dilemas da humanidade no encontro entre
-            <strong>fé, tecnologia e futuro</strong>.
-          </p>
-          <p>
-            Carioca, atuei por anos no universo da tecnologia e encontrei na literatura um espaço para refletir sobre os
-            desafios da nossa geração diante dos avanços tecnológicos e das grandes questões existenciais do nosso tempo.
-          </p>
+          <p>Escritor brasileiro de ficção cristã, mestre em Engenharia de Sistemas e Computação pela UFRJ, apaixonado por tecnologia e música. Na escrita, exploro os dilemas da humanidade no encontro entre <strong>fé, tecnologia e futuro</strong>.</p>
+          <p>Carioca, atuei por anos no universo da tecnologia e encontrei na literatura um espaço para refletir sobre os desafios da nossa geração diante dos avanços tecnológicos e das grandes questões existenciais do nosso tempo.</p>
         </div>
       </div>
     </section>
 
     <!-- Instagram -->
-    <section id="instagram" class="card-custom">
-      <h2><i class="bi bi-instagram"></i> Instagram</h2>
+    <section id="instagram" class="card-custom" aria-labelledby="titulo-instagram">
+      <h2 id="titulo-instagram"><i class="bi bi-instagram" aria-hidden="true"></i> Instagram</h2>
       <p>Siga nosso perfil no Instagram para ficar sempre atualizado sobre as novidades da saga <i>Cânticos de Machina</i>:</p>
       <div class="row align-items-center">
         <div class="col-12">
           <script src="https://static.elfsight.com/platform/platform.js" async></script>
           <div class="elfsight-app-c5ff561c-4298-4544-a1e1-30f9ffce3e29" data-elfsight-app-lazy></div>
+          <noscript>
+            <p>Veja as atualizações em <a href="https://www.instagram.com/canticosdemachina" target="_blank" rel="noopener">instagram.com/canticosdemachina</a>.</p>
+          </noscript>
         </div>
       </div>
     </section>
 
     <!-- Publicações -->
-    <section id="publicacoes" class="card-custom">
-      <h2><i class="bi bi-journal-text"></i> Publicações Acadêmicas</h2>
+    <section id="publicacoes" class="card-custom" aria-labelledby="titulo-publicacoes">
+      <h2 id="titulo-publicacoes"><i class="bi bi-journal-text" aria-hidden="true"></i> Publicações Acadêmicas</h2>
       <p>Confira alguns dos meus principais trabalhos acadêmicos:</p>
       <ul class="list-group">
         <li class="list-group-item">
           <strong>Evaluation of a GWAP for social recruitment and measurement of musical talent.</strong><br />
-          <em class="text-secondary">In: 2019 23rd IEEE International Conference on Computer Supported
-            Cooperative Work in Design (CSCWD), Porto, Portugal.</em>
+          <em class="text-secondary">In: 2019 23rd IEEE International Conference on Computer Supported Cooperative Work in Design (CSCWD), Porto, Portugal.</em>
         </li>
         <li class="list-group-item">
           <strong>Towards a Framework for Crowdsourced Collection, Cleaning and Measurement of Digital Content.</strong><br />
@@ -375,42 +339,183 @@
         </li>
       </ul>
       <a class="btn btn-outline-primary mt-3" href="https://scholar.google.com.br/citations?user=11ORDMIAAAAJ" target="_blank" rel="noopener">
-        <i class="bi bi-box-arrow-up-right"></i> Ver perfil completo no Google Acadêmico
+        <i class="bi bi-box-arrow-up-right" aria-hidden="true"></i> Ver perfil completo no Google Acadêmico
       </a>
     </section>
 
-    <!-- Contato -->
+    <!-- FAQ -->
+    <section id="faq" class="card-custom" aria-labelledby="titulo-faq">
+      <h2 id="titulo-faq"><i class="bi bi-question-circle-fill" aria-hidden="true"></i> FAQ — Perguntas Frequentes</h2>
+
+      <div class="accordion" id="faqAccordion">
+        <div class="accordion-item">
+          <h3 class="accordion-header" id="faq1h">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1" aria-expanded="true" aria-controls="faq1">
+              Preciso entender de tecnologia para aproveitar a leitura?
+            </button>
+          </h3>
+          <div id="faq1" class="accordion-collapse collapse show" aria-labelledby="faq1h" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+              Não. Os conceitos de IA, implantes neurais e realidades virtuais são explicados de forma acessível, com foco em personagens, escolhas morais e consequências humanas.
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h3 class="accordion-header" id="faq2h">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2" aria-expanded="false" aria-controls="faq2">
+              O livro é adequado para leitores jovem-adulto?
+            </button>
+          </h3>
+          <div id="faq2" class="accordion-collapse collapse" aria-labelledby="faq2h" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+              Sim. A narrativa é jovem-adulto/adulto, sem conteúdo impróprio. Há ação, suspense, amizade e dilemas éticos/espirituais que dialogam bem com esse público.
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h3 class="accordion-header" id="faq3h">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3" aria-expanded="false" aria-controls="faq3">
+              Há elementos bíblicos ou a história é “religiosa”?
+            </button>
+          </h3>
+          <div id="faq3" class="accordion-collapse collapse" aria-labelledby="faq3h" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+              A obra é uma ficção cristã com simbologia inspirada no Rei Salomão e referências como o narrador Agur. Não é um sermão: fé e tecnologia se encontram para levantar questões sobre sabedoria, livre-arbítrio e poder.
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h3 class="accordion-header" id="faq4h">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4" aria-expanded="false" aria-controls="faq4">
+              Onde comprar e quais são os preços?
+            </button>
+          </h3>
+          <div id="faq4" class="accordion-collapse collapse" aria-labelledby="faq4h" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+              Impresso no Clube de Autores por <strong>R$ 66,81</strong>. E‑book na Amazon por <strong>R$ 14,90</strong> — <strong>gratuito</strong> para assinantes do Kindle Unlimited.
+              <div class="mt-2 d-flex flex-wrap gap-2">
+                <a class="btn btn-primary btn-sm" target="_blank" rel="noopener" href="https://clubedeautores.com.br/livro/canticos-de-machina"><i class="bi bi-cart-fill"></i> Comprar impresso</a>
+                <a class="btn btn-primary btn-sm" target="_blank" rel="noopener" href="https://a.co/d/7uYBpvn"><i class="bi bi-book"></i> E‑book na Amazon</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h3 class="accordion-header" id="faq5h">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5" aria-expanded="false" aria-controls="faq5">
+              É um livro único ou parte de uma série?
+            </button>
+          </h3>
+          <div id="faq5" class="accordion-collapse collapse" aria-labelledby="faq5h" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+              É o primeiro volume de uma série. A trama abre portas para novos capítulos explorando as consequências do implante Solomon e o futuro dos personagens.
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h3 class="accordion-header" id="faq6h">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq6" aria-expanded="false" aria-controls="faq6">
+              Quais temas centrais a história trabalha?
+            </button>
+          </h3>
+          <div id="faq6" class="accordion-collapse collapse" aria-labelledby="faq6h" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+              Fé e tecnologia; inteligência artificial e livre-arbítrio; ética de implantes neurais; amizade e chamado; o preço do poder e da “evolução” humana.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTATO (agora com Bootstrap Grid) -->
     <section id="contato" class="card-custom">
       <h2><i class="bi bi-envelope-fill"></i> Contato</h2>
+      <p class="mb-4">Fale comigo, acompanhe as novidades e avalie o livro nas plataformas abaixo:</p>
 
-      <!-- Novos: TikTok e Threads -->
-      <p class="small"><i class="bi bi-tiktok"></i>
-        <a href="https://www.tiktok.com/@cadugomes85" target="_blank" rel="noopener">@cadugomes85</a>
-      </p>
-      <p class="small"><i class="bi bi-threads"></i>
-        <a href="https://www.threads.com/@canticosdemachina" target="_blank" rel="noopener">@canticosdemachina</a>
-      </p>
-      <!-- /Novos -->
+      <div class="row g-2">
+        <div class="col-12 col-md-4 col-lg-3">
+          <a class="contact-chip" href="https://www.instagram.com/carlosgomes85" target="_blank" rel="noopener">
+            <i class="bi bi-instagram"></i><span class="label">@carlosgomes85</span><span class="sub">autor</span>
+          </a>
+        </div>
+        <div class="col-12 col-md-4 col-lg-3">
+          <a class="contact-chip" href="https://www.instagram.com/canticosdemachina" target="_blank" rel="noopener">
+            <i class="bi bi-instagram"></i><span class="label">@canticosdemachina</span><span class="sub">saga</span>
+          </a>
+        </div>
+        <div class="col-12 col-md-4 col-lg-3">
+          <a class="contact-chip" href="https://www.tiktok.com/@cadugomes85" target="_blank" rel="noopener">
+            <i class="bi bi-tiktok"></i><span class="label">@cadugomes85</span><span class="sub">vídeos</span>
+          </a>
+        </div>
+        <div class="col-12 col-md-4 col-lg-3">
+          <a class="contact-chip" href="https://www.threads.net/@canticosdemachina" target="_blank" rel="noopener">
+            <i class="bi bi-threads"></i><span class="label">@canticosdemachina</span><span class="sub">threads</span>
+          </a>
+        </div>
+        <div class="col-12 col-md-4 col-lg-3">
+          <a class="contact-chip" href="mailto:escritorcarlosgomes85@gmail.com">
+            <i class="bi bi-envelope"></i><span class="label">E-mail</span><span class="sub">respondo rápido :)</span>
+          </a>
+        </div>
+        <div class="col-12 col-md-4 col-lg-3">
+          <a class="contact-chip" href="https://canticosdemachina.com.br" target="_blank" rel="noopener">
+            <i class="bi bi-globe"></i><span class="label">Site oficial</span><span class="sub">home</span>
+          </a>
+        </div>
+        <div class="col-12 col-md-4 col-lg-3">
+          <a class="contact-chip" href="https://www.goodreads.com/book/show/239675050-c-nticos-de-machina" target="_blank" rel="noopener">
+            <i class="bi bi-chat-quote-fill"></i><span class="label">Goodreads</span><span class="sub">avalie</span>
+          </a>
+        </div>
+        <div class="col-12 col-md-4 col-lg-3">
+          <a class="contact-chip" href="https://www.skoob.com.br/share/book/277773475/122598175" target="_blank" rel="noopener">
+            <i class="bi bi-chat-quote"></i><span class="label">Skoob</span><span class="sub">avalie</span>
+          </a>
+        </div>
+        <div class="col-12 col-md-4 col-lg-3">
+          <a class="contact-chip" href="https://www.facebook.com/kdugomes" target="_blank" rel="noopener">
+            <i class="bi bi-facebook"></i><span class="label">Facebook</span><span class="sub">página</span>
+          </a>
+        </div>
+        <div class="col-12 col-md-4 col-lg-3">
+          <a class="contact-chip" href="https://www.linkedin.com/in/carlosgomes85/" target="_blank" rel="noopener">
+            <i class="bi bi-linkedin"></i><span class="label">LinkedIn</span><span class="sub">perfil</span>
+          </a>
+        </div>
+        <div class="col-12 col-md-4 col-lg-3">
+          <a class="contact-chip" href="https://scholar.google.com.br/citations?user=11ORDMIAAAAJ" target="_blank" rel="noopener">
+            <i class="bi bi-google"></i><span class="label">Google Scholar</span><span class="sub">publicações</span>
+          </a>
+        </div>
+      </div>
 
-      <p class="small"><i class="bi bi-instagram"></i> <a href="https://www.instagram.com/carlosgomes85" target="_blank" rel="noopener">@carlosgomes85</a></p>
-      <p class="small"><i class="bi bi-instagram"></i> <a href="https://www.instagram.com/canticosdemachina" target="_blank" rel="noopener">@canticosdemachina</a></p>
-      <p class="small"><i class="bi bi-envelope"></i> <a href="mailto:escritorcarlosgomes85@gmail.com">escritorcarlosgomes85@gmail.com</a></p>
-      <p class="small"><i class="bi bi-globe"></i> <a href="https://canticosdemachina.com.br" target="_blank" rel="noopener">canticosdemachina.com.br</a></p>
+      <hr class="my-4">
+      <div class="d-flex flex-wrap gap-2">
+        <a href="mailto:escritorcarlosgomes85@gmail.com" class="btn btn-primary">
+          <i class="bi bi-envelope"></i> Falar por e-mail
+        </a>
+      </div>
     </section>
   </main>
 
-  <!-- CTA fixa no mobile -->
-  <div class="mobile-cta">
+  <!-- CTA fixa no mobile (sem preços + avaliações visíveis) -->
+  <div class="mobile-cta" role="region" aria-label="Ações rápidas no mobile">
     <div class="container">
       <div class="d-grid gap-2">
         <a href="https://clubedeautores.com.br/livro/canticos-de-machina" target="_blank" rel="noopener" class="btn btn-primary btn-sm">
-          <i class="bi bi-cart-fill me-1"></i> Comprar Livro Impresso
+          <i class="bi bi-cart-fill me-1"></i> Livro impresso
         </a>
         <a href="https://a.co/d/7uYBpvn" target="_blank" rel="noopener" class="btn btn-primary btn-sm">
-          <i class="bi bi-book me-1"></i> Kindle / K. Unlimited
+          <i class="bi bi-book me-1"></i> E-book Amazon
         </a>
         <hr class="my-1">
-        <p class="text-center small mb-0">Gostou? Deixe sua avaliação:</p>
+        <p class="text-center small mb-1">Gostou? Deixe sua avaliação:</p>
         <div class="d-flex justify-content-center gap-2">
           <a href="https://a.co/d/7uYBpvn" target="_blank" rel="noopener" class="btn btn-outline-primary btn-sm" title="Avaliar na Amazon">
             <i class="bi bi-chat-square-text"></i>
@@ -434,19 +539,19 @@
     <div class="container p-4">
       <p class="mb-2">&copy; 2025 <span class="text-info">Carlos Eduardo Gomes</span> - Todos os direitos reservados.</p>
       <div>
-        <a href="https://www.instagram.com/carlosgomes85" target="_blank" rel="noopener" style="margin-right: 5px;"><i class="bi bi-instagram"></i> Instagram</a> |
-        <a href="https://www.facebook.com/kdugomes" target="_blank" rel="noopener" style="margin: 0 5px;"><i class="bi bi-facebook"></i> Facebook</a> |
-        <a href="https://www.tiktok.com/@cadugomes85" target="_blank" rel="noopener" style="margin: 0 5px;"><i class="bi bi-tiktok"></i> TikTok</a> |
-        <a href="https://www.threads.com/@canticosdemachina" target="_blank" rel="noopener" style="margin: 0 5px;"><i class="bi bi-threads"></i> Threads</a> |
-        <a href="mailto:escritorcarlosgomes85@gmail.com" style="margin: 0 5px;"><i class="bi bi-envelope"></i> E-mail</a> |
-        <a href="https://scholar.google.com.br/citations?user=11ORDMIAAAAJ" target="_blank" rel="noopener" style="margin: 0 5px;"><i class="bi bi-google"></i> Acadêmico</a> |
-        <a href="https://www.linkedin.com/in/carlosgomes85/" target="_blank" rel="noopener" style="margin: 0 5px;"><i class="bi bi-linkedin"></i> LinkedIn</a>
+        <a href="https://www.instagram.com/carlosgomes85" target="_blank" rel="noopener" style="margin-right: 5px;"><i class="bi bi-instagram" aria-hidden="true"></i> Instagram</a> |
+        <a href="https://www.facebook.com/kdugomes" target="_blank" rel="noopener" style="margin: 0 5px;"><i class="bi bi-facebook" aria-hidden="true"></i> Facebook</a> |
+        <a href="https://www.tiktok.com/@cadugomes85" target="_blank" rel="noopener" style="margin: 0 5px;"><i class="bi bi-tiktok" aria-hidden="true"></i> TikTok</a> |
+        <a href="https://www.threads.net/@canticosdemachina" target="_blank" rel="noopener" style="margin: 0 5px;"><i class="bi bi-threads" aria-hidden="true"></i> Threads</a> |
+        <a href="mailto:escritorcarlosgomes85@gmail.com" style="margin: 0 5px;"><i class="bi bi-envelope" aria-hidden="true"></i> E-mail</a> |
+        <a href="https://scholar.google.com.br/citations?user=11ORDMIAAAAJ" target="_blank" rel="noopener" style="margin: 0 5px;"><i class="bi bi-google" aria-hidden="true"></i> Acadêmico</a> |
+        <a href="https://www.linkedin.com/in/carlosgomes85/" target="_blank" rel="noopener" style="margin: 0 5px;"><i class="bi bi-linkedin" aria-hidden="true"></i> LinkedIn</a>
       </div>
       <br><br>
     </div>
   </footer>
 
-  <!-- JSON-LD -->
+  <!-- JSON-LD (Book com ofertas) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -460,38 +565,79 @@
         "https://www.facebook.com/kdugomes",
         "https://www.linkedin.com/in/carlosgomes85/",
         "https://www.tiktok.com/@cadugomes85",
-        "https://www.threads.com/@canticosdemachina"
+        "https://www.threads.net/@canticosdemachina"
       ]
     },
     "description": "Uma jornada intensa de ação e reflexão sobre fé, tecnologia e humanidade.",
     "image": "https://www.canticosdemachina.com.br/img/capa_livro.jpg",
-    "url": "https://www.canticosdemachina.com.br/"
+    "inLanguage": "pt-BR",
+    "url": "https://www.canticosdemachina.com.br/",
+    "genre": ["Ficção científica cristã","Tecnologia","IA","Thriller"],
+    "offers": [
+      {
+        "@type": "Offer",
+        "url": "https://clubedeautores.com.br/livro/canticos-de-machina",
+        "priceCurrency": "BRL",
+        "price": "66.81",
+        "availability": "https://schema.org/InStock",
+        "itemCondition": "https://schema.org/NewCondition",
+        "category": "https://schema.org/BookFormatType",
+        "name": "Livro impresso (Clube de Autores)"
+      },
+      {
+        "@type": "Offer",
+        "url": "https://a.co/d/7uYBpvn",
+        "priceCurrency": "BRL",
+        "price": "14.90",
+        "availability": "https://schema.org/InStock",
+        "itemCondition": "https://schema.org/NewCondition",
+        "name": "E-book (Amazon Kindle)"
+      }
+    ]
   }
   </script>
+
+  <!-- JSON-LD (WebSite) -->
   <script type="application/ld+json">
   {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "Cânticos de Machina",
-    "url": "https://www.canticosdemachina.com.br/",
-    "publisher": { "@type": "Organization", "name": "C. E. Gomes",
-      "logo": { "@type": "ImageObject", "url": "https://www.canticosdemachina.com.br/favicon.ico" }
-    }
+    "@context":"https://schema.org",
+    "@type":"WebSite",
+    "name":"Cânticos de Machina",
+    "url":"https://www.canticosdemachina.com.br/",
+    "publisher":{"@type":"Organization","name":"C. E. Gomes","logo":{"@type":"ImageObject","url":"https://www.canticosdemachina.com.br/favicon.ico"}}
+  }
+  </script>
+
+  <!-- JSON-LD (FAQPage) -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"FAQPage",
+    "mainEntity":[
+      {"@type":"Question","name":"Preciso entender de tecnologia para aproveitar a leitura?","acceptedAnswer":{"@type":"Answer","text":"Não. Os conceitos de IA, implantes neurais e realidades virtuais são explicados de forma acessível, com foco em personagens, escolhas morais e consequências humanas."}},
+      {"@type":"Question","name":"O livro é adequado para leitores jovem-adulto?","acceptedAnswer":{"@type":"Answer","text":"Sim. A narrativa é jovem-adulto/adulto, sem conteúdo impróprio. Há ação, suspense, amizade e dilemas éticos/espirituais que dialogam bem com esse público."}},
+      {"@type":"Question","name":"Há elementos bíblicos ou a história é “religiosa”?","acceptedAnswer":{"@type":"Answer","text":"A obra é uma ficção cristã com simbologia inspirada no Rei Salomão e referências como o narrador Agur. Não é um sermão: fé e tecnologia se encontram para levantar questões sobre sabedoria, livre-arbítrio e poder."}},
+      {"@type":"Question","name":"Onde comprar e quais são os preços?","acceptedAnswer":{"@type":"Answer","text":"Impresso no Clube de Autores por R$ 66,81. E-book na Amazon por R$ 14,90 — gratuito para assinantes do Kindle Unlimited."}},
+      {"@type":"Question","name":"É um livro único ou parte de uma série?","acceptedAnswer":{"@type":"Answer","text":"É o primeiro volume de uma série. A trama abre portas para novos capítulos explorando as consequências do implante Solomon e o futuro dos personagens."}},
+      {"@type":"Question","name":"Quais temas centrais a história trabalha?","acceptedAnswer":{"@type":"Answer","text":"Fé e tecnologia; inteligência artificial e livre-arbítrio; ética de implantes neurais; amizade e chamado; o preço do poder e da “evolução” humana."}}
+    ]
   }
   </script>
 
   <script>
-    particlesJS.load("particles-js","https://cdn.jsdelivr.net/gh/VincentGarreau/particles.js/particles.json");
+    document.addEventListener('DOMContentLoaded', function () {
+      const cards = document.querySelectorAll(".card-custom");
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => { if (entry.isIntersecting) entry.target.classList.add("show"); });
+      }, { threshold: 0.1 });
+      cards.forEach((card) => observer.observe(card));
 
-    const cards = document.querySelectorAll(".card-custom");
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => { if (entry.isIntersecting) entry.target.classList.add("show"); });
-    }, { threshold: 0.1 });
-    cards.forEach((card) => observer.observe(card));
-
-    const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
-    const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl));
+      if (window.bootstrap) {
+        const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
+        [...tooltipTriggerList].forEach(el => new bootstrap.Tooltip(el));
+      }
+    });
   </script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
 </body>
 </html>
