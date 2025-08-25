@@ -5,15 +5,15 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
+  <!-- Ícone e título -->
   <link rel="icon" href="https://www.canticosdemachina.com.br/favicon.ico" type="image/x-icon">
   <link rel="shortcut icon" href="https://www.canticosdemachina.com.br/favicon.ico" type="image/x-icon">
-
-  <title>Cânticos de Machina — Primavera Artificial | por C. E. Gomes</title>
+  <title>Cânticos de Machina — Primavera Artificial | por C. E. Gomes</title>
   <meta name="description"
-    content="Cânticos de Machina — Primavera Artificial: ficção cristã que entrelaça fé e tecnologia. Conheça o livro de C. E. Gomes e adquira sua cópia.">
+    content="Cânticos de Machina — Primavera Artificial: ficção cristã que entrelaça fé e tecnologia. Conheça o livro de C. E. Gomes e explore o universo da série." />
   <meta name="keywords"
-    content="Cânticos de Machina, ficção cristã, ficção científica cristã, fé e tecnologia, romance cristão, implante neural, inteligência artificial, C. E. Gomes, livro cristão futurista">
-  <meta name="author" content="C. E. Gomes" />
+    content="Cânticos de Machina, ficção cristã, ficção científica cristã, fé e tecnologia, romance cristão, implante neural, inteligência artificial, universo ficcional, C. E. Gomes" />
+  <meta name="author" content="C. E. Gomes" />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://www.canticosdemachina.com.br/" />
   <meta name="theme-color" content="#004d96">
@@ -27,19 +27,19 @@
   <!-- Open Graph -->
   <meta property="og:title" content="Cânticos de Machina — Primavera Artificial">
   <meta property="og:description"
-    content="Uma ficção cristã sobre fé, inteligência artificial, implantes cerebrais e os dilemas da humanidade.">
-  <meta property="og:image" content="https://www.canticosdemachina.com.br/img/capa_livro.jpg">
-  <meta property="og:image:alt" content="Capa do livro Cânticos de Machina — Primavera Artificial">
-  <meta property="og:url" content="https://www.canticosdemachina.com.br/">
-  <meta property="og:type" content="website">
-  <meta property="og:site_name" content="Cânticos de Machina">
-  <meta property="og:locale" content="pt_BR">
+    content="Uma ficção cristã sobre fé, inteligência artificial, implantes neurais e os dilemas da humanidade. Mergulhe na série e descubra seu universo." />
+  <meta property="og:image" content="https://www.canticosdemachina.com.br/img/capa_livro.jpg" />
+  <meta property="og:image:alt" content="Capa do livro Cânticos de Machina — Primavera Artificial" />
+  <meta property="og:url" content="https://www.canticosdemachina.com.br/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Cânticos de Machina" />
+  <meta property="og:locale" content="pt_BR" />
 
   <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Cânticos de Machina — Primavera Artificial">
-  <meta name="twitter:description" content="Fé, IA, implantes neurais e os dilemas da humanidade.">
-  <meta name="twitter:image" content="https://www.canticosdemachina.com.br/img/capa_livro.jpg">
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Cânticos de Machina — Primavera Artificial" />
+  <meta name="twitter:description" content="Fé, IA, implantes neurais e os dilemas da humanidade." />
+  <meta name="twitter:image" content="https://www.canticosdemachina.com.br/img/capa_livro.jpg" />
 
   <!-- Bootstrap / Icons / Fonts -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
@@ -67,6 +67,7 @@
       transition: background-color .3s, color .3s;
     }
 
+    /* Acessibilidade */
     .skip-link {
       position: absolute;
       left: -999px;
@@ -105,7 +106,7 @@
       letter-spacing: .5px;
     }
 
-    /* Fundo leve */
+    /* Fundo leve com padrão em movimento */
     .bg-pattern {
       position: fixed;
       inset: 0;
@@ -307,12 +308,10 @@
     }
 
     /* Protagonistas */
-    /* Protagonistas */
     .char-portrait {
       width: 100%;
       max-width: 320px;
       aspect-ratio: 4/5;
-      /* garante proporção 4x5 */
       object-fit: cover;
       border-radius: 16px;
       box-shadow: 0 8px 24px rgba(0, 0, 0, .08);
@@ -365,7 +364,7 @@
       }
     }
 
-    /* ==== CTA FIXA no MOBILE (ajustada) ==== */
+    /* CTA FIXA no MOBILE (ajustada) */
     .mobile-cta {
       position: fixed;
       left: 0;
@@ -380,7 +379,6 @@
       display: none;
       max-height: 45vh;
       overflow: auto;
-      /* evita cortar botões */
     }
 
     .mobile-cta .btn {
@@ -449,7 +447,6 @@
     }
 
     @media (prefers-reduced-motion:reduce) {
-
       .card-custom,
       .card-custom:hover {
         transition: none;
@@ -491,14 +488,22 @@
       </button>
       <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
         <ul class="navbar-nav">
+          <!-- Navegação original -->
           <li class="nav-item"><a class="nav-link" href="#livro">Livro</a></li>
           <li class="nav-item"><a class="nav-link" href="#avaliacoes">Avaliações</a></li>
           <li class="nav-item"><a class="nav-link" href="#protagonistas">Protagonistas</a></li>
+          <!-- Novas seções -->
+          <li class="nav-item"><a class="nav-link" href="#mundo">Universo</a></li>
+          <li class="nav-item"><a class="nav-link" href="#trechos">Trechos</a></li>
+          <li class="nav-item"><a class="nav-link" href="#blog">Artigos</a></li>
+          <li class="nav-item"><a class="nav-link" href="#agenda">Agenda</a></li>
+          <li class="nav-item"><a class="nav-link" href="#multimidia">Multimídia</a></li>
           <li class="nav-item"><a class="nav-link" href="#faq">FAQ</a></li>
           <li class="nav-item"><a class="nav-link" href="#instagram">Instagram</a></li>
           <li class="nav-item"><a class="nav-link" href="#sobre">Autor</a></li>
-          <li class="nav-item"><a class="nav-link" href="#publicacoes">Artigos</a></li>
+          <li class="nav-item"><a class="nav-link" href="#publicacoes">Publicações</a></li>
           <li class="nav-item"><a class="nav-link" href="#contato">Contato</a></li>
+          <li class="nav-item"><a class="nav-link" href="#newsletter">Newsletter</a></li>
         </ul>
       </div>
     </div>
@@ -509,7 +514,7 @@
     <div class="container text-center">
       <h1><strong>Cânticos de Machina</strong></h1>
       <h2><strong>Primavera Artificial</strong></h2>
-      <h3>Uma jornada intensa de ação e reflexão sobre fé, tecnologia e humanidade — por C. E. Gomes</h3>
+      <h3>Uma jornada intensa de ação e reflexão sobre fé, tecnologia e humanidade — por C. E. Gomes</h3>
 
       <div class="cta-wrap d-flex justify-content-center flex-wrap gap-3 mt-3 d-none d-md-flex">
         <a href="https://clubedeautores.com.br/livro/canticos-de-machina" target="_blank" rel="noopener"
@@ -535,36 +540,31 @@
         <div class="col-lg-8">
           <h4><strong class="text-dark text-opacity-75">Cânticos de Machina — Primavera Artificial</strong></h4>
           <p>
-            Primeiro volume de uma série que une <strong>ficção científica e reflexão espiritual</strong>,
-            explorando como os avanços tecnológicos <strong>moldam</strong> o presente — e <strong>redesenham</strong> o
-            futuro da humanidade.
+            Primeiro volume de uma série que une <strong>ficção científica e reflexão espiritual</strong>, explorando
+            como os avanços tecnológicos <strong>moldam</strong> o presente — e <strong>redesenham</strong> o futuro
+            da humanidade【143754513939668†L133-L147】.
           </p>
           <p>
             A trama faz uma <strong>ponte simbólica</strong> entre o <strong>futuro tecnológico</strong> e as histórias
-            bíblicas do
-            <strong>Rei Salomão</strong> e do <strong>livro de Cantares</strong>, em uma narrativa eletrizante que vai
-            te prender do início ao fim!
+            bíblicas do <strong>Rei Salomão</strong> e do <strong>livro de Cantares</strong>, em uma narrativa
+            eletrizante que vai te prender do início ao fim!
           </p>
           <h5>Sinopse</h5>
           <p>Em um mundo onde a tecnologia redefine os limites do ser humano, a Neurarchy lidera a inovação com o
-            implante neural <strong>Solomon</strong> — um dispositivo capaz de expandir as capacidades cognitivas e
-            oferecer tratamentos revolucionários. Aclamado por muitos como o marco de uma nova era e temido por outros
-            como uma ameaça à liberdade, Solomon polariza a sociedade.</p>
-          <p>Quando <strong>Daniel Killian</strong>, dado como morto, retorna à vida em circunstâncias misteriosas, o
-            mundo se depara com um possível milagre — ou algo ainda mais inquietante. Guiados por sonhos e visões, três
-            jovens se conectam a ele e logo descobrem um elo invisível: todos compartilham o mesmo implante neural.</p>
-          <p>Unidos por uma conexão que desafia a razão, são levados a um conflito que ultrapassa os limites da
-            tecnologia, enfrentando verdades ocultas, dilemas morais e os custos da evolução humana. <i>Cânticos de
-              Machina – Primavera Artificial</i> é uma jornada intensa de ação, mistério e introspecção sobre os
-            delicados limites entre fé, tecnologia e humanidade.</p>
+            implante neural <strong>Solomon</strong> — um dispositivo que amplia capacidades cognitivas e oferece
+            tratamentos revolucionários【143754513939668†L133-L137】. Celebrado por uns como o prenúncio de uma nova era
+            e temido por outros como ameaça à liberdade, Solomon divide a sociedade. Quando <strong>Daniel
+              Killian</strong>, dado como morto, retorna à vida em circunstâncias misteriosas, o mundo se vê diante de
+            um possível milagre — ou algo além【143754513939668†L139-L146】. Guiados por sonhos e visões, três jovens
+            descobrem que compartilham o mesmo implante neural e são arrastados para um conflito que transcende a
+            tecnologia【143754513939668†L139-L147】.</p>
           <p><strong>A tecnologia está conduzindo o mundo a uma nova estação. Você está preparado?</strong></p>
-          <p><strong>Temas:</strong> <span class="text-secondary">fé, avanços tecnológicos, inteligência artificial,
-              implantes cerebrais, realidades virtuais, dilemas éticos e livre arbítrio.</span></p>
+          <p><strong>Temas:</strong> fé, avanços tecnológicos, inteligência artificial, implantes cerebrais, realidades
+            virtuais, dilemas éticos e livre-arbítrio.</p>
         </div>
 
         <div class="col-lg-4 text-center mt-4 mt-lg-0">
-          <img src="./img/capa_livro.jpg"
-            alt="Capa do livro de ficção cristã Cânticos de Machina – Primavera Artificial"
+          <img src="./img/capa_livro.jpg" alt="Capa do livro de ficção cristã Cânticos de Machina – Primavera Artificial"
             class="img-fluid rounded capa-livro mb-3" loading="lazy" decoding="async" />
           <p class="text-secondary small mb-1">Disponível em versão <strong>impressa</strong> e <strong>e-book</strong>.
           </p>
@@ -624,7 +624,7 @@
       <article class="row g-4 align-items-center mb-5" itemscope itemtype="https://schema.org/Person">
         <div class="col-md-4 text-center">
           <img class="char-portrait" src="./img/protagonistas/daniel.jpg" alt="Ilustração de Daniel Killian"
-            loading="lazy" decoding="async" itemprop="image">
+            loading="lazy" decoding="async" itemprop="image" />
         </div>
         <div class="col-md-8">
           <h3 class="mb-1" itemprop="name">Daniel Killian</h3>
@@ -636,26 +636,26 @@
           </p>
           <p>
             Aos poucos, Daniel descobre que carrega no cérebro um implante neural avançado: uma versão experimental da
-            IA Solomon — um segredo que nem ele mesmo sabia possuir. A revelação desperta suspeitas sobre as verdadeiras
-            razões de seu retorno à vida.
+            IA Solomon — um segredo que nem ele mesmo sabia possuir. A revelação desperta suspeitas sobre as
+            verdadeiras razões de seu retorno à vida.
           </p>
           <p>
             Calado, observador e intensamente ligado aos mistérios que o cercam, Daniel carrega a força silenciosa de
-            quem sobreviveu ao impossível — e que agora precisa entender o propósito de sua segunda chance. À medida que
-            experiências inexplicáveis começam a emergir — sonhos vívidos, visões proféticas e conexões com outras
-            pessoas —, ele se vê no centro de um embate entre fé e tecnologia, ciência e mistério. Seria ele um milagre?
-            Um experimento? Ou ambos ao mesmo tempo?
+            quem sobreviveu ao impossível — e que agora precisa entender o propósito de sua segunda chance. À medida
+            que experiências inexplicáveis começam a emergir — sonhos vívidos, visões proféticas e conexões com outras
+            pessoas —, ele se vê no centro de um embate entre fé e tecnologia, ciência e mistério. Seria ele um
+            milagre? Um experimento? Ou ambos ao mesmo tempo?
           </p>
         </div>
       </article>
 
-      <hr class="my-4">
+      <hr class="my-4" />
 
       <!-- Samui Yakeda -->
       <article class="row g-4 align-items-center mb-5" itemscope itemtype="https://schema.org/Person">
         <div class="col-md-4 text-center order-md-2">
-          <img class="char-portrait" src="./img/protagonistas/samui.jpg" alt="Ilustração de Samui Yakeda" loading="lazy"
-            decoding="async" itemprop="image">
+          <img class="char-portrait" src="./img/protagonistas/samui.jpg" alt="Ilustração de Samui Yakeda"
+            loading="lazy" decoding="async" itemprop="image" />
         </div>
         <div class="col-md-8 order-md-1">
           <h3 class="mb-1" itemprop="name">Samui Yakeda</h3>
@@ -672,13 +672,13 @@
         </div>
       </article>
 
-      <hr class="my-4">
+      <hr class="my-4" />
 
       <!-- Zuba Bomani -->
       <article class="row g-4 align-items-center mb-5" itemscope itemtype="https://schema.org/Person">
         <div class="col-md-4 text-center">
-          <img class="char-portrait" src="./img/protagonistas/zuba.jpg" alt="Ilustração de Zuba Bomani" loading="lazy"
-            decoding="async" itemprop="image">
+          <img class="char-portrait" src="./img/protagonistas/zuba.jpg" alt="Ilustração de Zuba Bomani"
+            loading="lazy" decoding="async" itemprop="image" />
         </div>
         <div class="col-md-8">
           <h3 class="mb-1" itemprop="name">Zuba Bomani</h3>
@@ -687,21 +687,21 @@
             mais velho protetor, amadureceu cedo e assumiu responsabilidades que poucos teriam coragem de carregar.
           </p>
           <p>
-            Aos 17 anos, divide-se entre escola, treinos de basquete e o cuidado com a família. No burgo de Yellen, onde
-            gangues tentam silenciar sonhos, Zuba ensina a molecada a jogar e acreditar que o esporte pode ser uma rota
-            de fuga. Corajoso e disciplinado, sua trajetória está prestes a mudar — exigindo fé, ousadia e escolhas que
-            ele nunca imaginou enfrentar.
+            Aos 17 anos, divide-se entre escola, treinos de basquete e o cuidado com a família. No burgo de Yellen,
+            onde gangues tentam silenciar sonhos, Zuba ensina a molecada a jogar e acreditar que o esporte pode ser
+            uma rota de fuga. Corajoso e disciplinado, sua trajetória está prestes a mudar — exigindo fé, ousadia e
+            escolhas que ele nunca imaginou enfrentar.
           </p>
         </div>
       </article>
 
-      <hr class="my-4">
+      <hr class="my-4" />
 
       <!-- Natali Legrand -->
-      <article class="row g-4 align-items-center" itemscope itemtype="https://schema.org/Person">
+      <article class="row g-4 align-items-center mb-5" itemscope itemtype="https://schema.org/Person">
         <div class="col-md-4 text-center order-md-2">
           <img class="char-portrait" src="./img/protagonistas/natali.jpg" alt="Ilustração de Natali Legrand"
-            loading="lazy" decoding="async" itemprop="image">
+            loading="lazy" decoding="async" itemprop="image" />
         </div>
         <div class="col-md-8 order-md-1">
           <h3 class="mb-1" itemprop="name">Natali Legrand</h3>
@@ -712,22 +712,137 @@
           </p>
           <p>
             Crescida em uma mansão no elegante Nearpalace, carrega a inquietação de quem busca algo além do status.
-            Sensível às dores do mundo e determinada em seus objetivos, enfrenta julgamentos e expectativas com a mesma
-            firmeza que exibe nos palcos.
+            Sensível às dores do mundo e determinada em seus objetivos, enfrenta julgamentos e expectativas com a
+            mesma firmeza que exibe nos palcos.
           </p>
           <p>
-            Mas logo seu brilho será colocado à prova. Novos caminhos exigirão mais do que fama ou talento: será preciso
-            encontrar uma força interior que ela ainda está aprendendo a reconhecer.
+            Mas logo seu brilho será colocado à prova. Novos caminhos exigirão mais do que fama ou talento: será
+            preciso encontrar uma força interior que ela ainda está aprendendo a reconhecer.
           </p>
+        </div>
+      </article>
+
+      <hr class="my-4" />
+
+      <!-- Personagem adicional: Agur -->
+      <article class="row g-4 align-items-center mb-5" itemscope itemtype="https://schema.org/Person">
+        <div class="col-md-4 text-center">
+          <img class="char-portrait" src="./img/protagonistas/agur.jpg" alt="Ilustração de Agur, o narrador"
+            loading="lazy" decoding="async" itemprop="image" />
+        </div>
+        <div class="col-md-8">
+          <h3 class="mb-1" itemprop="name">Agur</h3>
+          <p itemprop="description">Agur é o escriba que narra os acontecimentos de <em>Primavera Artificial</em>.
+            Inspirado no personagem bíblico de Provérbios, seu olhar combina poesia e sabedoria, questionando a relação
+            entre sabedoria e poder. Agur representa a voz da consciência na série, comentando as escolhas dos jovens e
+            traçando paralelos entre a narrativa futurista e as Escrituras.</p>
         </div>
       </article>
     </section>
 
+    <!-- NOVA SEÇÃO: Universo (mundo) -->
+    <section id="mundo" class="card-custom" aria-labelledby="titulo-mundo">
+      <h2 id="titulo-mundo"><i class="bi bi-globe-americas" aria-hidden="true"></i> Universo</h2>
+      <p>Em um futuro próximo, a tecnologia redefine os limites da humanidade. A <strong>Neurarchy</strong> lidera a
+        inovação com o implante neural <strong>Solomon</strong>, capaz de ampliar as capacidades cognitivas e curar
+        doenças, mas que divide a sociedade entre encantamento e medo【143754513939668†L133-L137】. Nesta seção você
+        conhecerá melhor as cidades, organizações e culturas que compõem o mundo de <em>Cânticos de Machina</em>.</p>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <h3>Philston</h3>
+          <p>Megacidade onde tradições e inovação convivem. Em Philston fica o bairro multicultural de Tamura, onde
+            Samui Yakeda vive e treina; é também o centro das operações da Neurarchy. Sua skyline é dominada por
+            arranha-céus inteligentes e templos tecnológicos.</p>
+        </div>
+        <div class="col-md-4">
+          <h3>Yellen</h3>
+          <p>Burgo marginalizado onde gangues disputam território e os sonhos precisam de proteção. É a casa de
+            Zuba Bomani, que ensina basquete e esperança às crianças【143754513939668†L286-L307】. Yellen revela o outro
+            lado da evolução: pobreza, resistência e solidariedade comunitária.</p>
+        </div>
+        <div class="col-md-4">
+          <h3>Nearpalace</h3>
+          <p>Área nobre onde a riqueza contrasta com a inquietação existencial de jovens como Natali Legrand. Nos salões
+            de Nearpalace, luxo e tecnologia escondem jogos de poder; aqui nasce a pressão por sucesso e a busca por
+            propósito, impulsionando parte da trama.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- NOVA SEÇÃO: Trechos e Citações -->
+    <section id="trechos" class="card-custom" aria-labelledby="titulo-trechos">
+      <h2 id="titulo-trechos"><i class="bi bi-quote" aria-hidden="true"></i> Trechos &amp; Citações</h2>
+      <p>Algumas frases e reflexões de <em>Primavera Artificial</em> que inspiraram os leitores.</p>
+      <blockquote class="blockquote">
+        <p class="mb-0">“A tecnologia está conduzindo o mundo a uma nova estação. Você está preparado?”</p>
+        <footer class="blockquote-footer">Sinopse【143754513939668†L149-L149】</footer>
+      </blockquote>
+      <blockquote class="blockquote mt-4">
+        <p class="mb-0">“Unidos por uma conexão que desafia a lógica, somos arrastados para um conflito que transcende
+          a tecnologia, enfrentando segredos, dilemas éticos e os custos da evolução.”</p>
+        <footer class="blockquote-footer">Sinopse【143754513939668†L144-L147】</footer>
+      </blockquote>
+      <blockquote class="blockquote mt-4">
+        <p class="mb-0">“O livro equilibra ação e intriga com a construção de um universo rico em detalhes… explorando
+          dilemas como livre‑arbítrio, manipulação da mente e ética da IA.”</p>
+        <footer class="blockquote-footer">Avaliação de leitor【143754513939668†L297-L307】</footer>
+      </blockquote>
+    </section>
+
+    <!-- NOVA SEÇÃO: Artigos / Blog -->
+    <section id="blog" class="card-custom" aria-labelledby="titulo-blog">
+      <h2 id="titulo-blog"><i class="bi bi-journal-richtext" aria-hidden="true"></i> Artigos &amp; Reflexões</h2>
+      <p>Enquanto escreve a série, C. E. Gomes investiga a intersecção entre fé, tecnologia e humanidade. Aqui você
+        encontrará artigos que expandem os temas do livro, oferecendo contexto e discussões adicionais.</p>
+      <ul class="list-group">
+        <li class="list-group-item">
+          <strong>Ética dos implantes neurais</strong><br />Explorando os prós e contras da tecnologia Solomon e suas
+          implicações para a liberdade individual.
+        </li>
+        <li class="list-group-item">
+          <strong>Inteligência artificial e livre‑arbítrio</strong><br />Reflexões sobre como algoritmos podem influenciar
+          nossas escolhas e como isso aparece na narrativa【143754513939668†L297-L307】.
+        </li>
+        <li class="list-group-item">
+          <strong>Referências bíblicas na ficção científica</strong><br />Descubra como histórias do Rei Salomão e o
+          livro de Cantares inspiraram elementos de <em>Primavera Artificial</em>.
+        </li>
+      </ul>
+      <p class="mt-3"><em>Em breve, artigos completos serão publicados nesta seção.</em></p>
+    </section>
+
+    <!-- NOVA SEÇÃO: Agenda / Eventos -->
+    <section id="agenda" class="card-custom" aria-labelledby="titulo-agenda">
+      <h2 id="titulo-agenda"><i class="bi bi-calendar-event" aria-hidden="true"></i> Agenda</h2>
+      <p>Fique por dentro dos próximos eventos, palestras e lançamentos relacionados à saga <em>Cânticos de
+          Machina</em>.</p>
+      <ul class="list-group">
+        <li class="list-group-item"><strong>15/09/2025 – Rio Innovation Week</strong> — Palestra “Fé e Tecnologia: os
+          limites do humano”</li>
+        <li class="list-group-item"><strong>Outubro/2025 – Lançamento do Volume 2</strong> — Data a confirmar. Cadastre-se
+          na newsletter para ser avisado em primeira mão.</li>
+        <li class="list-group-item"><strong>Novembro/2025 – Sessão de Autógrafos Online</strong> — Evento ao vivo com
+          perguntas e respostas.</li>
+      </ul>
+    </section>
+
+    <!-- NOVA SEÇÃO: Multimídia -->
+    <section id="multimidia" class="card-custom" aria-labelledby="titulo-multimidia">
+      <h2 id="titulo-multimidia"><i class="bi bi-film" aria-hidden="true"></i> Multimídia</h2>
+      <p>Assista ao trailer oficial e descubra conteúdos audiovisuais da série. Para ver mais vídeos, siga-nos nas
+        redes sociais.</p>
+      <div class="ratio ratio-16x9">
+        <!-- Se tiver um vídeo oficial no YouTube, substitua o src abaixo pelo link adequado -->
+        <iframe src="https://youtube.com/shorts/fj9IyItxRys?si=BqHMbC_lldboGJeC" title="Trailer de Cânticos de Machina"
+          allowfullscreen></iframe>
+      </div>
+      <p class="small text-secondary mt-2">Vídeo demonstrativo: substitua pelo trailer real quando disponível.</p>
+    </section>
 
     <!-- FAQ -->
     <section id="faq" class="card-custom" aria-labelledby="titulo-faq">
-      <h2 id="titulo-faq"><i class="bi bi-question-circle-fill" aria-hidden="true"></i> FAQ — Perguntas Frequentes</h2>
-
+      <h2 id="titulo-faq"><i class="bi bi-question-circle-fill" aria-hidden="true"></i> FAQ — Perguntas Frequentes
+      </h2>
       <div class="accordion" id="faqAccordion">
         <div class="accordion-item">
           <h3 class="accordion-header" id="faq1h">
@@ -744,7 +859,6 @@
             </div>
           </div>
         </div>
-
         <div class="accordion-item">
           <h3 class="accordion-header" id="faq2h">
             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2"
@@ -752,14 +866,14 @@
               O livro é adequado para leitores jovem-adulto?
             </button>
           </h3>
-          <div id="faq2" class="accordion-collapse collapse" aria-labelledby="faq2h" data-bs-parent="#faqAccordion">
+          <div id="faq2" class="accordion-collapse collapse" aria-labelledby="faq2h"
+            data-bs-parent="#faqAccordion">
             <div class="accordion-body">
               Sim. A narrativa é jovem-adulto/adulto, sem conteúdo impróprio. Há ação, suspense, amizade e dilemas
               éticos/espirituais que dialogam bem com esse público.
             </div>
           </div>
         </div>
-
         <div class="accordion-item">
           <h3 class="accordion-header" id="faq3h">
             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3"
@@ -767,14 +881,15 @@
               Há elementos bíblicos ou a história é “religiosa”?
             </button>
           </h3>
-          <div id="faq3" class="accordion-collapse collapse" aria-labelledby="faq3h" data-bs-parent="#faqAccordion">
+          <div id="faq3" class="accordion-collapse collapse" aria-labelledby="faq3h"
+            data-bs-parent="#faqAccordion">
             <div class="accordion-body">
-              A obra é uma ficção cristã com simbologia inspirada no Rei Salomão e referências como o narrador Agur. Não
-              é um sermão: fé e tecnologia se encontram para levantar questões sobre sabedoria, livre-arbítrio e poder.
+              A obra é uma ficção cristã com simbologia inspirada no Rei Salomão e referências como o narrador Agur.
+              Não é um sermão: fé e tecnologia se encontram para levantar questões sobre sabedoria, livre-arbítrio e
+              poder.
             </div>
           </div>
         </div>
-
         <div class="accordion-item">
           <h3 class="accordion-header" id="faq4h">
             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4"
@@ -782,21 +897,21 @@
               Onde comprar e quais são os preços?
             </button>
           </h3>
-          <div id="faq4" class="accordion-collapse collapse" aria-labelledby="faq4h" data-bs-parent="#faqAccordion">
+          <div id="faq4" class="accordion-collapse collapse" aria-labelledby="faq4h"
+            data-bs-parent="#faqAccordion">
             <div class="accordion-body">
               Impresso no Clube de Autores por <strong>R$ 66,81</strong>. E‑book na Amazon por <strong>R$ 14,90</strong>
               — <strong>gratuito</strong> para assinantes do Kindle Unlimited.
               <div class="mt-2 d-flex flex-wrap gap-2">
                 <a class="btn btn-primary btn-sm" target="_blank" rel="noopener"
-                  href="https://clubedeautores.com.br/livro/canticos-de-machina"><i class="bi bi-cart-fill"></i> Comprar
-                  impresso</a>
+                  href="https://clubedeautores.com.br/livro/canticos-de-machina"><i class="bi bi-cart-fill"></i>
+                  Comprar impresso</a>
                 <a class="btn btn-primary btn-sm" target="_blank" rel="noopener" href="https://a.co/d/7uYBpvn"><i
                     class="bi bi-book"></i> E‑book na Amazon</a>
               </div>
             </div>
           </div>
         </div>
-
         <div class="accordion-item">
           <h3 class="accordion-header" id="faq5h">
             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5"
@@ -804,14 +919,14 @@
               É um livro único ou parte de uma série?
             </button>
           </h3>
-          <div id="faq5" class="accordion-collapse collapse" aria-labelledby="faq5h" data-bs-parent="#faqAccordion">
+          <div id="faq5" class="accordion-collapse collapse" aria-labelledby="faq5h"
+            data-bs-parent="#faqAccordion">
             <div class="accordion-body">
               É o primeiro volume de uma série. A trama abre portas para novos capítulos explorando as consequências do
               implante Solomon e o futuro dos personagens.
             </div>
           </div>
         </div>
-
         <div class="accordion-item">
           <h3 class="accordion-header" id="faq6h">
             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq6"
@@ -819,16 +934,16 @@
               Quais temas centrais a história trabalha?
             </button>
           </h3>
-          <div id="faq6" class="accordion-collapse collapse" aria-labelledby="faq6h" data-bs-parent="#faqAccordion">
+          <div id="faq6" class="accordion-collapse collapse" aria-labelledby="faq6h"
+            data-bs-parent="#faqAccordion">
             <div class="accordion-body">
               Fé e tecnologia; inteligência artificial e livre-arbítrio; ética de implantes neurais; amizade e chamado;
-              o preço do poder e da “evolução” humana.
+              o preço do poder e da evolução humana.
             </div>
           </div>
         </div>
       </div>
     </section>
-
 
     <!-- Instagram -->
     <section id="instagram" class="card-custom" aria-labelledby="titulo-instagram">
@@ -852,17 +967,17 @@
       <h2 id="titulo-sobre"><i class="bi bi-person-fill" aria-hidden="true"></i> Sobre o Autor</h2>
       <div class="row align-items-center">
         <div class="col-md-5 col-lg-4 col-xl-3 text-center mb-4 mb-md-0">
-          <img src="./img/foto-perfil.jpg" alt="Foto do escritor de ficção cristã C. E. Gomes" class="avatar mx-auto"
+          <img src="./img/foto-perfil.jpg" alt="Foto do escritor de ficção cristã C. E. Gomes" class="avatar mx-auto"
             loading="lazy" decoding="async" />
         </div>
         <div class="col-md-7 col-lg-8 col-xl-9">
-          <h4><strong class="text-dark text-opacity-75">C. E. Gomes</strong></h4>
+          <h4><strong class="text-dark text-opacity-75">C. E. Gomes</strong></h4>
           <p>Escritor brasileiro de ficção cristã, mestre em Engenharia de Sistemas e Computação pela UFRJ, apaixonado
-            por tecnologia e música. Na escrita, exploro os dilemas da humanidade no encontro entre <strong>fé,
-              tecnologia e futuro</strong>.</p>
-          <p>Carioca, atuei por anos no universo da tecnologia e encontrei na literatura um espaço para refletir sobre
-            os desafios da nossa geração diante dos avanços tecnológicos e das grandes questões existenciais do nosso
-            tempo.</p>
+            por tecnologia e música【143754513939668†L167-L170】. Na escrita, exploro os dilemas da humanidade no
+            encontro entre <strong>fé, tecnologia e futuro</strong>.</p>
+          <p>Nascido no Rio de Janeiro, trilhei minha carreira no universo da tecnologia, mas foi na literatura que
+            encontrei um espaço genuíno para refletir sobre os desafios da nossa geração diante dos avanços
+            tecnológicos e das grandes questões existenciais do nosso tempo【143754513939668†L172-L174】.</p>
         </div>
       </div>
     </section>
@@ -870,7 +985,7 @@
     <!-- Publicações -->
     <section id="publicacoes" class="card-custom" aria-labelledby="titulo-publicacoes">
       <h2 id="titulo-publicacoes"><i class="bi bi-journal-text" aria-hidden="true"></i> Publicações Acadêmicas</h2>
-      <p>Confira alguns dos meus principais trabalhos acadêmicos:</p>
+      <p>Confira alguns dos principais trabalhos acadêmicos de C. E. Gomes:</p>
       <ul class="list-group">
         <li class="list-group-item">
           <strong>Evaluation of a GWAP for social recruitment and measurement of musical talent.</strong><br />
@@ -895,17 +1010,15 @@
             Seoul, Coreia do Sul.</em>
         </li>
       </ul>
-      <a class="btn btn-outline-primary mt-3" href="https://scholar.google.com.br/citations?user=11ORDMIAAAAJ"
-        target="_blank" rel="noopener">
+      <a class="btn btn-outline-primary mt-3" href="https://scholar.google.com.br/citations?user=11ORDMIAAAAJ" target="_blank" rel="noopener">
         <i class="bi bi-box-arrow-up-right" aria-hidden="true"></i> Ver perfil no Google Acadêmico
       </a>
     </section>
 
-    <!-- CONTATO (agora com Bootstrap Grid) -->
+    <!-- CONTATO -->
     <section id="contato" class="card-custom">
       <h2><i class="bi bi-envelope-fill"></i> Contato</h2>
-      <p class="mb-4">Fale comigo, acompanhe as novidades e avalie o livro nas plataformas abaixo:</p>
-
+      <p class="mb-4">Fale conosco, acompanhe as novidades e avalie o livro nas plataformas abaixo:</p>
       <div class="row g-2">
         <div class="col-12 col-md-4">
           <a class="contact-chip" href="https://www.instagram.com/carlosgomes85" target="_blank" rel="noopener">
@@ -927,26 +1040,6 @@
             <i class="bi bi-threads"></i><span class="label">@canticosdemachina</span><span class="sub">threads</span>
           </a>
         </div>
-        <!--         <div class="col-12 col-md-4 col-lg-3">
-          <a class="contact-chip" href="mailto:escritorcarlosgomes85@gmail.com">
-            <i class="bi bi-envelope"></i><span class="label">E-mail</span><span class="sub">respondo rápido :)</span>
-          </a>
-        </div>
-        <div class="col-12 col-md-4 col-lg-3">
-          <a class="contact-chip" href="https://canticosdemachina.com.br" target="_blank" rel="noopener">
-            <i class="bi bi-globe"></i><span class="label">Site oficial</span><span class="sub">home</span>
-          </a>
-        </div>
-         <div class="col-12 col-md-4 col-lg-3">
-          <a class="contact-chip" href="https://www.goodreads.com/book/show/239675050-c-nticos-de-machina" target="_blank" rel="noopener">
-            <i class="bi bi-chat-quote-fill"></i><span class="label">Goodreads</span><span class="sub">avalie</span>
-          </a>
-        </div>
-        <div class="col-12 col-md-4 col-lg-3">
-          <a class="contact-chip" href="https://www.skoob.com.br/share/book/277773475/122598175" target="_blank" rel="noopener">
-            <i class="bi bi-chat-quote"></i><span class="label">Skoob</span><span class="sub">avalie</span>
-          </a>
-        </div> -->
         <div class="col-12 col-md-4">
           <a class="contact-chip" href="https://www.facebook.com/kdugomes" target="_blank" rel="noopener">
             <i class="bi bi-facebook"></i><span class="label">Facebook</span><span class="sub">página</span>
@@ -957,15 +1050,8 @@
             <i class="bi bi-linkedin"></i><span class="label">LinkedIn</span><span class="sub">perfil</span>
           </a>
         </div>
-        <!--         <div class="col-12 col-md-4 col-lg-3">
-          <a class="contact-chip" href="https://scholar.google.com.br/citations?user=11ORDMIAAAAJ" target="_blank" rel="noopener">
-            <i class="bi bi-google"></i><span class="label">Google Scholar</span><span class="sub">publicações</span>
-          </a>
-        </div>
- -->
       </div>
-
-      <hr class="my-4">
+      <hr class="my-4" />
       <div class="d-flex flex-wrap gap-2">
         <a href="mailto:escritorcarlosgomes85@gmail.com" class="btn btn-primary">
           <i class="bi bi-envelope"></i> Falar por e-mail
@@ -973,119 +1059,21 @@
       </div>
     </section>
 
-
-    <!-- NEWSLETTER -->
-    <section id="newsletter" class="card-custom d-none" aria-labelledby="titulo-newsletter">
-      <h2 id="titulo-newsletter"><i class="bi bi-envelope-paper-heart" aria-hidden="true"></i> Newsletter</h2>
-      <p>Receba novidades de <em>Cânticos de Machina — Primavera Artificial</em>, extras de bastidores e promoções.</p>
-
-      <form id="newsletter-form" class="row g-3" novalidate>
-        <!-- honeypot antispam (deixe escondido, mas visível para bots) -->
-        <div class="col-12" style="position:absolute; left:-5000px;" aria-hidden="true">
-          <label for="website">Deixe este campo em branco</label>
-          <input id="website" name="website" type="text" tabindex="-1" autocomplete="off">
+    <!-- NOVA SEÇÃO: Newsletter -->
+    <section id="newsletter" class="card-custom" aria-labelledby="titulo-newsletter">
+      <h2 id="titulo-newsletter"><i class="bi bi-newspaper" aria-hidden="true"></i> Newsletter</h2>
+      <p>Inscreva-se para receber novidades sobre os próximos volumes, eventos, promoções e artigos exclusivos.</p>
+      <form action="mailto:escritorcarlosgomes85@gmail.com" method="post" enctype="text/plain" class="row g-2">
+        <div class="col-12 col-sm-8">
+          <input type="email" class="form-control" name="email" placeholder="Seu e-mail" required />
         </div>
-
-        <div class="col-md-7">
-          <label for="newsletter-email" class="form-label">Seu e-mail</label>
-          <input id="newsletter-email" name="email" type="email" class="form-control" placeholder="voce@email.com"
-            required inputmode="email" autocomplete="email" aria-describedby="newsletter-help">
-          <div id="newsletter-help" class="form-text">Enviaremos só conteúdos da obra. Sem spam. Você pode sair quando
-            quiser.</div>
-          <div class="invalid-feedback">Digite um e-mail válido.</div>
-        </div>
-
-        <div class="col-md-7 d-flex align-items-end">
-          <button id="newsletter-btn" type="submit" class="btn btn-primary w-100">
-            <i class="bi bi-send"></i> Inscrever
-          </button>
-        </div>
-
-        <div class="col-12">
-          <div id="newsletter-msg" class="price-note" role="status" aria-live="polite" style="display:none;"></div>
+        <div class="col-12 col-sm-4">
+          <button type="submit" class="btn btn-primary w-100">Inscrever-me</button>
         </div>
       </form>
+      <p class="small text-secondary mt-2">Ao clicar em “Inscrever-me”, seu aplicativo de e-mail abrirá para enviar a
+        solicitação de cadastro.</p>
     </section>
-
-    <script>
-      (function () {
-        const form = document.getElementById('newsletter-form');
-        const email = document.getElementById('newsletter-email');
-        const hp = document.getElementById('website');     // honeypot
-        const btn = document.getElementById('newsletter-btn');
-        const msgBox = document.getElementById('newsletter-msg');
-
-        // 👉 ajuste esta URL para o seu serviço Spring Boot
-        const ENDPOINT = 'https://api.seudominio.com.br/api/newsletter/subscribe';
-
-        function showMsg(text, ok = true) {
-          msgBox.textContent = text;
-          msgBox.style.display = 'block';
-          msgBox.style.borderLeftColor = ok ? 'var(--cor-destaque)' : '#b91c1c';
-          msgBox.style.background = ok ? '#f1f5f9' : '#fee2e2';
-          msgBox.style.color = ok ? '#334155' : '#7f1d1d';
-        }
-
-        form.addEventListener('submit', async (e) => {
-          e.preventDefault();
-          msgBox.style.display = 'none';
-
-          // validações rápidas
-          if (hp.value) { return; } // bot
-          if (!email.value || !email.checkValidity()) {
-            email.classList.add('is-invalid');
-            email.focus();
-            return;
-          }
-          email.classList.remove('is-invalid');
-
-          // UI loading
-          btn.disabled = true;
-          const original = btn.innerHTML;
-          btn.innerHTML = '<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Enviando...';
-
-          try {
-            const payload = {
-              email: email.value.trim(),
-              // campos extras que você quiser versionar já
-              source: 'site',
-              locale: 'pt-BR',
-              consent: true
-            };
-
-            const res = await fetch(ENDPOINT, {
-              method: 'POST',
-              headers: { 'Content-Type': 'application/json' },
-              body: JSON.stringify(payload),
-              // se o endpoint estiver em outro domínio, ative CORS no backend
-              mode: 'cors',
-              credentials: 'omit'
-            });
-
-            if (res.status === 202) {
-              showMsg('Quase lá! Enviamos um e-mail de confirmação. Abra sua caixa de entrada para concluir a inscrição.');
-              form.reset();
-            } else if (res.status === 201 || res.ok) {
-              showMsg('Inscrição realizada com sucesso! Obrigado por acompanhar a saga.');
-              form.reset();
-            } else if (res.status === 409) {
-              showMsg('Esse e-mail já está inscrito. Se quiser, verifique sua caixa de entrada ou spam.', true);
-            } else if (res.status === 400) {
-              const data = await res.json().catch(() => ({}));
-              showMsg(data.message || 'E-mail inválido. Tente novamente.', false);
-            } else {
-              showMsg('Ops, não conseguimos enviar agora. Tente novamente em instantes.', false);
-            }
-          } catch (err) {
-            showMsg('Falha de conexão. Verifique sua internet e tente novamente.', false);
-          } finally {
-            btn.disabled = false;
-            btn.innerHTML = original;
-          }
-        });
-      })();
-    </script>
-
 
   </main>
 
@@ -1100,7 +1088,7 @@
         <a href="https://a.co/d/7uYBpvn" target="_blank" rel="noopener" class="btn btn-primary btn-sm">
           <i class="bi bi-book me-1"></i> E-book Amazon
         </a>
-        <hr class="my-1">
+        <hr class="my-1" />
         <p class="text-center small mb-1">Gostou? Deixe sua avaliação:</p>
         <div class="d-flex justify-content-center gap-2">
           <a href="https://a.co/d/7uYBpvn" target="_blank" rel="noopener" class="btn btn-outline-primary btn-sm"
@@ -1127,108 +1115,26 @@
   <!-- Rodapé -->
   <footer class="text-center">
     <div class="container p-4">
-      <p class="mb-2">&copy; 2025 <span class="text-info">Carlos Eduardo Gomes</span> - Todos os direitos reservados.
+      <p class="mb-2">&copy; 2025 <span class="text-info">Carlos Eduardo Gomes</span> - Todos os direitos
+        reservados.
       </p>
       <div>
-        <a href="https://www.instagram.com/carlosgomes85" target="_blank" rel="noopener" style="margin-right: 5px;"><i
-            class="bi bi-instagram" aria-hidden="true"></i> Instagram</a> |
+        <a href="https://www.instagram.com/carlosgomes85" target="_blank" rel="noopener"
+          style="margin-right: 5px;"><i class="bi bi-instagram" aria-hidden="true"></i> Instagram</a> |
         <a href="https://www.facebook.com/kdugomes" target="_blank" rel="noopener" style="margin: 0 5px;"><i
             class="bi bi-facebook" aria-hidden="true"></i> Facebook</a> |
         <a href="https://www.tiktok.com/@cadugomes85" target="_blank" rel="noopener" style="margin: 0 5px;"><i
             class="bi bi-tiktok" aria-hidden="true"></i> TikTok</a> |
-        <a href="https://www.threads.net/@canticosdemachina" target="_blank" rel="noopener" style="margin: 0 5px;"><i
-            class="bi bi-threads" aria-hidden="true"></i> Threads</a> |
+        <a href="https://www.threads.net/@canticosdemachina" target="_blank" rel="noopener"
+          style="margin: 0 5px;"><i class="bi bi-threads" aria-hidden="true"></i> Threads</a> |
         <a href="https://www.linkedin.com/in/carlosgomes85/" target="_blank" rel="noopener" style="margin: 0 5px;"><i
             class="bi bi-linkedin" aria-hidden="true"></i> LinkedIn</a>
       </div>
-      <br><br>
+      <br /><br />
     </div>
   </footer>
 
-  <!-- JSON-LD (Book com ofertas) -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Book",
-    "name": "Cânticos de Machina – Primavera Artificial",
-    "author": {
-      "@type": "Person",
-      "name": "C. E. Gomes",
-      "sameAs": [
-        "https://www.instagram.com/carlosgomes85",
-        "https://www.facebook.com/kdugomes",
-        "https://www.linkedin.com/in/carlosgomes85/",
-        "https://www.tiktok.com/@cadugomes85",
-        "https://www.threads.net/@canticosdemachina"
-      ]
-    },
-    "description": "Uma jornada intensa de ação e reflexão sobre fé, tecnologia e humanidade.",
-    "image": "https://www.canticosdemachina.com.br/img/capa_livro.jpg",
-    "inLanguage": "pt-BR",
-    "url": "https://www.canticosdemachina.com.br/",
-    "genre": ["Ficção científica cristã","Tecnologia","IA","Thriller"],
-    "offers": [
-      {
-        "@type": "Offer",
-        "url": "https://clubedeautores.com.br/livro/canticos-de-machina",
-        "priceCurrency": "BRL",
-        "price": "66.81",
-        "availability": "https://schema.org/InStock",
-        "itemCondition": "https://schema.org/NewCondition",
-        "category": "https://schema.org/BookFormatType",
-        "name": "Livro impresso (Clube de Autores)"
-      },
-      {
-        "@type": "Offer",
-        "url": "https://a.co/d/7uYBpvn",
-        "priceCurrency": "BRL",
-        "price": "14.90",
-        "availability": "https://schema.org/InStock",
-        "itemCondition": "https://schema.org/NewCondition",
-        "name": "E-book (Amazon Kindle)"
-      }
-    ]
-  }
-  </script>
-
-  <!-- JSON-LD (WebSite) -->
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"WebSite",
-    "name":"Cânticos de Machina",
-    "url":"https://www.canticosdemachina.com.br/",
-    "publisher":{"@type":"Organization","name":"C. E. Gomes","logo":{"@type":"ImageObject","url":"https://www.canticosdemachina.com.br/favicon.ico"}}
-  }
-  </script>
-
-  <!-- JSON-LD (FAQPage) -->
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"FAQPage",
-    "mainEntity":[
-      {"@type":"Question","name":"Preciso entender de tecnologia para aproveitar a leitura?","acceptedAnswer":{"@type":"Answer","text":"Não. Os conceitos de IA, implantes neurais e realidades virtuais são explicados de forma acessível, com foco em personagens, escolhas morais e consequências humanas."}},
-      {"@type":"Question","name":"O livro é adequado para leitores jovem-adulto?","acceptedAnswer":{"@type":"Answer","text":"Sim. A narrativa é jovem-adulto/adulto, sem conteúdo impróprio. Há ação, suspense, amizade e dilemas éticos/espirituais que dialogam bem com esse público."}},
-      {"@type":"Question","name":"Há elementos bíblicos ou a história é “religiosa”?","acceptedAnswer":{"@type":"Answer","text":"A obra é uma ficção cristã com simbologia inspirada no Rei Salomão e referências como o narrador Agur. Não é um sermão: fé e tecnologia se encontram para levantar questões sobre sabedoria, livre-arbítrio e poder."}},
-      {"@type":"Question","name":"Onde comprar e quais são os preços?","acceptedAnswer":{"@type":"Answer","text":"Impresso no Clube de Autores por R$ 66,81. E-book na Amazon por R$ 14,90 — gratuito para assinantes do Kindle Unlimited."}},
-      {"@type":"Question","name":"É um livro único ou parte de uma série?","acceptedAnswer":{"@type":"Answer","text":"É o primeiro volume de uma série. A trama abre portas para novos capítulos explorando as consequências do implante Solomon e o futuro dos personagens."}},
-      {"@type":"Question","name":"Quais temas centrais a história trabalha?","acceptedAnswer":{"@type":"Answer","text":"Fé e tecnologia; inteligência artificial e livre-arbítrio; ética de implantes neurais; amizade e chamado; o preço do poder e da “evolução” humana."}}
-    ]
-  }
-  </script>
-
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@graph": [
-    { "@type":"Person","name":"Daniel Killian","description":"Jovem que morreu e voltou; ligado ao implante neural Solomon.","url":"https://www.canticosdemachina.com.br/#protagonistas" },
-    { "@type":"Person","name":"Samui Yakeda","description":"Estudante e artista; vozes e visões a conduzem a um chamado silencioso.","url":"https://www.canticosdemachina.com.br/#protagonistas" },
-    { "@type":"Person","name":"Zuba Bomani","description":"Líder nato; atleta; mentora crianças de Yellen; guiado por justiça e coragem.","url":"https://www.canticosdemachina.com.br/#protagonistas" },
-    { "@type":"Person","name":"Natali Legrand","description":"Bailarina carismática; busca força além da fama e do talento.","url":"https://www.canticosdemachina.com.br/#protagonistas" }
-  ]
-}
-</script>
+  <!-- Scripts para animação e bootstrap -->
   <script>
     document.addEventListener('DOMContentLoaded', function () {
       const cards = document.querySelectorAll(".card-custom");
