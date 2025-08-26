@@ -1016,7 +1016,6 @@
       <p>Receba novidades de <em>Cânticos de Machina — Primavera Artificial</em>, extras de bastidores e promoções.</p>
 
       <form id="newsletter-form" class="row g-3" novalidate>
-        <!-- honeypot antispam (deixe escondido, mas visível para bots) -->
         <div class="col-12" style="position:absolute; left:-5000px;" aria-hidden="true">
           <label for="website">Deixe este campo em branco</label>
           <input id="website" name="website" type="text" tabindex="-1" autocomplete="off">
@@ -1043,84 +1042,6 @@
       </form>
     </section>
 
-    <script>
-      (function () {
-        const form = document.getElementById('newsletter-form');
-        const email = document.getElementById('newsletter-email');
-        const hp = document.getElementById('website');     // honeypot
-        const btn = document.getElementById('newsletter-btn');
-        const msgBox = document.getElementById('newsletter-msg');
-
-        // 👉 ajuste esta URL para o seu serviço Spring Boot
-        const ENDPOINT = 'http://vps43551.publiccloud.com.br:8080/sisgpiapi/api/newsletter/subscribe';
-
-        function showMsg(text, ok = true) {
-          msgBox.textContent = text;
-          msgBox.style.display = 'block';
-          msgBox.style.borderLeftColor = ok ? 'var(--cor-destaque)' : '#b91c1c';
-          msgBox.style.background = ok ? '#f1f5f9' : '#fee2e2';
-          msgBox.style.color = ok ? '#334155' : '#7f1d1d';
-        }
-
-        form.addEventListener('submit', async (e) => {
-          e.preventDefault();
-          msgBox.style.display = 'none';
-
-          // validações rápidas
-          if (hp.value) { return; } // bot
-          if (!email.value || !email.checkValidity()) {
-            email.classList.add('is-invalid');
-            email.focus();
-            return;
-          }
-          email.classList.remove('is-invalid');
-
-          // UI loading
-          btn.disabled = true;
-          const original = btn.innerHTML;
-          btn.innerHTML = '<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Enviando...';
-
-          try {
-            const payload = {
-              email: email.value.trim(),
-              // campos extras que você quiser versionar já
-              source: 'site',
-              locale: 'pt-BR',
-              consent: true
-            };
-
-            const res = await fetch(ENDPOINT, {
-              method: 'POST',
-              headers: { 'Content-Type': 'application/json' },
-              body: JSON.stringify(payload),
-              // se o endpoint estiver em outro domínio, ative CORS no backend
-              mode: 'cors',
-              credentials: 'omit'
-            });
-
-            if (res.status === 202) {
-              showMsg('Quase lá! Enviamos um e-mail de confirmação. Abra sua caixa de entrada para concluir a inscrição.');
-              form.reset();
-            } else if (res.status === 201 || res.ok) {
-              showMsg('Inscrição realizada com sucesso! Obrigado por acompanhar a saga.');
-              form.reset();
-            } else if (res.status === 409) {
-              showMsg('Esse e-mail já está inscrito. Se quiser, verifique sua caixa de entrada ou spam.', true);
-            } else if (res.status === 400) {
-              const data = await res.json().catch(() => ({}));
-              showMsg(data.message || 'E-mail inválido. Tente novamente.', false);
-            } else {
-              showMsg('Ops, não conseguimos enviar agora. Tente novamente em instantes.', false);
-            }
-          } catch (err) {
-            showMsg('Falha de conexão. Verifique sua internet e tente novamente.', false);
-          } finally {
-            btn.disabled = false;
-            btn.innerHTML = original;
-          }
-        });
-      })();
-    </script>
 
 
   </main>
