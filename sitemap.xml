@@ -1,17 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://www.canticosdemachina.com.br/</loc>
     <lastmod>2025-09-03</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>1.00</priority>
+
+    <!-- Imagens principais da home -->
+    <image:image>
+      <image:loc>https://www.canticosdemachina.com.br/img/capa_livro.jpg</image:loc>
+      <image:title><![CDATA[Capa do livro Cânticos de Machina — Primavera Artificial]]></image:title>
+      <image:caption><![CDATA[Capa do livro Cânticos de Machina — Primavera Artificial, de C. E. Gomes.]]></image:caption>
+    </image:image>
+
+    <image:image>
+      <image:loc>https://www.canticosdemachina.com.br/img/banner.jpg</image:loc>
+      <image:title><![CDATA[Banner Cânticos de Machina — Primavera Artificial]]></image:title>
+      <image:caption><![CDATA[Banner principal do site Cânticos de Machina.]]></image:caption>
+    </image:image>
+
+    <image:image>
+      <image:loc>https://www.canticosdemachina.com.br/img/logo-nome.png</image:loc>
+      <image:title><![CDATA[Logo — Cânticos de Machina]]></image:title>
+      <image:caption><![CDATA[Logotipo do site Cânticos de Machina.]]></image:caption>
+    </image:image>
+
+    <!-- Protagonistas -->
+    <image:image>
+      <image:loc>https://www.canticosdemachina.com.br/img/protagonistas/daniel.jpg</image:loc>
+      <image:title><![CDATA[Daniel Killian — protagonista]]></image:title>
+      <image:caption><![CDATA[Ilustração de Daniel Killian, personagem de Cânticos de Machina.]]></image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.canticosdemachina.com.br/img/protagonistas/samui.jpg</image:loc>
+      <image:title><![CDATA[Samui Yakeda — protagonista]]></image:title>
+      <image:caption><![CDATA[Ilustração de Samui Yakeda, personagem de Cânticos de Machina.]]></image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.canticosdemachina.com.br/img/protagonistas/zuba.jpg</image:loc>
+      <image:title><![CDATA[Zuba Bomani — protagonista]]></image:title>
+      <image:caption><![CDATA[Ilustração de Zuba Bomani, personagem de Cânticos de Machina.]]></image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.canticosdemachina.com.br/img/protagonistas/natali.jpg</image:loc>
+      <image:title><![CDATA[Natali Legrand — protagonista]]></image:title>
+      <image:caption><![CDATA[Ilustração de Natali Legrand, personagem de Cânticos de Machina.]]></image:caption>
+    </image:image>
   </url>
-  <!-- Se criar páginas reais, acrescente-as aqui:
-  <url>
-    <loc>https://www.canticosdemachina.com.br/sobre</loc>
-    <lastmod>2025-09-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  -->
 </urlset>
