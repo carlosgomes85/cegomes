@@ -20,7 +20,7 @@
 
   <title>Cânticos de Machina – Primavera Artificial (Ficção Cristã & Sci-Fi) | C. E. Gomes</title>
   <meta name="description"
-    content="Cânticos de Machina – Primavera Artificial: ficção cristã e ficção científica que cruzam fé, IA e implantes neurais. Leia a sinopse e compre o livro impresso ou e-book.">
+    content="Cânticos de Machina – Primavera Artificial: ficção cristã e ficção científica que cruzam fé, IA e implantes neurais. Leia a sinopse e compre o livro impresso (Amazon/Clube de Autores) ou e-book.">
   <!-- Removido meta keywords (Google ignora) -->
   <meta name="author" content="C. E. Gomes" />
   <!-- Robots com políticas de preview para CTR -->
@@ -37,7 +37,7 @@
   <!-- Open Graph -->
   <meta property="og:title" content="Cânticos de Machina – Primavera Artificial">
   <meta property="og:description"
-    content="Uma ficção cristã sobre fé, inteligência artificial, implantes cerebrais e os dilemas da humanidade.">
+    content="Uma ficção cristã sobre fé, inteligência artificial, implantes cerebrais e os dilemas da humanidade. Disponível impresso na Amazon e no Clube de Autores.">
   <meta property="og:image" content="https://www.canticosdemachina.com.br/img/capa_livro.jpg">
   <meta property="og:image:alt" content="Capa do livro Cânticos de Machina — Primavera Artificial">
   <meta property="og:image:width" content="1200">
@@ -68,9 +68,7 @@
       --texto-principal: #1f2937;
     }
 
-    html {
-      scroll-behavior: smooth;
-    }
+    html { scroll-behavior: smooth; }
 
     body {
       background-color: var(--cor-secundaria);
@@ -80,388 +78,120 @@
     }
 
     .skip-link {
-      position: absolute;
-      left: -999px;
-      top: auto;
-      width: 1px;
-      height: 1px;
-      overflow: hidden;
+      position: absolute; left: -999px; top: auto; width: 1px; height: 1px; overflow: hidden;
     }
-
     .skip-link:focus {
-      left: 16px;
-      top: 10px;
-      width: auto;
-      height: auto;
-      padding: 8px 10px;
-      z-index: 2000;
-      background: #fff;
-      border-radius: 8px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, .15);
+      left: 16px; top: 10px; width: auto; height: auto; padding: 8px 10px; z-index: 2000;
+      background: #fff; border-radius: 8px; box-shadow: 0 4px 12px rgba(0, 0, 0, .15);
     }
 
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6,
-    section h2 {
-      font-family: 'Orbitron', sans-serif;
-      letter-spacing: .5px;
-    }
+    h1,h2,h3,h4,h5,h6, section h2 { font-family: 'Orbitron', sans-serif; letter-spacing: .5px; }
+    .navbar-brand, .navbar-nav .nav-link { font-family: 'Orbitron', sans-serif; letter-spacing: .5px; }
 
-    .navbar-brand,
-    .navbar-nav .nav-link {
-      font-family: 'Orbitron', sans-serif;
-      letter-spacing: .5px;
-    }
-
-    /* Fundo leve */
     .bg-pattern {
-      position: fixed;
-      inset: 0;
-      z-index: -3;
+      position: fixed; inset: 0; z-index: -3;
       background:
         radial-gradient(circle at 1px 1px, rgba(0, 0, 0, .06) 1.2px, transparent 1.2px) 0 0/22px 22px,
         linear-gradient(180deg, #f1f5f9 0%, #f9fafb 60%, #ffffff 100%);
-      will-change: background-position;
-      opacity: .9;
+      will-change: background-position; opacity: .9;
+    }
+    @media (prefers-reduced-motion:no-preference){
+      .bg-pattern { animation: gridShift 60s linear infinite; }
+      @keyframes gridShift { from { background-position: 0 0, 0 0; } to { background-position: 200px 0, 0 0; } }
     }
 
-    @media (prefers-reduced-motion:no-preference) {
-      .bg-pattern {
-        animation: gridShift 60s linear infinite;
-      }
-
-      @keyframes gridShift {
-        from {
-          background-position: 0 0, 0 0;
-        }
-
-        to {
-          background-position: 200px 0, 0 0;
-        }
-      }
-    }
-
-    .navbar {
-      background-color: var(--cor-principal);
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    }
-
-    .navbar-brand img {
-      border-radius: 8px;
-      width: 250px;
-      height: auto;
-      object-fit: contain;
-      display: block;
-      margin: 10px;
-      padding: 0;
-    }
-
-    .navbar-nav .nav-link {
-      color: var(--texto-principal) !important;
-      font-weight: 500;
-    }
-
-    .navbar-nav .nav-link:hover {
-      color: var(--cor-destaque) !important;
-      font-weight: 550;
-    }
-
-    .navbar-toggler {
-      border-color: rgba(0, 0, 0, 0.5);
-    }
-
+    .navbar { background-color: var(--cor-principal); box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+    .navbar-brand img { border-radius: 8px; width: 250px; height: auto; object-fit: contain; display: block; margin: 10px; padding: 0; }
+    .navbar-nav .nav-link { color: var(--texto-principal) !important; font-weight: 500; }
+    .navbar-nav .nav-link:hover { color: var(--cor-destaque) !important; font-weight: 550; }
+    .navbar-toggler { border-color: rgba(0,0,0,0.5); }
     .navbar-toggler-icon {
       background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba(31,41,55,0.9)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
     }
 
-    /* Header com a CAPA em blur 0px */
     .parallax-header {
-      position: relative;
-      color: white;
-      min-height: 520px;
-      display: flex;
-      align-items: center;
-      overflow: hidden;
-      z-index: 0;
+      position: relative; color: white; min-height: 520px; display: flex; align-items: center; overflow: hidden; z-index: 0;
     }
-
     .parallax-header::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: url("./img/banner.png") center/cover no-repeat;
-      filter: blur(0px);
-      transform: scale(1.08);
-      z-index: -2;
+      content: ""; position: absolute; inset: 0;
+      background: url("./img/banner.png") center/cover no-repeat; filter: blur(0px); transform: scale(1.08); z-index: -2;
     }
+    .parallax-header::after { content: ""; position: absolute; inset: 0; background: rgba(0,0,0,0.38); z-index: -1; }
+    .parallax-header .container { position: relative; z-index: 1; }
+    .parallax-header h1 { font-size: clamp(2rem, 5vw, 3rem); font-weight: 700; }
+    .parallax-header h2 { font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 600; }
+    .parallax-header h3 { font-size: 1rem; font-weight: 400; margin-top: 10px; color: #e5e7eb; }
 
-    .parallax-header::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: rgba(0, 0, 0, 0.38);
-      z-index: -1;
-    }
+    .cta-wrap { margin-top: 18px; display: flex; gap: 12px; flex-wrap: wrap; }
 
-    .parallax-header .container {
-      position: relative;
-      z-index: 1;
-    }
-
-    .parallax-header h1 {
-      font-size: clamp(2rem, 5vw, 3rem);
-      font-weight: 700;
-    }
-
-    .parallax-header h2 {
-      font-size: clamp(1.5rem, 3vw, 2rem);
-      font-weight: 600;
-    }
-
-    .parallax-header h3 {
-      font-size: 1rem;
-      font-weight: 400;
-      margin-top: 10px;
-      color: #e5e7eb;
-    }
-
-    .cta-wrap {
-      margin-top: 18px;
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-    }
-
-    section h2 {
-      color: var(--cor-destaque);
-      font-weight: 600;
-      margin-bottom: 20px;
-    }
+    section h2 { color: var(--cor-destaque); font-weight: 600; margin-bottom: 20px; }
 
     .price-note {
-      font-size: .95rem;
-      color: #334155;
-      background: #f1f5f9;
-      border-left: 4px solid var(--cor-destaque);
-      padding: .6rem .8rem;
-      border-radius: .25rem;
+      font-size: .95rem; color: #334155; background: #f1f5f9; border-left: 4px solid var(--cor-destaque);
+      padding: .6rem .8rem; border-radius: .25rem;
     }
 
     .card-custom {
-      background-color: #fff;
-      border: none;
-      border-radius: 16px;
-      padding: 30px;
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
-      margin-bottom: 50px;
-      opacity: 0;
-      transform: translateY(20px);
+      background-color: #fff; border: none; border-radius: 16px; padding: 30px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.06); margin-bottom: 50px; opacity: 0; transform: translateY(20px);
       transition: all .6s ease;
     }
+    .card-custom.show { opacity: 1; transform: translateY(0); }
+    .card-custom:hover { transform: scale(1.02); }
+    .card-custom:nth-of-type(1){ transition-delay: .2s }
+    .card-custom:nth-of-type(2){ transition-delay: .4s }
 
-    .card-custom.show {
-      opacity: 1;
-      transform: translateY(0);
-    }
+    .btn-primary { background-color: var(--cor-destaque); border: none; font-size: 1.1rem; padding: 12px 28px; font-weight: 600; }
+    .btn-primary:hover { background-color: #123a62; transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.15); }
 
-    .card-custom:hover {
-      transform: scale(1.02);
-    }
+    footer { background-color: var(--texto-principal); color: #fff; padding: 20px 0; }
+    footer a { color: #d4d4d4; text-decoration: none; }
+    footer a:hover { color: #0dcaf0; }
 
-    .card-custom:nth-of-type(1) {
-      transition-delay: .2s
-    }
-
-    .card-custom:nth-of-type(2) {
-      transition-delay: .4s
-    }
-
-    .btn-primary {
-      background-color: var(--cor-destaque);
-      border: none;
-      font-size: 1.1rem;
-      padding: 12px 28px;
-      font-weight: 600;
-    }
-
-    .btn-primary:hover {
-      background-color: #123a62;
-      transform: translateY(-2px);
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    }
-
-    footer {
-      background-color: var(--texto-principal);
-      color: #fff;
-      padding: 20px 0;
-    }
-
-    footer a {
-      color: #d4d4d4;
-      text-decoration: none;
-    }
-
-    footer a:hover {
-      color: #0dcaf0;
-    }
-
-    .avatar {
-      width: 250px;
-      height: 250px;
-      border-radius: 20%;
-      object-fit: cover;
-      border: 0;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    }
+    .avatar { width: 250px; height: 250px; border-radius: 20%; object-fit: cover; border: 0; box-shadow: 0 4px 12px rgba(0,0,0,0.15); }
 
     .char-portrait {
-      width: 100%;
-      max-width: 320px;
-      aspect-ratio: 4/5;
-      object-fit: cover;
-      border-radius: 16px;
-      box-shadow: 0 8px 24px rgba(0, 0, 0, .08);
-      border: 0;
+      width: 100%; max-width: 320px; aspect-ratio: 4/5; object-fit: cover; border-radius: 16px;
+      box-shadow: 0 8px 24px rgba(0,0,0,.08); border: 0;
     }
 
-    /* Menu social fixo (desktop) */
     .social-menu {
-      position: fixed;
-      top: 50%;
-      right: 0;
-      transform: translateY(-50%);
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
-      padding: 10px;
-      background-color: rgba(255, 255, 255, 0.9);
-      border-radius: 8px 0 0 8px;
-      box-shadow: -2px 4px 12px rgba(0, 0, 0, 0.2);
-      z-index: 999;
+      position: fixed; top: 50%; right: 0; transform: translateY(-50%); display: flex; flex-direction: column; gap: 15px;
+      padding: 10px; background-color: rgba(255,255,255,0.9); border-radius: 8px 0 0 8px; box-shadow: -2px 4px 12px rgba(0,0,0,0.2); z-index: 999;
     }
+    .social-menu a { color: var(--texto-principal); font-size: 22px; transition: all .3s; }
+    .social-menu a:hover { color: var(--cor-destaque); transform: scale(1.2); }
+    @media (max-width:768px){ .social-menu { display:none; } }
 
-    .social-menu a {
-      color: var(--texto-principal);
-      font-size: 22px;
-      transition: all .3s;
-    }
+    .capa-livro { width: 60%; border: 2px solid #e0e0e0; box-shadow: 0 8px 24px rgba(0,0,0,0.1); border-radius: 12px; }
+    @media (min-width:992px){ .capa-livro { width: 85%; } }
 
-    .social-menu a:hover {
-      color: var(--cor-destaque);
-      transform: scale(1.2);
-    }
-
-    @media (max-width:768px) {
-      .social-menu {
-        display: none;
-      }
-    }
-
-    .capa-livro {
-      width: 60%;
-      border: 2px solid #e0e0e0;
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
-      border-radius: 12px;
-    }
-
-    @media (min-width:992px) {
-      .capa-livro {
-        width: 85%;
-      }
-    }
-
-    /* CTA FIXA no MOBILE */
     .mobile-cta {
-      position: fixed;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: rgba(255, 255, 255, 0.96);
-      border-top: 1px solid #e5e7eb;
-      padding: 10px 12px;
-      padding-bottom: calc(10px + env(safe-area-inset-bottom, 0px));
-      backdrop-filter: blur(8px);
-      z-index: 1100;
-      display: none;
-      max-height: 45vh;
-      overflow: auto;
+      position: fixed; left: 0; right: 0; bottom: 0; background: rgba(255,255,255,0.96);
+      border-top: 1px solid #e5e7eb; padding: 10px 12px; padding-bottom: calc(10px + env(safe-area-inset-bottom, 0px));
+      backdrop-filter: blur(8px); z-index: 1100; display: none; max-height: 45vh; overflow: auto;
     }
-
-    .mobile-cta .btn {
-      width: 100%;
-    }
-
+    .mobile-cta .btn { width: 100%; }
     .mobile-cta .btn-outline-primary {
-      width: 40px;
-      height: 40px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 0;
+      width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; padding: 0;
     }
+    @media (max-width:768px){ .mobile-cta { display:block; } body { padding-bottom: 160px; } .cta-wrap { display: none; } }
 
-    @media (max-width:768px) {
-      .mobile-cta {
-        display: block;
-      }
-
-      body {
-        padding-bottom: 130px;
-      }
-
-      .cta-wrap {
-        display: none;
-      }
-    }
-
-    /* Chips de contato */
     .contact-chip {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      padding: 12px 14px;
-      border-radius: 12px;
-      text-decoration: none;
-      background: #fff;
-      border: 1px solid #e5e7eb;
-      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
-      transition: transform .15s ease, box-shadow .15s ease, border-color .15s ease;
-      color: var(--texto-principal);
+      display: flex; align-items: center; gap: 10px; padding: 12px 14px; border-radius: 12px; text-decoration: none;
+      background: #fff; border: 1px solid #e5e7eb; box-shadow: 0 4px 14px rgba(0,0,0,0.04);
+      transition: transform .15s ease, box-shadow .15s ease, border-color .15s ease; color: var(--texto-principal);
     }
-
-    .contact-chip i {
-      font-size: 18px;
-    }
-
-    .contact-chip .label {
-      font-weight: 600;
-      letter-spacing: .2px;
-    }
-
-    .contact-chip .sub {
-      font-size: 12px;
-      color: #6b7280;
-      margin-left: auto;
-    }
-
+    .contact-chip i { font-size: 18px; }
+    .contact-chip .label { font-weight: 600; letter-spacing: .2px; }
+    .contact-chip .sub { font-size: 12px; color: #6b7280; margin-left: auto; }
     .contact-chip:hover {
-      transform: translateY(-2px);
-      border-color: var(--cor-destaque);
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+      transform: translateY(-2px); border-color: var(--cor-destaque); box-shadow: 0 8px 20px rgba(0,0,0,0.08);
       color: var(--texto-principal);
     }
 
-    @media (prefers-reduced-motion:reduce) {
-
-      .card-custom,
-      .card-custom:hover {
-        transition: none;
-        transform: none;
-      }
+    @media (prefers-reduced-motion:reduce){
+      .card-custom, .card-custom:hover { transition: none; transform: none; }
     }
   </style>
 </head>
@@ -520,17 +250,21 @@
       </h3>
 
       <div class="cta-wrap d-flex justify-content-center flex-wrap gap-3 mt-3 d-none d-md-flex">
+        <a href="https://www.amazon.com.br/dp/6552783329" target="_blank" rel="noopener"
+          class="btn btn-primary">
+          <i class="bi bi-cart-fill"></i> Comprar livro impresso (Amazon)
+        </a>
         <a href="https://clubedeautores.com.br/livro/canticos-de-machina" target="_blank" rel="noopener"
           class="btn btn-primary">
-          <i class="bi bi-cart-fill"></i> Comprar livro impresso
+          <i class="bi bi-bag"></i> Livro impresso (Clube de Autores)
         </a>
         <a href="https://a.co/d/7uYBpvn" target="_blank" rel="noopener" class="btn btn-primary">
           <i class="bi bi-book"></i> E-book Amazon
         </a>
       </div>
       <p class="mt-3 mb-0 price-note d-none d-md-inline-block">
-        Impresso no Clube de Autores: <strong>R$ 67,00</strong> • E-book na Amazon: <strong>R$ 9,90</strong> ou
-        <strong>gratuito</strong> no Kindle Unlimited
+        Impresso na <strong>Amazon</strong> e no <strong>Clube de Autores</strong>: <strong>R$ 67,00</strong> •
+        E-book na Amazon: <strong>R$ 9,90</strong> ou <strong>gratuito</strong> no Kindle Unlimited
       </p>
     </div>
   </header>
@@ -578,18 +312,27 @@
             class="img-fluid rounded capa-livro mb-3" loading="lazy" decoding="async" />
           <p class="text-secondary small mb-1">Disponível em versão <strong>impressa</strong> e <strong>e-book</strong>.
           </p>
-          <p class="price-note mb-0">Impresso: <strong>R$ 67,00</strong> • E-book: <strong>R$ 9,90</strong> (Kindle
-            Unlimited: <strong>gratuito</strong>)</p>
+          <p class="price-note mb-0">
+            Impresso (Amazon e Clube de Autores): <strong>R$ 67,00</strong> •
+            E-book: <strong>R$ 9,90</strong> (Kindle Unlimited: <strong>gratuito</strong>)
+          </p>
         </div>
       </div>
       <div class="row align-items-center p-2">
         <div class="col-12 mt-4 mt-lg-0" role="group" aria-label="Links de compra">
 
-          <div class="row row-cols-1 row-cols-md-2 g-2 g-md-3 justify-content-center">
+          <div class="row row-cols-1 row-cols-md-3 g-2 g-md-3 justify-content-center">
+            <div class="col d-grid">
+              <a href="https://www.amazon.com.br/dp/6552783329" target="_blank" rel="noopener"
+                class="btn btn-primary w-100 d-flex align-items-center justify-content-center text-break">
+                <i class="bi bi-cart-fill me-2" aria-hidden="true"></i> Impresso (Amazon)
+              </a>
+            </div>
+
             <div class="col d-grid">
               <a href="https://clubedeautores.com.br/livro/canticos-de-machina" target="_blank" rel="noopener"
                 class="btn btn-primary w-100 d-flex align-items-center justify-content-center text-break">
-                <i class="bi bi-cart-fill me-2" aria-hidden="true"></i> Comprar o livro impresso
+                <i class="bi bi-bag me-2" aria-hidden="true"></i> Impresso (Clube de Autores)
               </a>
             </div>
 
@@ -825,12 +568,13 @@
           </h3>
           <div id="faq4" class="accordion-collapse collapse" aria-labelledby="faq4h" data-bs-parent="#faqAccordion">
             <div class="accordion-body">
-              Impresso no Clube de Autores por <strong>R$ 67,00</strong>. E-book na Amazon por <strong>R$ 9,90</strong>
-              — <strong>gratuito</strong> para assinantes do Kindle Unlimited.
+              Impresso na <strong>Amazon</strong> e no <strong>Clube de Autores</strong> por <strong>R$ 67,00</strong>.
+              E-book na Amazon por <strong>R$ 9,90</strong> — <strong>gratuito</strong> para assinantes do Kindle Unlimited.
               <div class="mt-2 d-flex flex-wrap gap-2">
                 <a class="btn btn-primary btn-sm" target="_blank" rel="noopener"
-                  href="https://clubedeautores.com.br/livro/canticos-de-machina"><i class="bi bi-cart-fill"></i> Comprar
-                  impresso</a>
+                  href="https://www.amazon.com.br/dp/6552783329"><i class="bi bi-cart-fill"></i> Impresso (Amazon)</a>
+                <a class="btn btn-primary btn-sm" target="_blank" rel="noopener"
+                  href="https://clubedeautores.com.br/livro/canticos-de-machina"><i class="bi bi-bag"></i> Impresso (Clube de Autores)</a>
                 <a class="btn btn-primary btn-sm" target="_blank" rel="noopener" href="https://a.co/d/7uYBpvn"><i
                     class="bi bi-book"></i> E-book na Amazon</a>
               </div>
@@ -1030,9 +774,13 @@
   <div class="mobile-cta" role="region" aria-label="Ações rápidas no mobile">
     <div class="container">
       <div class="d-grid gap-2">
+        <a href="https://www.amazon.com.br/dp/6552783329" target="_blank" rel="noopener"
+          class="btn btn-primary btn-sm">
+          <i class="bi bi-cart-fill me-1"></i> Livro impresso (Amazon)
+        </a>
         <a href="https://clubedeautores.com.br/livro/canticos-de-machina" target="_blank" rel="noopener"
           class="btn btn-primary btn-sm">
-          <i class="bi bi-cart-fill me-1"></i> Livro impresso
+          <i class="bi bi-bag me-1"></i> Livro impresso (Clube de Autores)
         </a>
         <a href="https://a.co/d/7uYBpvn" target="_blank" rel="noopener" class="btn btn-primary btn-sm">
           <i class="bi bi-book me-1"></i> E-book Amazon
@@ -1118,6 +866,15 @@
   "offers":[
     {
       "@type":"Offer",
+      "url":"https://www.amazon.com.br/dp/6552783329",
+      "priceCurrency":"BRL",
+      "price":"67.00",
+      "availability":"https://schema.org/InStock",
+      "itemCondition":"https://schema.org/NewCondition",
+      "name":"Livro impresso (Amazon)"
+    },
+    {
+      "@type":"Offer",
       "url":"https://clubedeautores.com.br/livro/canticos-de-machina",
       "priceCurrency":"BRL",
       "price":"67.00",
@@ -1162,7 +919,7 @@
       {"@type":"Question","name":"Preciso entender de tecnologia para aproveitar a leitura?","acceptedAnswer":{"@type":"Answer","text":"Não. Os conceitos de IA, implantes neurais e realidades virtuais são explicados de forma acessível, com foco em personagens, escolhas morais e consequências humanas."}},
       {"@type":"Question","name":"O livro é adequado para leitores jovem-adulto?","acceptedAnswer":{"@type":"Answer","text":"Sim. A narrativa é jovem-adulto/adulto, sem conteúdo impróprio. Há ação, suspense, amizade e dilemas éticos/espirituais que dialogam bem com esse público."}},
       {"@type":"Question","name":"Há elementos bíblicos ou a história é “religiosa”?","acceptedAnswer":{"@type":"Answer","text":"A obra é uma ficção cristã que traz simbologia inspirada no Rei Salomão e no livro de Cantares, além de referências a personagens bíblicos como Agur, o profeta Natã e Abiatar. Não se trata de um sermão: é o encontro entre fé e tecnologia para levantar questões sobre sabedoria, livre-arbítrio e poder."}},
-      {"@type":"Question","name":"Onde comprar e quais são os preços?","acceptedAnswer":{"@type":"Answer","text":"Impresso no Clube de Autores por R$ 67,00. E-book na Amazon por R$ 9,90 — gratuito para assinantes do Kindle Unlimited."}},
+      {"@type":"Question","name":"Onde comprar e quais são os preços?","acceptedAnswer":{"@type":"Answer","text":"Impresso na Amazon e no Clube de Autores por R$ 67,00. E-book na Amazon por R$ 9,90 — gratuito para assinantes do Kindle Unlimited."}},
       {"@type":"Question","name":"É um livro único ou parte de uma série?","acceptedAnswer":{"@type":"Answer","text":"É o primeiro volume de uma série. A trama abre portas para novos capítulos explorando as consequências do implante Solomon e o futuro dos personagens."}},
       {"@type":"Question","name":"Quais temas centrais a história trabalha?","acceptedAnswer":{"@type":"Answer","text":"Fé e tecnologia; inteligência artificial e livre-arbítrio; ética de implantes neurais; amizade e chamado; o preço do poder e da “evolução” humana."}}
     ]
