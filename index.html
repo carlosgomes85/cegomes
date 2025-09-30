@@ -167,28 +167,52 @@
     @media (min-width:992px){ .capa-livro { width: 85%; } }
 
 
-	.mobile-cta {
-	  position: fixed;
-	  left: 0; right: 0; bottom: 0;
-	  background: rgba(255,255,255,0.96);
-	  border-top: 1px solid #e5e7eb;
-	  padding: 8px 10px;
-	  padding-bottom: calc(8px + env(safe-area-inset-bottom, 0px));
-	  backdrop-filter: blur(8px);
-	  z-index: 1100; display: none;
-	}
-	@media (max-width:768px){
-	  .mobile-cta { display:block; }
-	  /* reduz o espaço reservado pelo corpo já que a barra ficou menor */
-	  body { padding-bottom: 84px; }
-	}
-	.mobile-cta .btn {
-	  --bs-btn-padding-y: .375rem; /* menor altura */
-	  --bs-btn-padding-x: .5rem;
-	  --bs-btn-font-size: .9rem;
-	}
-	.mobile-cta .btn i { font-size: 1rem; }
-	.mobile-cta .dropdown-menu a i { width: 1rem; text-align: center; }
+/* ===== Mobile CTA (simétrico e compacto) ===== */
+.mobile-cta{
+  position:fixed; left:0; right:0; bottom:0;
+  background:rgba(255,255,255,.96);
+  border-top:1px solid #e5e7eb;
+  padding:8px 10px;
+  padding-bottom:calc(8px + env(safe-area-inset-bottom,0px));
+  backdrop-filter:blur(8px);
+  z-index:1100; display:none;
+}
+@media (max-width:768px){
+  .mobile-cta{ display:block; }
+  body{ padding-bottom:84px; } /* reserva a altura da barra */
+}
+
+/* Grid com 3 colunas iguais */
+.mobile-cta .cta-grid{
+  display:grid; grid-template-columns:repeat(3,1fr);
+  gap:8px; align-items:stretch;
+}
+
+/* Botões uniformes */
+.mobile-cta .btn-cta{
+  display:flex; align-items:center; justify-content:center;
+  gap:.4rem;
+  padding:.5rem .6rem;                 /* altura enxuta */
+  font-size:.92rem; line-height:1.1;   /* mesma altura de linha */
+  font-weight:600; border-radius:.6rem;
+  min-height:40px;                     /* altura consistente */
+  white-space:nowrap;
+}
+
+/* Ícones e caret alinhados */
+.mobile-cta .btn-cta i{ font-size:1rem; line-height:1; }
+.mobile-cta .dropdown-toggle::after{ margin-left:.35rem; }
+
+/* Menu do dropup */
+.mobile-cta .dropdown-menu{
+  inset:auto auto 100% 0 !important;   /* sobe como dropup */
+  transform:translateY(-6px) !important;
+}
+
+/* Micro-ajuste de labels muito longos em telas estreitas */
+@media (max-width:360px){
+  .mobile-cta .btn-cta .label{ font-weight:600; letter-spacing:.1px; }
+}
 
 
     .contact-chip {
@@ -785,63 +809,59 @@
   </main>
 
   <!-- CTA fixa no mobile -->
-	<div class="mobile-cta" role="region" aria-label="Ações rápidas no mobile">
-	  <div class="container">
-		<div class="d-flex align-items-center gap-2">
-		  <!-- Principal: Impresso (Amazon) -->
-		  <a href="https://www.amazon.com.br/dp/6552783329"
-			 target="_blank" rel="noopener"
-			 class="btn btn-primary btn-sm flex-fill"
-			 aria-label="Comprar livro impresso na Amazon">
-			<i class="bi bi-cart-fill me-1" aria-hidden="true"></i>
-			Impresso
-		  </a>
+<div class="mobile-cta" role="region" aria-label="Ações rápidas no mobile">
+  <div class="container">
+    <div class="cta-grid">
+      <!-- Impresso (Amazon) -->
+      <a href="https://www.amazon.com.br/dp/6552783329" target="_blank" rel="noopener"
+         class="btn btn-primary btn-cta" aria-label="Comprar livro impresso na Amazon">
+        <i class="bi bi-cart-fill" aria-hidden="true"></i>
+        <span class="label">Impresso</span>
+      </a>
 
-		  <!-- E-book -->
-		  <a href="https://a.co/d/7uYBpvn"
-			 target="_blank" rel="noopener"
-			 class="btn btn-primary btn-sm flex-fill"
-			 aria-label="Comprar e-book na Amazon">
-			<i class="bi bi-book me-1" aria-hidden="true"></i>
-			E-book
-		  </a>
+      <!-- E-book -->
+      <a href="https://a.co/d/7uYBpvn" target="_blank" rel="noopener"
+         class="btn btn-primary btn-cta" aria-label="Comprar e-book na Amazon">
+        <i class="bi bi-book" aria-hidden="true"></i>
+        <span class="label">E-book</span>
+      </a>
 
-		  <!-- Avaliar (dropup) -->
-		  <div class="dropup flex-fill">
-			<button class="btn btn-outline-primary btn-sm w-100 dropdown-toggle"
-					type="button" data-bs-toggle="dropdown" aria-expanded="false"
-					aria-label="Abrir opções para avaliar o livro">
-			  <i class="bi bi-stars me-1" aria-hidden="true"></i>
-			  Avaliar
-			</button>
-			<ul class="dropdown-menu shadow dropdown-menu-end">
-			  <li>
-				<a class="dropdown-item" href="https://a.co/d/7uYBpvn" target="_blank" rel="noopener">
-				  <i class="bi bi-amazon me-2" aria-hidden="true"></i> Amazon
-				</a>
-			  </li>
-			  <li>
-				<a class="dropdown-item" href="https://www.skoob.com.br/canticos-de-machina-primavera-artificial-122595444ed122598175.html" target="_blank" rel="noopener">
-				  <i class="bi bi-chat-quote me-2" aria-hidden="true"></i> Skoob
-				</a>
-			  </li>
-			  <li>
-				<a class="dropdown-item" href="https://www.goodreads.com/book/show/239675050-c-nticos-de-machina" target="_blank" rel="noopener">
-				  <i class="bi bi-chat-quote-fill me-2" aria-hidden="true"></i> Goodreads
-				</a>
-			  </li>
-			  <!-- Opcional: manter avaliação no Clube de Autores aqui, se quiser -->
-			  <li><hr class="dropdown-divider"></li>
-			  <li>
-				<a class="dropdown-item" href="https://clubedeautores.com.br/livro/canticos-de-machina" target="_blank" rel="noopener">
-				  <i class="bi bi-bag me-2" aria-hidden="true"></i> Clube de Autores
-				</a>
-			  </li>
-			</ul>
-		  </div>
-		</div>
-	  </div>
-	</div>
+      <!-- Avaliar (dropup) -->
+      <div class="dropup">
+        <button class="btn btn-outline-primary btn-cta dropdown-toggle w-100"
+                type="button" data-bs-toggle="dropdown" aria-expanded="false"
+                aria-label="Abrir opções para avaliar o livro">
+          <i class="bi bi-stars" aria-hidden="true"></i>
+          <span class="label">Avaliar</span>
+        </button>
+        <ul class="dropdown-menu shadow dropdown-menu-end">
+          <li>
+            <a class="dropdown-item" href="https://a.co/d/7uYBpvn" target="_blank" rel="noopener">
+              <i class="bi bi-amazon me-2" aria-hidden="true"></i> Amazon
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item" href="https://www.skoob.com.br/canticos-de-machina-primavera-artificial-122595444ed122598175.html" target="_blank" rel="noopener">
+              <i class="bi bi-chat-quote me-2" aria-hidden="true"></i> Skoob
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item" href="https://www.goodreads.com/book/show/239675050-c-nticos-de-machina" target="_blank" rel="noopener">
+              <i class="bi bi-chat-quote-fill me-2" aria-hidden="true"></i> Goodreads
+            </a>
+          </li>
+          <!-- Mantive Clube de Autores apenas aqui (opcional: remova este <li> se quiser tirar do menu flutuante) -->
+          <li><hr class="dropdown-divider"></li>
+          <li>
+            <a class="dropdown-item" href="https://clubedeautores.com.br/livro/canticos-de-machina" target="_blank" rel="noopener">
+              <i class="bi bi-bag me-2" aria-hidden="true"></i> Clube de Autores
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
 
   <!-- Rodapé -->
   <footer class="text-center">
