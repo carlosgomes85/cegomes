@@ -214,6 +214,15 @@
   .mobile-cta .btn-cta .label{ font-weight:600; letter-spacing:.1px; }
 }
 
+.mobile-cta .cta-label {
+  font-size: .8rem;
+  font-weight: 600;
+  text-align: center;
+  color: #374151;          /* cinza discreto */
+  margin-bottom: 6px;      /* espaço entre label e botões */
+  letter-spacing: .2px;
+}
+
 
     .contact-chip {
       display: flex; align-items: center; gap: 10px; padding: 12px 14px; border-radius: 12px; text-decoration: none;
@@ -809,8 +818,12 @@
   </main>
 
   <!-- CTA fixa no mobile -->
-<div class="mobile-cta" role="region" aria-label="Ações rápidas no mobile">
+<!-- CTA fixa no mobile (simétrica) -->
+<div class="mobile-cta px-2 py-3" role="region" aria-label="Ações rápidas no mobile">
   <div class="container">
+    <!-- Label de contexto -->
+    <p class="cta-label mb-2">Garanta o seu ou deixe sua avaliação se já leu:</p>
+
     <div class="cta-grid">
       <!-- Impresso (Amazon) -->
       <a href="https://www.amazon.com.br/dp/6552783329" target="_blank" rel="noopener"
@@ -837,24 +850,23 @@
         <ul class="dropdown-menu shadow dropdown-menu-end">
           <li>
             <a class="dropdown-item" href="https://a.co/d/7uYBpvn" target="_blank" rel="noopener">
-              <i class="bi bi-amazon me-2" aria-hidden="true"></i> Amazon
+              <i class="bi bi-amazon me-2"></i> Amazon
             </a>
           </li>
           <li>
             <a class="dropdown-item" href="https://www.skoob.com.br/canticos-de-machina-primavera-artificial-122595444ed122598175.html" target="_blank" rel="noopener">
-              <i class="bi bi-chat-quote me-2" aria-hidden="true"></i> Skoob
+              <i class="bi bi-chat-quote me-2"></i> Skoob
             </a>
           </li>
           <li>
             <a class="dropdown-item" href="https://www.goodreads.com/book/show/239675050-c-nticos-de-machina" target="_blank" rel="noopener">
-              <i class="bi bi-chat-quote-fill me-2" aria-hidden="true"></i> Goodreads
+              <i class="bi bi-chat-quote-fill me-2"></i> Goodreads
             </a>
           </li>
-          <!-- Mantive Clube de Autores apenas aqui (opcional: remova este <li> se quiser tirar do menu flutuante) -->
           <li><hr class="dropdown-divider"></li>
           <li>
             <a class="dropdown-item" href="https://clubedeautores.com.br/livro/canticos-de-machina" target="_blank" rel="noopener">
-              <i class="bi bi-bag me-2" aria-hidden="true"></i> Clube de Autores
+              <i class="bi bi-bag me-2"></i> Clube de Autores
             </a>
           </li>
         </ul>
