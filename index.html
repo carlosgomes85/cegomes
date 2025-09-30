@@ -223,6 +223,32 @@
   letter-spacing: .2px;
 }
 
+/* Dropup do "Avaliar" abrindo para a esquerda e sem estourar a tela */
+.mobile-cta .dropup { position: relative; }
+
+.mobile-cta .dropup .dropdown-menu{
+  /* ancorado à direita do botão -> expande para a esquerda */
+  right: 0 !important;
+  left: auto !important;
+  inset: auto auto 100% 0 !important;   /* mantém como dropup */
+  transform: translateY(-6px) !important;
+
+  /* limites de largura seguros no mobile */
+  width: max-content;        /* usa o conteúdo, mas... */
+  min-width: 200px;          /* um mínimo confortável */
+  max-width: 92vw;           /* nunca ultrapassa a viewport */
+  overflow-wrap: anywhere;   /* quebra palavras longas se preciso */
+  word-break: break-word;
+  white-space: normal;       /* permite 2 linhas no item */
+  padding-right: 10px;       /* folga para não colar na borda */
+}
+
+/* Itens com quebra de linha e altura confortável */
+.mobile-cta .dropup .dropdown-item{
+  white-space: normal;
+  line-height: 1.2;
+  padding-right: 10px;
+}
 
     .contact-chip {
       display: flex; align-items: center; gap: 10px; padding: 12px 14px; border-radius: 12px; text-decoration: none;
@@ -847,7 +873,8 @@
           <i class="bi bi-stars" aria-hidden="true"></i>
           <span class="label">Avaliar</span>
         </button>
-        <ul class="dropdown-menu shadow dropdown-menu-end">
+		
+        <ul class="dropdown-menu shadow">
           <li>
             <a class="dropdown-item" href="https://a.co/d/7uYBpvn" target="_blank" rel="noopener">
               <i class="bi bi-amazon me-2"></i> Amazon
