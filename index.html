@@ -223,31 +223,30 @@
   letter-spacing: .2px;
 }
 
-/* Dropup do "Avaliar" abrindo para a esquerda e sem estourar a tela */
+/* --- Dropup "Avaliar" ancorado à direita do botão e abrindo para a esquerda --- */
 .mobile-cta .dropup { position: relative; }
 
-.mobile-cta .dropup .dropdown-menu{
-  /* ancorado à direita do botão -> expande para a esquerda */
-  right: 0 !important;
+.mobile-cta .dropdown-menu-mobile-aval{
+  position: absolute !important;
+  top: auto !important;
+  bottom: calc(100% + 6px) !important;     /* sobe 6px acima do botão */
+  right: 8px !important;                    /* encosta no lado direito com folga */
   left: auto !important;
-  inset: auto auto 100% 0 !important;   /* mantém como dropup */
-  transform: translateY(-6px) !important;
+  transform: none !important;               /* sem translate do Popper */
 
-  /* limites de largura seguros no mobile */
-  width: max-content;        /* usa o conteúdo, mas... */
-  min-width: 200px;          /* um mínimo confortável */
-  max-width: 92vw;           /* nunca ultrapassa a viewport */
-  overflow-wrap: anywhere;   /* quebra palavras longas se preciso */
+  /* limites de largura: nunca ultrapassa a viewport */
+  width: max-content;
+  min-width: 200px;
+  max-width: calc(100vw - 16px);            /* 8px de respiro em cada lado */
+  white-space: normal;                      /* permite 2 linhas */
+  overflow-wrap: anywhere;
   word-break: break-word;
-  white-space: normal;       /* permite 2 linhas no item */
-  padding-right: 10px;       /* folga para não colar na borda */
 }
 
-/* Itens com quebra de linha e altura confortável */
-.mobile-cta .dropup .dropdown-item{
+/* itens confortáveis mesmo quebrando linha */
+.mobile-cta .dropdown-menu-mobile-aval .dropdown-item{
   white-space: normal;
   line-height: 1.2;
-  padding-right: 10px;
 }
 
     .contact-chip {
@@ -867,14 +866,16 @@
 
       <!-- Avaliar (dropup) -->
       <div class="dropup">
-        <button class="btn btn-outline-primary btn-cta dropdown-toggle w-100"
-                type="button" data-bs-toggle="dropdown" aria-expanded="false"
-                aria-label="Abrir opções para avaliar o livro">
+	  
+	  <button class="btn btn-outline-primary btn-cta dropdown-toggle w-100"
+        type="button" data-bs-toggle="dropdown" data-bs-display="static"
+        aria-expanded="false" aria-label="Abrir opções para avaliar o livro">
           <i class="bi bi-stars" aria-hidden="true"></i>
           <span class="label">Avaliar</span>
         </button>
 		
-        <ul class="dropdown-menu shadow">
+        <ul class="dropdown-menu shadow dropdown-menu-mobile-aval">
+
           <li>
             <a class="dropdown-item" href="https://a.co/d/7uYBpvn" target="_blank" rel="noopener">
               <i class="bi bi-amazon me-2"></i> Amazon
