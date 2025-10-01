@@ -68,7 +68,9 @@
       --texto-principal: #1f2937;
     }
 
-    html { scroll-behavior: smooth; }
+    html {
+      scroll-behavior: smooth;
+    }
 
     body {
       background-color: var(--cor-secundaria);
@@ -78,192 +80,485 @@
     }
 
     .skip-link {
-      position: absolute; left: -999px; top: auto; width: 1px; height: 1px; overflow: hidden;
-    }
-    .skip-link:focus {
-      left: 16px; top: 10px; width: auto; height: auto; padding: 8px 10px; z-index: 2000;
-      background: #fff; border-radius: 8px; box-shadow: 0 4px 12px rgba(0, 0, 0, .15);
+      position: absolute;
+      left: -999px;
+      top: auto;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
     }
 
-    h1,h2,h3,h4,h5,h6, section h2 { font-family: 'Orbitron', sans-serif; letter-spacing: .5px; }
-    .navbar-brand, .navbar-nav .nav-link { font-family: 'Orbitron', sans-serif; letter-spacing: .5px; }
+    .skip-link:focus {
+      left: 16px;
+      top: 10px;
+      width: auto;
+      height: auto;
+      padding: 8px 10px;
+      z-index: 2000;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, .15);
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    section h2 {
+      font-family: 'Orbitron', sans-serif;
+      letter-spacing: .5px;
+    }
+
+    .navbar-brand,
+    .navbar-nav .nav-link {
+      font-family: 'Orbitron', sans-serif;
+      letter-spacing: .5px;
+    }
 
     .bg-pattern {
-      position: fixed; inset: 0; z-index: -3;
+      position: fixed;
+      inset: 0;
+      z-index: -3;
       background:
         radial-gradient(circle at 1px 1px, rgba(0, 0, 0, .06) 1.2px, transparent 1.2px) 0 0/22px 22px,
         linear-gradient(180deg, #f1f5f9 0%, #f9fafb 60%, #ffffff 100%);
-      will-change: background-position; opacity: .9;
-    }
-    @media (prefers-reduced-motion:no-preference){
-      .bg-pattern { animation: gridShift 60s linear infinite; }
-      @keyframes gridShift { from { background-position: 0 0, 0 0; } to { background-position: 200px 0, 0 0; } }
+      will-change: background-position;
+      opacity: .9;
     }
 
-    .navbar { background-color: var(--cor-principal); box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
-    .navbar-brand img { border-radius: 8px; width: 250px; height: auto; object-fit: contain; display: block; margin: 10px; padding: 0; }
-    .navbar-nav .nav-link { color: var(--texto-principal) !important; font-weight: 500; }
-    .navbar-nav .nav-link:hover { color: var(--cor-destaque) !important; font-weight: 550; }
-    .navbar-toggler { border-color: rgba(0,0,0,0.5); }
+    @media (prefers-reduced-motion:no-preference) {
+      .bg-pattern {
+        animation: gridShift 60s linear infinite;
+      }
+
+      @keyframes gridShift {
+        from {
+          background-position: 0 0, 0 0;
+        }
+
+        to {
+          background-position: 200px 0, 0 0;
+        }
+      }
+    }
+
+    .navbar {
+      background-color: var(--cor-principal);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .navbar-brand img {
+      border-radius: 8px;
+      width: 250px;
+      height: auto;
+      object-fit: contain;
+      display: block;
+      margin: 10px;
+      padding: 0;
+    }
+
+    .navbar-nav .nav-link {
+      color: var(--texto-principal) !important;
+      font-weight: 500;
+    }
+
+    .navbar-nav .nav-link:hover {
+      color: var(--cor-destaque) !important;
+      font-weight: 550;
+    }
+
+    .navbar-toggler {
+      border-color: rgba(0, 0, 0, 0.5);
+    }
+
     .navbar-toggler-icon {
       background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba(31,41,55,0.9)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
     }
 
     .parallax-header {
-      position: relative; color: white; min-height: 520px; display: flex; align-items: center; overflow: hidden; z-index: 0;
+      position: relative;
+      color: white;
+      min-height: 520px;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      z-index: 0;
     }
+
     .parallax-header::before {
-      content: ""; position: absolute; inset: 0;
-      background: url("./img/banner.png") center/cover no-repeat; filter: blur(0px); transform: scale(1.08); z-index: -2;
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: url("./img/banner.png") center/cover no-repeat;
+      filter: blur(0px);
+      transform: scale(1.08);
+      z-index: -2;
     }
-    .parallax-header::after { content: ""; position: absolute; inset: 0; background: rgba(0,0,0,0.38); z-index: -1; }
-    .parallax-header .container { position: relative; z-index: 1; }
-    .parallax-header h1 { font-size: clamp(2rem, 5vw, 3rem); font-weight: 700; }
-    .parallax-header h2 { font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 600; }
-    .parallax-header h3 { font-size: 1rem; font-weight: 400; margin-top: 10px; color: #e5e7eb; }
 
-    .cta-wrap { margin-top: 18px; display: flex; gap: 12px; flex-wrap: wrap; }
+    .parallax-header::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.38);
+      z-index: -1;
+    }
 
-    section h2 { color: var(--cor-destaque); font-weight: 600; margin-bottom: 20px; }
+    .parallax-header .container {
+      position: relative;
+      z-index: 1;
+    }
+
+    .parallax-header h1 {
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 700;
+    }
+
+    .parallax-header h2 {
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      font-weight: 600;
+    }
+
+    .parallax-header h3 {
+      font-size: 1rem;
+      font-weight: 400;
+      margin-top: 10px;
+      color: #e5e7eb;
+    }
+
+    .cta-wrap {
+      margin-top: 18px;
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    section h2 {
+      color: var(--cor-destaque);
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
 
     .price-note {
-      font-size: .95rem; color: #334155; background: #f1f5f9; border-left: 4px solid var(--cor-destaque);
-      padding: .6rem .8rem; border-radius: .25rem;
+      font-size: .95rem;
+      color: #334155;
+      background: #f1f5f9;
+      border-left: 4px solid var(--cor-destaque);
+      padding: .6rem .8rem;
+      border-radius: .25rem;
     }
 
     .card-custom {
-      background-color: #fff; border: none; border-radius: 16px; padding: 30px;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.06); margin-bottom: 50px; opacity: 0; transform: translateY(20px);
+      background-color: #fff;
+      border: none;
+      border-radius: 16px;
+      padding: 30px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+      margin-bottom: 50px;
+      opacity: 0;
+      transform: translateY(20px);
       transition: all .6s ease;
     }
-    .card-custom.show { opacity: 1; transform: translateY(0); }
-    .card-custom:hover { transform: scale(1.02); }
-    .card-custom:nth-of-type(1){ transition-delay: .2s }
-    .card-custom:nth-of-type(2){ transition-delay: .4s }
 
-    .btn-primary { background-color: var(--cor-destaque); border: none; font-size: 1.1rem; padding: 12px 28px; font-weight: 600; }
-    .btn-primary:hover { background-color: #123a62; transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.15); }
+    .card-custom.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
 
-    footer { background-color: var(--texto-principal); color: #fff; padding: 20px 0; }
-    footer a { color: #d4d4d4; text-decoration: none; }
-    footer a:hover { color: #0dcaf0; }
+    .card-custom:hover {
+      transform: scale(1.02);
+    }
 
-    .avatar { width: 250px; height: 250px; border-radius: 20%; object-fit: cover; border: 0; box-shadow: 0 4px 12px rgba(0,0,0,0.15); }
+    .card-custom:nth-of-type(1) {
+      transition-delay: .2s
+    }
+
+    .card-custom:nth-of-type(2) {
+      transition-delay: .4s
+    }
+
+    .btn-primary {
+      background-color: var(--cor-destaque);
+      border: none;
+      font-size: 1.1rem;
+      padding: 12px 28px;
+      font-weight: 600;
+    }
+
+    .btn-primary:hover {
+      background-color: #123a62;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    footer {
+      background-color: var(--texto-principal);
+      color: #fff;
+      padding: 20px 0;
+    }
+
+    footer a {
+      color: #d4d4d4;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      color: #0dcaf0;
+    }
+
+    .avatar {
+      width: 250px;
+      height: 250px;
+      border-radius: 20%;
+      object-fit: cover;
+      border: 0;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
 
     .char-portrait {
-      width: 100%; max-width: 320px; aspect-ratio: 4/5; object-fit: cover; border-radius: 16px;
-      box-shadow: 0 8px 24px rgba(0,0,0,.08); border: 0;
+      width: 100%;
+      max-width: 320px;
+      aspect-ratio: 4/5;
+      object-fit: cover;
+      border-radius: 16px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, .08);
+      border: 0;
     }
 
     .social-menu {
-      position: fixed; top: 50%; right: 0; transform: translateY(-50%); display: flex; flex-direction: column; gap: 15px;
-      padding: 10px; background-color: rgba(255,255,255,0.9); border-radius: 8px 0 0 8px; box-shadow: -2px 4px 12px rgba(0,0,0,0.2); z-index: 999;
+      position: fixed;
+      top: 50%;
+      right: 0;
+      transform: translateY(-50%);
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      padding: 10px;
+      background-color: rgba(255, 255, 255, 0.9);
+      border-radius: 8px 0 0 8px;
+      box-shadow: -2px 4px 12px rgba(0, 0, 0, 0.2);
+      z-index: 999;
     }
-    .social-menu a { color: var(--texto-principal); font-size: 22px; transition: all .3s; }
-    .social-menu a:hover { color: var(--cor-destaque); transform: scale(1.2); }
-    @media (max-width:768px){ .social-menu { display:none; } }
 
-    .capa-livro { width: 60%; border: 2px solid #e0e0e0; box-shadow: 0 8px 24px rgba(0,0,0,0.1); border-radius: 12px; }
-    @media (min-width:992px){ .capa-livro { width: 85%; } }
+    .social-menu a {
+      color: var(--texto-principal);
+      font-size: 22px;
+      transition: all .3s;
+    }
+
+    .social-menu a:hover {
+      color: var(--cor-destaque);
+      transform: scale(1.2);
+    }
+
+    @media (max-width:768px) {
+      .social-menu {
+        display: none;
+      }
+    }
+
+    .capa-livro {
+      width: 60%;
+      border: 2px solid #e0e0e0;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+      border-radius: 12px;
+    }
+
+    @media (min-width:992px) {
+      .capa-livro {
+        width: 85%;
+      }
+    }
 
 
-/* ===== Mobile CTA (simétrico e compacto) ===== */
-.mobile-cta{
-  position:fixed; left:0; right:0; bottom:0;
-  background:rgba(255,255,255,.96);
-  border-top:1px solid #e5e7eb;
-  padding:8px 10px;
-  padding-bottom:calc(8px + env(safe-area-inset-bottom,0px));
-  backdrop-filter:blur(8px);
-  z-index:1100; display:none;
-}
-@media (max-width:768px){
-  .mobile-cta{ display:block; }
-  body{ padding-bottom:84px; } /* reserva a altura da barra */
-}
+    /* ===== Mobile CTA (simétrico e compacto) ===== */
+    .mobile-cta {
+      position: fixed;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(255, 255, 255, .96);
+      border-top: 1px solid #e5e7eb;
+      padding: 8px 10px;
+      padding-bottom: calc(8px + env(safe-area-inset-bottom, 0px));
+      backdrop-filter: blur(8px);
+      z-index: 1100;
+      display: none;
+    }
 
-/* Grid com 3 colunas iguais */
-.mobile-cta .cta-grid{
-  display:grid; grid-template-columns:repeat(3,1fr);
-  gap:8px; align-items:stretch;
-}
+    @media (max-width:768px) {
+      .mobile-cta {
+        display: block;
+      }
 
-/* Botões uniformes */
-.mobile-cta .btn-cta{
-  display:flex; align-items:center; justify-content:center;
-  gap:.4rem;
-  padding:.5rem .6rem;                 /* altura enxuta */
-  font-size:.92rem; line-height:1.1;   /* mesma altura de linha */
-  font-weight:600; border-radius:.6rem;
-  min-height:40px;                     /* altura consistente */
-  white-space:nowrap;
-}
+      body {
+        padding-bottom: 84px;
+      }
 
-/* Ícones e caret alinhados */
-.mobile-cta .btn-cta i{ font-size:1rem; line-height:1; }
-.mobile-cta .dropdown-toggle::after{ margin-left:.35rem; }
+      /* reserva a altura da barra */
+    }
 
-/* Menu do dropup */
-.mobile-cta .dropdown-menu{
-  inset:auto auto 100% 0 !important;   /* sobe como dropup */
-  transform:translateY(-6px) !important;
-}
+    /* Grid com 3 colunas iguais */
+    .mobile-cta .cta-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+      align-items: stretch;
+    }
 
-/* Micro-ajuste de labels muito longos em telas estreitas */
-@media (max-width:360px){
-  .mobile-cta .btn-cta .label{ font-weight:600; letter-spacing:.1px; }
-}
+    /* Botões uniformes */
+    .mobile-cta .btn-cta {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: .4rem;
+      padding: .5rem .6rem;
+      /* altura enxuta */
+      font-size: .92rem;
+      line-height: 1.1;
+      /* mesma altura de linha */
+      font-weight: 600;
+      border-radius: .6rem;
+      min-height: 40px;
+      /* altura consistente */
+      white-space: nowrap;
+    }
 
-.mobile-cta .cta-label {
-  font-size: .8rem;
-  font-weight: 600;
-  text-align: center;
-  color: #374151;          /* cinza discreto */
-  margin-bottom: 6px;      /* espaço entre label e botões */
-  letter-spacing: .2px;
-}
+    /* Ícones e caret alinhados */
+    .mobile-cta .btn-cta i {
+      font-size: 1rem;
+      line-height: 1;
+    }
 
-/* --- Dropup "Avaliar" ancorado à direita do botão e abrindo para a esquerda --- */
-.mobile-cta .dropup { position: relative; }
+    .mobile-cta .dropdown-toggle::after {
+      margin-left: .35rem;
+    }
 
-.mobile-cta .dropdown-menu-mobile-aval{
-  position: absolute !important;
-  top: auto !important;
-  bottom: calc(100% + 6px) !important;     /* sobe 6px acima do botão */
-  right: 8px !important;                    /* encosta no lado direito com folga */
-  left: auto !important;
-  transform: none !important;               /* sem translate do Popper */
+    /* Menu do dropup */
+    .mobile-cta .dropdown-menu {
+      inset: auto auto 100% 0 !important;
+      /* sobe como dropup */
+      transform: translateY(-6px) !important;
+    }
 
-  /* limites de largura: nunca ultrapassa a viewport */
-  width: max-content;
-  min-width: 200px;
-  max-width: calc(100vw - 16px);            /* 8px de respiro em cada lado */
-  white-space: normal;                      /* permite 2 linhas */
-  overflow-wrap: anywhere;
-  word-break: break-word;
-}
+    /* Micro-ajuste de labels muito longos em telas estreitas */
+    @media (max-width:360px) {
+      .mobile-cta .btn-cta .label {
+        font-weight: 600;
+        letter-spacing: .1px;
+      }
+    }
 
-/* itens confortáveis mesmo quebrando linha */
-.mobile-cta .dropdown-menu-mobile-aval .dropdown-item{
-  white-space: normal;
-  line-height: 1.2;
-}
+    .mobile-cta .cta-label {
+      font-size: .8rem;
+      font-weight: 600;
+      text-align: center;
+      color: #374151;
+      /* cinza discreto */
+      margin-bottom: 6px;
+      /* espaço entre label e botões */
+      letter-spacing: .2px;
+    }
+
+    /* --- Dropup "Avaliar" ancorado à direita do botão e abrindo para a esquerda --- */
+    .mobile-cta .dropup {
+      position: relative;
+    }
+
+    .mobile-cta .dropdown-menu-mobile-aval {
+      position: absolute !important;
+      top: auto !important;
+      bottom: calc(100% + 6px) !important;
+      /* sobe 6px acima do botão */
+      right: 8px !important;
+      /* encosta no lado direito com folga */
+      left: auto !important;
+      transform: none !important;
+      /* sem translate do Popper */
+
+      /* limites de largura: nunca ultrapassa a viewport */
+      width: max-content;
+      min-width: 200px;
+      max-width: calc(100vw - 16px);
+      /* 8px de respiro em cada lado */
+      white-space: normal;
+      /* permite 2 linhas */
+      overflow-wrap: anywhere;
+      word-break: break-word;
+    }
+
+    /* itens confortáveis mesmo quebrando linha */
+    .mobile-cta .dropdown-menu-mobile-aval .dropdown-item {
+      white-space: normal;
+      line-height: 1.2;
+    }
 
     .contact-chip {
-      display: flex; align-items: center; gap: 10px; padding: 12px 14px; border-radius: 12px; text-decoration: none;
-      background: #fff; border: 1px solid #e5e7eb; box-shadow: 0 4px 14px rgba(0,0,0,0.04);
-      transition: transform .15s ease, box-shadow .15s ease, border-color .15s ease; color: var(--texto-principal);
-    }
-    .contact-chip i { font-size: 18px; }
-    .contact-chip .label { font-weight: 600; letter-spacing: .2px; }
-    .contact-chip .sub { font-size: 12px; color: #6b7280; margin-left: auto; }
-    .contact-chip:hover {
-      transform: translateY(-2px); border-color: var(--cor-destaque); box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 14px;
+      border-radius: 12px;
+      text-decoration: none;
+      background: #fff;
+      border: 1px solid #e5e7eb;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
+      transition: transform .15s ease, box-shadow .15s ease, border-color .15s ease;
       color: var(--texto-principal);
     }
 
-    @media (prefers-reduced-motion:reduce){
-      .card-custom, .card-custom:hover { transition: none; transform: none; }
+    .contact-chip i {
+      font-size: 18px;
+    }
+
+    .contact-chip .label {
+      font-weight: 600;
+      letter-spacing: .2px;
+    }
+
+    .contact-chip .sub {
+      font-size: 12px;
+      color: #6b7280;
+      margin-left: auto;
+    }
+
+    .contact-chip:hover {
+      transform: translateY(-2px);
+      border-color: var(--cor-destaque);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+      color: var(--texto-principal);
+    }
+
+    @media (prefers-reduced-motion:reduce) {
+
+      .card-custom,
+      .card-custom:hover {
+        transition: none;
+        transform: none;
+      }
+    }
+
+    #universo article .shadow-sm {
+      transition: transform .15s ease, box-shadow .15s ease;
+    }
+
+    #universo article .shadow-sm:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, .10);
+    }
+
+    #neurarchy .shadow-sm {
+      transition: transform .15s ease, box-shadow .15s ease;
+    }
+
+    #neurarchy .shadow-sm:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, .10);
+    }
+
+    #neurarchy .h6 {
+      letter-spacing: .2px;
     }
   </style>
 </head>
@@ -303,6 +598,8 @@
           <li class="nav-item"><a class="nav-link" href="#livro">Livro</a></li>
           <li class="nav-item"><a class="nav-link" href="#avaliacoes">Avaliações</a></li>
           <li class="nav-item"><a class="nav-link" href="#protagonistas">Protagonistas</a></li>
+          <li class="nav-item"><a class="nav-link" href="#neurarchy">Neurarchy</a></li>
+          <li class="nav-item"><a class="nav-link" href="#universo">Localidades</a></li>
           <li class="nav-item"><a class="nav-link" href="#faq">FAQ</a></li>
           <li class="nav-item"><a class="nav-link" href="#instagram">Instagram</a></li>
           <li class="nav-item"><a class="nav-link" href="#sobre">Autor</a></li>
@@ -322,8 +619,7 @@
       </h3>
 
       <div class="cta-wrap d-flex justify-content-center flex-wrap gap-3 mt-3 d-none d-md-flex">
-        <a href="https://www.amazon.com.br/dp/6552783329" target="_blank" rel="noopener"
-          class="btn btn-primary">
+        <a href="https://www.amazon.com.br/dp/6552783329" target="_blank" rel="noopener" class="btn btn-primary">
           <i class="bi bi-cart-fill"></i> Comprar livro impresso (Amazon)
         </a>
         <a href="https://clubedeautores.com.br/livro/canticos-de-machina" target="_blank" rel="noopener"
@@ -411,7 +707,7 @@
             <div class="col d-grid">
               <a href="https://a.co/d/7uYBpvn" target="_blank" rel="noopener"
                 class="btn btn-primary w-100 d-flex align-items-center justify-content-center text-break">
-                <i class="bi bi-book me-2" aria-hidden="true"></i> E-book (grátis no Kindle Unlimited)
+                <i class="bi bi-book me-2" aria-hidden="true"></i> E-book (Kindle/Kindle Unlimited)
               </a>
             </div>
           </div>
@@ -578,6 +874,286 @@
       </article>
     </section>
 
+    <!-- NEURARCHY -->
+    <section id="neurarchy" class="card-custom" aria-labelledby="titulo-neurarchy">
+      <h2 id="titulo-neurarchy"><i class="bi bi-cpu-fill" aria-hidden="true"></i> Neurarchy</h2>
+      <p class="mb-3">
+        Big tech de neurotecnologia responsável pelo implante <strong>Solomon</strong>. Pesquisa, ética e poder se
+        cruzam em seus corredores —
+        onde decisões técnicas moldam vidas, cidades e o futuro.
+      </p>
+
+      <!-- Subnav local da seção -->
+      <div class="d-flex flex-wrap gap-2 mb-4" role="navigation" aria-label="Atalhos da Neurarchy">
+        <a class="btn btn-outline-primary btn-sm" href="#neurarchy-equipes"><i class="bi bi-diagram-3"></i> Áreas &
+          Equipes</a>
+        <a class="btn btn-outline-primary btn-sm" href="#neurarchy-pessoas"><i class="bi bi-people"></i> Pessoas</a>
+      </div>
+
+      <!-- Áreas & Equipes -->
+      <article id="neurarchy-equipes" class="mb-4">
+        <h3 class="h5 mb-3"><i class="bi bi-diagram-3" aria-hidden="true"></i> Áreas & Equipes</h3>
+        <div class="row row-cols-1 row-cols-md-2 g-3">
+          <div class="col">
+            <div class="h-100 p-3 border rounded-3 bg-white">
+              <h4 class="h6 mb-2">P&D Neuro (Solomon Lab)</h4>
+              <p class="mb-0 small text-secondary">Pesquisa de interface cérebro-máquina, modelos de IA aplicada, ética
+                de uso e protocolos clínicos.</p>
+            </div>
+          </div>
+          <div class="col">
+            <div class="h-100 p-3 border rounded-3 bg-white">
+              <h4 class="h6 mb-2">Segurança e Operações</h4>
+              <p class="mb-0 small text-secondary">Proteção física e cibernética, SOC/Red Team, protocolos de crise,
+                contra-inteligência.</p>
+            </div>
+          </div>
+          <div class="col">
+            <div class="h-100 p-3 border rounded-3 bg-white">
+              <h4 class="h6 mb-2">Cedrus (subsidiária)</h4>
+              <p class="mb-0 small text-secondary">Nanotecnologia e tecnologias incorporadas; integração de hardware
+                avançado com o ecossistema Solomon.</p>
+            </div>
+          </div>
+          <div class="col">
+            <div class="h-100 p-3 border rounded-3 bg-white">
+              <h4 class="h6 mb-2">Parcerias & Clínicas</h4>
+              <p class="mb-0 small text-secondary">Hospitais, universidades e centros de reabilitação para ensaios e
+                adoção segura.</p>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Pessoas -->
+      <article id="neurarchy-pessoas">
+        <h3 class="h5 mb-3"><i class="bi bi-people" aria-hidden="true"></i> Pessoas</h3>
+
+        <div class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-3">
+
+          <!-- Elizabeth Sabra -->
+          <article class="col" itemscope itemtype="https://schema.org/Person">
+            <div class="h-100 p-3 border rounded-3 bg-white shadow-sm">
+              <h4 class="h6 mb-1" itemprop="name">Elizabeth Sabra</h4>
+              <p class="small mb-1"><strong itemprop="jobTitle">CEO • Co-fundadora</strong></p>
+              <p class="small text-secondary" itemprop="description">
+                Visionária por trás do projeto <em>Solomon</em>. Equilibra ciência, propósito e um passado que cobra
+                respostas.
+              </p>
+            </div>
+          </article>
+
+          <!-- John Abraham -->
+          <article class="col" itemscope itemtype="https://schema.org/Person">
+            <div class="h-100 p-3 border rounded-3 bg-white shadow-sm">
+              <h4 class="h6 mb-1" itemprop="name">John Abraham</h4>
+              <p class="small mb-1"><strong itemprop="jobTitle">Chefe de Segurança</strong></p>
+              <p class="small text-secondary" itemprop="description">
+                Lidera a proteção executiva e a resposta a incidentes. Coordena Benaia e equipes táticas, do físico ao
+                digital.
+              </p>
+            </div>
+          </article>
+
+          <!-- Abiathar Cohen -->
+          <article class="col" itemscope itemtype="https://schema.org/Person">
+            <div class="h-100 p-3 border rounded-3 bg-white shadow-sm">
+              <h4 class="h6 mb-1" itemprop="name">Abiathar Cohen</h4>
+              <p class="small mb-1"><strong itemprop="jobTitle">Diretor de Estratégia</strong></p>
+              <p class="small text-secondary" itemprop="description">
+                Tática corporativa e parcerias. Ponte entre pesquisa, produto e impacto social do programa Solomon.
+              </p>
+            </div>
+          </article>
+
+          <!-- Abigail Saidov -->
+          <article class="col" itemscope itemtype="https://schema.org/Person">
+            <div class="h-100 p-3 border rounded-3 bg-white shadow-sm">
+              <h4 class="h6 mb-1" itemprop="name">Abigail Saidov</h4>
+              <p class="small mb-1"><strong itemprop="jobTitle">Diretora de Marketing</strong></p>
+              <p class="small text-secondary" itemprop="description">
+                Estratégia de marca, lançamentos e influência pública do Solomon. Sabe operar crise e narrativa com
+                precisão.
+              </p>
+            </div>
+          </article>
+
+          <!-- Reyna Gonzalez -->
+          <article class="col" itemscope itemtype="https://schema.org/Person">
+            <div class="h-100 p-3 border rounded-3 bg-white shadow-sm">
+              <h4 class="h6 mb-1" itemprop="name">Reyna González</h4>
+              <p class="small mb-1"><strong itemprop="jobTitle">Diretora de Segurança Cibernética</strong></p>
+              <p class="small text-secondary" itemprop="description">
+                Defesa digital da Neurarchy (SOC/ameaças/IA interna). Integra operações com o time de campo quando
+                necessário.
+              </p>
+            </div>
+          </article>
+
+          <!-- Zayden Greendock -->
+          <article class="col" itemscope itemtype="https://schema.org/Person">
+            <div class="h-100 p-3 border rounded-3 bg-white shadow-sm">
+              <h4 class="h6 mb-1" itemprop="name">Zayden Greendock</h4>
+              <p class="small mb-1"><strong itemprop="jobTitle">Diretor de Desenvolvimento & Engenharia</strong></p>
+              <p class="small text-secondary" itemprop="description">
+                Produtos avançados (ex.: exoesqueleto). Entre laboratório, demonstrações e integração com o ecossistema
+                Solomon.
+              </p>
+            </div>
+          </article>
+
+          <!-- Nathan Theodore -->
+          <article class="col" itemscope itemtype="https://schema.org/Person">
+            <div class="h-100 p-3 border rounded-3 bg-white shadow-sm">
+              <h4 class="h6 mb-1" itemprop="name">Nathan Theodore</h4>
+              <p class="small mb-1"><strong itemprop="jobTitle">CTO</strong></p>
+              <p class="small text-secondary" itemprop="description">
+                Mentor carismático e arquiteto do ecossistema Solomon. Visão técnica que inspira — e intriga.
+              </p>
+            </div>
+          </article>
+
+          <!-- Benaia Leone -->
+          <article class="col" itemscope itemtype="https://schema.org/Person">
+            <div class="h-100 p-3 border rounded-3 bg-white shadow-sm">
+              <h4 class="h6 mb-1" itemprop="name">Benaia Leone</h4>
+              <p class="small mb-1"><strong itemprop="jobTitle">Operações de Segurança</strong></p>
+              <p class="small text-secondary" itemprop="description">
+                Proteção executiva e resposta em campo; coordena evacuação e rotas sob comando de John.
+              </p>
+            </div>
+          </article>
+
+
+          <!-- Huram El-Khoury -->
+          <article class="col" itemscope itemtype="https://schema.org/Person">
+            <div class="h-100 p-3 border rounded-3 bg-white shadow-sm">
+              <h4 class="h6 mb-1" itemprop="name">Huram El-Khoury</h4>
+              <p class="small mb-1"><strong itemprop="jobTitle">Executivo • Cedrus (subsidiária)</strong></p>
+              <p class="small text-secondary" itemprop="description">
+                Nanotecnologia/tecnologias incorporadas. Perfil técnico e operativo; conduz demonstrações e suporte em
+                campo.
+              </p>
+            </div>
+          </article>
+
+          <!-- Lilyandra Sunamaj ("Lily") -->
+          <!--article class="col" itemscope itemtype="https://schema.org/Person">
+            <div class="h-100 p-3 border rounded-3 bg-white shadow-sm">
+              <h4 class="h6 mb-1" itemprop="name">Lilyandra Sunamaj (“Lily”)</h4>
+              <p class="small mb-1"><strong itemprop="jobTitle">Interfaces & Experiência Neural</strong></p>
+              <p class="small text-secondary" itemprop="description">
+                Treinamento e protocolo de uso do implante/ambiente neural; ponte entre cognição, prática e ética de
+                adoção.
+              </p>
+            </div>
+          </article-->
+
+        </div>
+
+      </article>
+    </section>
+
+
+    <!-- UNIVERSO -->
+    <section id="universo" class="card-custom" aria-labelledby="titulo-universo">
+      <h2 id="titulo-universo"><i class="bi bi-geo-alt-fill" aria-hidden="true"></i> Universo — Localidades</h2>
+      <p class="mb-4">Conheça os cenários onde a fé encontra a tecnologia em <em>Cânticos de Machina – Primavera
+          Artificial</em>. Explore cidades e burgos que moldam as jornadas dos personagens.</p>
+
+      <div class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-3">
+        <!-- Philston -->
+        <article class="col">
+          <div class="h-100 p-3 border rounded-3 bg-white shadow-sm">
+            <h3 class="h5 mb-2">Philston</h3>
+            <p class="mb-2">Cidade de imigrantes, feita de burgos e tradições que cruzam gerações; refúgio pós
+              Tecno-Guerra.</p>
+            <ul class="list-unstyled small text-secondary mb-0">
+              <li>• Burgos: Maria Del Carmen, Tamura, Yellen…</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- Maria Del Carmen -->
+        <article class="col">
+          <div class="h-100 p-3 border rounded-3 bg-white shadow-sm">
+            <h3 class="h5 mb-2">Maria Del Carmen</h3>
+            <p class="mb-2">Coração latino de Philston. Palco do Jolgório da Serpente Quadriculada e do Lamento de
+              Rogel.</p>
+            <ul class="list-unstyled small text-secondary mb-0">
+              <li>• Música, culinária, costumes hispânicos</li>
+              <li>• Tradições que conectam passado e futuro</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- Tamura -->
+        <article class="col">
+          <div class="h-100 p-3 border rounded-3 bg-white shadow-sm">
+            <h3 class="h5 mb-2">Tamura</h3>
+            <p class="mb-2">Bairro de forte presença asiática. Lanternas, especiarias e um dojô histórico.</p>
+          </div>
+        </article>
+
+        <!-- Yellen -->
+        <article class="col">
+          <div class="h-100 p-3 border rounded-3 bg-white shadow-sm">
+            <h3 class="h5 mb-2">Yellen</h3>
+            <p class="mb-2">Vizinhança unida sob pressão do crime. A quadra pública é o respiro da juventude.</p>
+          </div>
+        </article>
+
+        <!-- Gihon Lakes -->
+        <article class="col">
+          <div class="h-100 p-3 border rounded-3 bg-white shadow-sm">
+            <h3 class="h5 mb-2">Gihon Lakes</h3>
+            <p class="mb-2">Cidade serrana vizinha; cenário do caso que abala convicções e desperta chamados.</p>
+          </div>
+        </article>
+
+        <!-- Montdave -->
+        <article class="col">
+          <div class="h-100 p-3 border rounded-3 bg-white shadow-sm">
+            <h3 class="h5 mb-2">Montdave</h3>
+            <p class="mb-2">Motor industrial do estado e vizinha poderosa de Philston.</p>
+          </div>
+        </article>
+
+        <!-- Nearpalace -->
+        <article class="col">
+          <div class="h-100 p-3 border rounded-3 bg-white shadow-sm">
+            <h3 class="h5 mb-2">Nearpalace</h3>
+            <p class="mb-2">Bairro nobre de Montdave — mansões, estúdios e o brilho (e o peso) da fama.</p>
+          </div>
+        </article>
+
+        <!-- Tairo -->
+        <article class="col">
+          <div class="h-100 p-3 border rounded-3 bg-white shadow-sm">
+            <h3 class="h5 mb-2">Tairo</h3>
+            <p class="mb-2">Eixo universitário citado nas escolhas de graduação; elo com Philston e Montdave.</p>
+            <ul class="list-unstyled small text-secondary mb-0">
+              <li>• Próximo ao Deserto de Yehuda</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- Deserto de Yehuda -->
+        <article class="col">
+          <div class="h-100 p-3 border rounded-3 bg-white shadow-sm">
+            <div class="d-flex align-items-center justify-content-between mb-1">
+              <h3 class="h5 mb-0">Deserto de Yehuda</h3>
+            </div>
+            <p class="mb-2">
+              Faixa árida próxima a Tairo, território dos nômades de
+              Quedar, onde tradição e tecnologia convivem sob o silêncio das dunas.
+            </p>
+          </div>
+        </article>
+      </div>
+
+    </section>
+
 
     <!-- FAQ -->
     <section id="faq" class="card-custom" aria-labelledby="titulo-faq">
@@ -641,12 +1217,14 @@
           <div id="faq4" class="accordion-collapse collapse" aria-labelledby="faq4h" data-bs-parent="#faqAccordion">
             <div class="accordion-body">
               Impresso na <strong>Amazon</strong> e no <strong>Clube de Autores</strong> por <strong>R$ 67,00</strong>.
-              E-book na Amazon por <strong>R$ 9,90</strong> — <strong>gratuito</strong> para assinantes do Kindle Unlimited.
+              E-book na Amazon por <strong>R$ 9,90</strong> — <strong>gratuito</strong> para assinantes do Kindle
+              Unlimited.
               <div class="mt-2 d-flex flex-wrap gap-2">
                 <a class="btn btn-primary btn-sm" target="_blank" rel="noopener"
                   href="https://www.amazon.com.br/dp/6552783329"><i class="bi bi-cart-fill"></i> Impresso (Amazon)</a>
                 <a class="btn btn-primary btn-sm" target="_blank" rel="noopener"
-                  href="https://clubedeautores.com.br/livro/canticos-de-machina"><i class="bi bi-bag"></i> Impresso (Clube de Autores)</a>
+                  href="https://clubedeautores.com.br/livro/canticos-de-machina"><i class="bi bi-bag"></i> Impresso
+                  (Clube de Autores)</a>
                 <a class="btn btn-primary btn-sm" target="_blank" rel="noopener" href="https://a.co/d/7uYBpvn"><i
                     class="bi bi-book"></i> E-book na Amazon</a>
               </div>
@@ -843,65 +1421,70 @@
   </main>
 
   <!-- CTA fixa no mobile -->
-<!-- CTA fixa no mobile (simétrica) -->
-<div class="mobile-cta px-2 py-3" role="region" aria-label="Ações rápidas no mobile">
-  <div class="container">
-    <!-- Label de contexto -->
-    <p class="cta-label mb-2">Garanta o seu ou deixe sua avaliação se já leu:</p>
+  <!-- CTA fixa no mobile (simétrica) -->
+  <div class="mobile-cta px-2 py-3" role="region" aria-label="Ações rápidas no mobile">
+    <div class="container">
+      <!-- Label de contexto -->
+      <p class="cta-label mb-2">Garanta o seu ou deixe sua avaliação se já leu:</p>
 
-    <div class="cta-grid">
-      <!-- Impresso (Amazon) -->
-      <a href="https://www.amazon.com.br/dp/6552783329" target="_blank" rel="noopener"
-         class="btn btn-primary btn-cta" aria-label="Comprar livro impresso na Amazon">
-        <i class="bi bi-cart-fill" aria-hidden="true"></i>
-        <span class="label">Impresso</span>
-      </a>
+      <div class="cta-grid">
+        <!-- Impresso (Amazon) -->
+        <a href="https://www.amazon.com.br/dp/6552783329" target="_blank" rel="noopener" class="btn btn-primary btn-cta"
+          aria-label="Comprar livro impresso na Amazon">
+          <i class="bi bi-cart-fill" aria-hidden="true"></i>
+          <span class="label">Impresso</span>
+        </a>
 
-      <!-- E-book -->
-      <a href="https://a.co/d/7uYBpvn" target="_blank" rel="noopener"
-         class="btn btn-primary btn-cta" aria-label="Comprar e-book na Amazon">
-        <i class="bi bi-book" aria-hidden="true"></i>
-        <span class="label">E-book</span>
-      </a>
+        <!-- E-book -->
+        <a href="https://a.co/d/7uYBpvn" target="_blank" rel="noopener" class="btn btn-primary btn-cta"
+          aria-label="Comprar e-book na Amazon">
+          <i class="bi bi-book" aria-hidden="true"></i>
+          <span class="label">E-book</span>
+        </a>
 
-      <!-- Avaliar (dropup) -->
-      <div class="dropup">
-	  
-	  <button class="btn btn-outline-primary btn-cta dropdown-toggle w-100"
-        type="button" data-bs-toggle="dropdown" data-bs-display="static"
-        aria-expanded="false" aria-label="Abrir opções para avaliar o livro">
-          <i class="bi bi-stars" aria-hidden="true"></i>
-          <span class="label">Avaliar</span>
-        </button>
-		
-        <ul class="dropdown-menu shadow dropdown-menu-mobile-aval">
+        <!-- Avaliar (dropup) -->
+        <div class="dropup">
 
-          <li>
-            <a class="dropdown-item" href="https://a.co/d/7uYBpvn" target="_blank" rel="noopener">
-              <i class="bi bi-amazon me-2"></i> Amazon
-            </a>
-          </li>
-          <li>
-            <a class="dropdown-item" href="https://www.skoob.com.br/canticos-de-machina-primavera-artificial-122595444ed122598175.html" target="_blank" rel="noopener">
-              <i class="bi bi-chat-quote me-2"></i> Skoob
-            </a>
-          </li>
-          <li>
-            <a class="dropdown-item" href="https://www.goodreads.com/book/show/239675050-c-nticos-de-machina" target="_blank" rel="noopener">
-              <i class="bi bi-chat-quote-fill me-2"></i> Goodreads
-            </a>
-          </li>
-          <li><hr class="dropdown-divider"></li>
-          <li>
-            <a class="dropdown-item" href="https://clubedeautores.com.br/livro/canticos-de-machina" target="_blank" rel="noopener">
-              <i class="bi bi-bag me-2"></i> Clube de Autores
-            </a>
-          </li>
-        </ul>
+          <button class="btn btn-outline-primary btn-cta dropdown-toggle w-100" type="button" data-bs-toggle="dropdown"
+            data-bs-display="static" aria-expanded="false" aria-label="Abrir opções para avaliar o livro">
+            <i class="bi bi-stars" aria-hidden="true"></i>
+            <span class="label">Avaliar</span>
+          </button>
+
+          <ul class="dropdown-menu shadow dropdown-menu-mobile-aval">
+
+            <li>
+              <a class="dropdown-item" href="https://a.co/d/7uYBpvn" target="_blank" rel="noopener">
+                <i class="bi bi-amazon me-2"></i> Amazon
+              </a>
+            </li>
+            <li>
+              <a class="dropdown-item"
+                href="https://www.skoob.com.br/canticos-de-machina-primavera-artificial-122595444ed122598175.html"
+                target="_blank" rel="noopener">
+                <i class="bi bi-chat-quote me-2"></i> Skoob
+              </a>
+            </li>
+            <li>
+              <a class="dropdown-item" href="https://www.goodreads.com/book/show/239675050-c-nticos-de-machina"
+                target="_blank" rel="noopener">
+                <i class="bi bi-chat-quote-fill me-2"></i> Goodreads
+              </a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+            <li>
+              <a class="dropdown-item" href="https://clubedeautores.com.br/livro/canticos-de-machina" target="_blank"
+                rel="noopener">
+                <i class="bi bi-bag me-2"></i> Clube de Autores
+              </a>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   </div>
-</div>
 
   <!-- Rodapé -->
   <footer class="text-center">
@@ -1019,6 +1602,56 @@
     ]
   }
   </script>
+
+  <script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"ItemList",
+  "name":"Localidades do Universo - Cânticos de Machina",
+  "itemListElement":[
+    {"@type":"ListItem","position":1,"item":{"@type":"Place","name":"Philston","description":"Cidade de imigrantes formada por burgos e tradições vivas."}},
+    {"@type":"ListItem","position":2,"item":{"@type":"Place","name":"Maria Del Carmen","description":"Burgo latino de Philston; palco do Jolgório e do Lamento."}},
+    {"@type":"ListItem","position":3,"item":{"@type":"Place","name":"Tamura","description":"Burgo de herança asiática; lanternas, especiarias e dojô."}},
+    {"@type":"ListItem","position":4,"item":{"@type":"Place","name":"Yellen","description":"Burgo sob pressão do crime, com forte laço comunitário."}},
+    {"@type":"ListItem","position":5,"item":{"@type":"Place","name":"Gihon Lakes","description":"Cidade serrana vizinha; palco de um evento marcante."}},
+    {"@type":"ListItem","position":6,"item":{"@type":"Place","name":"Montdave","description":"Polo industrial histórico; influência regional."}},
+    {"@type":"ListItem","position":7,"item":{"@type":"Place","name":"Nearpalace","description":"Bairro nobre de Montdave; mansões e shows."}},
+    {"@type":"ListItem","position":8,"item":{"@type":"Place","name":"Tairo","description":"Cidade universitária conectada à indústria."}}
+    {
+  "@type":"ListItem",
+  "position":9,
+  "item":{
+    "@type":"Place",
+    "name":"Deserto de Yehuda",
+    "description":"Faixa árida próxima a Tairo; território dos nômades de Quedar."
+  }
+}
+  ]
+}
+</script>
+
+  <script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"Organization",
+  "name":"Neurarchy",
+  "url":"https://www.canticosdemachina.com.br/",
+  "logo":"https://www.canticosdemachina.com.br/favicon.ico",
+  "member":[
+    {"@type":"Person","name":"Elizabeth Sabra","jobTitle":"CEO, Co-fundadora"},
+    {"@type":"Person","name":"Nathan Theodore","jobTitle":"CTO"},
+    {"@type":"Person","name":"John Abraham","jobTitle":"Chefe de Segurança"},
+    {"@type":"Person","name":"Benaia Leone","jobTitle":"Operações de Segurança"},
+    {"@type":"Person","name":"Reyna González","alternateName":"Reyna Gonzalez","jobTitle":"Diretora de Segurança Cibernética"},
+    {"@type":"Person","name":"Abigail Saidov","jobTitle":"Diretora de Marketing"},
+    {"@type":"Person","name":"Zayden Greendock","jobTitle":"Diretor de Desenvolvimento & Engenharia"},
+    {"@type":"Person","name":"Abiathar Cohen","jobTitle":"Diretor de Estratégia"},
+    {"@type":"Person","name":"Huram El-Khoury","jobTitle":"Executivo, Cedrus (subsidiária)"},
+    {"@type":"Person","name":"Lilyandra Sunamaj","alternateName":"Lily","jobTitle":"Interfaces & Experiência Neural"}
+  ]
+}
+</script>
+
 
   <script>
     document.addEventListener('DOMContentLoaded', function () {
