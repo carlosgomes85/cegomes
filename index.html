@@ -560,6 +560,94 @@
     #neurarchy .h6 {
       letter-spacing: .2px;
     }
+
+    /* Thumbs pequenas à esquerda do card */
+    .thumb-left {
+      width: 64px;
+      height: 64px;
+      border-radius: 10px;
+      object-fit: cover;
+      flex: 0 0 64px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, .08);
+    }
+
+    .thumb-left:hover {
+      transform: translateY(-1px);
+    }
+
+    .thumb-click {
+      cursor: zoom-in;
+    }
+
+    /* Versão um pouco maior para localidades (opcional) */
+    .thumb-left.lg {
+      width: 80px;
+      height: 80px;
+    }
+
+    /* Acessibilidade/teclado */
+    .thumb-click:focus {
+      outline: 2px solid var(--cor-destaque);
+      outline-offset: 2px;
+      border-radius: 12px;
+    }
+
+    /* Coluna da thumb, fixa à esquerda, ocupando a altura total do card */
+    .thumb-col {
+      flex: 0 0 112px;
+      /* largura da coluna */
+      max-width: 112px;
+      align-self: stretch;
+      /* estica até a altura do card */
+      display: flex;
+    }
+
+    .thumb-fill {
+      width: 100%;
+      height: 100%;
+      border-radius: 12px;
+      object-fit: cover;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, .08);
+      cursor: zoom-in;
+    }
+
+    .thumb-fill:focus {
+      outline: 2px solid var(--cor-destaque);
+      outline-offset: 2px;
+    }
+
+    /* Localidades: um pouco maior, opcional */
+    .thumb-col.lg {
+      flex-basis: 132px;
+      max-width: 132px;
+    }
+
+    /* Botões de navegação no modal (estilo leve) */
+    .modal-nav-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      border: 0;
+      background: rgba(0, 0, 0, .35);
+      color: #fff;
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+    }
+
+    .modal-nav-btn:hover {
+      background: rgba(0, 0, 0, .55);
+    }
+
+    .modal-nav-prev {
+      left: 12px;
+    }
+
+    .modal-nav-next {
+      right: 12px;
+    }
   </style>
 </head>
 
@@ -932,125 +1020,237 @@
 
           <!-- Elizabeth Sabra -->
           <article class="col" itemscope itemtype="https://schema.org/Person">
-            <div class="h-100 p-3 border rounded-3 bg-white shadow-sm">
-              <h4 class="h6 mb-1" itemprop="name">Elizabeth Sabra</h4>
-              <p class="small mb-1"><strong itemprop="jobTitle">CEO • Co-fundadora</strong></p>
-              <p class="small text-secondary" itemprop="description">
-                Visionária por trás do projeto <em>Solomon</em>. Equilibra ciência, propósito e um passado que cobra
-                respostas.
-              </p>
+            <div class="h-100 p-3 border rounded-3 bg-white shadow-sm d-flex gap-3 align-items-stretch">
+              <div class="thumb-col">
+                <img class="thumb-fill gallery-trigger" src="./img/neurarchy/elizabeth-sabra-thumb.jpg"
+                  data-img="./img/neurarchy/elizabeth-sabra.jpg" data-alt="Retrato de Elizabeth Sabra"
+                  data-title="Elizabeth Sabra" data-gallery="people" alt="Retrato de Elizabeth Sabra" width="112"
+                  height="112" loading="lazy" decoding="async" role="button" tabindex="0">
+              </div>
+              <div class="flex-grow-1">
+                <h4 class="h6 mb-1" itemprop="name">Elizabeth Sabra</h4>
+                <p class="small mb-1"><strong itemprop="jobTitle">CEO • Co-fundadora</strong></p>
+                <p class="small text-secondary mb-2" itemprop="description">
+                  Visionária por trás do projeto <em>Solomon</em>. Equilibra ciência, propósito e um passado que cobra
+                  respostas.
+                </p>
+                <button type="button" class="btn btn-sm btn-outline-primary gallery-trigger"
+                  data-img="./img/neurarchy/elizabeth-sabra.jpg" data-alt="Retrato de Elizabeth Sabra"
+                  data-title="Elizabeth Sabra" data-gallery="people">
+                  Ver maior
+                </button>
+              </div>
             </div>
           </article>
 
           <!-- John Abraham -->
           <article class="col" itemscope itemtype="https://schema.org/Person">
-            <div class="h-100 p-3 border rounded-3 bg-white shadow-sm">
-              <h4 class="h6 mb-1" itemprop="name">John Abraham</h4>
-              <p class="small mb-1"><strong itemprop="jobTitle">Chefe de Segurança</strong></p>
-              <p class="small text-secondary" itemprop="description">
-                Lidera a proteção executiva e a resposta a incidentes. Coordena equipes táticas, do físico ao
-                digital.
-              </p>
+            <div class="h-100 p-3 border rounded-3 bg-white shadow-sm d-flex gap-3 align-items-stretch">
+              <div class="thumb-col">
+                <img class="thumb-fill gallery-trigger" src="./img/neurarchy/john-abraham-thumb.jpg"
+                  data-img="./img/neurarchy/john-abraham.jpg" data-alt="Retrato de John Abraham"
+                  data-title="John Abraham" data-gallery="people" alt="Retrato de John Abraham" width="112" height="112"
+                  loading="lazy" decoding="async" role="button" tabindex="0">
+              </div>
+              <div class="flex-grow-1">
+                <h4 class="h6 mb-1" itemprop="name">John Abraham</h4>
+                <p class="small mb-1"><strong itemprop="jobTitle">Chefe de Segurança</strong></p>
+                <p class="small text-secondary mb-2" itemprop="description">
+                  Lidera a proteção executiva e a resposta a incidentes. Coordena equipes táticas, do físico ao digital.
+                </p>
+                <button type="button" class="btn btn-sm btn-outline-primary gallery-trigger"
+                  data-img="./img/neurarchy/john-abraham.jpg" data-alt="Retrato de John Abraham"
+                  data-title="John Abraham" data-gallery="people">Ver maior</button>
+              </div>
             </div>
           </article>
 
           <!-- Abiathar Cohen -->
           <article class="col" itemscope itemtype="https://schema.org/Person">
-            <div class="h-100 p-3 border rounded-3 bg-white shadow-sm">
-              <h4 class="h6 mb-1" itemprop="name">Abiathar Cohen</h4>
-              <p class="small mb-1"><strong itemprop="jobTitle">Diretor de Estratégia</strong></p>
-              <p class="small text-secondary" itemprop="description">
-                Tática corporativa e parcerias. Ponte entre pesquisa, produto e impacto social do programa Solomon.
-              </p>
+            <div class="h-100 p-3 border rounded-3 bg-white shadow-sm d-flex gap-3 align-items-stretch">
+              <div class="thumb-col">
+                <img class="thumb-fill gallery-trigger" src="./img/neurarchy/abiathar-cohen-thumb.jpg"
+                  data-img="./img/neurarchy/abiathar-cohen.jpg" data-alt="Retrato de Abiathar Cohen"
+                  data-title="Abiathar Cohen" data-gallery="people" alt="Retrato de Abiathar Cohen" width="112"
+                  height="112" loading="lazy" decoding="async" role="button" tabindex="0">
+              </div>
+              <div class="flex-grow-1">
+                <h4 class="h6 mb-1" itemprop="name">Abiathar Cohen</h4>
+                <p class="small mb-1"><strong itemprop="jobTitle">Diretor de Estratégia</strong></p>
+                <p class="small text-secondary mb-2" itemprop="description">
+                  Tática corporativa e parcerias. Ponte entre pesquisa, produto e impacto social do programa Solomon.
+                </p>
+                <button type="button" class="btn btn-sm btn-outline-primary gallery-trigger"
+                  data-img="./img/neurarchy/abiathar-cohen.jpg" data-alt="Retrato de Abiathar Cohen"
+                  data-title="Abiathar Cohen" data-gallery="people">Ver maior</button>
+              </div>
             </div>
           </article>
 
           <!-- Abigail Saidov -->
           <article class="col" itemscope itemtype="https://schema.org/Person">
-            <div class="h-100 p-3 border rounded-3 bg-white shadow-sm">
-              <h4 class="h6 mb-1" itemprop="name">Abigail Saidov</h4>
-              <p class="small mb-1"><strong itemprop="jobTitle">Diretora de Marketing</strong></p>
-              <p class="small text-secondary" itemprop="description">
-                Estratégia de marca, lançamentos e influência pública do Solomon. Sabe operar crise e narrativa com
-                precisão.
-              </p>
+            <div class="h-100 p-3 border rounded-3 bg-white shadow-sm d-flex gap-3 align-items-stretch">
+              <div class="thumb-col">
+                <img class="thumb-fill gallery-trigger" src="./img/neurarchy/abigail-saidov-thumb.jpg"
+                  data-img="./img/neurarchy/abigail-saidov.jpg" data-alt="Retrato de Abigail Saidov"
+                  data-title="Abigail Saidov" data-gallery="people" alt="Retrato de Abigail Saidov" width="112"
+                  height="112" loading="lazy" decoding="async" role="button" tabindex="0">
+              </div>
+              <div class="flex-grow-1">
+                <h4 class="h6 mb-1" itemprop="name">Abigail Saidov</h4>
+                <p class="small mb-1"><strong itemprop="jobTitle">Diretora de Marketing</strong></p>
+                <p class="small text-secondary mb-2" itemprop="description">
+                  Estratégia de marca, lançamentos e influência pública do Solomon.
+                </p>
+                <button type="button" class="btn btn-sm btn-outline-primary gallery-trigger"
+                  data-img="./img/neurarchy/abigail-saidov.jpg" data-alt="Retrato de Abigail Saidov"
+                  data-title="Abigail Saidov" data-gallery="people">Ver maior</button>
+              </div>
             </div>
           </article>
 
-          <!-- Reyna Gonzalez -->
+          <!-- Reyna González -->
           <article class="col" itemscope itemtype="https://schema.org/Person">
-            <div class="h-100 p-3 border rounded-3 bg-white shadow-sm">
-              <h4 class="h6 mb-1" itemprop="name">Reyna González</h4>
-              <p class="small mb-1"><strong itemprop="jobTitle">Diretora de Segurança Cibernética</strong></p>
-              <p class="small text-secondary" itemprop="description">
-                Defesa digital da Neurarchy (SOC/ameaças/IA interna). Integra operações com o time de campo quando
-                necessário.
-              </p>
+            <div class="h-100 p-3 border rounded-3 bg-white shadow-sm d-flex gap-3 align-items-stretch">
+              <div class="thumb-col">
+                <img class="thumb-fill gallery-trigger" src="./img/neurarchy/reyna-gonzalez-thumb.jpg"
+                  data-img="./img/neurarchy/reyna-gonzalez.jpg" data-alt="Retrato de Reyna González"
+                  data-title="Reyna González" data-gallery="people" alt="Retrato de Reyna González" width="112"
+                  height="112" loading="lazy" decoding="async" role="button" tabindex="0">
+              </div>
+              <div class="flex-grow-1">
+                <h4 class="h6 mb-1" itemprop="name">Reyna González</h4>
+                <p class="small mb-1"><strong itemprop="jobTitle">Diretora de Segurança Cibernética</strong></p>
+                <p class="small text-secondary mb-2" itemprop="description">
+                  Defesa digital da Neurarchy; integra operações com o time de campo quando necessário.
+                </p>
+                <button type="button" class="btn btn-sm btn-outline-primary gallery-trigger"
+                  data-img="./img/neurarchy/reyna-gonzalez.jpg" data-alt="Retrato de Reyna González"
+                  data-title="Reyna González" data-gallery="people">Ver maior</button>
+              </div>
             </div>
           </article>
 
           <!-- Zayden Greendock -->
           <article class="col" itemscope itemtype="https://schema.org/Person">
-            <div class="h-100 p-3 border rounded-3 bg-white shadow-sm">
-              <h4 class="h6 mb-1" itemprop="name">Zayden Greendock</h4>
-              <p class="small mb-1"><strong itemprop="jobTitle">Diretor de Pesquisa & Desenvolvimento</strong></p>
-              <p class="small text-secondary" itemprop="description">
-                Produtos avançados (ex.: exoesqueleto). Entre laboratório, demonstrações e integração com o ecossistema
-                Solomon.
-              </p>
+            <div class="h-100 p-3 border rounded-3 bg-white shadow-sm d-flex gap-3 align-items-stretch">
+              <div class="thumb-col">
+                <img class="thumb-fill gallery-trigger" src="./img/neurarchy/zayden-greendock-thumb.jpg"
+                  data-img="./img/neurarchy/zayden-greendock.jpg" data-alt="Retrato de Zayden Greendock"
+                  data-title="Zayden Greendock" data-gallery="people" alt="Retrato de Zayden Greendock" width="112"
+                  height="112" loading="lazy" decoding="async" role="button" tabindex="0">
+              </div>
+              <div class="flex-grow-1">
+                <h4 class="h6 mb-1" itemprop="name">Zayden Greendock</h4>
+                <p class="small mb-1"><strong itemprop="jobTitle">Diretor de P&D</strong></p>
+                <p class="small text-secondary mb-2" itemprop="description">
+                  Produtos avançados (ex.: exoesqueleto) e integração com o ecossistema Solomon.
+                </p>
+                <button type="button" class="btn btn-sm btn-outline-primary gallery-trigger"
+                  data-img="./img/neurarchy/zayden-greendock.jpg" data-alt="Retrato de Zayden Greendock"
+                  data-title="Zayden Greendock" data-gallery="people">Ver maior</button>
+              </div>
             </div>
           </article>
 
           <!-- Nathan Theodore -->
           <article class="col" itemscope itemtype="https://schema.org/Person">
-            <div class="h-100 p-3 border rounded-3 bg-white shadow-sm">
-              <h4 class="h6 mb-1" itemprop="name">Nathan Theodore</h4>
-              <p class="small mb-1"><strong itemprop="jobTitle">CTO (Diretor de Tecnologia)</strong></p>
-              <p class="small text-secondary" itemprop="description">
-                Mentor carismático e responsável por liderar pesquisas, inovações e o desenvolvimento do implante neural Solomon.
-              </p>
+            <div class="h-100 p-3 border rounded-3 bg-white shadow-sm d-flex gap-3 align-items-stretch">
+              <div class="thumb-col">
+                <img class="thumb-fill gallery-trigger" src="./img/neurarchy/nathan-theodore-thumb.jpg"
+                  data-img="./img/neurarchy/nathan-theodore.jpg" data-alt="Retrato de Nathan Theodore"
+                  data-title="Nathan Theodore" data-gallery="people" alt="Retrato de Nathan Theodore" width="112"
+                  height="112" loading="lazy" decoding="async" role="button" tabindex="0">
+              </div>
+              <div class="flex-grow-1">
+                <h4 class="h6 mb-1" itemprop="name">Nathan Theodore</h4>
+                <p class="small mb-1"><strong itemprop="jobTitle">CTO (Diretor de Tecnologia)</strong></p>
+                <p class="small text-secondary mb-2" itemprop="description">
+                  Lidera pesquisas e o desenvolvimento do implante neural Solomon; mentor técnico da equipe.
+                </p>
+                <button type="button" class="btn btn-sm btn-outline-primary gallery-trigger"
+                  data-img="./img/neurarchy/nathan-theodore.jpg" data-alt="Retrato de Nathan Theodore"
+                  data-title="Nathan Theodore" data-gallery="people">Ver maior</button>
+              </div>
             </div>
           </article>
 
           <!-- Benaia Leone -->
           <article class="col" itemscope itemtype="https://schema.org/Person">
-            <div class="h-100 p-3 border rounded-3 bg-white shadow-sm">
-              <h4 class="h6 mb-1" itemprop="name">Benaia Leone</h4>
-              <p class="small mb-1"><strong itemprop="jobTitle">Operações de Segurança</strong></p>
-              <p class="small text-secondary" itemprop="description">
-                Proteção executiva e resposta em campo; coordena evacuação e rotas sob comando de John.
-              </p>
+            <div class="h-100 p-3 border rounded-3 bg-white shadow-sm d-flex gap-3 align-items-stretch">
+              <div class="thumb-col">
+                <img class="thumb-fill gallery-trigger" src="./img/neurarchy/benaia-leone-thumb.jpg"
+                  data-img="./img/neurarchy/benaia-leone.jpg" data-alt="Retrato de Benaia Leone"
+                  data-title="Benaia Leone" data-gallery="people" alt="Retrato de Benaia Leone" width="112" height="112"
+                  loading="lazy" decoding="async" role="button" tabindex="0">
+              </div>
+              <div class="flex-grow-1">
+                <h4 class="h6 mb-1" itemprop="name">Benaia Leone</h4>
+                <p class="small mb-1"><strong itemprop="jobTitle">Operações de Segurança</strong></p>
+                <p class="small text-secondary mb-2" itemprop="description">
+                  Proteção executiva e resposta em campo; coordena evacuação e rotas sob comando de John.
+                </p>
+                <button type="button" class="btn btn-sm btn-outline-primary gallery-trigger"
+                  data-img="./img/neurarchy/benaia-leone.jpg" data-alt="Retrato de Benaia Leone"
+                  data-title="Benaia Leone" data-gallery="people">Ver maior</button>
+              </div>
             </div>
           </article>
-
 
           <!-- Huram El-Khoury -->
           <article class="col" itemscope itemtype="https://schema.org/Person">
-            <div class="h-100 p-3 border rounded-3 bg-white shadow-sm">
-              <h4 class="h6 mb-1" itemprop="name">Huram El-Khoury</h4>
-              <p class="small mb-1"><strong itemprop="jobTitle">Executivo • Cedrus (subsidiária)</strong></p>
-              <p class="small text-secondary" itemprop="description">
-                Nanotecnologia/tecnologias incorporadas. Perfil técnico e operativo; conduz demonstrações e suporte em
-                campo.
-              </p>
+            <div class="h-100 p-3 border rounded-3 bg-white shadow-sm d-flex gap-3 align-items-stretch">
+              <div class="thumb-col">
+                <img class="thumb-fill gallery-trigger" src="./img/neurarchy/huram-el-khoury-thumb.jpg"
+                  data-img="./img/neurarchy/huram-el-khoury.jpg" data-alt="Retrato de Huram El-Khoury"
+                  data-title="Huram El-Khoury" data-gallery="people" alt="Retrato de Huram El-Khoury" width="112"
+                  height="112" loading="lazy" decoding="async" role="button" tabindex="0">
+              </div>
+              <div class="flex-grow-1">
+                <h4 class="h6 mb-1" itemprop="name">Huram El-Khoury</h4>
+                <p class="small mb-1"><strong itemprop="jobTitle">Executivo • Cedrus (subsidiária)</strong></p>
+                <p class="small text-secondary mb-2" itemprop="description">
+                  Nanotecnologia e tecnologias incorporadas; demonstrações e suporte em campo.
+                </p>
+                <button type="button" class="btn btn-sm btn-outline-primary gallery-trigger"
+                  data-img="./img/neurarchy/huram-el-khoury.jpg" data-alt="Retrato de Huram El-Khoury"
+                  data-title="Huram El-Khoury" data-gallery="people">Ver maior</button>
+              </div>
             </div>
           </article>
 
-          <!-- Lilyandra Sunamaj ("Lily") -->
-          <!--article class="col" itemscope itemtype="https://schema.org/Person">
-            <div class="h-100 p-3 border rounded-3 bg-white shadow-sm">
-              <h4 class="h6 mb-1" itemprop="name">Lilyandra Sunamaj (“Lily”)</h4>
-              <p class="small mb-1"><strong itemprop="jobTitle">Interfaces & Experiência Neural</strong></p>
-              <p class="small text-secondary" itemprop="description">
-                Treinamento e protocolo de uso do implante/ambiente neural; ponte entre cognição, prática e ética de
-                adoção.
-              </p>
-            </div>
-          </article-->
+          <!-- (Opcional) Lilyandra Sunamaj -->
+          <!--
+    <article class="col" itemscope itemtype="https://schema.org/Person">
+      <div class="h-100 p-3 border rounded-3 bg-white shadow-sm d-flex gap-3 align-items-stretch">
+        <div class="thumb-col">
+          <img class="thumb-fill gallery-trigger"
+               src="./img/neurarchy/lilyandra-sunamaj-thumb.jpg"
+               data-img="./img/neurarchy/lilyandra-sunamaj.jpg"
+               data-alt="Retrato de Lilyandra Sunamaj"
+               data-title="Lilyandra Sunamaj"
+               data-gallery="people"
+               alt="Retrato de Lilyandra Sunamaj"
+               width="112" height="112"
+               loading="lazy" decoding="async" role="button" tabindex="0">
+        </div>
+        <div class="flex-grow-1">
+          <h4 class="h6 mb-1" itemprop="name">Lilyandra Sunamaj (“Lily”)</h4>
+          <p class="small mb-1"><strong itemprop="jobTitle">Interfaces & Experiência Neural</strong></p>
+          <p class="small text-secondary mb-2" itemprop="description">…</p>
+          <button type="button" class="btn btn-sm btn-outline-primary gallery-trigger"
+                  data-img="./img/neurarchy/lilyandra-sunamaj.jpg"
+                  data-alt="Retrato de Lilyandra Sunamaj"
+                  data-title="Lilyandra Sunamaj"
+                  data-gallery="people">Ver maior</button>
+        </div>
+      </div>
+    </article>
+    -->
 
         </div>
-
       </article>
+
     </section>
 
 
@@ -1061,95 +1261,196 @@
           Artificial</em>. Explore cidades e burgos que moldam as jornadas dos personagens.</p>
 
       <div class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-3">
-        <!-- Philston -->
-        <article class="col">
-          <div class="h-100 p-3 border rounded-3 bg-white shadow-sm">
-            <h3 class="h5 mb-2">Philston</h3>
-            <p class="mb-2">Cidade de imigrantes, feita de burgos e tradições que cruzam gerações; refúgio pós
-              Tecno-Guerra.</p>
-            <ul class="list-unstyled small text-secondary mb-0">
-              <li>• Burgos: Maria Del Carmen, Tamura, Yellen…</li>
-            </ul>
-          </div>
-        </article>
 
-        <!-- Maria Del Carmen -->
-        <article class="col">
-          <div class="h-100 p-3 border rounded-3 bg-white shadow-sm">
-            <h3 class="h5 mb-2">Maria Del Carmen</h3>
-            <p class="mb-2">Coração latino de Philston. Palco do Jolgório da Serpente Quadriculada e do Lamento de
-              Rogel.</p>
-            <ul class="list-unstyled small text-secondary mb-0">
-              <li>• Música, culinária, costumes hispânicos</li>
-              <li>• Tradições que conectam passado e futuro</li>
-            </ul>
-          </div>
-        </article>
-
-        <!-- Tamura -->
-        <article class="col">
-          <div class="h-100 p-3 border rounded-3 bg-white shadow-sm">
-            <h3 class="h5 mb-2">Tamura</h3>
-            <p class="mb-2">Bairro de forte presença asiática. Lanternas, especiarias e um dojô histórico.</p>
-          </div>
-        </article>
-
-        <!-- Yellen -->
-        <article class="col">
-          <div class="h-100 p-3 border rounded-3 bg-white shadow-sm">
-            <h3 class="h5 mb-2">Yellen</h3>
-            <p class="mb-2">Vizinhança unida sob pressão do crime. A quadra pública é o respiro da juventude.</p>
-          </div>
-        </article>
-
-        <!-- Gihon Lakes -->
-        <article class="col">
-          <div class="h-100 p-3 border rounded-3 bg-white shadow-sm">
-            <h3 class="h5 mb-2">Gihon Lakes</h3>
-            <p class="mb-2">Cidade serrana vizinha; cenário do caso que abala convicções e desperta chamados.</p>
-          </div>
-        </article>
 
         <!-- Montdave -->
         <article class="col">
-          <div class="h-100 p-3 border rounded-3 bg-white shadow-sm">
-            <h3 class="h5 mb-2">Montdave</h3>
-            <p class="mb-2">Motor industrial do estado e vizinha poderosa de Philston.</p>
+          <div class="h-100 p-3 border rounded-3 bg-white shadow-sm d-flex gap-3 align-items-stretch">
+            <div class="thumb-col lg">
+              <img class="thumb-fill gallery-trigger" src="./img/localidades/montdave-thumb.jpg"
+                data-img="./img/localidades/montdave.jpg" data-alt="Vista industrial de Montdave" data-title="Montdave"
+                data-gallery="places" alt="Vista industrial de Montdave" role="button" tabindex="0" width="132"
+                height="132" loading="lazy" decoding="async">
+            </div>
+            <div class="flex-grow-1">
+              <h3 class="h5 mb-2">Montdave</h3>
+              <p class="mb-2">Motor industrial do estado e vizinha poderosa de Philston.</p>
+              <button type="button" class="btn btn-sm btn-outline-primary mt-2 gallery-trigger"
+                data-img="./img/localidades/montdave.jpg" data-alt="Vista industrial de Montdave" data-title="Montdave"
+                data-gallery="places">Ver maior</button>
+            </div>
           </div>
         </article>
 
         <!-- Nearpalace -->
         <article class="col">
-          <div class="h-100 p-3 border rounded-3 bg-white shadow-sm">
-            <h3 class="h5 mb-2">Nearpalace</h3>
-            <p class="mb-2">Bairro nobre de Montdave — mansões, estúdios e o brilho (e o peso) da fama.</p>
+          <div class="h-100 p-3 border rounded-3 bg-white shadow-sm d-flex gap-3 align-items-stretch">
+            <div class="thumb-col lg">
+              <img class="thumb-fill gallery-trigger" src="./img/localidades/nearpalace-thumb.jpg"
+                data-img="./img/localidades/nearpalace.jpg" data-alt="Bairro nobre de Nearpalace"
+                data-title="Nearpalace" data-gallery="places" alt="Bairro nobre de Nearpalace" role="button"
+                tabindex="0" width="132" height="132" loading="lazy" decoding="async">
+            </div>
+            <div class="flex-grow-1">
+              <h3 class="h5 mb-2">Nearpalace</h3>
+              <p class="mb-2">Bairro nobre de Montdave — mansões, estúdios e o brilho (e o peso) da fama.</p>
+              <button type="button" class="btn btn-sm btn-outline-primary mt-2 gallery-trigger"
+                data-img="./img/localidades/nearpalace.jpg" data-alt="Bairro nobre de Nearpalace"
+                data-title="Nearpalace" data-gallery="places">Ver maior</button>
+            </div>
           </div>
         </article>
 
+        <!-- Philston -->
+        <article class="col">
+          <div class="h-100 p-3 border rounded-3 bg-white shadow-sm d-flex gap-3 align-items-stretch">
+            <div class="thumb-col lg">
+              <img class="thumb-fill gallery-trigger" src="./img/localidades/philston-thumb.jpg"
+                data-img="./img/localidades/philston.jpg" data-alt="Vista ilustrada de Philston" data-title="Philston"
+                data-gallery="places" alt="Vista ilustrada de Philston" role="button" tabindex="0" width="132"
+                height="132" loading="lazy" decoding="async">
+            </div>
+            <div class="flex-grow-1">
+              <h3 class="h5 mb-2">Philston</h3>
+              <p class="mb-2">Cidade de imigrantes, feita de burgos e tradições que cruzam gerações; refúgio pós
+                Tecno-Guerra.</p>
+              <ul class="list-unstyled small text-secondary mb-0">
+                <li>• Burgos: Maria Del Carmen, Tamura, Yellen…</li>
+              </ul>
+              <button type="button" class="btn btn-sm btn-outline-primary mt-2 gallery-trigger"
+                data-img="./img/localidades/philston.jpg" data-alt="Vista ilustrada de Philston" data-title="Philston"
+                data-gallery="places">Ver maior</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Maria Del Carmen -->
+        <article class="col">
+          <div class="h-100 p-3 border rounded-3 bg-white shadow-sm d-flex gap-3 align-items-stretch">
+            <div class="thumb-col lg">
+              <img class="thumb-fill gallery-trigger" src="./img/localidades/maria-del-carmen-thumb.jpg"
+                data-img="./img/localidades/maria-del-carmen.jpg" data-alt="Cenas festivas em Maria Del Carmen"
+                data-title="Maria Del Carmen" data-gallery="places" alt="Cenas festivas em Maria Del Carmen"
+                role="button" tabindex="0" width="132" height="132" loading="lazy" decoding="async">
+            </div>
+            <div class="flex-grow-1">
+              <h3 class="h5 mb-2">Maria Del Carmen</h3>
+              <p class="mb-2">Coração latino de Philston. Palco do Jolgório da Serpente Quadriculada e do Lamento de
+                Rogel.</p>
+              <ul class="list-unstyled small text-secondary mb-0">
+                <li>• Música, culinária, costumes hispânicos</li>
+                <li>• Tradições que conectam passado e futuro</li>
+              </ul>
+              <button type="button" class="btn btn-sm btn-outline-primary mt-2 gallery-trigger"
+                data-img="./img/localidades/maria-del-carmen.jpg" data-alt="Cenas festivas em Maria Del Carmen"
+                data-title="Maria Del Carmen" data-gallery="places">Ver maior</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Tamura -->
+        <article class="col">
+          <div class="h-100 p-3 border rounded-3 bg-white shadow-sm d-flex gap-3 align-items-stretch">
+            <div class="thumb-col lg">
+              <img class="thumb-fill gallery-trigger" src="./img/localidades/tamura-thumb.jpg"
+                data-img="./img/localidades/tamura.jpg" data-alt="Lanternas e dojô em Tamura" data-title="Tamura"
+                data-gallery="places" alt="Lanternas e dojô em Tamura" role="button" tabindex="0" width="132"
+                height="132" loading="lazy" decoding="async">
+            </div>
+            <div class="flex-grow-1">
+              <h3 class="h5 mb-2">Tamura</h3>
+              <p class="mb-2">Bairro de forte presença asiática. Lanternas, especiarias e um dojô histórico.</p>
+              <button type="button" class="btn btn-sm btn-outline-primary mt-2 gallery-trigger"
+                data-img="./img/localidades/tamura.jpg" data-alt="Lanternas e dojô em Tamura" data-title="Tamura"
+                data-gallery="places">Ver maior</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Yellen -->
+        <article class="col">
+          <div class="h-100 p-3 border rounded-3 bg-white shadow-sm d-flex gap-3 align-items-stretch">
+            <div class="thumb-col lg">
+              <img class="thumb-fill gallery-trigger" src="./img/localidades/yellen-thumb.jpg"
+                data-img="./img/localidades/yellen.jpg" data-alt="Quadra pública e ruas de Yellen" data-title="Yellen"
+                data-gallery="places" alt="Quadra pública e ruas de Yellen" role="button" tabindex="0" width="132"
+                height="132" loading="lazy" decoding="async">
+            </div>
+            <div class="flex-grow-1">
+              <h3 class="h5 mb-2">Yellen</h3>
+              <p class="mb-2">Vizinhança unida sob pressão do crime. A quadra pública é o respiro da juventude.</p>
+              <button type="button" class="btn btn-sm btn-outline-primary mt-2 gallery-trigger"
+                data-img="./img/localidades/yellen.jpg" data-alt="Quadra pública e ruas de Yellen" data-title="Yellen"
+                data-gallery="places">Ver maior</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Gihon Lakes -->
+        <article class="col">
+          <div class="h-100 p-3 border rounded-3 bg-white shadow-sm d-flex gap-3 align-items-stretch">
+            <div class="thumb-col lg">
+              <img class="thumb-fill gallery-trigger" src="./img/localidades/gihon-lakes-thumb.jpg"
+                data-img="./img/localidades/gihon-lakes.jpg" data-alt="Paisagem serrana de Gihon Lakes"
+                data-title="Gihon Lakes" data-gallery="places" alt="Paisagem serrana de Gihon Lakes" role="button"
+                tabindex="0" width="132" height="132" loading="lazy" decoding="async">
+            </div>
+            <div class="flex-grow-1">
+              <h3 class="h5 mb-2">Gihon Lakes</h3>
+              <p class="mb-2">Cidade serrana vizinha; cenário do caso que abala convicções e desperta chamados.</p>
+              <button type="button" class="btn btn-sm btn-outline-primary mt-2 gallery-trigger"
+                data-img="./img/localidades/gihon-lakes.jpg" data-alt="Paisagem serrana de Gihon Lakes"
+                data-title="Gihon Lakes" data-gallery="places">Ver maior</button>
+            </div>
+          </div>
+        </article>
+
+
         <!-- Tairo -->
         <article class="col">
-          <div class="h-100 p-3 border rounded-3 bg-white shadow-sm">
-            <h3 class="h5 mb-2">Tairo</h3>
-            <p class="mb-2">Centro universitário e polo tecnológico, situado nos arredores da metrópole, onde inovação e conhecimento caminham lado a lado.</p>
-            <ul class="list-unstyled small text-secondary mb-0">
-              <li>• Próximo ao Deserto de Yehuda</li>
-            </ul>
+          <div class="h-100 p-3 border rounded-3 bg-white shadow-sm d-flex gap-3 align-items-stretch">
+            <div class="thumb-col lg">
+              <img class="thumb-fill gallery-trigger" src="./img/localidades/tairo-thumb.jpg"
+                data-img="./img/localidades/tairo.jpg" data-alt="Campus e parque tecnológico de Tairo"
+                data-title="Tairo" data-gallery="places" alt="Campus e parque tecnológico de Tairo" role="button"
+                tabindex="0" width="132" height="132" loading="lazy" decoding="async">
+            </div>
+            <div class="flex-grow-1">
+              <h3 class="h5 mb-2">Tairo</h3>
+              <p class="mb-2">Centro universitário e polo tecnológico, nos arredores da metrópole.</p>
+              <ul class="list-unstyled small text-secondary mb-0">
+                <li>• Próximo ao Deserto de Yehuda</li>
+              </ul>
+              <button type="button" class="btn btn-sm btn-outline-primary mt-2 gallery-trigger"
+                data-img="./img/localidades/tairo.jpg" data-alt="Campus e parque tecnológico de Tairo"
+                data-title="Tairo" data-gallery="places">Ver maior</button>
+            </div>
           </div>
         </article>
 
         <!-- Deserto de Yehuda -->
         <article class="col">
-          <div class="h-100 p-3 border rounded-3 bg-white shadow-sm">
-            <div class="d-flex align-items-center justify-content-between mb-1">
-              <h3 class="h5 mb-0">Deserto de Yehuda</h3>
+          <div class="h-100 p-3 border rounded-3 bg-white shadow-sm d-flex gap-3 align-items-stretch">
+            <div class="thumb-col lg">
+              <img class="thumb-fill gallery-trigger" src="./img/localidades/deserto-yehuda-thumb.jpg"
+                data-img="./img/localidades/deserto-yehuda.jpg" data-alt="Dunas e horizonte no Deserto de Yehuda"
+                data-title="Deserto de Yehuda" data-gallery="places" alt="Dunas e horizonte no Deserto de Yehuda"
+                role="button" tabindex="0" width="132" height="132" loading="lazy" decoding="async">
             </div>
-            <p class="mb-2">
-              Faixa árida próxima a Tairo, território dos nômades de
-              Quedar, onde tradição e tecnologia convivem sob o silêncio das dunas.
-            </p>
+            <div class="flex-grow-1">
+              <div class="d-flex align-items-center justify-content-between mb-1">
+                <h3 class="h5 mb-0">Deserto de Yehuda</h3>
+              </div>
+              <p class="mb-2">Faixa árida próxima a Tairo, território dos nômades de Quedar.</p>
+              <button type="button" class="btn btn-sm btn-outline-primary mt-2 gallery-trigger"
+                data-img="./img/localidades/deserto-yehuda.jpg" data-alt="Dunas e horizonte no Deserto de Yehuda"
+                data-title="Deserto de Yehuda" data-gallery="places">Ver maior</button>
+            </div>
           </div>
         </article>
+
       </div>
+
 
     </section>
 
@@ -1651,6 +1952,30 @@
 }
 </script>
 
+  <!-- Modal único com galeria -->
+  <div class="modal fade" id="imgModal" tabindex="-1" aria-labelledby="imgModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl">
+      <div class="modal-content bg-dark text-white position-relative">
+        <button class="modal-nav-btn modal-nav-prev" type="button" aria-label="Imagem anterior">
+          <i class="bi bi-chevron-left"></i>
+        </button>
+        <button class="modal-nav-btn modal-nav-next" type="button" aria-label="Próxima imagem">
+          <i class="bi bi-chevron-right"></i>
+        </button>
+
+        <div class="modal-header border-0">
+          <h5 class="modal-title" id="imgModalLabel">Visualização</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Fechar"></button>
+        </div>
+
+        <div class="modal-body p-0">
+          <img id="imgModalPicture" src="" alt="" class="w-100 h-auto d-block" loading="eager">
+          <figcaption id="imgModalCaption" class="p-3 small text-secondary"></figcaption>
+        </div>
+      </div>
+    </div>
+  </div>
+
 
   <script>
     document.addEventListener('DOMContentLoaded', function () {
@@ -1666,7 +1991,79 @@
       }
     });
   </script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      // Modal + refs
+      const modalEl = document.getElementById('imgModal');
+      const modalImg = document.getElementById('imgModalPicture');
+      const modalTitle = document.getElementById('imgModalLabel');
+      const modalCaption = document.getElementById('imgModalCaption');
+      const btnPrev = modalEl.querySelector('.modal-nav-prev');
+      const btnNext = modalEl.querySelector('.modal-nav-next');
+      const bsModal = new bootstrap.Modal(modalEl);
+
+      let galleryGroup = null;     // "people" | "places"
+      let galleryNodes = [];       // NodeList -> Array dos itens clicáveis da seção
+      let currentIndex = 0;
+
+      function gatherGallery(group) {
+        galleryGroup = group;
+        galleryNodes = Array.from(document.querySelectorAll(`.gallery-trigger[data-gallery="${group}"]`));
+      }
+
+      function showItemByIndex(idx) {
+        if (!galleryNodes.length) return;
+        currentIndex = (idx + galleryNodes.length) % galleryNodes.length; // loop circular
+        const el = galleryNodes[currentIndex];
+        const src = el.dataset.img || el.getAttribute('data-full') || el.src;
+        const alt = el.dataset.alt || el.alt || 'Imagem ampliada';
+        const title = el.dataset.title || el.getAttribute('aria-label') || 'Visualização';
+
+        modalImg.src = src;
+        modalImg.alt = alt;
+        modalTitle.textContent = title;
+        modalCaption.textContent = alt;
+      }
+
+      function openFromEl(triggerEl) {
+        const group = triggerEl.dataset.gallery;
+        gatherGallery(group);
+        const idx = galleryNodes.indexOf(triggerEl);
+        showItemByIndex(idx >= 0 ? idx : 0);
+        bsModal.show();
+      }
+
+      // Clique em QUALQUER disparador da galeria
+      document.body.addEventListener('click', (e) => {
+        const trigger = e.target.closest('.gallery-trigger');
+        if (trigger) openFromEl(trigger);
+      });
+
+      // Teclado nos disparadores (Enter/Espaço)
+      document.body.addEventListener('keydown', (e) => {
+        const trigger = e.target.closest('.gallery-trigger');
+        if (trigger && (e.key === 'Enter' || e.key === ' ')) {
+          e.preventDefault();
+          openFromEl(trigger);
+        }
+      });
+
+      // Botões prev/next
+      btnPrev.addEventListener('click', () => showItemByIndex(currentIndex - 1));
+      btnNext.addEventListener('click', () => showItemByIndex(currentIndex + 1));
+
+      // Setas do teclado dentro do modal
+      modalEl.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowLeft') { e.preventDefault(); showItemByIndex(currentIndex - 1); }
+        if (e.key === 'ArrowRight') { e.preventDefault(); showItemByIndex(currentIndex + 1); }
+      });
+    });
+  </script>
+
+
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
+
 </body>
 
 </html>
