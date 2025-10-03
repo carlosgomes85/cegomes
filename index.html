@@ -648,6 +648,71 @@
     .modal-nav-next {
       right: 12px;
     }
+
+    /* --- Citação de personagem (hero quote) --- */
+    .quote-hero {
+      position: relative;
+      background: linear-gradient(135deg, #0b2744 0%, #0e3a66 100%);
+      color: #fff;
+      border-radius: 16px;
+      padding: clamp(20px, 3.5vw, 40px);
+      overflow: hidden;
+      box-shadow: 0 10px 28px rgba(0, 0, 0, .18);
+    }
+
+    .quote-hero::after {
+      content: "";
+      position: absolute;
+      inset: -20%;
+      background:
+        radial-gradient(1200px 1200px at 110% 20%, rgba(255, 255, 255, .08), transparent 60%),
+        radial-gradient(900px 900px at -20% 120%, rgba(255, 255, 255, .06), transparent 60%);
+      pointer-events: none;
+    }
+
+    .quote-hero blockquote {
+      margin: 0;
+      font-size: clamp(1.05rem, 2.1vw, 1.35rem);
+      line-height: 1.6;
+    }
+
+    .quote-hero .quote-mark {
+      font-size: clamp(2.6rem, 6vw, 4rem);
+      line-height: 1;
+      opacity: .35;
+      margin-right: .35rem;
+    }
+
+    .quote-hero .who {
+      margin-top: 14px;
+      font-weight: 600;
+      letter-spacing: .2px;
+      color: #cfe8ff;
+    }
+
+    /* --- Avaliações (review cards) --- */
+    .review-card {
+      background: #fff;
+      border: 1px solid #e5e7eb;
+      border-radius: 14px;
+      padding: 18px;
+      height: 100%;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, .06);
+    }
+
+    .review-card .name {
+      font-weight: 700;
+      margin-bottom: 2px;
+    }
+
+    .stars {
+      color: #f59e0b;
+    }
+
+    /* estrelas douradas */
+    .review-card p {
+      margin-bottom: .6rem;
+    }
   </style>
 </head>
 
@@ -805,32 +870,46 @@
 
     </section>
 
-    <!-- AVALIAÇÕES -->
-    <section id="avaliacoes" class="card-custom" aria-labelledby="titulo-avaliacoes">
+    <section id="citacao" class="card-custom" aria-labelledby="titulo-citacao">
+
+      <!--h2 id="titulo-citacao"><i class="bi bi-chat-left-quote-fill" aria-hidden="true"></i> Citação</h2-->
+
+      <figure class="quote-hero">
+        <blockquote class="mb-2">
+          <span class="quote-mark" aria-hidden="true">“</span>
+          Vivemos uma era em que humanos aperfeiçoaram máquinas, máquinas aperfeiçoaram máquinas, e agora, as máquinas
+          irão aperfeiçoar os humanos.
+          Solomon veio para erradicar doenças neurodegenerativas, salvar milhares de vidas e elevar o desempenho humano
+          a novos patamares.
+          Hoje, damos um passo definitivo em direção à evolução!
+        </blockquote>
+        <figcaption class="who">— Elizabeth Sabra <span class="text-white-50">(CEO da Neurarchy)</span></figcaption>
+      </figure>
+    </section>
+
+    <section id="avaliacoes" class="card-custom" aria-labelledby="titulo-avaliacoes" itemscope
+      itemtype="https://schema.org/ItemList">
       <h2 id="titulo-avaliacoes"><i class="bi bi-star-fill" aria-hidden="true"></i> Avaliações</h2>
       <p>
-        Gostou do livro? Sua avaliação é muito importante para que outros leitores conheçam a obra e para aumentar a
-        visibilidade do livro nas plataformas digitais. Por favor, considere deixar sua avaliação nos links abaixo:
+        Gostou do livro? Sua avaliação é muito importante para que outros leitores conheçam a obra.
+        Deixe sua opinião nas plataformas e confira abaixo o que leitores já disseram.
       </p>
 
-      <!-- Grid: 1 (xs), 2 (sm), 3 (md), 4 (lg+) -->
-      <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 g-2 g-md-3 mt-4" role="group"
+      <!-- CTA plataformas -->
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 g-2 g-md-3 mt-3" role="group"
         aria-label="Plataformas para avaliar">
-
         <div class="col d-grid">
           <a href="https://a.co/d/7uYBpvn" target="_blank" rel="noopener"
             class="btn btn-primary w-100 d-flex align-items-center justify-content-center text-break">
             <i class="bi bi-chat-left-quote me-2" aria-hidden="true"></i> Amazon
           </a>
         </div>
-
         <div class="col d-grid">
           <a href="https://clubedeautores.com.br/livro/canticos-de-machina" target="_blank" rel="noopener"
             class="btn btn-primary w-100 d-flex align-items-center justify-content-center text-break">
             <i class="bi bi-chat-left-quote-fill me-2" aria-hidden="true"></i> Clube de Autores
           </a>
         </div>
-
         <div class="col d-grid">
           <a href="https://www.skoob.com.br/canticos-de-machina-primavera-artificial-122595444ed122598175.html"
             target="_blank" rel="noopener"
@@ -838,14 +917,155 @@
             <i class="bi bi-chat-quote me-2" aria-hidden="true"></i> Skoob
           </a>
         </div>
-
         <div class="col d-grid">
           <a href="https://www.goodreads.com/book/show/239675050-c-nticos-de-machina" target="_blank" rel="noopener"
             class="btn btn-primary w-100 d-flex align-items-center justify-content-center text-break">
             <i class="bi bi-chat-quote-fill me-2" aria-hidden="true"></i> Goodreads
           </a>
         </div>
+      </div>
 
+      <hr class="my-4" />
+
+      <!-- Lista de reviews -->
+      <div class="row row-cols-1 row-cols-md-2 g-3" itemprop="itemListElement">
+        <!-- Rafael Ferreira -->
+        <article class="col" itemscope itemtype="https://schema.org/Review">
+          <div class="review-card h-100">
+            <div class="d-flex align-items-center justify-content-between mb-1">
+              <div class="name" itemprop="author" itemscope itemtype="https://schema.org/Person">
+                <span itemprop="name">Rafael Ferreira</span>
+              </div>
+              <div class="stars" aria-label="5 de 5 estrelas">
+                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                  class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+              </div>
+            </div>
+            <meta itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
+            <meta itemprop="ratingValue" content="5">
+            <p class="small text-secondary mb-2">5 estrelas</p>
+            <div itemprop="reviewBody">
+              <p>Uma obra que merece 5 estrelas. O livro apresenta um enredo interessante que mistura aventura, ação e
+                suspense na dose certa.</p>
+              <p>O autor aborda temas relevantes como a IA e seu impacto crescente na sociedade. Fala também sobre fé,
+                esperança e sobre como a humanidade — com pessoas reais, dilemas reais — pode ser impactada por essa
+                inteligência artificial.</p>
+            </div>
+          </div>
+        </article>
+
+        <!-- Rodrigo Guimarães -->
+        <article class="col" itemscope itemtype="https://schema.org/Review">
+          <div class="review-card h-100">
+            <div class="d-flex align-items-center justify-content-between mb-1">
+              <div class="name" itemprop="author" itemscope itemtype="https://schema.org/Person">
+                <span itemprop="name">Rodrigo Guimarães</span>
+              </div>
+              <div class="stars" aria-label="5 de 5 estrelas">
+                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                  class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+              </div>
+            </div>
+            <meta itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
+            <meta itemprop="ratingValue" content="5">
+            <p class="small text-secondary mb-2">5 estrelas</p>
+            <div itemprop="reviewBody">
+              <p>O legal do livro é como ele mistura aventura, mistério e reflexão. Tem momentos de pura tensão e
+                passagens que fazem pensar sobre fé, identidade e o preço da evolução.</p>
+              <p>No fim, não é só ficção científica futurista — é um convite pra refletir sobre os limites (ou a falta
+                deles) entre o humano e a máquina. Ótimo pra quem curte distopia com um toque de misticismo.</p>
+            </div>
+          </div>
+        </article>
+
+        <!-- Rafael Araújo -->
+        <article class="col" itemscope itemtype="https://schema.org/Review">
+          <div class="review-card h-100">
+            <div class="d-flex align-items-center justify-content-between mb-1">
+              <div class="name" itemprop="author" itemscope itemtype="https://schema.org/Person">
+                <span itemprop="name">Rafael Araújo</span>
+              </div>
+              <div class="stars" aria-label="5 de 5 estrelas">
+                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                  class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+              </div>
+            </div>
+            <meta itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
+            <meta itemprop="ratingValue" content="5">
+            <p class="small text-secondary mb-2">5 estrelas</p>
+            <div itemprop="reviewBody">
+              <p>Experiência diferente: mistura ficção científica com reflexões cristãs de forma especial.</p>
+              <p>A cada capítulo há tecnologia e futuro, mas também mensagens sobre fé, propósito e a caminhada com
+                Deus. Leitura que prende, faz pensar e edifica.</p>
+            </div>
+          </div>
+        </article>
+
+        <!-- Wagner Ventura -->
+        <article class="col" itemscope itemtype="https://schema.org/Review">
+          <div class="review-card h-100">
+            <div class="d-flex align-items-center justify-content-between mb-1">
+              <div class="name" itemprop="author" itemscope itemtype="https://schema.org/Person">
+                <span itemprop="name">Wagner Ventura</span>
+              </div>
+              <div class="stars" aria-label="5 de 5 estrelas">
+                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                  class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+              </div>
+            </div>
+            <meta itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
+            <meta itemprop="ratingValue" content="5">
+            <p class="small text-secondary mb-2">5 estrelas</p>
+            <div itemprop="reviewBody">
+              <p>Leitura obrigatória pra quem curte distopia, ficção científica, tecnologia, IA e religião — tudo numa
+                trama envolvente com reflexões atuais sobre como a tecnologia influencia nossas vidas e espiritualidade.
+                Valeu muito!</p>
+            </div>
+          </div>
+        </article>
+
+        <!-- Juliana Magna -->
+        <article class="col" itemscope itemtype="https://schema.org/Review">
+          <div class="review-card h-100">
+            <div class="d-flex align-items-center justify-content-between mb-1">
+              <div class="name" itemprop="author" itemscope itemtype="https://schema.org/Person">
+                <span itemprop="name">Juliana Magna</span>
+              </div>
+              <div class="stars" aria-label="5 de 5 estrelas">
+                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                  class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+              </div>
+            </div>
+            <meta itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
+            <meta itemprop="ratingValue" content="5">
+            <p class="small text-secondary mb-2">5 estrelas</p>
+            <div itemprop="reviewBody">
+              <p>Ótimo livro! Trama muito bem elaborada, com poder de envolver o leitor desde as primeiras páginas.</p>
+            </div>
+          </div>
+        </article>
+
+        <!-- Sonia Moreira -->
+        <article class="col" itemscope itemtype="https://schema.org/Review">
+          <div class="review-card h-100">
+            <div class="d-flex align-items-center justify-content-between mb-1">
+              <div class="name" itemprop="author" itemscope itemtype="https://schema.org/Person">
+                <span itemprop="name">Sonia Moreira</span>
+              </div>
+              <div class="stars" aria-label="5 de 5 estrelas">
+                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                  class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+              </div>
+            </div>
+            <meta itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
+            <meta itemprop="ratingValue" content="5">
+            <p class="small text-secondary mb-2">5 estrelas</p>
+            <div itemprop="reviewBody">
+              <p>Trama envolvente e bem elaborada. O livro traz a emoção da ficção e reflexões importantes para a vida
+                atual. Leitura agradável e construtiva!</p>
+            </div>
+          </div>
+        </article>
       </div>
     </section>
 
@@ -970,14 +1190,13 @@
         cruzam em seus corredores, onde decisões técnicas moldam vidas, a sociedade e o futuro.
       </p>
 
-      <!-- Subnav local da seção -->
-      <div class="d-flex flex-wrap gap-2 mb-4" role="navigation" aria-label="Atalhos da Neurarchy">
+      <!-- div class="d-flex flex-wrap gap-2 mb-4" role="navigation" aria-label="Atalhos da Neurarchy">
         <a class="btn btn-outline-primary btn-sm" href="#neurarchy-equipes"><i class="bi bi-diagram-3"></i> Áreas &
           Equipes</a>
         <a class="btn btn-outline-primary btn-sm" href="#neurarchy-pessoas"><i class="bi bi-people"></i> Pessoas</a>
       </div>
 
-      <!-- Áreas & Equipes -->
+      
       <article id="neurarchy-equipes" class="mb-4">
         <h3 class="h5 mb-3"><i class="bi bi-diagram-3" aria-hidden="true"></i> Áreas & Equipes</h3>
         <div class="row row-cols-1 row-cols-md-2 g-3">
@@ -1011,7 +1230,7 @@
           </div>
         </div>
       </article>
-
+-->
       <!-- Pessoas -->
       <article id="neurarchy-pessoas">
         <h3 class="h5 mb-3"><i class="bi bi-people" aria-hidden="true"></i> Pessoas</h3>
@@ -1590,12 +1809,21 @@
         </div>
         <div class="col-md-7 col-lg-8 col-xl-9">
           <h4><strong class="text-dark text-opacity-75">C. E. Gomes</strong></h4>
-          <p>Escritor brasileiro de ficção cristã, mestre em Engenharia de Sistemas e Computação pela UFRJ, apaixonado
-            por tecnologia e música. Na escrita, exploro os dilemas da humanidade no encontro entre <strong>fé,
-              tecnologia e futuro</strong>.</p>
-          <p>Carioca, atuei por anos no universo da tecnologia e encontrei na literatura um espaço para refletir sobre
-            os desafios da nossa geração diante dos avanços tecnológicos e das grandes questões existenciais do nosso
-            tempo.</p>
+
+          <p>Escritor brasileiro de ficção cristã e científica, mestre em Engenharia de Sistemas e Computação pela UFRJ.
+            Apaixonado por tecnologia, música e literatura,
+            encontrei na escrita um caminho para unir essas paixões em histórias que misturam fé, ciência e suspense.
+          </p>
+
+          <p>Carioca, cresci cercado pelo universo da tecnologia, mas foi na ficção que descobri um espaço para refletir
+            sobre os dilemas da nossa geração: inteligência artificial, implantes neurais, limites da ciência… e, claro,
+            como tudo isso se conecta com a fé e o futuro da humanidade.
+          </p>
+
+          <p>Quando não estou escrevendo, provavelmente estou ouvindo música, programando, lendo, cantando ou atuando na
+            liderança de jovens da minha igreja. Meu primeiro livro, Cânticos de Machina – Primavera Artificial, nasceu
+            dessa mistura de paixões: tecnologia, Deus e imaginar histórias.
+          </p>
           <a class="btn btn-outline-primary mt-3" href="https://scholar.google.com.br/citations?user=11ORDMIAAAAJ"
             target="_blank" rel="noopener">
             <i class="bi bi-box-arrow-up-right" aria-hidden="true"></i> Ver Artigos Científicos Publicados
