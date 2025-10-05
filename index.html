@@ -341,6 +341,11 @@
   .review-card .name{ font-weight:700; margin-bottom:2px; }
   .stars{ color:#f59e0b; } /* estrelas douradas */
   .review-card p{ margin-bottom:.6rem; }
+  
+  /* --- Banner card (imagem ocupa o card inteiro) --- */
+.card-custom.p-0 { overflow: hidden; }           /* garante o arredondado na borda da imagem */
+.banner-full { width: 100%; height: auto; display: block; border-radius: 16px; }
+
 </style>
 
 </head>
@@ -718,6 +723,16 @@
       </div>
     </section>
 
+<!-- BANNER 1 — Agur / Vigília da Palavra -->
+<section class="card-custom p-0" aria-label="Banner: Agur e a Palavra">
+  <img
+    src="./img/banners/banner-agur.png"
+    alt="Agur escrevendo à luz de uma vela enquanto um sentinela mecânico vigia a cidade; texto sobre a Palavra de Deus permanecer viva"
+    class="banner-full"
+    loading="lazy"
+    decoding="async"
+  />
+</section>
 
 
     <!-- PROTAGONISTAS -->
@@ -1320,6 +1335,16 @@
 
     </section>
 
+<!-- BANNER 2 — Guitarrista / Cântico Novo -->
+<section class="card-custom p-0" aria-label="Banner: Cântico Novo">
+  <img
+    src="./img/banners/banner-guitarrista.png"
+    alt="Guitarrista de asas tecnológicas em um palco futurista; texto: Do encontro entre fé e tecnologia nasce um cântico novo"
+    class="banner-full"
+    loading="lazy"
+    decoding="async"
+  />
+</section>
 
     <!-- FAQ -->
     <section id="faq" class="card-custom" aria-labelledby="titulo-faq">
