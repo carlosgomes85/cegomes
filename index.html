@@ -239,11 +239,18 @@
     .parallax-header {
       position: relative;
       color: #fff;
-      min-height: 650px;
+      min-height: 700px;
       display: flex;
       align-items: center;
       overflow: hidden;
       z-index: 0
+    }
+
+    
+    @media (max-width: 992px) {
+     .parallax-header {
+      min-height: 450px;
+     }
     }
 
     .parallax-header::before {
