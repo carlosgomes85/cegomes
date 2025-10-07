@@ -435,6 +435,49 @@
       text-align: center;
     }
 
+    /* 1) Evita corte de texto (linhas e altura) */
+    .mobile-cta .cta-text {
+      line-height: 1.25;
+      /* antes 1.1; evita cortar acentos/descendentes */
+    }
+
+    .mobile-cta .btn-cta-dock,
+    .mobile-cta .btn-cta-dock__btn {
+      min-height: 60px;
+      /* antes 48px; dá espaço pro título + sub */
+    }
+
+    /* Browsers com lh: altura mínima baseada em 2 linhas + padding */
+    @supports (height: 1lh) {
+      .mobile-cta .btn-cta-dock {
+        min-height: calc(2lh + 16px);
+      }
+    }
+
+    /* 2) Respiro pro caret do dropdown (Avaliar) */
+    .mobile-cta .btn-cta-dock__btn.dropdown-toggle {
+      padding-right: 18px;
+      /* evita que o triângulo encoste/corte */
+    }
+
+    /* 3) O dropup precisa poder “vazar” o caret/menuzinho */
+    .mobile-cta .btn-cta-dock {
+      overflow: hidden;
+      /* mantém bordas redondas nos botões normais */
+    }
+
+    .mobile-cta .btn-cta-dock.dropup {
+      overflow: visible;
+      /* já existia, mas reforçamos aqui */
+    }
+
+    /* Telas muito estreitas: já esconde sub; força quebra segura do título */
+    @media (max-width:360px) {
+      .mobile-cta .cta-title {
+        word-break: break-word;
+      }
+    }
+
     /* dock responsivo de 3 itens */
     .cta-dock {
       display: grid;
@@ -896,7 +939,7 @@
         min-height: 600px
       }
     }
-    
+
 
     /* BANNER GUITARRISTA — imagem full com texto sobreposto */
     .banner-guitarrista {
@@ -2120,20 +2163,18 @@
         <!-- Impresso -->
         <a href="https://www.amazon.com.br/dp/6552783329" target="_blank" rel="noopener"
           class="btn-cta-dock btn-cta-primary" aria-label="Comprar livro impresso na Amazon">
-          <span class="cta-icon" aria-hidden="true"><i class="bi bi-cart-fill"></i></span>
           <span class="cta-text">
             <span class="cta-title">Impresso</span>
-            <span class="cta-sub"><span class="text-light">Amazon</span></span>
+            <span class="cta-sub"><span class="text-light">Comprar na Amazon</span></span>
           </span>
         </a>
 
         <!-- E-book -->
         <a href="https://a.co/d/7uYBpvn" target="_blank" rel="noopener" class="btn-cta-dock"
           aria-label="Comprar e-book na Amazon">
-          <span class="cta-icon" aria-hidden="true"><i class="bi bi-book"></i></span>
           <span class="cta-text">
             <span class="cta-title">E-book</span>
-            <span class="cta-sub">Kindle / Kindle Unlimited</span>
+            <span class="cta-sub">Ler no Kindle / Kindle Unlimited</span>
           </span>
         </a>
 
@@ -2141,7 +2182,6 @@
         <div class="btn-cta-dock dropup">
           <button class="btn-cta-dock__btn dropdown-toggle" type="button" data-bs-toggle="dropdown"
             data-bs-display="static" aria-expanded="false" aria-label="Abrir opções para avaliar o livro">
-            <span class="cta-icon" aria-hidden="true"><i class="bi bi-stars"></i></span>
             <span class="cta-text">
               <span class="cta-title">Avaliar</span>
 
