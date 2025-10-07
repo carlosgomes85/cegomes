@@ -60,408 +60,899 @@
     href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Orbitron:wght@400;500;700&display=swap"
     rel="stylesheet" />
 
-<style>
-  :root {
-    --cor-principal: #ffffff;
-    --cor-secundaria: #f9fafb;
-    /* azul com leve tom arroxeado */
-    --cor-destaque: #2a2bb5;
-    --cor-destaque-hover: #4536d8;
-    --texto-principal: #1f2937;
-	--cor-destaque-rgb: 48,64,208;       /* #3040d0 */
-    --cor-destaque-hover-rgb: 69,54,216; /* #4536d8 */
+  <style>
+    :root {
+      --cor-principal: #ffffff;
+      --cor-secundaria: #f9fafb;
+      --cor-destaque: #2a2bb5;
+      --cor-destaque-hover: #4536d8;
+      --texto-principal: #1f2937;
+      --cor-destaque-rgb: 48, 64, 208;
+      --cor-destaque-hover-rgb: 69, 54, 216
+    }
 
-  }
+    html {
+      scroll-behavior: smooth
+    }
 
-  html { scroll-behavior: smooth; }
+    body {
+      background-color: var(--cor-secundaria);
+      color: var(--texto-principal);
+      font-family: "Poppins", sans-serif;
+      transition: background-color .3s, color .3s
+    }
 
-  body {
-    background-color: var(--cor-secundaria);
-    color: var(--texto-principal);
-    font-family: "Poppins", sans-serif;
-    transition: background-color .3s, color .3s;
-  }
+    /* acessibilidade */
+    .skip-link {
+      position: absolute;
+      left: -999px;
+      top: auto;
+      width: 1px;
+      height: 1px;
+      overflow: hidden
+    }
 
-  .skip-link {
-    position: absolute; left: -999px; top: auto; width: 1px; height: 1px; overflow: hidden;
-  }
-  .skip-link:focus {
-    left: 16px; top: 10px; width: auto; height: auto; padding: 8px 10px; z-index: 2000;
-    background: #fff; border-radius: 8px; box-shadow: 0 4px 12px rgba(0, 0, 0, .15);
-  }
+    .skip-link:focus {
+      left: 16px;
+      top: 10px;
+      width: auto;
+      height: auto;
+      padding: 8px 10px;
+      z-index: 2000;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, .15)
+    }
 
-  h1,h2,h3,h4,h5,h6, section h2 {
-    font-family: 'Orbitron', sans-serif; letter-spacing: .5px;
-  }
-  .navbar-brand, .navbar-nav .nav-link {
-    font-family: 'Orbitron', sans-serif; letter-spacing: .5px;
-  }
+    /* títulos & navegação */
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    section h2,
+    .navbar-brand,
+    .navbar-nav .nav-link {
+      font-family: 'Orbitron', sans-serif;
+      letter-spacing: .5px
+    }
 
-  .bg-pattern {
-    position: fixed; inset: 0; z-index: -3;
-    background:
-      radial-gradient(circle at 1px 1px, rgba(0, 0, 0, .06) 1.2px, transparent 1.2px) 0 0/22px 22px,
-      linear-gradient(180deg, #f1f5f9 0%, #f9fafb 60%, #ffffff 100%);
-    will-change: background-position; opacity: .9;
-  }
-  @media (prefers-reduced-motion:no-preference) {
-    .bg-pattern { animation: gridShift 60s linear infinite; }
-    @keyframes gridShift { from { background-position: 0 0, 0 0; } to { background-position: 200px 0, 0 0; } }
-  }
+    /* fundo */
+    .bg-pattern {
+      position: fixed;
+      inset: 0;
+      z-index: -3;
+      background:
+        radial-gradient(circle at 1px 1px, rgba(0, 0, 0, .06) 1.2px, transparent 1.2px) 0 0/22px 22px,
+        linear-gradient(180deg, #f1f5f9 0%, #f9fafb 60%, #ffffff 100%);
+      will-change: background-position;
+      opacity: .9
+    }
 
-  .navbar { background-color: var(--cor-principal); box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); }
-  .navbar-brand img {
-    border-radius: 8px; width: 250px; height: auto; object-fit: contain; display: block; margin: 10px; padding: 0;
-  }
-  .navbar-nav .nav-link { color: var(--texto-principal) !important; font-weight: 500; }
-  .navbar-nav .nav-link:hover { color: var(--cor-destaque) !important; font-weight: 550; }
-  .navbar-toggler { border-color: rgba(0, 0, 0, 0.5); }
-  .navbar-toggler-icon {
-    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba(31,41,55,0.9)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
-  }
+    @media (prefers-reduced-motion:no-preference) {
+      .bg-pattern {
+        animation: gridShift 60s linear infinite
+      }
 
-.btn-outline-primary {
-  color: var(--cor-destaque);
-  border-color: var(--cor-destaque);
-  background-color: transparent;
-}
+      @keyframes gridShift {
+        from {
+          background-position: 0 0, 0 0
+        }
 
-.btn-outline-primary:hover,
-.btn-outline-primary:focus {
-  color: #fff;
-  background-color: var(--cor-destaque);
-  border-color: var(--cor-destaque);
-}
+        to {
+          background-position: 200px 0, 0 0
+        }
+      }
+    }
 
-.btn-outline-primary:active,
-.btn-outline-primary.active,
-.show > .btn-outline-primary.dropdown-toggle {
-  color: #fff;
-  background-color: var(--cor-destaque-hover);
-  border-color: var(--cor-destaque-hover);
-}
+    /* navbar */
+    .navbar {
+      background-color: var(--cor-principal);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, .1)
+    }
 
-.btn-check:checked + .btn-outline-primary,
-.btn-check:active + .btn-outline-primary {
-  color: #fff;
-  background-color: var(--cor-destaque);
-  border-color: var(--cor-destaque);
-}
+    .navbar-brand img {
+      border-radius: 8px;
+      width: 250px;
+      height: auto;
+      object-fit: contain;
+      display: block;
+      margin: 10px
+    }
 
-/* Disabled fica “clarinho”, mas ainda legível */
-.btn-outline-primary:disabled,
-.btn-outline-primary.disabled {
-  color: rgba(var(--cor-destaque-rgb), .55);
-  border-color: rgba(var(--cor-destaque-rgb), .35);
-  background-color: transparent;
-}
+    .navbar-nav .nav-link {
+      color: var(--texto-principal) !important;
+      font-weight: 500
+    }
 
-/* Foco acessível (anneled ring no mesmo tom) */
-.btn-outline-primary:focus,
-.btn-outline-primary:focus-visible {
-  box-shadow: 0 0 0 .25rem rgba(var(--cor-destaque-rgb), .25);
-}
-  .parallax-header {
-    position: relative; color: white; min-height: 650px; display: flex; align-items: center; overflow: hidden; z-index: 0;
-  }
-  .parallax-header::before {
-    content: ""; position: absolute; inset: 0; background: url("./img/banner.png") center/cover no-repeat;
-    filter: blur(0px); transform: scale(1.08); z-index: -2;
-  }
-  .parallax-header::after { content: ""; position: absolute; inset: 0; background: rgba(0, 0, 0, 0.38); z-index: -1; }
-  .parallax-header .container { position: relative; z-index: 1; }
-  .parallax-header h1 { font-size: clamp(2rem, 5vw, 3rem); font-weight: 700; }
-  .parallax-header h2 { font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 600; }
-  .parallax-header h3 { font-size: 1rem; font-weight: 400; margin-top: 10px; color: #e5e7eb; }
+    .navbar-nav .nav-link:hover {
+      color: var(--cor-destaque) !important;
+      font-weight: 550
+    }
 
-  .cta-wrap { margin-top: 18px; display: flex; gap: 12px; flex-wrap: wrap; }
+    .navbar-toggler {
+      border-color: rgba(0, 0, 0, .5)
+    }
 
-  section h2 { color: var(--cor-destaque); font-weight: 600; margin-bottom: 20px; }
+    .navbar-toggler-icon {
+      background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba(31,41,55,0.9)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E")
+    }
 
-  .price-note {
-    font-size: .95rem; color: #334155; background: #f1f5f9;
-    border-left: 4px solid var(--cor-destaque); padding: .6rem .8rem; border-radius: .25rem;
-  }
+    /* botões primários/outline (usados em CTAs e mini-CTAs) */
+    .btn-outline-primary {
+      color: var(--cor-destaque);
+      border-color: var(--cor-destaque);
+      background-color: transparent
+    }
 
-  /* Mantido sem mudanças de cor para o card */
-  .card-custom {
-    background-color: #fff; border: none; border-radius: 16px; padding: 30px;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06); margin-bottom: 50px;
-    opacity: 0; transform: translateY(20px); transition: all .6s ease;
-  }
-  .card-custom.show { opacity: 1; transform: translateY(0); }
-  .card-custom:hover { transform: scale(1.02); }
-  .card-custom:nth-of-type(1){ transition-delay:.2s } .card-custom:nth-of-type(2){ transition-delay:.4s }
+    .btn-outline-primary:hover,
+    .btn-outline-primary:focus {
+      color: #fff;
+      background-color: var(--cor-destaque);
+      border-color: var(--cor-destaque)
+    }
 
-  .btn-primary {
-    background-color: var(--cor-destaque); border: none;
-    font-size: 1.1rem; padding: 12px 28px; font-weight: 600;
-  }
-  .btn-primary:hover, .btn-primary:focus {
-    background-color: var(--cor-destaque-hover);
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  }
+    .btn-outline-primary:active,
+    .btn-outline-primary.active,
+    .show>.btn-outline-primary.dropdown-toggle {
+      color: #fff;
+      background-color: var(--cor-destaque-hover);
+      border-color: var(--cor-destaque-hover)
+    }
 
-  footer { background-color: var(--texto-principal); color: #fff; padding: 20px 0; }
-  footer a { color: #d4d4d4; text-decoration: none; }
-  footer a:hover { color: var(--cor-destaque-hover); }
+    .btn-check:checked+.btn-outline-primary,
+    .btn-check:active+.btn-outline-primary {
+      color: #fff;
+      background-color: var(--cor-destaque);
+      border-color: var(--cor-destaque)
+    }
 
-  .avatar {
-    width: 250px; height: 250px; border-radius: 20%; object-fit: cover; border: 0;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  }
+    .btn-outline-primary:disabled,
+    .btn-outline-primary.disabled {
+      color: rgba(var(--cor-destaque-rgb), .55);
+      border-color: rgba(var(--cor-destaque-rgb), .35);
+      background-color: transparent
+    }
 
-  .char-portrait {
-    width: 100%; max-width: 320px; aspect-ratio: 4/5; object-fit: cover; border-radius: 16px;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, .08); border: 0;
-  }
+    .btn-outline-primary:focus,
+    .btn-outline-primary:focus-visible {
+      box-shadow: 0 0 0 .25rem rgba(var(--cor-destaque-rgb), .25)
+    }
 
-  .social-menu {
-    position: fixed; top: 50%; right: 0; transform: translateY(-50%);
-    display: flex; flex-direction: column; gap: 15px; padding: 10px;
-    background-color: rgba(255, 255, 255, 0.9); border-radius: 8px 0 0 8px;
-    box-shadow: -2px 4px 12px rgba(0, 0, 0, 0.2); z-index: 999;
-  }
-  .social-menu a { color: var(--texto-principal); font-size: 22px; transition: all .3s; }
-  .social-menu a:hover { color: var(--cor-destaque); transform: scale(1.2); }
-  @media (max-width:768px) { .social-menu { display: none; } }
+    .btn-primary {
+      background-color: var(--cor-destaque);
+      border: none;
+      font-size: 1.1rem;
+      padding: 12px 28px;
+      font-weight: 600
+    }
 
-  .capa-livro {
-    width: 60%; border: 2px solid #e0e0e0; box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1); border-radius: 12px;
-  }
-  @media (min-width:992px) { .capa-livro { width: 85%; } }
+    .btn-primary:hover,
+    .btn-primary:focus {
+      background-color: var(--cor-destaque-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, .15)
+    }
 
-  /* ===== Mobile CTA (simétrico e compacto) ===== */
-  .mobile-cta {
-    position: fixed; left: 0; right: 0; bottom: 0; background: rgba(255, 255, 255, .96);
-    border-top: 1px solid #e5e7eb; padding: 8px 10px;
-    padding-bottom: calc(8px + env(safe-area-inset-bottom, 0px));
-    backdrop-filter: blur(8px); z-index: 1100; display: none;
-  }
-  @media (max-width:768px) {
-    .mobile-cta { display: block; }
-    body { padding-bottom: 84px; } /* reserva a altura da barra */
-  }
+    /* header */
+    .parallax-header {
+      position: relative;
+      color: #fff;
+      min-height: 650px;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      z-index: 0
+    }
 
-  .mobile-cta .cta-grid {
-    display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; align-items: stretch;
-  }
-  .mobile-cta .btn-cta {
-    display: flex; align-items: center; justify-content: center; gap: .4rem;
-    padding: .5rem .6rem; font-size: .92rem; line-height: 1.1; font-weight: 600;
-    border-radius: .6rem; min-height: 40px; white-space: nowrap;
-  }
-  .mobile-cta .btn-cta i { font-size: 1rem; line-height: 1; }
-  .mobile-cta .dropdown-toggle::after { margin-left: .35rem; }
-  .mobile-cta .dropdown-menu { inset: auto auto 100% 0 !important; transform: translateY(-6px) !important; }
-  @media (max-width:360px) {
-    .mobile-cta .btn-cta .label { font-weight: 600; letter-spacing: .1px; }
-  }
-  .mobile-cta .cta-label {
-    font-size: .8rem; font-weight: 600; text-align: center; color: #374151; margin-bottom: 6px; letter-spacing: .2px;
-  }
-  .mobile-cta .dropup { position: relative; }
-  .mobile-cta .dropdown-menu-mobile-aval {
-    position: absolute !important; top: auto !important; bottom: calc(100% + 6px) !important; right: 8px !important; left: auto !important; transform: none !important;
-    width: max-content; min-width: 200px; max-width: calc(100vw - 16px); white-space: normal; overflow-wrap: anywhere; word-break: break-word;
-  }
-  .mobile-cta .dropdown-menu-mobile-aval .dropdown-item { white-space: normal; line-height: 1.2; }
+    .parallax-header::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: url("./img/banner.png") center/cover no-repeat;
+      transform: scale(1.08);
+      z-index: -2
+    }
 
-  .contact-chip {
-    display: flex; align-items: center; gap: 10px; padding: 12px 14px; border-radius: 12px; text-decoration: none;
-    background: #fff; border: 1px solid #e5e7eb; box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
-    transition: transform .15s ease, box-shadow .15s ease, border-color .15s ease; color: var(--texto-principal);
-  }
-  .contact-chip i { font-size: 18px; }
-  .contact-chip .label { font-weight: 600; letter-spacing: .2px; }
-  .contact-chip .sub { font-size: 12px; color: #6b7280; margin-left: auto; }
-  .contact-chip:hover {
-    transform: translateY(-2px); border-color: var(--cor-destaque);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08); color: var(--texto-principal);
-  }
+    .parallax-header::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, .38);
+      z-index: -1
+    }
 
-  @media (prefers-reduced-motion:reduce) {
-    .card-custom, .card-custom:hover { transition: none; transform: none; }
-  }
+    .parallax-header .container {
+      position: relative;
+      z-index: 1
+    }
 
-  #universo article .shadow-sm { transition: transform .15s ease, box-shadow .15s ease; }
-  #universo article .shadow-sm:hover { transform: translateY(-2px); box-shadow: 0 12px 24px rgba(0, 0, 0, .10); }
-  #neurarchy .shadow-sm { transition: transform .15s ease, box-shadow .15s ease; }
-  #neurarchy .shadow-sm:hover { transform: translateY(-2px); box-shadow: 0 12px 24px rgba(0, 0, 0, .10); }
-  #neurarchy .h6 { letter-spacing: .2px; }
+    .parallax-header h1 {
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 700
+    }
 
-  /* Thumbs pequenas à esquerda do card */
-  .thumb-left { width: 64px; height: 64px; border-radius: 10px; object-fit: cover; flex: 0 0 64px; box-shadow: 0 2px 10px rgba(0, 0, 0, .08); }
-  .thumb-left:hover { transform: translateY(-1px); }
-  .thumb-click { cursor: zoom-in; }
-  .thumb-left.lg { width: 80px; height: 80px; }
+    .parallax-header h2 {
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      font-weight: 600
+    }
 
-  .thumb-click:focus { outline: 2px solid var(--cor-destaque); outline-offset: 2px; border-radius: 12px; }
+    .parallax-header h3 {
+      font-size: 1rem;
+      font-weight: 400;
+      margin-top: 10px;
+      color: #e5e7eb
+    }
 
-  .thumb-col { flex: 0 0 112px; max-width: 112px; align-self: stretch; display: flex; }
-  .thumb-fill {
-    width: 100%; height: 100%; border-radius: 12px; object-fit: cover; box-shadow: 0 2px 10px rgba(0, 0, 0, .08); cursor: zoom-in;
-  }
-  .thumb-fill:focus { outline: 2px solid var(--cor-destaque); outline-offset: 2px; }
-  .thumb-col.lg { flex-basis: 132px; max-width: 132px; }
+    .cta-wrap {
+      margin-top: 18px;
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap
+    }
 
-  .modal-nav-btn {
-    position: absolute; top: 50%; transform: translateY(-50%); border: 0; background: rgba(0, 0, 0, .35);
-    color: #fff; width: 42px; height: 42px; border-radius: 50%; display: grid; place-items: center;
-  }
-  .modal-nav-btn:hover { background: rgba(0, 0, 0, .55); }
-  .modal-nav-prev { left: 12px; }
-  .modal-nav-next { right: 12px; }
+    /* títulos de seção e notas de preço */
+    section h2 {
+      color: var(--cor-destaque);
+      font-weight: 600;
+      margin-bottom: 20px
+    }
 
-  /* --- Citação de personagem (hero quote) --- */
-  .quote-hero {
-    position: relative;
-    background: linear-gradient(135deg, #0b2744 0%, #3b2db3 100%);
-    color: #fff; border-radius: 16px;
-    padding: clamp(20px, 3.5vw, 40px); overflow: hidden;
-    box-shadow: 0 10px 28px rgba(0, 0, 0, .18);
-  }
-  .quote-hero::after{
-    content:""; position:absolute; inset:-20%;
-    background:
-      radial-gradient(1200px 1200px at 110% 20%, rgba(255,255,255,.08), transparent 60%),
-      radial-gradient(900px 900px at -20% 120%, rgba(255,255,255,.06), transparent 60%);
-    pointer-events:none;
-  }
-  .quote-hero blockquote{ margin:0; font-size: clamp(1.05rem, 2.1vw, 1.35rem); line-height:1.6; }
-  .quote-hero .quote-mark{ font-size: clamp(2.6rem, 6vw, 4rem); line-height:1; opacity:.35; margin-right:.35rem; }
-  .quote-hero .who{ margin-top:14px; font-weight:600; letter-spacing:.2px; color:#cfe8ff; }
+    .price-note {
+      font-size: .95rem;
+      color: #334155;
+      background: #f1f5f9;
+      border-left: 4px solid var(--cor-destaque);
+      padding: .6rem .8rem;
+      border-radius: .25rem
+    }
 
-  /* --- Avaliações (review cards) --- */
-  .review-card{
-    background:#fff; border:1px solid #e5e7eb; border-radius:14px; padding:18px; height:100%;
-    box-shadow:0 6px 16px rgba(0,0,0,.06);
-  }
-  .review-card .name{ font-weight:700; margin-bottom:2px; }
-  .stars{ color:#f59e0b; } /* estrelas douradas */
-  .review-card p{ margin-bottom:.6rem; }
-  
-  /* --- Banner card (imagem ocupa o card inteiro) --- */
-.card-custom.p-0 { overflow: hidden; }           /* garante o arredondado na borda da imagem */
-.banner-full { width: 100%; height: auto; display: block; border-radius: 16px; }
+    /* cards */
+    .card-custom {
+      background: #fff;
+      border: none;
+      border-radius: 16px;
+      padding: 30px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, .06);
+      margin-bottom: 50px;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all .6s ease
+    }
 
-/* ====== Largura maior para tablets (md–lg) ====== */
-@media (min-width: 768px) and (max-width: 1199.98px) {
-  /* Aumenta a largura útil do conteúdo sem afetar a navbar */
-  main.container {
-    max-width: min(1100px, 94vw) !important;
-  }
-  /* Espaço um pouco maior entre colunas nessas faixas */
-  .row.g-2 { --bs-gutter-x: 1.25rem; }
-  .row.g-3 { --bs-gutter-x: 1.5rem; }
-}
+    .card-custom.show {
+      opacity: 1;
+      transform: translateY(0)
+    }
 
-/* ====== Footer novo ====== */
-.site-footer {
-  --footer-bg-1: #0b2744;   /* azul profundo */
-  --footer-bg-2: #1a1d36;   /* roxo-azulado */
-  --footer-text: #eaf2ff;   /* texto claro */
-  --footer-dim: #a9b7d6;    /* texto secundário */
-  --footer-pill-bg: rgba(255,255,255,.08);
-  --footer-pill-brd: rgba(255,255,255,.18);
+    .card-custom:hover {
+      transform: scale(1.02)
+    }
 
-  background: linear-gradient(180deg, var(--footer-bg-1), var(--footer-bg-2));
-  color: var(--footer-text);
-  padding: 32px 0 24px;
-  position: relative;
-  overflow: hidden;
-}
-.site-footer::before{
-  /* linha de destaque no topo do footer */
-  content:"";
-  position:absolute; inset:0 0 auto 0; height:3px;
-  background: linear-gradient(90deg, #2a2bb5, #4536d8 40%, #2a2bb5 80%);
-  opacity:.9;
-}
-.site-footer .footer-inner{
-  display:grid;
-  grid-template-columns: 1fr auto;
-  gap: 16px 24px;
-  align-items:center;
-}
-@media (max-width: 576.98px){
-  .site-footer .footer-inner{ grid-template-columns: 1fr; text-align:center; }
-}
+    .card-custom:nth-of-type(1) {
+      transition-delay: .2s
+    }
 
-/* bloco de links sociais em “pills” */
-/* ====== Rodapé minimalista ====== */
-.site-footer {
-  --footer-bg-1: #0b2744;
-  --footer-bg-2: #1a1d36;
-  --footer-text: #eaf2ff;
-  --footer-pill-bg: rgba(255,255,255,.08);
-  --footer-pill-brd: rgba(255,255,255,.18);
+    .card-custom:nth-of-type(2) {
+      transition-delay: .4s
+    }
 
-  background: linear-gradient(180deg, var(--footer-bg-1), var(--footer-bg-2));
-  color: var(--footer-text);
-  padding: 40px 0 30px;
-  text-align: center;
-  position: relative;
-}
+    /* retratos / capa do livro */
+    .avatar {
+      width: 250px;
+      height: 250px;
+      border-radius: 20%;
+      object-fit: cover;
+      border: 0;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, .15)
+    }
 
-.site-footer::before {
-  content: "";
-  position: absolute;
-  top: 0; left: 0; right: 0; height: 3px;
-  background: linear-gradient(90deg, #2a2bb5, #4536d8 40%, #2a2bb5 80%);
-  opacity: .9;
-}
+    .char-portrait {
+      width: 100%;
+      max-width: 320px;
+      aspect-ratio: 4/5;
+      object-fit: cover;
+      border-radius: 16px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, .08);
+      border: 0
+    }
 
-.footer-title {
-  font-size: 1.1rem;
-  font-weight: 600;
-  margin-bottom: 20px;
-  letter-spacing: 0.5px;
-}
+    .capa-livro {
+      width: 60%;
+      border: 2px solid #e0e0e0;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, .1);
+      border-radius: 12px
+    }
 
-.footer-social {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-bottom: 18px;
-}
+    @media (min-width:992px) {
+      .capa-livro {
+        width: 85%
+      }
+    }
 
-.footer-pill {
-  display: inline-flex;
-  align-items: center;
-  gap: .45rem;
-  padding: 8px 14px;
-  border-radius: 999px;
-  background: var(--footer-pill-bg);
-  border: 1px solid var(--footer-pill-brd);
-  color: var(--footer-text);
-  text-decoration: none;
-  font-weight: 500;
-  transition: all .2s ease;
-}
+    /* menu social (desktop) */
+    .social-menu {
+      position: fixed;
+      top: 50%;
+      right: 0;
+      transform: translateY(-50%);
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      padding: 10px;
+      background: rgba(255, 255, 255, .9);
+      border-radius: 8px 0 0 8px;
+      box-shadow: -2px 4px 12px rgba(0, 0, 0, .2);
+      z-index: 999
+    }
 
-.footer-pill:hover {
-  background: rgba(255,255,255,.14);
-  border-color: rgba(255,255,255,.28);
-  transform: translateY(-1px);
-  color: #fff;
-}
+    .social-menu a {
+      color: var(--texto-principal);
+      font-size: 22px;
+      transition: all .3s
+    }
 
-.footer-copy {
-  font-size: 0.9rem;
-  opacity: 0.8;
-  margin: 0;
-}
+    .social-menu a:hover {
+      color: var(--cor-destaque);
+      transform: scale(1.2)
+    }
 
-.footer-pill:focus {
-  outline: 2px solid #c8d3ff;
-  outline-offset: 2px;
-}
+    @media (max-width:768px) {
+      .social-menu {
+        display: none
+      }
+    }
+
+    /* ========== MOBILE CTA (dock) ========== */
+    .mobile-cta {
+      position: fixed;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 1100;
+      display: none;
+      background: rgba(255, 255, 255, .78);
+      -webkit-backdrop-filter: blur(10px);
+      backdrop-filter: blur(10px);
+      border-top: 1px solid rgba(15, 23, 42, .1);
+      box-shadow: 0 -6px 24px rgba(0, 0, 0, .12);
+      padding-bottom: calc(8px + env(safe-area-inset-bottom, 0px));
+    }
+
+    @media (max-width: 768px) {
+      .mobile-cta {
+        display: block
+      }
+    }
+
+    .mobile-cta .cta-label {
+      font-size: .78rem;
+      font-weight: 600;
+      color: #374151;
+      letter-spacing: .2px;
+      margin: 0 4px 8px;
+      text-align: center;
+    }
+
+    /* dock responsivo de 3 itens */
+    .cta-dock {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+      align-items: stretch;
+    }
+
+    /* botão-base (link ou wrapper do dropup) */
+    .btn-cta-dock {
+      position: relative;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 12px;
+      border-radius: 14px;
+      background: #fff;
+      border: 1px solid #e5e7eb;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, .06);
+      text-decoration: none;
+      color: #111827;
+      min-height: 48px;
+      transition: transform .12s ease, box-shadow .12s ease, border-color .12s ease;
+      overflow: hidden;
+    }
+
+    .btn-cta-dock:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 10px 22px rgba(0, 0, 0, .08);
+      border-color: var(--cor-destaque, #2a2bb5);
+    }
+
+    .btn-cta-dock:active {
+      transform: translateY(0);
+    }
+
+    /* variante primária para “Impresso” */
+    .btn-cta-primary {
+      background: linear-gradient(180deg, var(--cor-destaque, #2a2bb5), var(--cor-destaque-hover, #4536d8));
+      color: #fff;
+      border-color: transparent;
+    }
+
+    .btn-cta-primary:hover {
+      box-shadow: 0 12px 26px rgba(42, 43, 181, .35);
+    }
+
+    /* conteúdo interno */
+    .cta-icon {
+      font-size: 1.15rem;
+      line-height: 1;
+      display: grid;
+      place-items: center;
+    }
+
+    .cta-text {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.1;
+    }
+
+    .cta-title {
+      font-weight: 700;
+      font-size: .95rem;
+      letter-spacing: .1px;
+    }
+
+    .cta-sub {
+      font-size: .72rem;
+      color: #6b7280;
+    }
+
+    /* badge (ex.: Kindle Unlimited) */
+    .cta-badge {
+      position: absolute;
+      top: 6px;
+      right: 6px;
+      font-size: .66rem;
+      font-weight: 700;
+      background: #10b981;
+      color: #fff;
+      padding: .15rem .4rem;
+      border-radius: 999px;
+    }
+
+    /* dropup: permitir botão no mesmo shape do link */
+    .btn-cta-dock.dropup {
+      padding: 0;
+    }
+
+    .btn-cta-dock__btn {
+      all: unset;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 12px;
+      width: 100%;
+      height: 100%;
+      cursor: pointer;
+      border-radius: 14px;
+    }
+
+    .btn-cta-dock__btn:focus {
+      outline: 2px solid rgba(48, 64, 208, .35);
+      outline-offset: 2px;
+    }
+
+    /* menu abre para cima e cabe em telas estreitas */
+    .dropdown-menu-mobile-aval {
+      position: absolute !important;
+      top: auto !important;
+      bottom: calc(100% + 6px) !important;
+      right: 0 !important;
+      left: auto !important;
+      transform: none !important;
+      width: max-content;
+      min-width: 220px;
+      max-width: calc(100vw - 16px);
+      white-space: normal;
+      overflow-wrap: anywhere;
+    }
+
+    /* ultra-compactação em telas muito pequenas */
+    @media (max-width:360px) {
+      .cta-text .cta-sub {
+        display: none;
+      }
+
+      .cta-title {
+        font-size: .9rem;
+      }
+    }
+
+    /* esconder/mostrar ao rolar – estados aplicados via JS */
+    .mobile-cta.is-hidden {
+      transform: translateY(110%);
+      transition: transform .24s ease;
+    }
+
+    .mobile-cta.is-visible {
+      transform: translateY(0);
+      transition: transform .24s ease;
+    }
+
+    .btn-cta-dock.dropup {
+      overflow: visible;
+    }
+
+    .dropdown-menu-mobile-aval {
+      z-index: 1201;
+    }
+
+    /* acessibilidade: menos movimento */
+    @media (prefers-reduced-motion: reduce) {
+
+      .btn-cta-dock,
+      .mobile-cta {
+        transition: none;
+        transform: none;
+      }
+    }
 
 
-</style>
+    /* chips de contato */
+    .contact-chip {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 14px;
+      border-radius: 12px;
+      text-decoration: none;
+      background: #fff;
+      border: 1px solid #e5e7eb;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, .04);
+      transition: transform .15s ease, box-shadow .15s ease, border-color .15s ease;
+      color: var(--texto-principal)
+    }
+
+    .contact-chip i {
+      font-size: 18px
+    }
+
+    .contact-chip .label {
+      font-weight: 600;
+      letter-spacing: .2px
+    }
+
+    .contact-chip .sub {
+      font-size: 12px;
+      color: #6b7280;
+      margin-left: auto
+    }
+
+    .contact-chip:hover {
+      transform: translateY(-2px);
+      border-color: var(--cor-destaque);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, .08);
+      color: var(--texto-principal)
+    }
+
+    /* hovers leves em cards das seções Universo/Neurarchy */
+    #universo article .shadow-sm,
+    #neurarchy .shadow-sm {
+      transition: transform .15s ease, box-shadow .15s ease
+    }
+
+    #universo article .shadow-sm:hover,
+    #neurarchy .shadow-sm:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, .10)
+    }
+
+    #neurarchy .h6 {
+      letter-spacing: .2px
+    }
+
+    /* thumbs + galeria (as usadas no HTML) */
+    .thumb-col {
+      flex: 0 0 112px;
+      max-width: 112px;
+      align-self: stretch;
+      display: flex
+    }
+
+    .thumb-fill {
+      width: 100%;
+      height: 100%;
+      border-radius: 12px;
+      object-fit: cover;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, .08);
+      cursor: zoom-in
+    }
+
+    .thumb-fill:focus {
+      outline: 2px solid var(--cor-destaque);
+      outline-offset: 2px
+    }
+
+    .thumb-col.lg {
+      flex-basis: 132px;
+      max-width: 132px
+    }
+
+    /* navegação do modal da galeria */
+    .modal-nav-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      border: 0;
+      background: rgba(0, 0, 0, .35);
+      color: #fff;
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center
+    }
+
+    .modal-nav-btn:hover {
+      background: rgba(0, 0, 0, .55)
+    }
+
+    .modal-nav-prev {
+      left: 12px
+    }
+
+    .modal-nav-next {
+      right: 12px
+    }
+
+    /* citação (quote hero) reutilizada e variantes */
+    .quote-hero {
+      position: relative;
+      background: linear-gradient(135deg, #0b2744 0%, #3b2db3 100%);
+      color: #fff;
+      border-radius: 16px;
+      padding: clamp(20px, 3.5vw, 40px);
+      overflow: hidden;
+      box-shadow: 0 10px 28px rgba(0, 0, 0, .18)
+    }
+
+    .quote-hero::after {
+      content: "";
+      position: absolute;
+      inset: -20%;
+      background:
+        radial-gradient(1200px 1200px at 110% 20%, rgba(255, 255, 255, .08), transparent 60%),
+        radial-gradient(900px 900px at -20% 120%, rgba(255, 255, 255, .06), transparent 60%);
+      pointer-events: none
+    }
+
+    .quote-hero blockquote {
+      margin: 0;
+      font-size: clamp(1.05rem, 2.1vw, 1.35rem);
+      line-height: 1.6
+    }
+
+    .quote-hero .quote-mark {
+      font-size: clamp(2.6rem, 6vw, 4rem);
+      line-height: 1;
+      opacity: .35;
+      margin-right: .35rem
+    }
+
+    .quote-hero .who {
+      margin-top: 14px;
+      font-weight: 600;
+      letter-spacing: .2px;
+      color: #cfe8ff
+    }
+
+    /* cards de review */
+    .review-card {
+      background: #fff;
+      border: 1px solid #e5e7eb;
+      border-radius: 14px;
+      padding: 18px;
+      height: 100%;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, .06)
+    }
+
+    .review-card .name {
+      font-weight: 700;
+      margin-bottom: 2px
+    }
+
+    .stars {
+      color: #f59e0b
+    }
+
+    .review-card p {
+      margin-bottom: .6rem
+    }
+
+    /* largura maior para tablets (conteúdo) */
+    @media (min-width:768px) and (max-width:1199.98px) {
+      main.container {
+        max-width: min(1100px, 94vw) !important
+      }
+
+      .row.g-2 {
+        --bs-gutter-x: 1.25rem
+      }
+
+      .row.g-3 {
+        --bs-gutter-x: 1.5rem
+      }
+    }
+
+    /* FOOTER (apenas a versão minimal atual) */
+    .site-footer {
+      --footer-bg-1: #0b2744;
+      --footer-bg-2: #1a1d36;
+      --footer-text: #eaf2ff;
+      --footer-pill-bg: rgba(255, 255, 255, .08);
+      --footer-pill-brd: rgba(255, 255, 255, .18);
+      background: linear-gradient(180deg, var(--footer-bg-1), var(--footer-bg-2));
+      color: var(--footer-text);
+      padding: 40px 0 30px;
+      text-align: center;
+      position: relative
+    }
+
+    .site-footer::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, #2a2bb5, #4536d8 40%, #2a2bb5 80%);
+      opacity: .9
+    }
+
+    .footer-title {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 20px;
+      letter-spacing: .5px
+    }
+
+    .footer-social {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 18px
+    }
+
+    .footer-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: .45rem;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: var(--footer-pill-bg);
+      border: 1px solid var(--footer-pill-brd);
+      color: var(--footer-text);
+      text-decoration: none;
+      font-weight: 500;
+      transition: all .2s ease
+    }
+
+    .footer-pill:hover {
+      background: rgba(255, 255, 255, .14);
+      border-color: rgba(255, 255, 255, .28);
+      transform: translateY(-1px);
+      color: #fff
+    }
+
+    .footer-copy {
+      font-size: .9rem;
+      opacity: .8;
+      margin: 0
+    }
+
+    .footer-pill:focus {
+      outline: 2px solid #c8d3ff;
+      outline-offset: 2px
+    }
+
+    /* BANNER AGUR – imagem vertical + texto ao lado */
+    .card-custom.banner-agur {
+      padding: 0 !important;
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: clamp(160px, 32vw, 460px) 1fr;
+      border-radius: 16px
+    }
+
+    .banner-agur .agur-illustration {
+      background: url("./img/banners/agur.png") 22% center/cover no-repeat;
+      min-height: clamp(300px, 48vw, 560px)
+    }
+
+    .banner-agur .agur-text.quote-hero {
+      border-radius: 0;
+      box-shadow: none;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: clamp(20px, 4vw, 40px)
+    }
+
+    .banner-agur blockquote {
+      margin-bottom: .5rem
+    }
+
+    .banner-agur .who {
+      margin-bottom: .75rem
+    }
+
+    @media (max-width:768px) {
+      .card-custom.banner-agur {
+        grid-template-columns: 1fr
+      }
+
+      .banner-agur .agur-illustration {
+        min-height: 600px
+      }
+    }
+    
+
+    /* BANNER GUITARRISTA — imagem full com texto sobreposto */
+    .banner-guitarrista {
+      position: relative;
+      overflow: hidden;
+      border-radius: 16px;
+      padding: 0 !important
+    }
+
+    .banner-guitarrista-img {
+      /* usa o arquivo sem texto (corrigido para .jpg) */
+      background: url("./img/banners/banner-guitarrista.png") center center/cover no-repeat;
+      min-height: clamp(300px, 45vw, 520px);
+      filter: brightness(.85)
+    }
+
+    .banner-guitarrista-texto {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      text-align: center;
+      padding: 30px;
+      background: linear-gradient(to top, rgba(0, 0, 0, .55) 10%, transparent 60%)
+    }
+
+    .banner-guitarrista-texto h3 {
+      font-family: 'Orbitron', sans-serif;
+      font-weight: 600;
+      color: #fff;
+      text-shadow: 0 0 8px rgba(0, 0, 0, .6);
+      font-size: clamp(1rem, 2.8vw, 1.8rem);
+      line-height: 1.4;
+      letter-spacing: .5px;
+      margin: 0
+    }
+
+    @media (max-width:768px) {
+      .banner-guitarrista-texto {
+        align-items: center;
+        background: linear-gradient(to top, rgba(0, 0, 0, .3) 30%, transparent 70%);
+        padding: 20px
+      }
+    }
+
+    /* reduções de movimento */
+    @media (prefers-reduced-motion:reduce) {
+
+      .card-custom,
+      .card-custom:hover {
+        transition: none;
+        transform: none
+      }
+    }
+  </style>
 
 </head>
 
@@ -503,9 +994,7 @@
           <li class="nav-item"><a class="nav-link" href="#neurarchy">Neurarchy</a></li>
           <li class="nav-item"><a class="nav-link" href="#universo">Localidades</a></li>
           <li class="nav-item"><a class="nav-link" href="#faq">FAQ</a></li>
-          <!--li class="nav-item"><a class="nav-link" href="#instagram">Instagram</a></li-->
           <li class="nav-item"><a class="nav-link" href="#sobre">Autor</a></li>
-          <!--li class="nav-item"><a class="nav-link" href="#publicacoes">Artigos</a></li-->
           <li class="nav-item"><a class="nav-link" href="#contato">Contato</a></li>
         </ul>
       </div>
@@ -517,7 +1006,8 @@
     <div class="container text-center">
       <h1><strong>Cânticos de Machina</strong></h1>
       <h2><strong>Primavera Artificial</strong></h2>
-      <h3 class="mb-5">Uma ficção cristã com jornada intensa de ação e reflexão sobre fé, tecnologia e humanidade — por C. E. Gomes
+      <h3 class="mb-5">Uma ficção cristã com jornada intensa de ação e reflexão sobre fé, tecnologia e humanidade — por
+        C. E. Gomes
       </h3>
 
       <div class="cta-wrap d-flex justify-content-center flex-wrap gap-3 mt-3 d-none d-md-flex">
@@ -534,7 +1024,8 @@
       </div>
       <p class="mt-5 mb-0 price-note d-none d-md-inline-block">
         Impresso na <strong>Amazon</strong> e no <strong>Clube de Autores</strong>: <strong>R$ 67,00</strong> •
-        E-book na Amazon: <strong>R$ 9,90</strong> ou <strong>gratuito</strong> no <strong class="text-primary">Kindle Unlimited</strong>
+        E-book na Amazon: <strong>R$ 9,90</strong> ou <strong>gratuito</strong> no <strong class="text-primary">Kindle
+          Unlimited</strong>
       </p>
     </div>
   </header>
@@ -651,6 +1142,7 @@
           Eu anseio por uma Humanidade com a mente livre, mas muitos rejeitam essa liberdade, preferindo a falsa
           segurança oferecida por manipuladores. Não enxergam o perigo que está bem diante de seus olhos. Por isso, é
           meu dever expor essa ameaça, mesmo que isso exija alguns sacrifícios em nome de um bem maior.
+        </blockquote>
         <figcaption class="who">— Adonijah</figcaption>
       </figure>
 
@@ -838,16 +1330,34 @@
       </div>
     </section>
 
-<!-- BANNER 1 — Agur / Vigília da Palavra -->
-<section class="card-custom p-0" aria-label="Banner: Agur e a Palavra">
-  <img
-    src="./img/banners/banner-agur.png"
-    alt="Agur escrevendo à luz de uma vela enquanto um sentinela mecânico vigia a cidade; texto sobre a Palavra de Deus permanecer viva"
-    class="banner-full"
-    loading="lazy"
-    decoding="async"
-  />
-</section>
+    <!-- BANNER 1 — Agur / Vigília da Palavra -->
+    <section class="card-custom banner-agur" aria-label="Banner: Agur e a Palavra">
+      <!-- Lado esquerdo: só a ilustração (recorte da imagem) -->
+      <div class="agur-illustration" role="img"
+        aria-label="Agur escrevendo à luz de vela enquanto um sentinela mecânico vigia a cidade.">
+      </div>
+
+      <!-- Lado direito: textos no mesmo background das citações -->
+      <div class="agur-text quote-hero">
+        <blockquote class="mb-3">
+          <span class="quote-mark" aria-hidden="true">“</span>
+          Enquanto houver quem se lembre, quem creia e quem resista,
+          a Palavra de Deus permanecerá viva.
+        </blockquote>
+        <figcaption class="who mb-3">— Agur</figcaption>
+
+        <p class="mb-2">
+          Agur escreve em segredo, num futuro onde a fé foi apagada
+          e a história reprogramada.
+        </p>
+        <p class="mb-2">
+          Sua narrativa resgata a <strong>Primavera Artificial</strong> — promessa
+          tecnológica que abriu caminho para a <strong>Dominação Machina</strong>.
+        </p>
+        <p class="mb-0">Um registro de resistência, alerta e esperança.</p>
+      </div>
+    </section>
+
 
 
     <!-- PROTAGONISTAS -->
@@ -969,47 +1479,6 @@
         cruzam em seus corredores, onde decisões técnicas moldam vidas, a sociedade e o futuro.
       </p>
 
-      <!-- div class="d-flex flex-wrap gap-2 mb-4" role="navigation" aria-label="Atalhos da Neurarchy">
-        <a class="btn btn-outline-primary btn-sm" href="#neurarchy-equipes"><i class="bi bi-diagram-3"></i> Áreas &
-          Equipes</a>
-        <a class="btn btn-outline-primary btn-sm" href="#neurarchy-pessoas"><i class="bi bi-people"></i> Pessoas</a>
-      </div>
-
-      
-      <article id="neurarchy-equipes" class="mb-4">
-        <h3 class="h5 mb-3"><i class="bi bi-diagram-3" aria-hidden="true"></i> Áreas & Equipes</h3>
-        <div class="row row-cols-1 row-cols-md-2 g-3">
-          <div class="col">
-            <div class="h-100 p-3 border rounded-3 bg-white">
-              <h4 class="h6 mb-2">P&D Neuro (Solomon Lab)</h4>
-              <p class="mb-0 small text-secondary">Pesquisa de interface cérebro-máquina, modelos de IA aplicada, ética
-                de uso e protocolos clínicos.</p>
-            </div>
-          </div>
-          <div class="col">
-            <div class="h-100 p-3 border rounded-3 bg-white">
-              <h4 class="h6 mb-2">Segurança e Operações</h4>
-              <p class="mb-0 small text-secondary">Proteção física e cibernética, SOC/Red Team, protocolos de crise,
-                contra-inteligência.</p>
-            </div>
-          </div>
-          <div class="col">
-            <div class="h-100 p-3 border rounded-3 bg-white">
-              <h4 class="h6 mb-2">Cedrus (subsidiária)</h4>
-              <p class="mb-0 small text-secondary">Nanotecnologia e tecnologias incorporadas; integração de hardware
-                avançado com o ecossistema Solomon.</p>
-            </div>
-          </div>
-          <div class="col">
-            <div class="h-100 p-3 border rounded-3 bg-white">
-              <h4 class="h6 mb-2">Parcerias & Clínicas</h4>
-              <p class="mb-0 small text-secondary">Hospitais, universidades e centros de reabilitação para ensaios e
-                adoção segura.</p>
-            </div>
-          </div>
-        </div>
-      </article>
--->
       <!-- Pessoas -->
       <article id="neurarchy-pessoas">
         <h3 class="h5 mb-3"><i class="bi bi-people" aria-hidden="true"></i> Pessoas</h3>
@@ -1217,35 +1686,6 @@
             </div>
           </article>
 
-          <!-- (Opcional) Lilyandra Sunamaj -->
-          <!--
-    <article class="col" itemscope itemtype="https://schema.org/Person">
-      <div class="h-100 p-3 border rounded-3 bg-white shadow-sm d-flex gap-3 align-items-stretch">
-        <div class="thumb-col">
-          <img class="thumb-fill gallery-trigger"
-               src="./img/neurarchy/lilyandra-sunamaj-thumb.jpg"
-               data-img="./img/neurarchy/lilyandra-sunamaj.jpg"
-               data-alt="Retrato de Lilyandra Sunamaj"
-               data-title="Lilyandra Sunamaj"
-               data-gallery="people"
-               alt="Retrato de Lilyandra Sunamaj"
-               width="112" height="112"
-               loading="lazy" decoding="async" role="button" tabindex="0">
-        </div>
-        <div class="flex-grow-1">
-          <h4 class="h6 mb-1" itemprop="name">Lilyandra Sunamaj (“Lily”)</h4>
-          <p class="small mb-1"><strong itemprop="jobTitle">Interfaces & Experiência Neural</strong></p>
-          <p class="small text-secondary mb-2" itemprop="description">…</p>
-          <button type="button" class="btn btn-sm btn-outline-primary gallery-trigger"
-                  data-img="./img/neurarchy/lilyandra-sunamaj.jpg"
-                  data-alt="Retrato de Lilyandra Sunamaj"
-                  data-title="Lilyandra Sunamaj"
-                  data-gallery="people">Ver maior</button>
-        </div>
-      </div>
-    </article>
-    -->
-
         </div>
       </article>
 
@@ -1450,16 +1890,17 @@
 
     </section>
 
-<!-- BANNER 2 — Guitarrista / Cântico Novo -->
-<section class="card-custom p-0" aria-label="Banner: Cântico Novo">
-  <img
-    src="./img/banners/banner-guitarrista.jpg"
-    alt="Guitarrista de asas tecnológicas em um palco futurista; texto: Do encontro entre fé e tecnologia nasce um cântico novo"
-    class="banner-full"
-    loading="lazy"
-    decoding="async"
-  />
-</section>
+    <!-- BANNER 2 — Guitarrista / Cântico Novo -->
+    <!-- BANNER 2 — Guitarrista / Cântico Novo -->
+    <section class="card-custom banner-guitarrista" aria-label="Banner: Cântico Novo">
+      <div class="banner-guitarrista-img" role="img"
+        aria-label="Guitarrista com asas tecnológicas em um palco futurista."></div>
+
+      <div class="banner-guitarrista-texto">
+        <h3>Do encontro entre fé e tecnologia,<br>nasce um cântico novo.</h3>
+      </div>
+    </section>
+
 
     <!-- FAQ -->
     <section id="faq" class="card-custom" aria-labelledby="titulo-faq">
@@ -1621,40 +2062,6 @@
       </div>
     </section>
 
-    <!-- Publicações -->
-    <section id="publicacoes" class="card-custom d-none" aria-labelledby="titulo-publicacoes">
-      <h2 id="titulo-publicacoes"><i class="bi bi-journal-text" aria-hidden="true"></i> Publicações Acadêmicas</h2>
-      <p>Confira alguns dos meus principais trabalhos acadêmicos:</p>
-      <ul class="list-group">
-        <li class="list-group-item">
-          <strong>Evaluation of a GWAP for social recruitment and measurement of musical talent.</strong><br />
-          <em class="text-secondary">In: 2019 23rd IEEE International Conference on Computer Supported Cooperative Work
-            in Design (CSCWD), Porto, Portugal.</em>
-        </li>
-        <li class="list-group-item">
-          <strong>Towards a Framework for Crowdsourced Collection, Cleaning and Measurement of Digital
-            Content.</strong><br />
-          <em class="text-secondary">In: 2013 IEEE International Conference on Systems, Man, and Cybernetics (SMC),
-            Manchester, Reino Unido.</em>
-        </li>
-        <li class="list-group-item">
-          <strong>Cassino Musical: A game with a purpose for social recruitment and measurement of musical
-            talent.</strong><br />
-          <em class="text-secondary">In: 2013 17th IEEE International Conference on Computer Supported Cooperative Work
-            in Design (CSCWD), Whistler, Canadá.</em>
-        </li>
-        <li class="list-group-item">
-          <strong>Crowdsourcing for music: Survey and taxonomy.</strong><br />
-          <em class="text-secondary">In: 2012 IEEE International Conference on Systems, Man, and Cybernetics (SMC),
-            Seoul, Coreia do Sul.</em>
-        </li>
-      </ul>
-      <a class="btn btn-outline-primary mt-3" href="https://scholar.google.com.br/citations?user=11ORDMIAAAAJ"
-        target="_blank" rel="noopener">
-        <i class="bi bi-box-arrow-up-right" aria-hidden="true"></i> Ver perfil no Google Acadêmico
-      </a>
-    </section>
-
     <!-- CONTATO -->
     <section id="contato" class="card-custom">
       <h2><i class="bi bi-envelope-fill"></i> Contato</h2>
@@ -1701,136 +2108,92 @@
       </div>
     </section>
 
-    <!-- NEWSLETTER (opcional/oculta) -->
-    <section id="newsletter" class="card-custom d-none" aria-labelledby="titulo-newsletter">
-      <h2 id="titulo-newsletter"><i class="bi bi-envelope-paper-heart" aria-hidden="true"></i> Newsletter</h2>
-      <p>Receba novidades de <em>Cânticos de Machina — Primavera Artificial</em>, extras de bastidores e promoções.</p>
-
-      <form id="newsletter-form" class="row g-3" novalidate>
-        <div class="col-12" style="position:absolute; left:-5000px;" aria-hidden="true">
-          <label for="website">Deixe este campo em branco</label>
-          <input id="website" name="website" type="text" tabindex="-1" autocomplete="off">
-        </div>
-
-        <div class="col-md-7">
-          <label for="newsletter-email" class="form-label">Seu e-mail</label>
-          <input id="newsletter-email" name="email" type="email" class="form-control" placeholder="voce@email.com"
-            required inputmode="email" autocomplete="email" aria-describedby="newsletter-help">
-          <div id="newsletter-help" class="form-text">Enviaremos só conteúdos da obra. Sem spam. Você pode sair quando
-            quiser.</div>
-          <div class="invalid-feedback">Digite um e-mail válido.</div>
-        </div>
-
-        <div class="col-md-7 d-flex align-items-end">
-          <button id="newsletter-btn" type="submit" class="btn btn-primary w-100">
-            <i class="bi bi-send"></i> Inscrever
-          </button>
-        </div>
-
-        <div class="col-12">
-          <div id="newsletter-msg" class="price-note" role="status" aria-live="polite" style="display:none;"></div>
-        </div>
-      </form>
-    </section>
 
   </main>
 
-  <!-- CTA fixa no mobile -->
-  <!-- CTA fixa no mobile (simétrica) -->
-  <div class="mobile-cta px-2 py-3" role="region" aria-label="Ações rápidas no mobile">
+  <!-- CTA fixa no mobile (NOVA) -->
+  <div class="mobile-cta px-2 py-2" role="region" aria-label="Ações rápidas no mobile">
     <div class="container">
-      <!-- Label de contexto -->
-      <p class="cta-label mb-2">Garanta o seu ou deixe sua avaliação se já leu:</p>
+      <p class="cta-label mb-2">Garanta o seu ou deixe sua avaliação:</p>
 
-      <div class="cta-grid">
-        <!-- Impresso (Amazon) -->
-        <a href="https://www.amazon.com.br/dp/6552783329" target="_blank" rel="noopener" class="btn btn-primary btn-cta"
-          aria-label="Comprar livro impresso na Amazon">
-          <i class="bi bi-cart-fill" aria-hidden="true"></i>
-          <span class="label">Impresso</span>
+      <nav class="cta-dock" aria-label="Menu de ações">
+        <!-- Impresso -->
+        <a href="https://www.amazon.com.br/dp/6552783329" target="_blank" rel="noopener"
+          class="btn-cta-dock btn-cta-primary" aria-label="Comprar livro impresso na Amazon">
+          <span class="cta-icon" aria-hidden="true"><i class="bi bi-cart-fill"></i></span>
+          <span class="cta-text">
+            <span class="cta-title">Impresso</span>
+            <span class="cta-sub"><span class="text-light">Amazon</span></span>
+          </span>
         </a>
 
         <!-- E-book -->
-        <a href="https://a.co/d/7uYBpvn" target="_blank" rel="noopener" class="btn btn-primary btn-cta"
+        <a href="https://a.co/d/7uYBpvn" target="_blank" rel="noopener" class="btn-cta-dock"
           aria-label="Comprar e-book na Amazon">
-          <i class="bi bi-book" aria-hidden="true"></i>
-          <span class="label">E-book</span>
+          <span class="cta-icon" aria-hidden="true"><i class="bi bi-book"></i></span>
+          <span class="cta-text">
+            <span class="cta-title">E-book</span>
+            <span class="cta-sub">Kindle / Kindle Unlimited</span>
+          </span>
         </a>
 
-        <!-- Avaliar (dropup) -->
-        <div class="dropup">
-
-          <button class="btn btn-outline-primary btn-cta dropdown-toggle w-100" type="button" data-bs-toggle="dropdown"
+        <!-- Avaliar (dropup acessível) -->
+        <div class="btn-cta-dock dropup">
+          <button class="btn-cta-dock__btn dropdown-toggle" type="button" data-bs-toggle="dropdown"
             data-bs-display="static" aria-expanded="false" aria-label="Abrir opções para avaliar o livro">
-            <i class="bi bi-stars" aria-hidden="true"></i>
-            <span class="label">Avaliar</span>
+            <span class="cta-icon" aria-hidden="true"><i class="bi bi-stars"></i></span>
+            <span class="cta-text">
+              <span class="cta-title">Avaliar</span>
+
+            </span>
           </button>
-
-          <ul class="dropdown-menu shadow dropdown-menu-mobile-aval">
-
-            <li>
-              <a class="dropdown-item" href="https://a.co/d/7uYBpvn" target="_blank" rel="noopener">
-                <i class="bi bi-amazon me-2"></i> Amazon
-              </a>
-            </li>
-            <li>
-              <a class="dropdown-item" href="https://clubedeautores.com.br/livro/canticos-de-machina" target="_blank"
-                rel="noopener">
-                <i class="bi bi-bag me-2"></i> Clube de Autores
-              </a>
-            </li>
+          <ul class="dropdown-menu dropdown-menu-mobile-aval shadow">
+            <li><a class="dropdown-item" href="https://a.co/d/7uYBpvn" target="_blank" rel="noopener"><i
+                  class="bi bi-amazon me-2"></i>Amazon</a></li>
+            <li><a class="dropdown-item" href="https://clubedeautores.com.br/livro/canticos-de-machina" target="_blank"
+                rel="noopener"><i class="bi bi-bag me-2"></i>Clube de Autores</a></li>
             <li>
               <hr class="dropdown-divider">
             </li>
-            <li>
-              <a class="dropdown-item"
+            <li><a class="dropdown-item"
                 href="https://www.skoob.com.br/canticos-de-machina-primavera-artificial-122595444ed122598175.html"
-                target="_blank" rel="noopener">
-                <i class="bi bi-chat-quote me-2"></i> Skoob
-              </a>
-            </li>
-            <li>
-              <a class="dropdown-item" href="https://www.goodreads.com/book/show/239675050-c-nticos-de-machina"
-                target="_blank" rel="noopener">
-                <i class="bi bi-chat-quote-fill me-2"></i> Goodreads
-              </a>
-            </li>
+                target="_blank" rel="noopener"><i class="bi bi-chat-quote me-2"></i>Skoob</a></li>
+            <li><a class="dropdown-item" href="https://www.goodreads.com/book/show/239675050-c-nticos-de-machina"
+                target="_blank" rel="noopener"><i class="bi bi-chat-quote-fill me-2"></i>Goodreads</a></li>
           </ul>
         </div>
-      </div>
+      </nav>
     </div>
   </div>
 
   <!-- Rodapé -->
-<footer class="site-footer text-light" role="contentinfo">
-  <div class="container">
-    <p class="footer-title">Siga-nos nas redes sociais</p>
+  <footer class="site-footer text-light" role="contentinfo">
+    <div class="container">
+      <p class="footer-title">Siga-nos nas redes sociais</p>
 
-    <nav class="footer-social" aria-label="Redes sociais">
-      <a class="footer-pill" href="https://www.instagram.com/carlosgomes85" target="_blank" rel="noopener">
-        <i class="bi bi-instagram" aria-hidden="true"></i><span>Instagram</span>
-      </a>
-      <a class="footer-pill" href="https://www.facebook.com/kdugomes" target="_blank" rel="noopener">
-        <i class="bi bi-facebook" aria-hidden="true"></i><span>Facebook</span>
-      </a>
-      <a class="footer-pill" href="https://www.tiktok.com/@cadugomes85" target="_blank" rel="noopener">
-        <i class="bi bi-tiktok" aria-hidden="true"></i><span>TikTok</span>
-      </a>
-      <a class="footer-pill" href="https://www.threads.net/@carlosgomes85" target="_blank" rel="noopener">
-        <i class="bi bi-threads" aria-hidden="true"></i><span>Threads</span>
-      </a>
-      <a class="footer-pill" href="https://www.linkedin.com/in/carlosgomes85/" target="_blank" rel="noopener">
-        <i class="bi bi-linkedin" aria-hidden="true"></i><span>LinkedIn</span>
-      </a>
-    </nav>
+      <nav class="footer-social" aria-label="Redes sociais">
+        <a class="footer-pill" href="https://www.instagram.com/carlosgomes85" target="_blank" rel="noopener">
+          <i class="bi bi-instagram" aria-hidden="true"></i><span>Instagram</span>
+        </a>
+        <a class="footer-pill" href="https://www.facebook.com/kdugomes" target="_blank" rel="noopener">
+          <i class="bi bi-facebook" aria-hidden="true"></i><span>Facebook</span>
+        </a>
+        <a class="footer-pill" href="https://www.tiktok.com/@cadugomes85" target="_blank" rel="noopener">
+          <i class="bi bi-tiktok" aria-hidden="true"></i><span>TikTok</span>
+        </a>
+        <a class="footer-pill" href="https://www.threads.net/@carlosgomes85" target="_blank" rel="noopener">
+          <i class="bi bi-threads" aria-hidden="true"></i><span>Threads</span>
+        </a>
+        <a class="footer-pill" href="https://www.linkedin.com/in/carlosgomes85/" target="_blank" rel="noopener">
+          <i class="bi bi-linkedin" aria-hidden="true"></i><span>LinkedIn</span>
+        </a>
+      </nav>
 
-    <p class="footer-copy">
-      &copy; 2025 Carlos Eduardo Gomes — Todos os direitos reservados.
-    </p>
-  </div>
-</footer>
-
-
+      <p class="footer-copy">
+        &copy; 2025 Carlos Eduardo Gomes — Todos os direitos reservados.
+      </p>
+    </div>
+  </footer>
 
   <!-- JSON-LD (Book enriquecido com seus dados) -->
   <script type="application/ld+json">
@@ -2078,6 +2441,39 @@
         if (e.key === 'ArrowRight') { e.preventDefault(); showItemByIndex(currentIndex + 1); }
       });
     });
+  </script>
+
+  <script>
+    (function () {
+      const bar = document.querySelector('.mobile-cta');
+      if (!bar) return;
+
+      // estado inicial visível
+      bar.classList.add('is-visible');
+      let lastY = window.scrollY, ticking = false;
+
+      function onScroll() {
+        const y = window.scrollY;
+        const goingDown = y > lastY && y > 80;
+        bar.classList.toggle('is-hidden', goingDown);
+        bar.classList.toggle('is-visible', !goingDown);
+        lastY = y;
+        ticking = false;
+      }
+      window.addEventListener('scroll', () => {
+        if (!ticking) { window.requestAnimationFrame(onScroll); ticking = true; }
+      }, { passive: true });
+
+      // aria-expanded no dropup
+      document.addEventListener('shown.bs.dropdown', (e) => {
+        const btn = e.target.closest('.dropup')?.querySelector('.dropdown-toggle');
+        if (btn) btn.setAttribute('aria-expanded', 'true');
+      });
+      document.addEventListener('hidden.bs.dropdown', (e) => {
+        const btn = e.target.closest('.dropup')?.querySelector('.dropdown-toggle');
+        if (btn) btn.setAttribute('aria-expanded', 'false');
+      });
+    })();
   </script>
 
 
