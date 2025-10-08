@@ -246,11 +246,11 @@
       z-index: 0
     }
 
-    
+
     @media (max-width: 992px) {
-     .parallax-header {
-      min-height: 450px;
-     }
+      .parallax-header {
+        min-height: 450px;
+      }
     }
 
     .parallax-header::before {
@@ -1003,6 +1003,97 @@
         transform: none
       }
     }
+
+    /* ================================
+   BANNER LANÇAMENTO — imagem à direita (abaixo no mobile)
+================================ */
+    .card-custom.banner-lancamento {
+      padding: 0 !important;
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 1fr clamp(160px, 32vw, 460px);
+      border-radius: 16px;
+    }
+
+    .banner-lancamento .lanc-illustration {
+      background: url("./img/banners/lancamento.png") center center/cover no-repeat;
+      min-height: clamp(300px, 48vw, 560px);
+    }
+
+    .banner-lancamento .lanc-text.quote-hero {
+      border-radius: 0;
+      box-shadow: none;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: clamp(20px, 4vw, 40px);
+    }
+
+    .banner-lancamento blockquote {
+      margin-bottom: .5rem;
+    }
+
+    .banner-lancamento .who {
+      margin-top: .75rem;
+    }
+
+    @media (max-width: 768px) {
+      .card-custom.banner-lancamento {
+        grid-template-columns: 1fr;
+      }
+
+      .banner-lancamento .lanc-text {
+        order: 1;
+      }
+
+      .banner-lancamento .lanc-illustration {
+        order: 2;
+        min-height: 600px;
+      }
+    }
+
+    /* ================================
+   BANNER ADONIJAH — imagem à esquerda (como Agur)
+================================ */
+    .card-custom.banner-adonijah {
+      padding: 0 !important;
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: clamp(160px, 32vw, 460px) 1fr;
+      border-radius: 16px;
+    }
+
+    .banner-adonijah .adonijah-illustration {
+      background: url("./img/banners/adonijah.jpg") center center/cover no-repeat;
+      min-height: clamp(300px, 48vw, 560px);
+    }
+
+    .banner-adonijah .adonijah-text.quote-hero {
+      border-radius: 0;
+      box-shadow: none;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: clamp(20px, 4vw, 40px);
+    }
+
+    .banner-adonijah blockquote {
+      margin-bottom: .5rem;
+    }
+
+    .banner-adonijah .who {
+      margin-top: .75rem;
+    }
+
+    @media (max-width: 768px) {
+      .card-custom.banner-adonijah {
+        grid-template-columns: 1fr;
+      }
+
+      .banner-adonijah .adonijah-illustration {
+        min-height: 600px;
+      }
+    }
   </style>
 
 </head>
@@ -1161,7 +1252,7 @@
 
     </section>
 
-    <section id="citacao" class="card-custom" aria-labelledby="titulo-citacao">
+    <section id="citacao" class="card-custom d-none" aria-labelledby="titulo-citacao">
 
       <h2 id="titulo-citacao"><i class="bi bi-chat-left-quote-fill" aria-hidden="true"></i> Citações</h2>
 
@@ -1255,7 +1346,6 @@
             </div>
             <meta itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
             <meta itemprop="ratingValue" content="5">
-            <p class="small text-secondary mb-2">5 estrelas</p>
             <div itemprop="reviewBody">
               <p>Uma obra que merece 5 estrelas. O livro apresenta um enredo interessante que mistura aventura, ação e
                 suspense na dose certa.</p>
@@ -1280,7 +1370,6 @@
             </div>
             <meta itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
             <meta itemprop="ratingValue" content="5">
-            <p class="small text-secondary mb-2">5 estrelas</p>
             <div itemprop="reviewBody">
               <p>O legal do livro é como ele mistura aventura, mistério e reflexão. Tem momentos de pura tensão e
                 passagens que fazem pensar sobre fé, identidade e o preço da evolução.</p>
@@ -1304,7 +1393,6 @@
             </div>
             <meta itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
             <meta itemprop="ratingValue" content="5">
-            <p class="small text-secondary mb-2">5 estrelas</p>
             <div itemprop="reviewBody">
               <p>Experiência diferente: mistura ficção científica com reflexões cristãs de forma especial.</p>
               <p>A cada capítulo há tecnologia e futuro, mas também mensagens sobre fé, propósito e a caminhada com
@@ -1327,7 +1415,6 @@
             </div>
             <meta itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
             <meta itemprop="ratingValue" content="5">
-            <p class="small text-secondary mb-2">5 estrelas</p>
             <div itemprop="reviewBody">
               <p>Leitura obrigatória pra quem curte distopia, ficção científica, tecnologia, IA e religião — tudo numa
                 trama envolvente com reflexões atuais sobre como a tecnologia influencia nossas vidas e espiritualidade.
@@ -1350,7 +1437,6 @@
             </div>
             <meta itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
             <meta itemprop="ratingValue" content="5">
-            <p class="small text-secondary mb-2">5 estrelas</p>
             <div itemprop="reviewBody">
               <p>Ótimo livro! Trama muito bem elaborada, com poder de envolver o leitor desde as primeiras páginas.</p>
             </div>
@@ -1371,7 +1457,6 @@
             </div>
             <meta itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
             <meta itemprop="ratingValue" content="5">
-            <p class="small text-secondary mb-2">5 estrelas</p>
             <div itemprop="reviewBody">
               <p>Trama envolvente e bem elaborada. O livro traz a emoção da ficção e reflexões importantes para a vida
                 atual. Leitura agradável e construtiva!</p>
@@ -1383,12 +1468,10 @@
 
     <!-- BANNER 1 — Agur / Vigília da Palavra -->
     <section class="card-custom banner-agur" aria-label="Banner: Agur e a Palavra">
-      <!-- Lado esquerdo: só a ilustração (recorte da imagem) -->
       <div class="agur-illustration" role="img"
         aria-label="Agur escrevendo à luz de vela enquanto um sentinela mecânico vigia a cidade.">
       </div>
 
-      <!-- Lado direito: textos no mesmo background das citações -->
       <div class="agur-text quote-hero">
         <blockquote class="mb-3">
           <span class="quote-mark" aria-hidden="true">“</span>
@@ -1521,6 +1604,23 @@
         </div>
       </article>
     </section>
+
+    <section class="card-custom banner-lancamento" aria-label="Banner: Lançamento Solomon">
+      <div class="lanc-text quote-hero">
+        <blockquote class="mb-2">
+          <span class="quote-mark" aria-hidden="true">“</span>
+          Vivemos uma era em que humanos aperfeiçoaram máquinas, máquinas aperfeiçoaram máquinas, e agora, as máquinas
+          irão aperfeiçoar os humanos. Solomon veio para erradicar doenças neurodegenerativas, salvar milhares de vidas
+          e elevar o desempenho humano a novos patamares. Hoje, damos um passo definitivo em direção à evolução!
+        </blockquote>
+        <figcaption class="who">— Elizabeth Sabra <span class="text-white-50">(CEO da Neurarchy)</span></figcaption>
+      </div>
+
+      <div class="lanc-illustration" role="img"
+        aria-label="Imagem do lançamento Solomon — neurorrede luminosa e estética futurista.">
+      </div>
+    </section>
+
 
     <!-- NEURARCHY -->
     <section id="neurarchy" class="card-custom" aria-labelledby="titulo-neurarchy">
@@ -1742,6 +1842,20 @@
 
     </section>
 
+    <section class="card-custom banner-adonijah" aria-label="Banner: Grupo Adonijah">
+      <div class="adonijah-illustration" role="img" aria-label="Imagem representando o grupo hacker Adonijah.">
+      </div>
+
+      <div class="adonijah-text quote-hero">
+        <blockquote class="mb-2">
+          <span class="quote-mark" aria-hidden="true">“</span>
+          Eu anseio por uma Humanidade com a mente livre, mas muitos rejeitam essa liberdade, preferindo a falsa
+          segurança oferecida por manipuladores. Não enxergam o perigo que está bem diante de seus olhos. Por isso,
+          é meu dever expor essa ameaça, mesmo que isso exija alguns sacrifícios em nome de um bem maior.
+        </blockquote>
+        <figcaption class="who">— Adonijah</figcaption>
+      </div>
+    </section>
 
     <!-- UNIVERSO -->
     <section id="universo" class="card-custom" aria-labelledby="titulo-universo">
@@ -2187,54 +2301,57 @@
         </a>
 
         <!-- Avaliar (dropup acessível) -->
-<!-- Avaliar (dropup acessível) -->
-<div class="btn-cta-dock dropup">
-  <button class="btn-cta-dock__btn dropdown-toggle" type="button"
-          data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false"
-          aria-label="Abrir opções para avaliar o livro">
-    <span class="cta-text">
-      <span class="cta-title">Avaliar</span>
-    </span>
-  </button>
+        <!-- Avaliar (dropup acessível) -->
+        <div class="btn-cta-dock dropup">
+          <button class="btn-cta-dock__btn dropdown-toggle" type="button" data-bs-toggle="dropdown"
+            data-bs-display="static" aria-expanded="false" aria-label="Abrir opções para avaliar o livro">
+            <span class="cta-text">
+              <span class="cta-title">Avaliar</span>
+            </span>
+          </button>
 
-  <ul class="dropdown-menu dropdown-menu-mobile-aval shadow">
-    <!-- Amazon -->
-    <li><h6 class="dropdown-header">Amazon</h6></li>
-    <li>
-      <a class="dropdown-item" href="https://www.amazon.com.br/dp/6552783329" target="_blank" rel="noopener">
-        <i class="bi bi-amazon me-2"></i>Avaliar (Impresso)
-      </a>
-    </li>
-    <li>
-      <a class="dropdown-item" href="https://a.co/d/7uYBpvn" target="_blank" rel="noopener">
-        <i class="bi bi-amazon me-2"></i>Avaliar (E-book)
-      </a>
-    </li>
+          <ul class="dropdown-menu dropdown-menu-mobile-aval shadow">
+            <!-- Amazon -->
+            <li>
+              <h6 class="dropdown-header">Amazon</h6>
+            </li>
+            <li>
+              <a class="dropdown-item" href="https://www.amazon.com.br/dp/6552783329" target="_blank" rel="noopener">
+                <i class="bi bi-amazon me-2"></i>Avaliar (Impresso)
+              </a>
+            </li>
+            <li>
+              <a class="dropdown-item" href="https://a.co/d/7uYBpvn" target="_blank" rel="noopener">
+                <i class="bi bi-amazon me-2"></i>Avaliar (E-book)
+              </a>
+            </li>
 
-    <li><hr class="dropdown-divider"></li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
 
-    <!-- Outras plataformas -->
-    <li>
-      <a class="dropdown-item" href="https://clubedeautores.com.br/livro/canticos-de-machina"
-         target="_blank" rel="noopener">
-        <i class="bi bi-bag me-2"></i>Clube de Autores
-      </a>
-    </li>
-    <li>
-      <a class="dropdown-item"
-         href="https://www.skoob.com.br/canticos-de-machina-primavera-artificial-122595444ed122598175.html"
-         target="_blank" rel="noopener">
-        <i class="bi bi-chat-quote me-2"></i>Skoob
-      </a>
-    </li>
-    <li>
-      <a class="dropdown-item" href="https://www.goodreads.com/book/show/239675050-c-nticos-de-machina"
-         target="_blank" rel="noopener">
-        <i class="bi bi-chat-quote-fill me-2"></i>Goodreads
-      </a>
-    </li>
-  </ul>
-</div>
+            <!-- Outras plataformas -->
+            <li>
+              <a class="dropdown-item" href="https://clubedeautores.com.br/livro/canticos-de-machina" target="_blank"
+                rel="noopener">
+                <i class="bi bi-bag me-2"></i>Clube de Autores
+              </a>
+            </li>
+            <li>
+              <a class="dropdown-item"
+                href="https://www.skoob.com.br/canticos-de-machina-primavera-artificial-122595444ed122598175.html"
+                target="_blank" rel="noopener">
+                <i class="bi bi-chat-quote me-2"></i>Skoob
+              </a>
+            </li>
+            <li>
+              <a class="dropdown-item" href="https://www.goodreads.com/book/show/239675050-c-nticos-de-machina"
+                target="_blank" rel="noopener">
+                <i class="bi bi-chat-quote-fill me-2"></i>Goodreads
+              </a>
+            </li>
+          </ul>
+        </div>
       </nav>
     </div>
   </div>
