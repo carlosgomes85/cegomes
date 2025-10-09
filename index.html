@@ -443,50 +443,39 @@
       text-align: center;
     }
 
-    /* 1) Evita corte de texto (linhas e altura) */
     .mobile-cta .cta-text {
       line-height: 1.25;
-      /* antes 1.1; evita cortar acentos/descendentes */
     }
 
     .mobile-cta .btn-cta-dock,
     .mobile-cta .btn-cta-dock__btn {
       min-height: 60px;
-      /* antes 48px; dá espaço pro título + sub */
     }
 
-    /* Browsers com lh: altura mínima baseada em 2 linhas + padding */
     @supports (height: 1lh) {
       .mobile-cta .btn-cta-dock {
         min-height: calc(2lh + 16px);
       }
     }
 
-    /* 2) Respiro pro caret do dropdown (Avaliar) */
     .mobile-cta .btn-cta-dock__btn.dropdown-toggle {
       padding-right: 18px;
-      /* evita que o triângulo encoste/corte */
     }
 
-    /* 3) O dropup precisa poder “vazar” o caret/menuzinho */
     .mobile-cta .btn-cta-dock {
       overflow: hidden;
-      /* mantém bordas redondas nos botões normais */
     }
 
     .mobile-cta .btn-cta-dock.dropup {
       overflow: visible;
-      /* já existia, mas reforçamos aqui */
     }
 
-    /* Telas muito estreitas: já esconde sub; força quebra segura do título */
     @media (max-width:360px) {
       .mobile-cta .cta-title {
         word-break: break-word;
       }
     }
 
-    /* dock responsivo de 3 itens */
     .cta-dock {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -494,7 +483,6 @@
       align-items: stretch;
     }
 
-    /* botão-base (link ou wrapper do dropup) */
     .btn-cta-dock {
       position: relative;
       display: flex;
@@ -522,7 +510,6 @@
       transform: translateY(0);
     }
 
-    /* variante primária para “Impresso” */
     .btn-cta-primary {
       background: linear-gradient(180deg, var(--cor-destaque, #2a2bb5), var(--cor-destaque-hover, #4536d8));
       color: #fff;
@@ -533,7 +520,6 @@
       box-shadow: 0 12px 26px rgba(42, 43, 181, .35);
     }
 
-    /* conteúdo interno */
     .cta-icon {
       font-size: 1.15rem;
       line-height: 1;
@@ -558,7 +544,6 @@
       color: #6b7280;
     }
 
-    /* badge (ex.: Kindle Unlimited) */
     .cta-badge {
       position: absolute;
       top: 6px;
@@ -571,9 +556,9 @@
       border-radius: 999px;
     }
 
-    /* dropup: permitir botão no mesmo shape do link */
     .btn-cta-dock.dropup {
       padding: 0;
+      overflow: visible;
     }
 
     .btn-cta-dock__btn {
@@ -593,7 +578,6 @@
       outline-offset: 2px;
     }
 
-    /* menu abre para cima e cabe em telas estreitas */
     .dropdown-menu-mobile-aval {
       position: absolute !important;
       top: auto !important;
@@ -606,9 +590,9 @@
       max-width: calc(100vw - 16px);
       white-space: normal;
       overflow-wrap: anywhere;
+      z-index: 1201;
     }
 
-    /* ultra-compactação em telas muito pequenas */
     @media (max-width:360px) {
       .cta-text .cta-sub {
         display: none;
@@ -619,7 +603,6 @@
       }
     }
 
-    /* esconder/mostrar ao rolar – estados aplicados via JS */
     .mobile-cta.is-hidden {
       transform: translateY(110%);
       transition: transform .24s ease;
@@ -630,15 +613,6 @@
       transition: transform .24s ease;
     }
 
-    .btn-cta-dock.dropup {
-      overflow: visible;
-    }
-
-    .dropdown-menu-mobile-aval {
-      z-index: 1201;
-    }
-
-    /* acessibilidade: menos movimento */
     @media (prefers-reduced-motion: reduce) {
 
       .btn-cta-dock,
@@ -648,8 +622,6 @@
       }
     }
 
-
-    /* chips de contato */
     .contact-chip {
       display: flex;
       align-items: center;
@@ -686,7 +658,6 @@
       color: var(--texto-principal)
     }
 
-    /* hovers leves em cards das seções Universo/Neurarchy */
     #universo article .shadow-sm,
     #neurarchy .shadow-sm {
       transition: transform .15s ease, box-shadow .15s ease
@@ -702,7 +673,6 @@
       letter-spacing: .2px
     }
 
-    /* thumbs + galeria (as usadas no HTML) */
     .thumb-col {
       flex: 0 0 112px;
       max-width: 112px;
@@ -729,7 +699,6 @@
       max-width: 132px
     }
 
-    /* navegação do modal da galeria */
     .modal-nav-btn {
       position: absolute;
       top: 50%;
@@ -756,7 +725,6 @@
       right: 12px
     }
 
-    /* citação (quote hero) reutilizada e variantes */
     .quote-hero {
       position: relative;
       background: linear-gradient(135deg, #0b2744 0%, #3b2db3 100%);
@@ -797,7 +765,6 @@
       color: #cfe8ff
     }
 
-    /* cards de review */
     .review-card {
       background: #fff;
       border: 1px solid #e5e7eb;
@@ -820,7 +787,6 @@
       margin-bottom: .6rem
     }
 
-    /* largura maior para tablets (conteúdo) */
     @media (min-width:768px) and (max-width:1199.98px) {
       main.container {
         max-width: min(1100px, 94vw) !important
@@ -835,7 +801,6 @@
       }
     }
 
-    /* FOOTER (apenas a versão minimal atual) */
     .site-footer {
       --footer-bg-1: #0b2744;
       --footer-bg-2: #1a1d36;
@@ -907,7 +872,6 @@
       outline-offset: 2px
     }
 
-    /* BANNER AGUR – imagem vertical + texto ao lado */
     .card-custom.banner-agur {
       padding: 0 !important;
       overflow: hidden;
@@ -949,7 +913,6 @@
     }
 
 
-    /* BANNER GUITARRISTA — imagem full com texto sobreposto */
     .banner-guitarrista {
       position: relative;
       overflow: hidden;
@@ -958,9 +921,8 @@
     }
 
     .banner-guitarrista-img {
-      /* usa o arquivo sem texto (corrigido para .jpg) */
       background: url("./img/banners/banner-guitarrista.png") center center/cover no-repeat;
-      min-height: clamp(300px, 45vw, 520px);
+      min-height: clamp(450px, 50vw, 620px);
       filter: brightness(.85)
     }
 
@@ -994,7 +956,6 @@
       }
     }
 
-    /* reduções de movimento */
     @media (prefers-reduced-motion:reduce) {
 
       .card-custom,
@@ -1004,9 +965,6 @@
       }
     }
 
-    /* ================================
-   BANNER LANÇAMENTO — imagem à direita (abaixo no mobile)
-================================ */
     .card-custom.banner-lancamento {
       padding: 0 !important;
       overflow: hidden;
@@ -1052,9 +1010,6 @@
       }
     }
 
-    /* ================================
-   BANNER ADONIJAH — imagem à esquerda (como Agur)
-================================ */
     .card-custom.banner-adonijah {
       padding: 0 !important;
       overflow: hidden;
@@ -1095,7 +1050,6 @@
       }
     }
 
-    /* ==== GRID DE VÍDEOS ==== */
     .video-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -1105,13 +1059,11 @@
       margin-top: 1.5rem;
     }
 
-    /* ==== ITEM DE VÍDEO ==== */
     .video-item {
       text-align: center;
       max-width: 420px;
     }
 
-    /* ==== EMBED YOUTUBE SHORT – NEON ROXO/AZUL ESCURO SUAVE ==== */
     .short-embed {
       position: relative;
       isolation: isolate;
@@ -1136,7 +1088,6 @@
       background: #000;
     }
 
-    /* Neon pulsante discreto */
     .short-embed::after {
       content: "";
       position: absolute;
@@ -1165,7 +1116,6 @@
       filter: blur(14px);
     }
 
-    /* ==== TÍTULOS E LEGENDAS (sem neon) ==== */
     .video-title {
       font-weight: 600;
       color: var(--cor-destaque);
@@ -1183,12 +1133,11 @@
       margin-top: 0.8rem;
       font-size: 1rem;
       font-weight: 500;
-      color: var(--cor-secondaria);
+      color:  #575656;
       text-shadow: none;
       letter-spacing: 0.3px;
     }
 
-    /* ==== EFEITO DE FADE-IN ==== */
     .fade-in {
       opacity: 0;
       transform: translateY(30px);
@@ -1200,7 +1149,6 @@
       transform: translateY(0);
     }
 
-    /* ==== ANIMAÇÕES ==== */
     @keyframes gradientShift {
       0% {
         background-position: 0% 50%;
@@ -1229,7 +1177,6 @@
       }
     }
 
-    /* ==== ACESSIBILIDADE ==== */
     @media (prefers-reduced-motion: reduce) {
 
       .short-embed,
@@ -1240,7 +1187,6 @@
       }
     }
 
-    /* ==== FALLBACK SEM aspect-ratio ==== */
     @supports not (aspect-ratio: 1) {
       .short-embed {
         position: relative;
@@ -1268,21 +1214,6 @@
 
   <div class="bg-pattern" aria-hidden="true"></div>
 
-  <!-- Menu social (desktop) -->
-  <div class="social-menu" role="navigation" aria-label="Redes sociais">
-    <a href="https://www.instagram.com/carlosgomes85" target="_blank" rel="noopener" aria-label="Instagram"><i
-        class="bi bi-instagram" aria-hidden="true"></i><span class="visually-hidden">Instagram</span></a>
-    <a href="https://www.tiktok.com/@cadugomes85" target="_blank" rel="noopener" aria-label="TikTok"><i
-        class="bi bi-tiktok" aria-hidden="true"></i><span class="visually-hidden">TikTok</span></a>
-    <a href="https://www.threads.net/@canticosdemachina" target="_blank" rel="noopener" aria-label="Threads"><i
-        class="bi bi-threads" aria-hidden="true"></i><span class="visually-hidden">Threads</span></a>
-    <a href="https://www.facebook.com/kdugomes" target="_blank" rel="noopener" aria-label="Facebook"><i
-        class="bi bi-facebook" aria-hidden="true"></i><span class="visually-hidden">Facebook</span></a>
-    <a href="https://www.linkedin.com/in/carlosgomes85/" target="_blank" rel="noopener" aria-label="LinkedIn"><i
-        class="bi bi-linkedin" aria-hidden="true"></i><span class="visually-hidden">LinkedIn</span></a>
-  </div>
-
-  <!-- Navbar -->
   <nav class="navbar navbar-expand-lg" role="navigation" aria-label="Principal">
     <div class="container">
       <a class="navbar-brand d-flex align-items-center" href="/" aria-label="Página inicial">
@@ -1308,6 +1239,20 @@
       </div>
     </div>
   </nav>
+
+
+  <div class="social-menu" role="navigation" aria-label="Redes sociais">
+    <a href="https://www.instagram.com/carlosgomes85" target="_blank" rel="noopener" aria-label="Instagram"><i
+        class="bi bi-instagram" aria-hidden="true"></i><span class="visually-hidden">Instagram</span></a>
+    <a href="https://www.tiktok.com/@cadugomes85" target="_blank" rel="noopener" aria-label="TikTok"><i
+        class="bi bi-tiktok" aria-hidden="true"></i><span class="visually-hidden">TikTok</span></a>
+    <a href="https://www.threads.net/@canticosdemachina" target="_blank" rel="noopener" aria-label="Threads"><i
+        class="bi bi-threads" aria-hidden="true"></i><span class="visually-hidden">Threads</span></a>
+    <a href="https://www.facebook.com/kdugomes" target="_blank" rel="noopener" aria-label="Facebook"><i
+        class="bi bi-facebook" aria-hidden="true"></i><span class="visually-hidden">Facebook</span></a>
+    <a href="https://www.linkedin.com/in/carlosgomes85/" target="_blank" rel="noopener" aria-label="LinkedIn"><i
+        class="bi bi-linkedin" aria-hidden="true"></i><span class="visually-hidden">LinkedIn</span></a>
+  </div>
 
   <!-- Header -->
   <header class="parallax-header">
@@ -2030,7 +1975,7 @@
                 <h4 class="h6 mb-1" itemprop="name">Benaia Leone</h4>
                 <p class="small mb-1"><strong itemprop="jobTitle">Operações de Segurança</strong></p>
                 <p class="small text-secondary mb-2" itemprop="description">
-                  Proteção executiva e resposta em campo; coordena evacuação e rotas sob comando de John.
+                  Proteção executiva e resposta em campo; coordena evacuação e rotas.
                 </p>
                 <button type="button" class="btn btn-sm btn-outline-primary gallery-trigger"
                   data-img="./img/neurarchy/benaia-leone.jpg" data-alt="Retrato de Benaia Leone"
@@ -2101,7 +2046,7 @@
             </div>
             <div class="flex-grow-1">
               <h3 class="h5 mb-2">Montdave</h3>
-              <p class="mb-2">Motor industrial do estado e vizinha poderosa de Philston.</p>
+              <p class="mb-2">Capital e Motor industrial do estado de Kingsdawn.</p>
               <button type="button" class="btn btn-sm btn-outline-primary mt-2 gallery-trigger"
                 data-img="./img/localidades/montdave.jpg" data-alt="Vista industrial de Montdave" data-title="Montdave"
                 data-gallery="places">Ver maior</button>
@@ -2120,7 +2065,7 @@
             </div>
             <div class="flex-grow-1">
               <h3 class="h5 mb-2">Nearpalace</h3>
-              <p class="mb-2">Bairro nobre de Montdave — mansões, estúdios e o brilho (e o peso) da fama.</p>
+              <p class="mb-2">Burgo nobre de Montdave onde moram as pessoas mais ricas da cidade.</p>
               <button type="button" class="btn btn-sm btn-outline-primary mt-2 gallery-trigger"
                 data-img="./img/localidades/nearpalace.jpg" data-alt="Bairro nobre de Nearpalace"
                 data-title="Nearpalace" data-gallery="places">Ver maior</button>
@@ -2139,8 +2084,7 @@
             </div>
             <div class="flex-grow-1">
               <h3 class="h5 mb-2">Philston</h3>
-              <p class="mb-2">Cidade de imigrantes, feita de burgos multiculturais; refúgio pós
-                Tecno-Guerra.</p>
+              <p class="mb-2">Cidade de imigrantes e refugiados da Tecno-Guerra, feita de burgos multiculturais.</p>
               <ul class="list-unstyled small text-secondary mb-0">
                 <li>• Burgos: Maria Del Carmen, Tamura, Yellen…</li>
               </ul>
@@ -2162,10 +2106,7 @@
             </div>
             <div class="flex-grow-1">
               <h3 class="h5 mb-2">Maria Del Carmen</h3>
-              <p class="mb-2">Coração latino de Philston. Tradições que conectam passado e futuro.</p>
-              <ul class="list-unstyled small text-secondary mb-0">
-                <li>• Música, culinária, costumes hispânicos</li>
-              </ul>
+              <p class="mb-2">Burgo hispano-latino de Philston. Tradições que conectam passado e futuro.</p>
               <button type="button" class="btn btn-sm btn-outline-primary mt-2 gallery-trigger"
                 data-img="./img/localidades/maria-del-carmen.jpg" data-alt="Cenas festivas em Maria Del Carmen"
                 data-title="Maria Del Carmen" data-gallery="places">Ver maior</button>
@@ -2184,7 +2125,8 @@
             </div>
             <div class="flex-grow-1">
               <h3 class="h5 mb-2">Tamura</h3>
-              <p class="mb-2">Bairro de forte presença asiática. Lanternas, especiarias e arquiteturas históricas.</p>
+              <p class="mb-2">Bairro de forte presença asiática. Dojôs, lanternas, especiarias e arquiteturas
+                históricas.</p>
               <button type="button" class="btn btn-sm btn-outline-primary mt-2 gallery-trigger"
                 data-img="./img/localidades/tamura.jpg" data-alt="Lanternas e dojô em Tamura" data-title="Tamura"
                 data-gallery="places">Ver maior</button>
@@ -2203,7 +2145,7 @@
             </div>
             <div class="flex-grow-1">
               <h3 class="h5 mb-2">Yellen</h3>
-              <p class="mb-2">Vizinhança unida sob pressão do crime. A quadra pública é o respiro da juventude.</p>
+              <p class="mb-2">Burgo dominado por gangues e o crime, mas com uma vizinhança unida.</p>
               <button type="button" class="btn btn-sm btn-outline-primary mt-2 gallery-trigger"
                 data-img="./img/localidades/yellen.jpg" data-alt="Quadra pública e ruas de Yellen" data-title="Yellen"
                 data-gallery="places">Ver maior</button>
@@ -2222,7 +2164,7 @@
             </div>
             <div class="flex-grow-1">
               <h3 class="h5 mb-2">Gihon Lakes</h3>
-              <p class="mb-2">Cidade serrana vizinha; cenário do caso que abala convicções e desperta chamados.</p>
+              <p class="mb-2">Cidade pequena serrana onde o frio domina quase o ano inteiro.</p>
               <button type="button" class="btn btn-sm btn-outline-primary mt-2 gallery-trigger"
                 data-img="./img/localidades/gihon-lakes.jpg" data-alt="Paisagem serrana de Gihon Lakes"
                 data-title="Gihon Lakes" data-gallery="places">Ver maior</button>
@@ -2276,10 +2218,8 @@
 
       </div>
 
-
     </section>
 
-    <!-- BANNER 2 — Guitarrista / Cântico Novo -->
     <!-- BANNER 2 — Guitarrista / Cântico Novo -->
     <section class="card-custom banner-guitarrista" aria-label="Banner: Cântico Novo">
       <div class="banner-guitarrista-img" role="img"
@@ -2609,72 +2549,70 @@
     </div>
   </footer>
 
-  <!-- JSON-LD (Book enriquecido com seus dados) -->
   <script type="application/ld+json">
-{
-  "@context":"https://schema.org",
-  "@type":"Book",
-  "name":"Cânticos de Machina – Primavera Artificial",
-  "author":{"@type":"Person","name":"C. E. Gomes"},
-  "publisher":{"@type":"Organization","name":"eDOC BRASIL"},
-  "datePublished":"2025",
-  "bookEdition":"1",
-  "isbn":"9786552783325",
-  "numberOfPages":344,
-  "bookFormat":"https://schema.org/Paperback",
-  "inLanguage":"pt-BR",
-  "description":"Uma jornada intensa de ação e reflexão sobre fé, tecnologia e humanidade.",
-  "image":"https://www.canticosdemachina.com.br/img/capa_livro.jpg",
-  "url":"https://www.canticosdemachina.com.br/",
-  "genre":[
-    "Romance",
-    "Ficção científica",
-    "Ficção cristã",
-    "Fantasia",
-    "Suspense",
-    "Ficção e contos brasileiros",
-    "Tecnologia",
-    "IA"
-  ],
-  "character": [
-    {"@type":"Person","name":"Daniel Killian"},
-    {"@type":"Person","name":"Samui Yakeda"},
-    {"@type":"Person","name":"Zuba Bomani"},
-    {"@type":"Person","name":"Natali Legrand"}
-  ],
-  "offers":[
-    {
-      "@type":"Offer",
-      "url":"https://www.amazon.com.br/dp/6552783329",
-      "priceCurrency":"BRL",
-      "price":"67.00",
-      "availability":"https://schema.org/InStock",
-      "itemCondition":"https://schema.org/NewCondition",
-      "name":"Livro impresso (Amazon)"
-    },
-    {
-      "@type":"Offer",
-      "url":"https://clubedeautores.com.br/livro/canticos-de-machina",
-      "priceCurrency":"BRL",
-      "price":"67.00",
-      "availability":"https://schema.org/InStock",
-      "itemCondition":"https://schema.org/NewCondition",
-      "name":"Livro impresso (Clube de Autores)"
-    },
-    {
-      "@type":"Offer",
-      "url":"https://a.co/d/7uYBpvn",
-      "priceCurrency":"BRL",
-      "price":"14.90",
-      "availability":"https://schema.org/InStock",
-      "itemCondition":"https://schema.org/NewCondition",
-      "name":"E-book (Amazon Kindle)"
-    }
-  ]
-}
-</script>
+  {
+    "@context":"https://schema.org",
+    "@type":"Book",
+    "name":"Cânticos de Machina – Primavera Artificial",
+    "author":{"@type":"Person","name":"C. E. Gomes"},
+    "publisher":{"@type":"Organization","name":"eDOC BRASIL"},
+    "datePublished":"2025",
+    "bookEdition":"1",
+    "isbn":"9786552783325",
+    "numberOfPages":344,
+    "bookFormat":"https://schema.org/Paperback",
+    "inLanguage":"pt-BR",
+    "description":"Uma jornada intensa de ação e reflexão sobre fé, tecnologia e humanidade.",
+    "image":"https://www.canticosdemachina.com.br/img/capa_livro.jpg",
+    "url":"https://www.canticosdemachina.com.br/",
+    "genre":[
+      "Romance",
+      "Ficção científica",
+      "Ficção cristã",
+      "Fantasia",
+      "Suspense",
+      "Ficção e contos brasileiros",
+      "Tecnologia",
+      "IA"
+    ],
+    "character": [
+      {"@type":"Person","name":"Daniel Killian"},
+      {"@type":"Person","name":"Samui Yakeda"},
+      {"@type":"Person","name":"Zuba Bomani"},
+      {"@type":"Person","name":"Natali Legrand"}
+    ],
+    "offers":[
+      {
+        "@type":"Offer",
+        "url":"https://www.amazon.com.br/dp/6552783329",
+        "priceCurrency":"BRL",
+        "price":"67.00",
+        "availability":"https://schema.org/InStock",
+        "itemCondition":"https://schema.org/NewCondition",
+        "name":"Livro impresso (Amazon)"
+      },
+      {
+        "@type":"Offer",
+        "url":"https://clubedeautores.com.br/livro/canticos-de-machina",
+        "priceCurrency":"BRL",
+        "price":"67.00",
+        "availability":"https://schema.org/InStock",
+        "itemCondition":"https://schema.org/NewCondition",
+        "name":"Livro impresso (Clube de Autores)"
+      },
+      {
+        "@type":"Offer",
+        "url":"https://a.co/d/7uYBpvn",
+        "priceCurrency":"BRL",
+        "price":"14.90",
+        "availability":"https://schema.org/InStock",
+        "itemCondition":"https://schema.org/NewCondition",
+        "name":"E-book (Amazon Kindle)"
+      }
+    ]
+  }
+  </script>
 
-  <!-- JSON-LD (WebSite) -->
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
@@ -2690,28 +2628,26 @@
   </script>
 
   <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BookSeries",
-  "name": "Cânticos de Machina",
-  "author": { "@type": "Person", "name": "C. E. Gomes" },
-  "inLanguage": "pt-BR",
-  "description": "Saga de ficção científica cristã que une fé, tecnologia e mistério em uma visão sobre o futuro da humanidade. Registros de Agur narram a origem da Dominação Machina e do implante neural Solomon.",
-  "url": "https://www.canticosdemachina.com.br/#saga",
-  "workExample": [
-    {
-      "@type": "Book",
-      "name": "Cânticos de Machina – Primavera Artificial",
-      "bookEdition": "1",
-      "isbn": "9786552783325",
-      "url": "https://www.canticosdemachina.com.br/#livro"
-    }
-  ]
-}
-</script>
+  {
+    "@context": "https://schema.org",
+    "@type": "BookSeries",
+    "name": "Cânticos de Machina",
+    "author": { "@type": "Person", "name": "C. E. Gomes" },
+    "inLanguage": "pt-BR",
+    "description": "Saga de ficção científica cristã que une fé, tecnologia e mistério em uma visão sobre o futuro da humanidade. Registros de Agur narram a origem da Dominação Machina e do implante neural Solomon.",
+    "url": "https://www.canticosdemachina.com.br/#saga",
+    "workExample": [
+      {
+        "@type": "Book",
+        "name": "Cânticos de Machina – Primavera Artificial",
+        "bookEdition": "1",
+        "isbn": "9786552783325",
+        "url": "https://www.canticosdemachina.com.br/#livro"
+      }
+    ]
+  }
+  </script>
 
-
-  <!-- JSON-LD (FAQPage) -->
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
@@ -2741,9 +2677,7 @@
     {"@type":"ListItem","position":6,"item":{"@type":"Place","name":"Montdave","description":"Polo industrial histórico; influência regional."}},
     {"@type":"ListItem","position":7,"item":{"@type":"Place","name":"Nearpalace","description":"Bairro nobre de Montdave; mansões e shows."}},
     {"@type":"ListItem","position":8,"item":{"@type":"Place","name":"Tairo","description":"Cidade universitária conectada à indústria."}},
-    {"@type":"ListItem","position":9,"item":{"@type":"Place","name":"Deserto de Yehuda","description":"Faixa árida próxima a Tairo; território dos nômades de Quedar."
-  }
-}
+    {"@type":"ListItem","position":9,"item":{"@type":"Place","name":"Deserto de Yehuda","description":"Faixa árida próxima a Tairo; território dos nômades de Quedar."}}
   ]
 }
 </script>
@@ -2774,7 +2708,7 @@
 {
   "@context": "https://schema.org",
   "@type": "VideoObject",
-  "name": "BookTrader – Cânticos de Machina: Primavera Artificial",
+  "name": "Book Trailer – Cânticos de Machina: Primavera Artificial",
   "description": "Short de divulgação do livro de ficção cristã & sci-fi 'Cânticos de Machina – Primavera Artificial', unindo fé, tecnologia e mistério.",
   "thumbnailUrl": ["https://i.ytimg.com/vi/JS2PrdXC4qI/hqdefault.jpg"],
   "uploadDate": "2025-01-01T00:00:00-03:00",
@@ -2787,7 +2721,6 @@
 }
 </script>
 
-  <!-- Modal único com galeria -->
   <div class="modal fade" id="imgModal" tabindex="-1" aria-labelledby="imgModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-xl">
       <div class="modal-content bg-dark text-white position-relative">
@@ -2829,7 +2762,6 @@
 
   <script>
     document.addEventListener('DOMContentLoaded', function () {
-      // Modal + refs
       const modalEl = document.getElementById('imgModal');
       const modalImg = document.getElementById('imgModalPicture');
       const modalTitle = document.getElementById('imgModalLabel');
@@ -2838,8 +2770,8 @@
       const btnNext = modalEl.querySelector('.modal-nav-next');
       const bsModal = new bootstrap.Modal(modalEl);
 
-      let galleryGroup = null;     // "people" | "places"
-      let galleryNodes = [];       // NodeList -> Array dos itens clicáveis da seção
+      let galleryGroup = null;
+      let galleryNodes = [];
       let currentIndex = 0;
 
       function gatherGallery(group) {
@@ -2869,13 +2801,11 @@
         bsModal.show();
       }
 
-      // Clique em QUALQUER disparador da galeria
       document.body.addEventListener('click', (e) => {
         const trigger = e.target.closest('.gallery-trigger');
         if (trigger) openFromEl(trigger);
       });
 
-      // Teclado nos disparadores (Enter/Espaço)
       document.body.addEventListener('keydown', (e) => {
         const trigger = e.target.closest('.gallery-trigger');
         if (trigger && (e.key === 'Enter' || e.key === ' ')) {
@@ -2884,11 +2814,9 @@
         }
       });
 
-      // Botões prev/next
       btnPrev.addEventListener('click', () => showItemByIndex(currentIndex - 1));
       btnNext.addEventListener('click', () => showItemByIndex(currentIndex + 1));
 
-      // Setas do teclado dentro do modal
       modalEl.addEventListener('keydown', (e) => {
         if (e.key === 'ArrowLeft') { e.preventDefault(); showItemByIndex(currentIndex - 1); }
         if (e.key === 'ArrowRight') { e.preventDefault(); showItemByIndex(currentIndex + 1); }
@@ -2917,7 +2845,6 @@
         if (!ticking) { window.requestAnimationFrame(onScroll); ticking = true; }
       }, { passive: true });
 
-      // aria-expanded no dropup
       document.addEventListener('shown.bs.dropdown', (e) => {
         const btn = e.target.closest('.dropup')?.querySelector('.dropdown-toggle');
         if (btn) btn.setAttribute('aria-expanded', 'true');
@@ -2930,7 +2857,6 @@
   </script>
 
   <script>
-    /* ==== SCRIPT PARA FADE-IN AO ROLAR ==== */
     document.addEventListener("DOMContentLoaded", () => {
       const faders = document.querySelectorAll(".fade-in");
       const options = { threshold: 0.2, rootMargin: "0px 0px -20px 0px" };
