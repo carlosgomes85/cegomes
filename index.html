@@ -638,6 +638,45 @@
       }
     }
 
+    /* Social icons dentro do mobile-cta */
+    .mobile-cta .cta-social {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 8px;
+    }
+
+    .mobile-cta .btn-ico {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 48px;
+      border-radius: 14px;
+      background: #fff;
+      border: 1px solid #e5e7eb;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, .06);
+      text-decoration: none;
+      color: #111827;
+      transition: transform .12s ease, box-shadow .12s ease, border-color .12s ease;
+    }
+
+    .mobile-cta .btn-ico:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 10px 22px rgba(0, 0, 0, .08);
+      border-color: var(--cor-destaque, #2a2bb5);
+    }
+
+    .mobile-cta .btn-ico:focus {
+      outline: 2px solid rgba(48, 64, 208, .35);
+      outline-offset: 2px;
+    }
+
+    .mobile-cta .btn-ico i {
+      font-size: 1.25rem;
+      line-height: 1;
+    }
+
+
     .contact-chip {
       display: flex;
       align-items: center;
@@ -2533,7 +2572,6 @@
         </a>
 
         <!-- Avaliar (dropup acessível) -->
-        <!-- Avaliar (dropup acessível) -->
         <div class="btn-cta-dock dropup">
           <button class="btn-cta-dock__btn dropdown-toggle" type="button" data-bs-toggle="dropdown"
             data-bs-display="static" aria-expanded="false" aria-label="Abrir opções para avaliar o livro">
@@ -2585,6 +2623,27 @@
           </ul>
         </div>
       </nav>
+
+      <!-- Ícones sociais (mobile) -->
+      <div class="cta-social" role="navigation" aria-label="Redes sociais">
+        <a class="btn-ico" href="https://www.instagram.com/carlosgomes85" target="_blank" rel="noopener"
+          aria-label="Instagram">
+          <i class="bi bi-instagram" aria-hidden="true"></i><span class="visually-hidden">Instagram</span>
+        </a>
+        <a class="btn-ico" href="https://www.tiktok.com/@cadugomes85" target="_blank" rel="noopener"
+          aria-label="TikTok">
+          <i class="bi bi-tiktok" aria-hidden="true"></i><span class="visually-hidden">TikTok</span>
+        </a>
+        <a class="btn-ico" href="https://www.threads.net/@carlosgomes85" target="_blank" rel="noopener"
+          aria-label="Threads">
+          <i class="bi bi-threads" aria-hidden="true"></i><span class="visually-hidden">Threads</span>
+        </a>
+        <a class="btn-ico" href="https://www.facebook.com/kdugomes" target="_blank" rel="noopener"
+          aria-label="Facebook">
+          <i class="bi bi-facebook" aria-hidden="true"></i><span class="visually-hidden">Facebook</span>
+        </a>
+      </div>
+
     </div>
   </div>
 
