@@ -362,6 +362,13 @@
       transition-delay: .4s
     }
 
+	@media (max-width: 991.98px) {
+	  .card-custom {
+		padding: 20px 18px;
+		margin-bottom: 32px;
+	  }
+	}
+
     /* retratos / capa do livro */
     .avatar {
       width: 250px;
@@ -842,19 +849,52 @@
       margin-bottom: .6rem
     }
 
-    @media (min-width:768px) and (max-width:1199.98px) {
-      main.container {
-        max-width: min(1100px, 94vw) !important
-      }
+@media (min-width:768px) and (max-width:1199.98px) {
+  /* Deixa o conteúdo mais “esparramado” no tablet */
+  main.container,
+  header .container {
+    max-width: 100% !important;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
 
-      .row.g-2 {
-        --bs-gutter-x: 1.25rem
-      }
+  /* Mantém um espaçamento razoável entre colunas */
+  .row.g-2 {
+    --bs-gutter-x: 1.25rem;
+  }
 
-      .row.g-3 {
-        --bs-gutter-x: 1.5rem
-      }
-    }
+  .row.g-3 {
+    --bs-gutter-x: 1.5rem;
+  }
+}
+
+/* Telas entre 576px e 768px: reduzir “tubinho” central */
+@media (min-width: 576px) and (max-width: 767.98px) {
+  /* Header e main usando quase toda a largura */
+  header .container,
+  main.container {
+    max-width: 100% !important;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  /* Conteúdo dentro do menu flutuante inferior */
+  .mobile-cta .container {
+    max-width: 100% !important;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+}
+
+/* NAVBAR mais fluida em telas menores (até ~tablet) */
+@media (max-width: 991.98px) {
+  .navbar .container {
+    max-width: 100% !important;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
 
     .site-footer {
       --footer-bg-1: #0b2744;
@@ -1539,12 +1579,12 @@
           </a>
         </div>
 
-        <div class="col d-grid">
+        <!--div class="col d-grid">
           <a href="https://www.goodreads.com/book/show/239675050-c-nticos-de-machina" target="_blank" rel="noopener"
             class="btn btn-primary w-100 d-flex align-items-center justify-content-center gap-2 py-3">
             <span>Goodreads</span>
           </a>
-        </div>
+        </div-->
       </div>
 
 
