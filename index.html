@@ -1300,6 +1300,850 @@
         height: 100%;
       }
     }
+
+    /* Refinamento visual geral */
+    :root {
+      --surface-soft: rgba(255, 255, 255, .94);
+      --line-soft: rgba(42, 43, 181, .13);
+      --shadow-soft: 0 18px 48px rgba(15, 23, 42, .10);
+      --shadow-lift: 0 24px 58px rgba(15, 23, 42, .14);
+      --accent-gold: #f59e0b;
+    }
+
+    body {
+      line-height: 1.72;
+      overflow-x: hidden;
+    }
+
+    main.container {
+      max-width: 1180px;
+    }
+
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 1080;
+      background: rgba(255, 255, 255, .92);
+      -webkit-backdrop-filter: blur(16px);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(15, 23, 42, .08);
+      box-shadow: 0 8px 28px rgba(15, 23, 42, .08);
+    }
+
+    .navbar .container {
+      max-width: 1280px;
+    }
+
+    .navbar-brand img {
+      width: clamp(150px, 17vw, 210px);
+      margin: 6px 0;
+    }
+
+    .navbar-nav {
+      align-items: center;
+      gap: 2px;
+    }
+
+    .navbar-nav .nav-link {
+      border-radius: 999px;
+      font-size: .78rem;
+      line-height: 1.15;
+      padding: .48rem .66rem !important;
+      transition: background-color .18s ease, color .18s ease, transform .18s ease;
+    }
+
+    .navbar-nav .nav-link:hover,
+    .navbar-nav .nav-link:focus {
+      background: rgba(42, 43, 181, .08);
+      transform: translateY(-1px);
+      font-weight: 500;
+    }
+
+    .parallax-header {
+      min-height: min(760px, calc(100svh - 78px));
+      align-items: flex-end;
+      padding: clamp(90px, 12vh, 150px) 0 clamp(56px, 9vh, 92px);
+    }
+
+    .parallax-header::before {
+      background-position: center top;
+      transform: scale(1.02);
+    }
+
+    .parallax-header::after {
+      background:
+        linear-gradient(180deg, rgba(4, 9, 22, .24) 0%, rgba(4, 9, 22, .58) 52%, rgba(4, 9, 22, .78) 100%),
+        radial-gradient(circle at 50% 42%, rgba(42, 43, 181, .22), transparent 38%);
+    }
+
+    .parallax-header .container {
+      max-width: 1040px;
+      text-shadow: 0 12px 30px rgba(0, 0, 0, .55);
+    }
+
+    .parallax-header h1 {
+      font-size: clamp(2.35rem, 7vw, 5.4rem);
+      line-height: .98;
+      margin-bottom: .35rem;
+    }
+
+    .parallax-header h2 {
+      color: #eef2ff;
+      font-size: clamp(1.35rem, 3vw, 2.25rem);
+      margin-bottom: 1rem;
+    }
+
+    .parallax-header h3 {
+      max-width: 760px;
+      margin-inline: auto;
+      color: #f8fafc;
+      font-size: clamp(1rem, 1.7vw, 1.24rem);
+      line-height: 1.65;
+    }
+
+    .btn,
+    .contact-chip,
+    .review-card,
+    .accordion-item,
+    .card-custom,
+    .quote-hero,
+    .short-embed,
+    .capa-livro,
+    .char-portrait,
+    .avatar,
+    .thumb-fill {
+      border-radius: 8px !important;
+    }
+
+    .btn-primary {
+      min-height: 48px;
+      border: 1px solid rgba(255, 255, 255, .16);
+      background: linear-gradient(135deg, var(--cor-destaque), var(--cor-destaque-hover));
+      box-shadow: 0 12px 28px rgba(42, 43, 181, .24);
+      transition: transform .18s ease, box-shadow .18s ease;
+    }
+
+    .btn-primary:hover,
+    .btn-primary:focus {
+      box-shadow: 0 16px 34px rgba(42, 43, 181, .32);
+    }
+
+    .btn-outline-primary {
+      border-width: 1.5px;
+      font-weight: 600;
+    }
+
+    .price-note {
+      display: inline-block;
+      max-width: 900px;
+      color: #172033;
+      background: rgba(255, 255, 255, .88);
+      border: 1px solid rgba(255, 255, 255, .72);
+      border-left: 4px solid var(--accent-gold);
+      box-shadow: 0 10px 28px rgba(15, 23, 42, .14);
+      opacity: 1;
+    }
+
+    .card-custom {
+      border: 1px solid var(--line-soft);
+      background: var(--surface-soft);
+      -webkit-backdrop-filter: blur(8px);
+      backdrop-filter: blur(8px);
+      box-shadow: var(--shadow-soft);
+      padding: clamp(22px, 3.4vw, 42px);
+      margin-bottom: clamp(28px, 5vw, 58px);
+      transition: opacity .55s ease, transform .55s ease, box-shadow .18s ease, border-color .18s ease;
+    }
+
+    .card-custom:hover,
+    .card-custom.show:hover {
+      transform: translateY(-4px);
+      border-color: rgba(42, 43, 181, .20);
+      box-shadow: var(--shadow-lift);
+    }
+
+    section h2 {
+      display: flex;
+      align-items: center;
+      gap: .65rem;
+      margin-bottom: 1.35rem;
+      line-height: 1.22;
+      letter-spacing: .02em;
+    }
+
+    section h2::after {
+      content: "";
+      height: 1px;
+      flex: 1 1 auto;
+      min-width: 40px;
+      background: linear-gradient(90deg, rgba(42, 43, 181, .38), transparent);
+    }
+
+    #titulo-video {
+      justify-content: center;
+    }
+
+    #titulo-video::before,
+    #titulo-video::after {
+      content: "";
+      height: 1px;
+      flex: 1 1 80px;
+      max-width: 190px;
+      background: linear-gradient(90deg, transparent, rgba(42, 43, 181, .34), transparent);
+    }
+
+    .capa-livro {
+      width: min(72%, 320px);
+      border: 1px solid rgba(15, 23, 42, .12);
+      box-shadow: 0 22px 46px rgba(15, 23, 42, .18);
+    }
+
+    @media (min-width:992px) {
+      .capa-livro {
+        width: min(88%, 360px);
+      }
+    }
+
+    .review-card,
+    #universo article .shadow-sm,
+    #neurarchy .shadow-sm,
+    .contact-chip {
+      border-color: rgba(15, 23, 42, .08) !important;
+      box-shadow: 0 12px 28px rgba(15, 23, 42, .07) !important;
+    }
+
+    #universo article .shadow-sm,
+    #neurarchy .shadow-sm {
+      background: linear-gradient(180deg, #ffffff, #f8fafc) !important;
+    }
+
+    .thumb-col,
+    .thumb-col.lg {
+      flex-basis: clamp(94px, 10vw, 132px);
+      max-width: clamp(94px, 10vw, 132px);
+    }
+
+    .video-grid {
+      gap: clamp(1.2rem, 3vw, 2.5rem);
+    }
+
+    .video-item {
+      width: min(100%, 360px);
+    }
+
+    .accordion-item {
+      overflow: hidden;
+      border-color: rgba(15, 23, 42, .09);
+      box-shadow: 0 8px 20px rgba(15, 23, 42, .05);
+      margin-bottom: 10px;
+    }
+
+    .accordion-button {
+      font-weight: 600;
+      line-height: 1.35;
+    }
+
+    .site-footer {
+      margin-top: 18px;
+    }
+
+    @media (max-width: 991.98px) {
+      .navbar-nav {
+        align-items: stretch;
+        padding: .75rem 0 .35rem;
+      }
+
+      .navbar-nav .nav-link {
+        border-radius: 8px;
+        font-size: .92rem;
+        padding: .72rem .85rem !important;
+      }
+
+      .parallax-header {
+        min-height: 560px;
+        padding-top: 70px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      body {
+        padding-bottom: 212px;
+      }
+
+      main.container {
+        margin-top: 1.25rem !important;
+      }
+
+      .parallax-header {
+        min-height: 520px;
+        align-items: flex-end;
+        padding-bottom: 34px;
+      }
+
+      .parallax-header h3 {
+        margin-bottom: 1.25rem !important;
+      }
+
+      .parallax-header .price-note {
+        display: none;
+      }
+
+      section h2 {
+        font-size: 1.25rem;
+        align-items: flex-start;
+      }
+
+      section h2::after,
+      #titulo-video::before,
+      #titulo-video::after {
+        display: none;
+      }
+
+      .card-custom:hover,
+      .card-custom.show:hover {
+        transform: none;
+      }
+
+      .banner-agur .agur-illustration,
+      .banner-lancamento .lanc-illustration,
+      .banner-adonijah .adonijah-illustration,
+      .banner-guitarrista-img {
+        min-height: 420px;
+      }
+
+      .mobile-cta {
+        background: rgba(255, 255, 255, .94);
+      }
+
+      .cta-dock,
+      .mobile-cta .cta-social {
+        gap: 8px;
+      }
+
+      .btn-cta-dock,
+      .btn-cta-dock__btn,
+      .mobile-cta .btn-ico {
+        border-radius: 8px;
+      }
+    }
+
+    @media (max-width: 430px) {
+      .navbar-brand img {
+        width: 148px;
+      }
+
+      .parallax-header {
+        min-height: 500px;
+      }
+
+      .card-custom {
+        padding: 18px 14px;
+      }
+
+      .thumb-col,
+      .thumb-col.lg {
+        flex-basis: 88px;
+        max-width: 88px;
+      }
+    }
+
+    /* Professional finishing layer */
+    html {
+      scroll-padding-top: 92px;
+    }
+
+    body {
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a,
+    button,
+    .btn {
+      text-underline-offset: .18em;
+    }
+
+    a:focus-visible,
+    button:focus-visible,
+    .btn:focus-visible,
+    .gallery-trigger:focus-visible,
+    .accordion-button:focus-visible {
+      outline: 3px solid rgba(245, 158, 11, .42);
+      outline-offset: 3px;
+      box-shadow: none;
+    }
+
+    p {
+      max-width: 78ch;
+    }
+
+    section>p,
+    #saga>p,
+    #simbologia>p,
+    #neurarchy>p,
+    #universo>p,
+    #contato>p {
+      color: #475569;
+      font-size: 1.02rem;
+    }
+
+    .card-custom>p:first-of-type,
+    #livro .col-lg-8>p:first-of-type,
+    #saga>p:first-of-type,
+    #neurarchy>p:first-of-type,
+    #universo>p:first-of-type {
+      font-size: clamp(1.04rem, 1.2vw, 1.12rem);
+      color: #334155;
+    }
+
+    .card-custom h3,
+    .card-custom h4,
+    .card-custom h5 {
+      color: #172033;
+    }
+
+    .card-custom h5 {
+      display: inline-flex;
+      align-items: center;
+      gap: .45rem;
+      padding: .34rem .62rem;
+      margin: .7rem 0 .75rem;
+      border: 1px solid rgba(42, 43, 181, .12);
+      border-left: 3px solid var(--cor-destaque);
+      border-radius: 8px;
+      background: rgba(42, 43, 181, .05);
+      font-size: .94rem;
+      letter-spacing: .02em;
+    }
+
+    #livro {
+      position: relative;
+      overflow: hidden;
+    }
+
+    #livro::before {
+      content: "";
+      position: absolute;
+      inset: 0 0 auto 0;
+      height: 5px;
+      background: linear-gradient(90deg, var(--cor-destaque), var(--accent-gold), var(--cor-destaque-hover));
+    }
+
+    #livro .row.align-items-center:first-of-type {
+      --bs-gutter-x: clamp(1.5rem, 4vw, 4rem);
+    }
+
+    #livro .col-lg-4 {
+      position: relative;
+    }
+
+    #livro .col-lg-4::before {
+      content: "";
+      position: absolute;
+      inset: 8% 6% 18% 6%;
+      z-index: -1;
+      border-radius: 18px;
+      background: radial-gradient(circle, rgba(42, 43, 181, .18), transparent 68%);
+      filter: blur(6px);
+    }
+
+    #livro .row.align-items-center.p-2 {
+      margin-top: 1.25rem;
+      padding: 1.1rem !important;
+      border-radius: 8px;
+      background: linear-gradient(135deg, rgba(42, 43, 181, .06), rgba(245, 158, 11, .06));
+      border: 1px solid rgba(42, 43, 181, .10);
+    }
+
+    #avaliacoes .row[role="group"] .btn-primary,
+    #livro [role="group"] .btn-primary,
+    #contato .btn-primary {
+      justify-content: center;
+      font-size: .98rem;
+      letter-spacing: .01em;
+    }
+
+    #avaliacoes .row[role="group"] .btn-primary {
+      background: #ffffff;
+      color: var(--cor-destaque);
+      border: 1px solid rgba(42, 43, 181, .22);
+      box-shadow: 0 8px 18px rgba(15, 23, 42, .06);
+    }
+
+    #avaliacoes .row[role="group"] .btn-primary:hover,
+    #avaliacoes .row[role="group"] .btn-primary:focus {
+      color: #ffffff;
+      background: linear-gradient(135deg, var(--cor-destaque), var(--cor-destaque-hover));
+      box-shadow: 0 14px 28px rgba(42, 43, 181, .22);
+    }
+
+    .review-card {
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(180deg, #ffffff, #f8fafc);
+    }
+
+    .review-card::before {
+      content: "";
+      position: absolute;
+      inset: 0 auto 0 0;
+      width: 4px;
+      background: linear-gradient(180deg, var(--accent-gold), var(--cor-destaque));
+      opacity: .88;
+    }
+
+    .review-card .name {
+      color: #172033;
+    }
+
+    .stars {
+      white-space: nowrap;
+      filter: drop-shadow(0 2px 5px rgba(245, 158, 11, .16));
+    }
+
+    #protagonistas article.row {
+      padding: clamp(16px, 2vw, 24px);
+      border: 1px solid rgba(15, 23, 42, .08);
+      border-radius: 8px;
+      background: linear-gradient(135deg, rgba(255, 255, 255, .96), rgba(248, 250, 252, .96));
+      box-shadow: 0 12px 28px rgba(15, 23, 42, .06);
+    }
+
+    #protagonistas hr {
+      opacity: 0;
+      margin: 1.25rem 0;
+    }
+
+    #protagonistas h3 {
+      font-size: clamp(1.25rem, 2vw, 1.62rem);
+      color: var(--cor-destaque);
+    }
+
+    .char-portrait {
+      box-shadow: 0 18px 40px rgba(15, 23, 42, .16);
+    }
+
+    #neurarchy article .h-100,
+    #universo article .h-100 {
+      position: relative;
+      overflow: hidden;
+      transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+    }
+
+    #neurarchy article .h-100::after,
+    #universo article .h-100::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      border-radius: inherit;
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, .76);
+    }
+
+    #neurarchy article .h-100:hover,
+    #universo article .h-100:hover {
+      border-color: rgba(42, 43, 181, .20) !important;
+      transform: translateY(-3px);
+    }
+
+    #neurarchy h4,
+    #universo h3 {
+      color: #172033;
+    }
+
+    .thumb-fill {
+      transition: transform .24s ease, filter .24s ease;
+    }
+
+    .gallery-trigger:hover.thumb-fill,
+    .thumb-fill.gallery-trigger:hover {
+      transform: scale(1.035);
+      filter: saturate(1.05) contrast(1.03);
+    }
+
+    .banner-agur .agur-text.quote-hero,
+    .banner-lancamento .lanc-text.quote-hero,
+    .banner-adonijah .adonijah-text.quote-hero {
+      background:
+        linear-gradient(135deg, rgba(6, 24, 44, .98), rgba(42, 43, 181, .98));
+    }
+
+    .banner-agur .agur-illustration,
+    .banner-adonijah .adonijah-illustration {
+      border-radius: 8px 0 0 8px;
+    }
+
+    .banner-agur .agur-text.quote-hero,
+    .banner-adonijah .adonijah-text.quote-hero {
+      border-radius: 0 8px 8px 0 !important;
+    }
+
+    .banner-lancamento .lanc-text.quote-hero {
+      border-radius: 8px 0 0 8px !important;
+    }
+
+    .banner-lancamento .lanc-illustration {
+      border-radius: 0 8px 8px 0;
+    }
+
+    .banner-guitarrista-texto {
+      background:
+        linear-gradient(to top, rgba(3, 7, 18, .72) 0%, rgba(3, 7, 18, .28) 48%, transparent 78%);
+    }
+
+    .accordion {
+      display: grid;
+      gap: 10px;
+    }
+
+    .accordion-item {
+      margin-bottom: 0;
+      background: #ffffff;
+    }
+
+    .accordion-button {
+      color: #172033;
+      background: #ffffff;
+      padding: 1.05rem 1.15rem;
+    }
+
+    .accordion-button:not(.collapsed) {
+      color: var(--cor-destaque);
+      background: linear-gradient(135deg, rgba(42, 43, 181, .08), rgba(245, 158, 11, .06));
+      box-shadow: inset 0 -1px 0 rgba(42, 43, 181, .10);
+    }
+
+    .accordion-body {
+      color: #475569;
+      background: #ffffff;
+      padding: 1rem 1.15rem 1.2rem;
+    }
+
+    .section-lead {
+      max-width: 72ch;
+      margin-bottom: 1.35rem;
+      color: #334155;
+      font-size: clamp(1.04rem, 1.2vw, 1.14rem);
+      line-height: 1.78;
+    }
+
+    .section-lead strong,
+    .reading-card strong,
+    .synopsis-flow strong {
+      color: #1e2a78;
+    }
+
+    .text-flow {
+      display: grid;
+      gap: .95rem;
+      margin: .65rem 0 1rem;
+    }
+
+    .text-flow p {
+      margin: 0;
+    }
+
+    .synopsis-flow {
+      padding: clamp(16px, 2vw, 22px);
+      border: 1px solid rgba(42, 43, 181, .11);
+      border-left: 4px solid var(--cor-destaque);
+      border-radius: 8px;
+      background:
+        linear-gradient(135deg, rgba(42, 43, 181, .045), rgba(245, 158, 11, .035)),
+        rgba(255, 255, 255, .74);
+    }
+
+    .reading-callout {
+      padding: .9rem 1rem;
+      border-radius: 8px;
+      color: #172033;
+      background: rgba(245, 158, 11, .10);
+      border: 1px solid rgba(245, 158, 11, .24);
+    }
+
+    .reading-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: clamp(14px, 2vw, 20px);
+      margin-top: 1.1rem;
+    }
+
+    .reading-card {
+      position: relative;
+      overflow: hidden;
+      padding: clamp(16px, 2.2vw, 22px);
+      border: 1px solid rgba(15, 23, 42, .08);
+      border-radius: 8px;
+      background: linear-gradient(180deg, rgba(255, 255, 255, .98), rgba(248, 250, 252, .96));
+      box-shadow: 0 12px 28px rgba(15, 23, 42, .06);
+    }
+
+    .reading-card:hover {
+      border-color: rgba(42, 43, 181, .18);
+      box-shadow: 0 16px 34px rgba(15, 23, 42, .09);
+      transform: translateY(-2px);
+    }
+
+    .reading-card::before {
+      content: "";
+      position: absolute;
+      inset: 0 auto 0 0;
+      width: 4px;
+      background: linear-gradient(180deg, var(--cor-destaque), var(--accent-gold));
+      opacity: .78;
+    }
+
+    .reading-card p {
+      margin: 0;
+      color: #475569;
+      line-height: 1.72;
+    }
+
+    .reading-card p+p {
+      margin-top: .72rem;
+    }
+
+    .reading-kicker {
+      display: block;
+      margin-bottom: .75rem;
+      color: var(--cor-destaque);
+      font-family: 'Orbitron', sans-serif;
+      font-size: .82rem;
+      font-weight: 700;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+    }
+
+    .symbolism-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    #simbologia .alert {
+      border: 1px solid rgba(42, 43, 181, .14);
+      border-left: 4px solid var(--accent-gold);
+      border-radius: 8px;
+      background: rgba(248, 250, 252, .92);
+      color: #475569;
+    }
+
+    .footer-copy {
+      color: rgba(234, 242, 255, .82);
+    }
+
+    #sobre .avatar {
+      box-shadow: 0 18px 40px rgba(15, 23, 42, .16);
+    }
+
+    .contact-chip {
+      min-height: 68px;
+      background: linear-gradient(180deg, #ffffff, #f8fafc);
+    }
+
+    .contact-chip i {
+      display: grid;
+      place-items: center;
+      width: 34px;
+      height: 34px;
+      border-radius: 8px;
+      background: rgba(42, 43, 181, .08);
+      color: var(--cor-destaque);
+    }
+
+    .site-footer {
+      background:
+        radial-gradient(circle at 50% 0%, rgba(69, 54, 216, .34), transparent 42%),
+        linear-gradient(180deg, #081728, #111827);
+    }
+
+    .footer-title {
+      font-family: 'Orbitron', sans-serif;
+    }
+
+    .footer-pill {
+      border-radius: 8px;
+    }
+
+    @media (min-width: 992px) {
+      #livro .col-lg-8 {
+        padding-right: 1rem;
+      }
+
+      #livro .col-lg-4 {
+        align-self: stretch;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+    }
+
+    @media (max-width: 768px) {
+      html {
+        scroll-padding-top: 76px;
+      }
+
+      p {
+        max-width: none;
+      }
+
+      #livro .row.align-items-center.p-2 {
+        padding: .75rem !important;
+      }
+
+      .reading-grid,
+      .symbolism-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .synopsis-flow,
+      .reading-card {
+        padding: 14px;
+      }
+
+      .reading-card:hover {
+        transform: none;
+      }
+
+      .banner-agur .agur-illustration,
+      .banner-adonijah .adonijah-illustration {
+        border-radius: 8px 8px 0 0;
+      }
+
+      .banner-agur .agur-text.quote-hero,
+      .banner-adonijah .adonijah-text.quote-hero {
+        border-radius: 0 0 8px 8px !important;
+      }
+
+      .banner-lancamento .lanc-text.quote-hero {
+        border-radius: 8px 8px 0 0 !important;
+      }
+
+      .banner-lancamento .lanc-illustration {
+        border-radius: 0 0 8px 8px;
+      }
+
+      #protagonistas article.row {
+        padding: 14px;
+      }
+
+      .review-card .d-flex {
+        align-items: flex-start !important;
+        gap: .75rem;
+      }
+
+      .stars {
+        font-size: .88rem;
+      }
+
+      #neurarchy article .h-100,
+      #universo article .h-100 {
+        gap: .85rem !important;
+        padding: .85rem !important;
+      }
+
+      .contact-chip {
+        min-height: 60px;
+      }
+    }
   </style>
 
 </head>
@@ -1383,10 +2227,10 @@
   <main id="conteudo" class="container my-5">
     <!-- LIVRO -->
     <section id="livro" class="card-custom" aria-labelledby="titulo-livro">
-      <h2 id="titulo-livro"><i class="bi bi-journal-bookmark-fill" aria-hidden="true"></i> O Livro</h2>
+      <h2 id="titulo-livro"><i class="bi bi-journal-bookmark-fill" aria-hidden="true"></i> Livro 1</h2>
       <div class="row align-items-center">
         <div class="col-lg-8">
-          <h4><strong class="text-dark text-opacity-75">Cânticos de Machina — Primavera Artificial</strong></h4>
+          <h4><strong class="text-dark text-opacity-75">Livro 1: Cânticos de Machina — Primavera Artificial</strong></h4>
           <p>
             Primeiro volume de uma saga que une <strong>ficção científica e reflexão espiritual</strong>,
             explorando como os avanços tecnológicos <strong>moldam</strong> o presente — e <strong>redesenham</strong> o
@@ -1399,18 +2243,22 @@
             te prender do início ao fim!
           </p>
           <h5>Sinopse</h5>
-          <p>Em um mundo onde a tecnologia redefine os limites do ser humano, a Neurarchy lidera a inovação com o
-            implante neural <strong>Solomon</strong> — um dispositivo capaz de expandir as capacidades cognitivas e
-            oferecer tratamentos revolucionários. Aclamado por muitos como o marco de uma nova era e temido por outros
-            como uma ameaça à liberdade, Solomon polariza a sociedade.</p>
-          <p>Quando <strong>Daniel Killian</strong>, dado como morto, retorna à vida em circunstâncias misteriosas, o
-            mundo se depara com um possível milagre — ou algo ainda mais inquietante. Guiados por sonhos e visões, três
-            jovens se conectam a ele e logo descobrem um elo invisível: todos compartilham o mesmo implante neural.</p>
-          <p>Unidos por uma conexão que desafia a razão, são levados a um conflito que ultrapassa os limites da
-            tecnologia, enfrentando verdades ocultas, dilemas morais e os custos da evolução humana. <i>Cânticos de
-              Machina – Primavera Artificial</i> é uma jornada intensa de ação, mistério e introspecção sobre os
-            delicados limites entre fé, tecnologia e humanidade.</p>
-          <p><strong>A tecnologia está conduzindo o mundo a uma nova estação. Você está preparado?</strong></p>
+          <div class="text-flow synopsis-flow">
+            <p>Em um mundo onde a tecnologia redefine os limites do ser humano, a Neurarchy lidera a inovação com o
+              implante neural <strong>Solomon</strong> — um dispositivo capaz de expandir as capacidades cognitivas e
+              oferecer tratamentos revolucionários. Aclamado por muitos como o marco de uma nova era e temido por outros
+              como uma ameaça à liberdade, Solomon polariza a sociedade.</p>
+            <p>Quando <strong>Daniel Killian</strong>, dado como morto, retorna à vida em circunstâncias misteriosas, o
+              mundo se depara com um possível milagre — ou algo ainda mais inquietante. Guiados por sonhos e visões,
+              três jovens se conectam a ele e logo descobrem um elo invisível: todos compartilham o mesmo implante
+              neural.</p>
+            <p>Unidos por uma conexão que desafia a razão, são levados a um conflito que ultrapassa os limites da
+              tecnologia, enfrentando verdades ocultas, dilemas morais e os custos da evolução humana. <i>Cânticos de
+                Machina – Primavera Artificial</i> é uma jornada intensa de ação, mistério e introspecção sobre os
+              delicados limites entre fé, tecnologia e humanidade.</p>
+            <p class="reading-callout"><strong>A tecnologia está conduzindo o mundo a uma nova estação. Você está
+                preparado?</strong></p>
+          </div>
           <p><strong>Categorias:</strong> <span class="text-secondary">Ficção Cristã, Ficção Científica, Suspense,
               Fantasia, Religioso</span></p>
           <!--p><strong>Temas:</strong> <span class="text-secondary">fé, avanços tecnológicos, inteligência artificial,
@@ -1729,16 +2577,27 @@
 
     <section id="saga" class="card-custom" aria-labelledby="titulo-saga">
       <h2 id="titulo-saga"><i class="bi bi-collection" aria-hidden="true"></i> Sobre a Saga</h2>
-      <p><strong>Cânticos de Machina</strong> é uma saga de ficção científica cristã que une fé, tecnologia e suspense
-        em uma visão poderosa sobre o futuro da humanidade.</p>
-      <p>Em um tempo em que as máquinas reescrevem a História e controlam mentes, <strong>Agur</strong>, o escritor que
-        sobreviveu ao apagamento da Fé, decide registrar os fatos que quase foram esquecidos. Em seus manuscritos
-        proibidos, ele busca descrever os acontecimentos que deram origem à <strong>Dominação Machina</strong>,
-        desencadeada pelo implante neural <strong>Solomon</strong> criado pela <strong>Neurarchy</strong>.</p>
-      <p>Seus relatos entrelaçam o destino de jovens marcados por milagres e conspirações, em uma guerra silenciosa
-        entre <em>ciência e espiritualidade</em>, <em>livre-arbítrio e controle</em>. A cada volume, Agur revela os
-        fatos para que o mundo conheça a verdade e compreenda como a promessa de evolução transformou-se em armadilha.
-      </p>
+      <p class="section-lead"><strong>Cânticos de Machina</strong> é uma saga de ficção científica cristã que une fé,
+        tecnologia e suspense em uma visão poderosa sobre o futuro da humanidade.</p>
+
+      <div class="reading-grid reading-grid--two">
+        <article class="reading-card">
+          <span class="reading-kicker">O registro de Agur</span>
+          <p>Em um tempo em que as máquinas reescrevem a História e controlam mentes, <strong>Agur</strong>, o escritor
+            que sobreviveu ao apagamento da Fé, decide registrar os fatos que quase foram esquecidos.</p>
+          <p>Em seus manuscritos proibidos, ele descreve os acontecimentos que deram origem à <strong>Dominação
+              Machina</strong>, desencadeada pelo implante neural <strong>Solomon</strong>, criado pela
+            <strong>Neurarchy</strong>.</p>
+        </article>
+
+        <article class="reading-card">
+          <span class="reading-kicker">O conflito central</span>
+          <p>Seus relatos entrelaçam o destino de jovens marcados por milagres e conspirações, em uma guerra silenciosa
+            entre <em>ciência e espiritualidade</em>, <em>livre-arbítrio e controle</em>.</p>
+          <p>A cada volume, Agur revela os fatos para que o mundo conheça a verdade e compreenda como a promessa de
+            evolução transformou-se em armadilha.</p>
+        </article>
+      </div>
     </section>
 
     
@@ -1775,43 +2634,48 @@
         <i class="bi bi-bookmark-star-fill" aria-hidden="true"></i> Simbologia Bíblica na Obra
       </h2>
 
-      <p>
+      <p class="section-lead">
         <em>Cânticos de Machina</em> combina ficção científica e simbologia bíblica para discutir
         a busca humana por sabedoria e os limites do poder. A narrativa coloca fé e tecnologia em contraste, mostrando
         como o desejo de dominar o conhecimento pode afastar o ser humano de sua própria essência.
       </p>
 
-      <p>
-        O narrador, <strong>Agur</strong>, tem seu nome inspirado no autor de <strong>Provérbios&nbsp;30</strong>, que
-        declara:
-        <q><strong>Toda a Palavra de Deus é pura; escudo é para os que confiam nele.</strong></q>
-        (<em>Provérbios&nbsp;30:5</em>).
-        Ele representa a voz que resiste ao esquecimento, preservando a verdade em um tempo em que memórias e crenças
-        são manipuladas.
-      </p>
+      <div class="reading-grid symbolism-grid">
+        <article class="reading-card">
+          <span class="reading-kicker">Agur e a memória</span>
+          <p>O narrador, <strong>Agur</strong>, tem seu nome inspirado no autor de
+            <strong>Provérbios&nbsp;30</strong>, que declara:
+            <q><strong>Toda a Palavra de Deus é pura; escudo é para os que confiam nele.</strong></q>
+            (<em>Provérbios&nbsp;30:5</em>).</p>
+          <p>Ele representa a voz que resiste ao esquecimento, preservando a verdade em um tempo em que memórias e
+            crenças são manipuladas.</p>
+        </article>
 
-      <p>
-        A obra também dialoga com <strong>Cantares de Salomão</strong>, que narra a história de amor entre o Amado e a
-        Amada — um sentimento puro que resiste ao tempo e às circunstâncias. Entre seus símbolos estão o <strong>Jardim
-          das Nogueiras</strong> e o <strong>Palácio de Prata</strong>, elementos do livro bíblico que ganham novas
-        representações dentro da narrativa de <em>Cânticos de Machina</em>. O próprio título da
-        saga é uma referência direta a esse cântico de Salomão.
-      </p>
+        <article class="reading-card">
+          <span class="reading-kicker">Cantares e o título</span>
+          <p>A obra também dialoga com <strong>Cantares de Salomão</strong>, que narra a história de amor entre o Amado
+            e a Amada — um sentimento puro que resiste ao tempo e às circunstâncias.</p>
+          <p>Entre seus símbolos estão o <strong>Jardim das Nogueiras</strong> e o <strong>Palácio de Prata</strong>,
+            elementos bíblicos que ganham novas representações dentro da narrativa.</p>
+        </article>
 
-      <p>
-        Alguns acontecimentos da trama, especialmente o <strong>lançamento do implante Solomon</strong>, têm paralelos
-        simbólicos com a <strong>coroação de Salomão</strong> em <em>1&nbsp;Reis</em> — um momento de exaltação em que a
-        sabedoria é celebrada, mas também colocada à prova. Assim como o antigo rei, os criadores da tecnologia
-        acreditam inaugurar uma nova era de entendimento, sem perceber os riscos da própria ambição.
-      </p>
+        <article class="reading-card">
+          <span class="reading-kicker">Solomon e a ambição</span>
+          <p>Alguns acontecimentos da trama, especialmente o <strong>lançamento do implante Solomon</strong>, têm
+            paralelos simbólicos com a <strong>coroação de Salomão</strong> em <em>1&nbsp;Reis</em>.</p>
+          <p>É um momento de exaltação em que a sabedoria é celebrada, mas também colocada à prova pela própria
+            ambição.</p>
+        </article>
 
-      <p>
-        Vários <strong>personagens</strong> foram construídos com inspiração em figuras bíblicas:
-        <strong>Nathan</strong> representa o profeta que adverte, <strong>Adonijah (Adonias)</strong> o filho que
-        desafia a vontade divina, e <strong>Abiathar</strong> e <strong>Benaia</strong> refletem antigos conflitos de
-        lealdade e poder. Suas histórias reúnem, em um contexto futurista, os mesmos dilemas entre fé, orgulho e
-        redenção presentes nas Escrituras.
-      </p>
+        <article class="reading-card">
+          <span class="reading-kicker">Personagens e ecos bíblicos</span>
+          <p>Vários <strong>personagens</strong> foram construídos com inspiração em figuras bíblicas:
+            <strong>Nathan</strong>, <strong>Adonijah</strong>, <strong>Abiathar</strong> e <strong>Benaia</strong>
+            refletem antigos conflitos de lealdade e poder.</p>
+          <p>Suas histórias reúnem, em um contexto futurista, dilemas entre fé, orgulho e redenção presentes nas
+            Escrituras.</p>
+        </article>
+      </div>
 
       <div class="alert alert-secondary mt-4 mb-0 small" role="note">
         <strong>Nota:</strong> A simbologia é literária e serve como pano de fundo para a narrativa. A obra não
@@ -2601,21 +3465,21 @@
       <p class="cta-label mb-2">Garanta o seu ou deixe sua avaliação:</p>
 
       <nav class="cta-dock" aria-label="Menu de ações">
-        <!-- Impresso -->
-        <a href="https://www.amazon.com.br/dp/6552783329" target="_blank" rel="noopener"
-          class="btn-cta-dock btn-cta-primary" aria-label="Comprar livro impresso na Amazon">
+        <!-- E-book -->
+        <a href="https://www.amazon.com.br/dp/B0FL1GM5PG" target="_blank" rel="noopener"
+          class="btn-cta-dock btn-cta-primary" aria-label="Comprar e-book na Amazon">
           <span class="cta-text">
-            <span class="cta-title">Impresso</span>
-            <span class="cta-sub"><span class="text-light">Comprar na Amazon</span></span>
+            <span class="cta-title">E-book</span>
+            <span class="cta-sub"><span class="text-light">Ler no Kindle / Kindle Unlimited</span></span>
           </span>
         </a>
 
-        <!-- E-book -->
-        <a href="https://www.amazon.com.br/dp/B0FL1GM5PG" target="_blank" rel="noopener" class="btn-cta-dock"
-          aria-label="Comprar e-book na Amazon">
+        <!-- Impresso -->
+        <a href="https://www.amazon.com.br/dp/6552783329" target="_blank" rel="noopener" class="btn-cta-dock"
+          aria-label="Comprar livro impresso na Amazon">
           <span class="cta-text">
-            <span class="cta-title">E-book</span>
-            <span class="cta-sub">Ler no Kindle / Kindle Unlimited</span>
+            <span class="cta-title">Impresso</span>
+            <span class="cta-sub">Comprar na Amazon</span>
           </span>
         </a>
 
@@ -2719,7 +3583,7 @@
       </nav>
 
       <p class="footer-copy">
-        &copy; 2025 Carlos Eduardo Gomes — Todos os direitos reservados.
+        &copy; 2025–2026 Carlos Eduardo Gomes — Todos os direitos reservados.
       </p>
     </div>
   </footer>
