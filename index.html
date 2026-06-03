@@ -2435,33 +2435,63 @@
 
     #avaliacoes .row[role="group"] .btn-primary {
       color: #111827;
-      background: linear-gradient(180deg, #f8fafc, #e7ecff);
+      background:
+        radial-gradient(circle at 18% 0%, rgba(142, 162, 255, .28), transparent 36%),
+        linear-gradient(180deg, rgba(255, 255, 255, .94), rgba(222, 230, 255, .90));
       border-color: rgba(142, 162, 255, .30);
-      box-shadow: 0 10px 24px rgba(0, 0, 0, .24);
+      box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, .82),
+        0 10px 24px rgba(0, 0, 0, .24);
     }
 
-    .btn-cta-dock:not(.btn-cta-primary),
-    .mobile-cta .btn-ico {
+    .btn-cta-dock:not(.btn-cta-primary) {
       color: #111827 !important;
-      background: linear-gradient(180deg, #f8fafc, #e7ecff) !important;
+      background:
+        radial-gradient(circle at 18% 0%, rgba(142, 162, 255, .30), transparent 36%),
+        linear-gradient(180deg, rgba(255, 255, 255, .94), rgba(222, 230, 255, .90)) !important;
       border-color: rgba(142, 162, 255, .34) !important;
+      box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, .84),
+        0 12px 26px rgba(0, 0, 0, .26) !important;
     }
 
     .btn-cta-dock:not(.btn-cta-primary):hover,
-    .btn-cta-dock:not(.btn-cta-primary):focus,
-    .mobile-cta .btn-ico:hover,
-    .mobile-cta .btn-ico:focus {
+    .btn-cta-dock:not(.btn-cta-primary):focus {
       color: #050816 !important;
-      background: #ffffff !important;
+      background:
+        radial-gradient(circle at 18% 0%, rgba(142, 162, 255, .36), transparent 38%),
+        linear-gradient(180deg, #ffffff, #edf2ff) !important;
+      border-color: rgba(142, 162, 255, .52) !important;
     }
 
     .btn-cta-dock:not(.btn-cta-primary) .cta-sub {
       color: #475569 !important;
     }
 
+    .mobile-cta .btn-ico {
+      color: #f8fafc !important;
+      background:
+        linear-gradient(180deg, rgba(18, 27, 51, .98), rgba(8, 13, 29, .98)) !important;
+      border-color: rgba(142, 162, 255, .28) !important;
+      box-shadow: 0 10px 24px rgba(0, 0, 0, .30) !important;
+    }
+
+    .mobile-cta .btn-ico:hover,
+    .mobile-cta .btn-ico:focus {
+      color: #ffffff !important;
+      background:
+        linear-gradient(180deg, rgba(30, 41, 75, .98), rgba(15, 23, 42, .98)) !important;
+      border-color: rgba(142, 162, 255, .48) !important;
+    }
+
     .btn-cta-primary,
     .btn-cta-primary:hover {
       color: #ffffff;
+    }
+
+    .btn-cta-primary .cta-sub,
+    .btn-cta-primary .btn-cta-dock__btn {
+      color: rgba(255, 255, 255, .86) !important;
     }
 
     .parallax-header .cta-wrap .btn-primary,
@@ -2471,6 +2501,34 @@
     #livro [role="group"] .btn-primary:hover,
     #livro [role="group"] .btn-primary:focus {
       color: #111827 !important;
+    }
+
+    .parallax-header .cta-wrap .btn-primary,
+    #livro [role="group"] .btn-primary {
+      background:
+        radial-gradient(circle at 18% 0%, rgba(142, 162, 255, .30), transparent 36%),
+        linear-gradient(180deg, rgba(255, 255, 255, .94), rgba(222, 230, 255, .90)) !important;
+      border-color: rgba(142, 162, 255, .34) !important;
+      box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, .84),
+        0 14px 30px rgba(0, 0, 0, .26) !important;
+      text-shadow: none;
+    }
+
+    .parallax-header .cta-wrap .btn-primary:hover,
+    .parallax-header .cta-wrap .btn-primary:focus,
+    #livro [role="group"] .btn-primary:hover,
+    #livro [role="group"] .btn-primary:focus,
+    #avaliacoes .row[role="group"] .btn-primary:hover,
+    #avaliacoes .row[role="group"] .btn-primary:focus {
+      color: #111827 !important;
+      background:
+        radial-gradient(circle at 18% 0%, rgba(142, 162, 255, .36), transparent 38%),
+        linear-gradient(180deg, #ffffff, #edf2ff) !important;
+      border-color: rgba(142, 162, 255, .52) !important;
+      box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, .90),
+        0 16px 34px rgba(0, 0, 0, .30) !important;
     }
 
     .cta-badge {
@@ -3815,15 +3873,16 @@
       <nav class="cta-dock" aria-label="Menu de ações">
         <!-- E-book -->
         <a href="https://www.amazon.com.br/dp/B0FL1GM5PG" target="_blank" rel="noopener"
-          class="btn-cta-dock btn-cta-primary" aria-label="Comprar e-book na Amazon">
+          class="btn-cta-dock" aria-label="Comprar e-book na Amazon">
           <span class="cta-text">
             <span class="cta-title">E-book</span>
-            <span class="cta-sub"><span class="text-light">Ler no Kindle / Kindle Unlimited</span></span>
+            <span class="cta-sub">Ler no Kindle / Kindle Unlimited</span>
           </span>
         </a>
 
         <!-- Impresso -->
-        <a href="https://www.amazon.com.br/dp/6552783329" target="_blank" rel="noopener" class="btn-cta-dock"
+        <a href="https://www.amazon.com.br/dp/6552783329" target="_blank" rel="noopener"
+          class="btn-cta-dock btn-cta-primary"
           aria-label="Comprar livro impresso na Amazon">
           <span class="cta-text">
             <span class="cta-title">Impresso</span>
@@ -3832,7 +3891,7 @@
         </a>
 
         <!-- Avaliar (dropup acessível) -->
-        <div class="btn-cta-dock dropup">
+        <div class="btn-cta-dock btn-cta-primary dropup">
           <button class="btn-cta-dock__btn dropdown-toggle" type="button" data-bs-toggle="dropdown"
             data-bs-display="static" aria-expanded="false" aria-label="Abrir opções para avaliar o livro">
             <span class="cta-text">
