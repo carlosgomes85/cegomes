@@ -26,7 +26,7 @@
   <!-- Robots com políticas de preview para CTR -->
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
   <link rel="canonical" href="https://www.canticosdemachina.com.br/">
-  <meta name="theme-color" content="#004d96">
+  <meta name="theme-color" content="#050816">
 
   <!-- Performance -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -62,13 +62,13 @@
 
   <style>
     :root {
-      --cor-principal: #ffffff;
-      --cor-secundaria: #f9fafb;
-      --cor-destaque: #2a2bb5;
-      --cor-destaque-hover: #4536d8;
-      --texto-principal: #1f2937;
-      --cor-destaque-rgb: 48, 64, 208;
-      --cor-destaque-hover-rgb: 69, 54, 216
+      --cor-principal: #0b1020;
+      --cor-secundaria: #050816;
+      --cor-destaque: #8ea2ff;
+      --cor-destaque-hover: #b69cff;
+      --texto-principal: #e5e7eb;
+      --cor-destaque-rgb: 142, 162, 255;
+      --cor-destaque-hover-rgb: 182, 156, 255
     }
 
     html {
@@ -787,6 +787,62 @@
       right: 12px
     }
 
+    #imgModal .modal-dialog {
+      max-width: min(96vw, 1440px);
+      --viewer-top-offset: 96px;
+      margin: var(--viewer-top-offset) auto 1.25rem;
+    }
+
+    #imgModal .modal-content {
+      max-height: calc(100svh - var(--viewer-top-offset) - 1.25rem);
+      overflow: hidden;
+    }
+
+    #imgModal .modal-body {
+      display: grid;
+      grid-template-rows: minmax(0, 1fr) auto;
+      min-height: 0;
+    }
+
+    #imgModalPicture {
+      width: 100%;
+      height: auto;
+      max-height: calc(100svh - var(--viewer-top-offset) - 8.25rem);
+      object-fit: contain;
+      background: #050816;
+    }
+
+    #imgModalCaption {
+      max-height: 5rem;
+      overflow-y: auto;
+    }
+
+    @media (max-width: 768px) {
+      #imgModal .modal-dialog {
+        max-width: 100vw;
+        --viewer-top-offset: 86px;
+        margin: var(--viewer-top-offset) 0 0;
+      }
+
+      #imgModal .modal-content {
+        min-height: calc(100svh - var(--viewer-top-offset));
+        max-height: calc(100svh - var(--viewer-top-offset));
+        border-radius: 0 !important;
+      }
+
+      #imgModalPicture {
+        max-height: calc(100svh - var(--viewer-top-offset) - 8rem);
+      }
+
+      .modal-nav-prev {
+        left: 8px;
+      }
+
+      .modal-nav-next {
+        right: 8px;
+      }
+    }
+
     .quote-hero {
       position: relative;
       background: linear-gradient(135deg, #0b2744 0%, #3b2db3 100%);
@@ -1303,11 +1359,11 @@
 
     /* Refinamento visual geral */
     :root {
-      --surface-soft: rgba(255, 255, 255, .94);
-      --line-soft: rgba(42, 43, 181, .13);
-      --shadow-soft: 0 18px 48px rgba(15, 23, 42, .10);
-      --shadow-lift: 0 24px 58px rgba(15, 23, 42, .14);
-      --accent-gold: #f59e0b;
+      --surface-soft: rgba(15, 23, 42, .88);
+      --line-soft: rgba(142, 162, 255, .22);
+      --shadow-soft: 0 18px 48px rgba(0, 0, 0, .34);
+      --shadow-lift: 0 24px 58px rgba(0, 0, 0, .44);
+      --accent-gold: #fbbf24;
     }
 
     body {
@@ -1569,6 +1625,15 @@
     }
 
     @media (max-width: 991.98px) {
+      .navbar {
+        min-height: 78px;
+      }
+
+      .navbar .container {
+        padding-top: .45rem;
+        padding-bottom: .45rem;
+      }
+
       .navbar-nav {
         align-items: stretch;
         padding: .75rem 0 .35rem;
@@ -2164,6 +2229,257 @@
       .contact-chip {
         min-height: 60px;
       }
+    }
+
+    /* Tema escuro */
+    html {
+      color-scheme: dark;
+    }
+
+    body {
+      background-color: var(--cor-secundaria);
+      color: var(--texto-principal);
+    }
+
+    body,
+    .card-custom,
+    .review-card,
+    .reading-card,
+    .accordion-item,
+    .accordion-button,
+    .accordion-body,
+    .contact-chip,
+    .btn-cta-dock,
+    .mobile-cta .btn-ico,
+    .dropdown-menu,
+    .dropdown-item {
+      color: var(--texto-principal);
+    }
+
+    a {
+      color: #c7d2fe;
+    }
+
+    a:hover,
+    a:focus {
+      color: #ffffff;
+    }
+
+    .text-dark,
+    .text-muted {
+      color: #cbd5e1 !important;
+    }
+
+    .bg-white {
+      background:
+        linear-gradient(180deg, rgba(18, 27, 51, .94), rgba(12, 18, 36, .94)) !important;
+    }
+
+    .bg-pattern {
+      background:
+        radial-gradient(circle at 1px 1px, rgba(142, 162, 255, .13) 1.2px, transparent 1.2px) 0 0/22px 22px,
+        radial-gradient(circle at 22% 12%, rgba(142, 162, 255, .18), transparent 34%),
+        radial-gradient(circle at 84% 8%, rgba(245, 158, 11, .10), transparent 30%),
+        linear-gradient(180deg, #050816 0%, #0b1020 48%, #101827 100%);
+      opacity: 1;
+    }
+
+    .skip-link:focus,
+    .navbar,
+    .mobile-cta,
+    .social-menu {
+      background: rgba(8, 13, 29, .92);
+      border-color: rgba(142, 162, 255, .18);
+      box-shadow: 0 12px 34px rgba(0, 0, 0, .38);
+    }
+
+    .navbar {
+      border-bottom: 1px solid rgba(142, 162, 255, .18);
+    }
+
+    .navbar-toggler {
+      border-color: rgba(229, 231, 235, .42);
+    }
+
+    .navbar-toggler-icon {
+      background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba(229,231,235,0.92)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+    }
+
+    .navbar-nav .nav-link:hover,
+    .navbar-nav .nav-link:focus,
+    .navbar-nav .dropdown-item:hover,
+    .navbar-nav .dropdown-item:focus {
+      background: rgba(142, 162, 255, .14);
+      color: #ffffff !important;
+    }
+
+    .navbar-nav .dropdown-menu,
+    .dropdown-menu-mobile-aval {
+      background: rgba(12, 18, 36, .98);
+      border-color: rgba(142, 162, 255, .20);
+      box-shadow: 0 20px 44px rgba(0, 0, 0, .46);
+    }
+
+    .dropdown-header,
+    .dropdown-item .text-muted,
+    .cta-sub,
+    .contact-chip .sub,
+    .video-caption,
+    .mobile-cta .cta-label,
+    section>p,
+    #saga>p,
+    #simbologia>p,
+    #neurarchy>p,
+    #universo>p,
+    #contato>p,
+    .card-custom>p:first-of-type,
+    #livro .col-lg-8>p:first-of-type,
+    #saga>p:first-of-type,
+    #neurarchy>p:first-of-type,
+    #universo>p:first-of-type,
+    .section-lead,
+    .accordion-body,
+    .reading-card p {
+      color: #b6c2d6 !important;
+    }
+
+    .price-note,
+    .synopsis-flow,
+    .reading-callout,
+    #livro .row.align-items-center.p-2,
+    #simbologia .alert {
+      color: #dfe7f5;
+      background:
+        linear-gradient(135deg, rgba(142, 162, 255, .12), rgba(251, 191, 36, .08)),
+        rgba(15, 23, 42, .78);
+      border-color: rgba(142, 162, 255, .20);
+    }
+
+    .card-custom,
+    .review-card,
+    .reading-card,
+    #protagonistas article.row,
+    #universo article .shadow-sm,
+    #neurarchy .shadow-sm,
+    #universo article .h-100,
+    #neurarchy article .h-100,
+    .contact-chip,
+    .btn-cta-dock,
+    .mobile-cta .btn-ico,
+    .accordion-item,
+    .accordion-button,
+    .accordion-body {
+      background:
+        linear-gradient(180deg, rgba(18, 27, 51, .94), rgba(12, 18, 36, .94)) !important;
+      border-color: rgba(142, 162, 255, .18) !important;
+      box-shadow: 0 16px 36px rgba(0, 0, 0, .32) !important;
+    }
+
+    .card-custom h3,
+    .card-custom h4,
+    .card-custom h5,
+    #neurarchy h4,
+    #universo h3,
+    .review-card .name,
+    .accordion-button,
+    .section-lead strong,
+    .reading-card strong,
+    .synopsis-flow strong,
+    .reading-callout,
+    .btn-cta-dock,
+    .mobile-cta .btn-ico {
+      color: #f8fafc !important;
+    }
+
+    .card-custom h5,
+    .contact-chip i {
+      background: rgba(142, 162, 255, .12);
+      border-color: rgba(142, 162, 255, .26);
+    }
+
+    .accordion-button:not(.collapsed) {
+      color: #ffffff !important;
+      background:
+        linear-gradient(135deg, rgba(142, 162, 255, .20), rgba(251, 191, 36, .10)) !important;
+      box-shadow: inset 0 -1px 0 rgba(142, 162, 255, .18) !important;
+    }
+
+    .accordion-button::after {
+      filter: invert(1) grayscale(1) brightness(1.8);
+    }
+
+    .capa-livro,
+    .char-portrait,
+    .avatar,
+    .thumb-fill {
+      border-color: rgba(226, 232, 240, .18) !important;
+      box-shadow: 0 22px 48px rgba(0, 0, 0, .42) !important;
+    }
+
+    #neurarchy article .h-100::after,
+    #universo article .h-100::after {
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, .12);
+    }
+
+    .btn-outline-primary {
+      color: #c7d2fe;
+      border-color: rgba(142, 162, 255, .62);
+    }
+
+    .btn-outline-primary:hover,
+    .btn-outline-primary:focus,
+    #avaliacoes .row[role="group"] .btn-primary:hover,
+    #avaliacoes .row[role="group"] .btn-primary:focus {
+      color: #ffffff;
+    }
+
+    #avaliacoes .row[role="group"] .btn-primary {
+      color: #111827;
+      background: linear-gradient(180deg, #f8fafc, #e7ecff);
+      border-color: rgba(142, 162, 255, .30);
+      box-shadow: 0 10px 24px rgba(0, 0, 0, .24);
+    }
+
+    .btn-cta-dock:not(.btn-cta-primary),
+    .mobile-cta .btn-ico {
+      color: #111827 !important;
+      background: linear-gradient(180deg, #f8fafc, #e7ecff) !important;
+      border-color: rgba(142, 162, 255, .34) !important;
+    }
+
+    .btn-cta-dock:not(.btn-cta-primary):hover,
+    .btn-cta-dock:not(.btn-cta-primary):focus,
+    .mobile-cta .btn-ico:hover,
+    .mobile-cta .btn-ico:focus {
+      color: #050816 !important;
+      background: #ffffff !important;
+    }
+
+    .btn-cta-dock:not(.btn-cta-primary) .cta-sub {
+      color: #475569 !important;
+    }
+
+    .btn-cta-primary,
+    .btn-cta-primary:hover {
+      color: #ffffff;
+    }
+
+    .parallax-header .cta-wrap .btn-primary,
+    .parallax-header .cta-wrap .btn-primary:hover,
+    .parallax-header .cta-wrap .btn-primary:focus,
+    #livro [role="group"] .btn-primary,
+    #livro [role="group"] .btn-primary:hover,
+    #livro [role="group"] .btn-primary:focus {
+      color: #111827 !important;
+    }
+
+    .cta-badge {
+      background: #22c55e;
+      color: #04130a;
+    }
+
+    .site-footer {
+      border-top: 1px solid rgba(142, 162, 255, .16);
     }
   </style>
 
@@ -3816,7 +4132,7 @@
         </div>
 
         <div class="modal-body p-0">
-          <img id="imgModalPicture" src="" alt="" class="w-100 h-auto d-block" loading="eager">
+          <img id="imgModalPicture" src="" alt="" class="d-block" loading="eager">
           <figcaption id="imgModalCaption" class="p-3 small text-secondary"></figcaption>
         </div>
       </div>
