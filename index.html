@@ -1634,6 +1634,10 @@
         padding-bottom: .45rem;
       }
 
+      .navbar-brand img {
+        width: clamp(172px, 44vw, 220px);
+      }
+
       .navbar-nav {
         align-items: stretch;
         padding: .75rem 0 .35rem;
@@ -1715,7 +1719,7 @@
 
     @media (max-width: 430px) {
       .navbar-brand img {
-        width: 148px;
+        width: clamp(164px, 50vw, 190px);
       }
 
       .parallax-header {
