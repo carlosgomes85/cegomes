@@ -84,9 +84,9 @@
               Universo
             </a>
             <ul class="dropdown-menu" aria-labelledby="universoDropdown">
-              <li><a class="dropdown-item" href="#protagonistas">Protagonistas</a></li>
-              <li><a class="dropdown-item" href="#neurarchy">Neurarchy</a></li>
-              <li><a class="dropdown-item" href="#universo">Locais</a></li>
+              <li><a class="dropdown-item" href="./protagonistas.html">Protagonistas</a></li>
+              <li><a class="dropdown-item" href="./neurarchy.html">Neurarchy</a></li>
+              <li><a class="dropdown-item" href="./locais.html">Locais</a></li>
             </ul>
           </li>
           <li class="nav-item"><a class="nav-link" href="#faq">FAQ</a></li>
@@ -142,6 +142,8 @@
   </header>
 
   <main id="conteudo" class="container my-5">
+
+
     <!-- LIVRO -->
     <section id="livro" class="card-custom" aria-labelledby="titulo-livro">
       <h2 id="titulo-livro">
@@ -238,9 +240,14 @@
         Assista ao <em>Book Trailer</em>, ao vídeo do autor e ao trecho musical autoral cantado por Shiren Meysel.
       </p>
 
-      <div class="video-grid">
+      <div class="card-carousel-controls" data-carousel-controls="video-cards" hidden>
+        <span class="card-carousel-status" aria-live="polite" aria-atomic="true"></span>
+        <button class="card-carousel-button" type="button" data-direction="-1" aria-controls="video-cards" aria-label="Vídeos anteriores"><i class="bi bi-chevron-left" aria-hidden="true"></i></button>
+        <button class="card-carousel-button" type="button" data-direction="1" aria-controls="video-cards" aria-label="Próximos vídeos"><i class="bi bi-chevron-right" aria-hidden="true"></i></button>
+      </div>
+      <div id="video-cards" class="card-carousel" tabindex="0" role="region" aria-label="Vídeos de Cânticos de Machina" aria-roledescription="carrossel">
         <!-- Book Trailer -->
-        <div class="video-item fade-in" aria-label="Book Trailer de Cânticos de Machina">
+        <div class="video-item" aria-label="Book Trailer de Cânticos de Machina">
           <div class="short-embed">
             <iframe src="https://www.youtube-nocookie.com/embed/JS2PrdXC4qI?rel=0&modestbranding=1&playsinline=1"
               title="Book Trailer – Cânticos de Machina" loading="lazy"
@@ -251,7 +258,7 @@
         </div>
 
         <!-- Vídeo do autor -->
-        <div class="video-item fade-in" aria-label="Autor C. E. Gomes falando sobre o livro">
+        <div class="video-item" aria-label="Autor C. E. Gomes falando sobre o livro">
           <div class="short-embed">
             <iframe src="https://www.youtube-nocookie.com/embed/JsjFpKgdNR0?rel=0&modestbranding=1&playsinline=1"
               title="C. E. Gomes fala sobre Cânticos de Machina" loading="lazy"
@@ -262,7 +269,7 @@
         </div>
 
         <!-- Cântico de Machina -->
-        <div class="video-item fade-in" aria-label="Trecho da música autoral Cântico de Machina cantada por Shiren Meysel">
+        <div class="video-item" aria-label="Trecho da música autoral Cântico de Machina cantada por Shiren Meysel">
           <div class="short-embed">
             <iframe src="https://www.youtube-nocookie.com/embed/n7H7A0oV92I?rel=0&modestbranding=1&playsinline=1"
               title="Cântico de Machina cantado por Shiren Meysel" loading="lazy"
@@ -370,7 +377,12 @@
       <hr class="my-4" />
 
       <!-- Lista de reviews -->
-      <div class="row row-cols-1 row-cols-md-2 g-3" itemprop="itemListElement">
+      <div class="card-carousel-controls" data-carousel-controls="avaliacoes-cards" hidden>
+        <span class="card-carousel-status" aria-live="polite" aria-atomic="true"></span>
+        <button class="card-carousel-button" type="button" data-direction="-1" aria-controls="avaliacoes-cards" aria-label="Avalia??es dos leitores: cards anteriores"><i class="bi bi-chevron-left" aria-hidden="true"></i></button>
+        <button class="card-carousel-button" type="button" data-direction="1" aria-controls="avaliacoes-cards" aria-label="Avalia??es dos leitores: pr?ximos cards"><i class="bi bi-chevron-right" aria-hidden="true"></i></button>
+      </div>
+      <div id="avaliacoes-cards" class="card-carousel" tabindex="0" role="region" aria-label="Avalia??es dos leitores" aria-roledescription="carrossel" itemprop="itemListElement">
         <!-- Rafael Ferreira -->
         <article class="col" itemscope itemtype="https://schema.org/Review">
           <div class="review-card h-100">
@@ -531,7 +543,7 @@
       </div>
     </section>
 
-    
+
     <!-- BANNER 1 — Agur / Vigília da Palavra -->
     <section class="card-custom banner-agur" aria-label="Banner: Agur e a Palavra">
       <div class="agur-illustration" role="img"
@@ -571,7 +583,12 @@
         como o desejo de dominar o conhecimento pode afastar o ser humano de sua própria essência.
       </p>
 
-      <div class="reading-grid symbolism-grid">
+      <div class="card-carousel-controls" data-carousel-controls="simbologia-cards" hidden>
+        <span class="card-carousel-status" aria-live="polite" aria-atomic="true"></span>
+        <button class="card-carousel-button" type="button" data-direction="-1" aria-controls="simbologia-cards" aria-label="Simbologia b?blica: cards anteriores"><i class="bi bi-chevron-left" aria-hidden="true"></i></button>
+        <button class="card-carousel-button" type="button" data-direction="1" aria-controls="simbologia-cards" aria-label="Simbologia b?blica: pr?ximos cards"><i class="bi bi-chevron-right" aria-hidden="true"></i></button>
+      </div>
+      <div id="simbologia-cards" class="card-carousel symbolism-grid" tabindex="0" role="region" aria-label="Simbologia b?blica" aria-roledescription="carrossel">
         <article class="reading-card">
           <span class="reading-kicker">Agur e a memória</span>
           <p>O narrador, <strong>Agur</strong>, tem seu nome inspirado no autor de
@@ -615,116 +632,6 @@
       </div>
     </section>
 
-
-
-    <!-- PROTAGONISTAS -->
-    <section id="protagonistas" class="card-custom" aria-labelledby="titulo-protagonistas">
-      <h2 id="titulo-protagonistas">
-        <i class="bi bi-people-fill" aria-hidden="true"></i> Protagonistas
-      </h2>
-      <p class="mb-4">Conheça os quatro jovens protagonistas de <em>Cânticos de Machina</em>,
-        cada um marcado por dilemas entre fé, tecnologia, escolhas e destino.</p>
-
-      <!-- Daniel Killian -->
-      <article class="row g-4 align-items-center mb-5" itemscope itemtype="https://schema.org/Person">
-        <div class="col-md-4 text-center">
-          <img class="char-portrait" src="./img/protagonistas/daniel.png" alt="Ilustração de Daniel Killian"
-            loading="lazy" decoding="async" itemprop="image">
-        </div>
-        <div class="col-md-8">
-          <h3 class="mb-1" itemprop="name">Daniel Killian</h3>
-          <p itemprop="description">
-            Daniel Killian é o jovem que morreu… e voltou. Após
-            um acidente no Lago da Carpideira, seu corpo permaneceu sem sinais vitais por mais de uma hora. Contra toda
-            a lógica médica, ele desperta, sem explicação, sem memórias claras do ocorrido, mas com algo diferente
-            pulsando dentro de si.
-          </p>
-          <p>Aos poucos, Daniel descobre que carrega no cérebro um implante neural avançado — um segredo que nem ele
-            mesmo sabia possuir. A revelação desperta suspeitas sobre as verdadeiras razões de seu retorno à vida.</p>
-          <p>
-            Calado, observador e intensamente ligado aos mistérios que o cercam, Daniel carrega a força silenciosa de
-            quem sobreviveu ao impossível — e que agora precisa entender o propósito de sua segunda chance. À medida que
-            experiências inexplicáveis começam a emergir — sonhos vívidos, visões proféticas e conexões com outras
-            pessoas —, ele se vê no centro de um embate entre fé e tecnologia, ciência e mistério. Seria ele um milagre?
-            Um experimento? Ou ambos ao mesmo tempo?
-          </p>
-        </div>
-      </article>
-
-      <hr class="my-4">
-
-      <!-- Samui Yakeda -->
-      <article class="row g-4 align-items-center mb-5" itemscope itemtype="https://schema.org/Person">
-        <div class="col-md-4 text-center order-md-2">
-          <img class="char-portrait" src="./img/protagonistas/samui.png" alt="Ilustração de Samui Yakeda" loading="lazy"
-            decoding="async" itemprop="image">
-        </div>
-        <div class="col-md-8 order-md-1">
-          <h3 class="mb-1" itemprop="name">Samui Yakeda</h3>
-          <p itemprop="description">
-            Samui Yakeda, de 17 anos, vive em Tamura, bairro multicultural de Philston. De olhar sério e rotina puxada,
-            divide-se entre estudos, trabalho em um mercadinho local e treinos no dojô da família. Nas horas vagas,
-            desenha seus mangás e joga online com amigos.
-          </p>
-          <p>
-            Entre responsabilidades cotidianas, algo maior começa a emergir em sua mente: vozes, visões e um chamado
-            inexplicável a levam para uma jornada que nem ela mesma compreende. Forte, sarcástica e leal, Samui é uma
-            alma reservada em um mundo caótico — e sua história está apenas começando.
-          </p>
-        </div>
-      </article>
-
-      <hr class="my-4">
-
-      <!-- Zuba Bomani -->
-      <article class="row g-4 align-items-center mb-5" itemscope itemtype="https://schema.org/Person">
-        <div class="col-md-4 text-center">
-          <img class="char-portrait" src="./img/protagonistas/zuba.png" alt="Ilustração de Zuba Bomani" loading="lazy"
-            decoding="async" itemprop="image">
-        </div>
-        <div class="col-md-8">
-          <h3 class="mb-1" itemprop="name">Zuba Bomani</h3>
-          <p itemprop="description">
-            Zuba Bomani é conhecido por sua mente afiada e coração gigante. Filho de uma enfermeira batalhadora e irmão
-            mais velho protetor, amadureceu cedo e assumiu responsabilidades que poucos teriam coragem de carregar.
-          </p>
-          <p>
-            Aos 17 anos, divide-se entre escola, treinos de basquete e o cuidado com a família. No burgo de Yellen, onde
-            gangues tentam silenciar sonhos, Zuba ensina a molecada a jogar e acreditar que o esporte pode ser uma rota
-            de fuga. Corajoso e disciplinado, sua trajetória está prestes a mudar — exigindo fé, ousadia e escolhas que
-            ele nunca imaginou enfrentar.
-          </p>
-        </div>
-      </article>
-
-      <hr class="my-4">
-
-      <!-- Natali Legrand -->
-      <article class="row g-4 align-items-center" itemscope itemtype="https://schema.org/Person">
-        <div class="col-md-4 text-center order-md-2">
-          <img class="char-portrait" src="./img/protagonistas/natali.png" alt="Ilustração de Natali Legrand"
-            loading="lazy" decoding="async" itemprop="image">
-        </div>
-        <div class="col-md-8 order-md-1">
-          <h3 class="mb-1" itemprop="name">Natali Legrand</h3>
-          <p itemprop="description">
-            Aos 17 anos, Natali Legrand equilibra ensaios de balé acrobático, provas escolares e
-            redes sociais. Inteligente, carismática e cheia de energia, está longe de ser apenas “a filha das
-            celebridades”.
-          </p>
-          <p>
-            Crescida em uma mansão no elegante Nearpalace, carrega a inquietação de quem busca algo além do status.
-            Sensível às dores do mundo e determinada em seus objetivos, enfrenta julgamentos e expectativas com a mesma
-            firmeza que exibe nos palcos.
-          </p>
-          <p>
-            Mas logo seu brilho será colocado à prova. Novos caminhos exigirão mais do que fama ou talento: será preciso
-            encontrar uma força interior que ela ainda está aprendendo a reconhecer.
-          </p>
-        </div>
-      </article>
-    </section>
-
     <section class="card-custom banner-lancamento" aria-label="Banner: Lançamento Solomon">
       <div class="lanc-text quote-hero">
         <blockquote class="mb-2">
@@ -741,434 +648,43 @@
       </div>
     </section>
 
-
-    <!-- NEURARCHY -->
-    <section id="neurarchy" class="card-custom" aria-labelledby="titulo-neurarchy">
-      <h2 id="titulo-neurarchy"><i class="bi bi-cpu-fill" aria-hidden="true"></i> Neurarchy</h2>
-      <p class="mb-3">
-        Big tech de neurotecnologia responsável pelo implante <strong>Solomon</strong>, a <strong>Neurarchy</strong>
-        está no centro de uma revolução que promete ampliar a mente humana e redefinir os limites da consciência.
-        Pesquisa, ética e poder se cruzam em seus corredores, onde decisões técnicas moldam vidas, a sociedade e o
-        futuro.
-        Mas enquanto a empresa avança rumo ao lançamento global do implante, enfrenta a resistência de grupos
-        <strong>hackers e insurgentes</strong> como os <strong>Adonijah</strong> e os <strong>Shutdown</strong>, que
-        enxergam no Solomon uma ameaça ao livre-arbítrio e à privacidade.
-      </p>
-
-      <!-- Pessoas -->
-      <article id="neurarchy-pessoas">
-        <h3 class="h5 mb-3"><i class="bi bi-people" aria-hidden="true"></i> Pessoas</h3>
-
-        <div class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-3">
-
-          <!-- Elizabeth Sabra -->
-          <article class="col" itemscope itemtype="https://schema.org/Person">
-            <div class="h-100 p-3 border rounded-3 bg-white shadow-sm d-flex gap-3 align-items-stretch">
-              <div class="thumb-col">
-                <img class="thumb-fill gallery-trigger" src="./img/neurarchy/elizabeth-sabra-thumb.jpg"
-                  data-img="./img/neurarchy/elizabeth-sabra.jpg" data-alt="Retrato de Elizabeth Sabra"
-                  data-title="Elizabeth Sabra" data-gallery="people" alt="Retrato de Elizabeth Sabra" width="112"
-                  height="112" loading="lazy" decoding="async" role="button" tabindex="0">
-              </div>
-              <div class="flex-grow-1">
-                <h4 class="h6 mb-1" itemprop="name">Elizabeth Sabra</h4>
-                <p class="small mb-1"><strong itemprop="jobTitle">CEO • Co-fundadora</strong></p>
-                <p class="small text-secondary mb-2" itemprop="description">
-                  Visionária por trás do projeto <em>Solomon</em>. Equilibra ciência, propósito e um passado que cobra
-                  respostas.
-                </p>
-                <button type="button" class="btn btn-sm btn-outline-primary gallery-trigger"
-                  data-img="./img/neurarchy/elizabeth-sabra.jpg" data-alt="Retrato de Elizabeth Sabra"
-                  data-title="Elizabeth Sabra" data-gallery="people">
-                  Ver maior
-                </button>
-              </div>
-            </div>
-          </article>
-
-          <!-- John Abraham -->
-          <article class="col" itemscope itemtype="https://schema.org/Person">
-            <div class="h-100 p-3 border rounded-3 bg-white shadow-sm d-flex gap-3 align-items-stretch">
-              <div class="thumb-col">
-                <img class="thumb-fill gallery-trigger" src="./img/neurarchy/john-abraham-thumb.jpg"
-                  data-img="./img/neurarchy/john-abraham.jpg" data-alt="Retrato de John Abraham"
-                  data-title="John Abraham" data-gallery="people" alt="Retrato de John Abraham" width="112" height="112"
-                  loading="lazy" decoding="async" role="button" tabindex="0">
-              </div>
-              <div class="flex-grow-1">
-                <h4 class="h6 mb-1" itemprop="name">John Abraham</h4>
-                <p class="small mb-1"><strong itemprop="jobTitle">Chefe de Segurança</strong></p>
-                <p class="small text-secondary mb-2" itemprop="description">
-                  Lidera a proteção executiva e a resposta a incidentes. Coordena equipes táticas, do físico ao digital.
-                </p>
-                <button type="button" class="btn btn-sm btn-outline-primary gallery-trigger"
-                  data-img="./img/neurarchy/john-abraham.jpg" data-alt="Retrato de John Abraham"
-                  data-title="John Abraham" data-gallery="people">Ver maior</button>
-              </div>
-            </div>
-          </article>
-
-          <!-- Abiathar Cohen -->
-          <article class="col" itemscope itemtype="https://schema.org/Person">
-            <div class="h-100 p-3 border rounded-3 bg-white shadow-sm d-flex gap-3 align-items-stretch">
-              <div class="thumb-col">
-                <img class="thumb-fill gallery-trigger" src="./img/neurarchy/abiathar-cohen-thumb.jpg"
-                  data-img="./img/neurarchy/abiathar-cohen.jpg" data-alt="Retrato de Abiathar Cohen"
-                  data-title="Abiathar Cohen" data-gallery="people" alt="Retrato de Abiathar Cohen" width="112"
-                  height="112" loading="lazy" decoding="async" role="button" tabindex="0">
-              </div>
-              <div class="flex-grow-1">
-                <h4 class="h6 mb-1" itemprop="name">Abiathar Cohen</h4>
-                <p class="small mb-1"><strong itemprop="jobTitle">Diretor de Estratégia</strong></p>
-                <p class="small text-secondary mb-2" itemprop="description">
-                  Tática corporativa e parcerias. Ponte entre pesquisa, produto e impacto social do programa Solomon.
-                </p>
-                <button type="button" class="btn btn-sm btn-outline-primary gallery-trigger"
-                  data-img="./img/neurarchy/abiathar-cohen.jpg" data-alt="Retrato de Abiathar Cohen"
-                  data-title="Abiathar Cohen" data-gallery="people">Ver maior</button>
-              </div>
-            </div>
-          </article>
-
-          <!-- Abigail Saidov -->
-          <article class="col" itemscope itemtype="https://schema.org/Person">
-            <div class="h-100 p-3 border rounded-3 bg-white shadow-sm d-flex gap-3 align-items-stretch">
-              <div class="thumb-col">
-                <img class="thumb-fill gallery-trigger" src="./img/neurarchy/abigail-saidov-thumb.jpg"
-                  data-img="./img/neurarchy/abigail-saidov.jpg" data-alt="Retrato de Abigail Saidov"
-                  data-title="Abigail Saidov" data-gallery="people" alt="Retrato de Abigail Saidov" width="112"
-                  height="112" loading="lazy" decoding="async" role="button" tabindex="0">
-              </div>
-              <div class="flex-grow-1">
-                <h4 class="h6 mb-1" itemprop="name">Abigail Saidov</h4>
-                <p class="small mb-1"><strong itemprop="jobTitle">Diretora de Marketing</strong></p>
-                <p class="small text-secondary mb-2" itemprop="description">
-                  Estratégia de marca, lançamentos e influência pública do Solomon.
-                </p>
-                <button type="button" class="btn btn-sm btn-outline-primary gallery-trigger"
-                  data-img="./img/neurarchy/abigail-saidov.jpg" data-alt="Retrato de Abigail Saidov"
-                  data-title="Abigail Saidov" data-gallery="people">Ver maior</button>
-              </div>
-            </div>
-          </article>
-
-          <!-- Reyna González -->
-          <article class="col" itemscope itemtype="https://schema.org/Person">
-            <div class="h-100 p-3 border rounded-3 bg-white shadow-sm d-flex gap-3 align-items-stretch">
-              <div class="thumb-col">
-                <img class="thumb-fill gallery-trigger" src="./img/neurarchy/reyna-gonzalez-thumb.jpg"
-                  data-img="./img/neurarchy/reyna-gonzalez.jpg" data-alt="Retrato de Reyna González"
-                  data-title="Reyna González" data-gallery="people" alt="Retrato de Reyna González" width="112"
-                  height="112" loading="lazy" decoding="async" role="button" tabindex="0">
-              </div>
-              <div class="flex-grow-1">
-                <h4 class="h6 mb-1" itemprop="name">Reyna González</h4>
-                <p class="small mb-1"><strong itemprop="jobTitle">Diretora de Segurança Cibernética</strong></p>
-                <p class="small text-secondary mb-2" itemprop="description">
-                  Defesa digital da Neurarchy; integra operações com o time de campo quando necessário.
-                </p>
-                <button type="button" class="btn btn-sm btn-outline-primary gallery-trigger"
-                  data-img="./img/neurarchy/reyna-gonzalez.jpg" data-alt="Retrato de Reyna González"
-                  data-title="Reyna González" data-gallery="people">Ver maior</button>
-              </div>
-            </div>
-          </article>
-
-          <!-- Zayden Greendock -->
-          <article class="col" itemscope itemtype="https://schema.org/Person">
-            <div class="h-100 p-3 border rounded-3 bg-white shadow-sm d-flex gap-3 align-items-stretch">
-              <div class="thumb-col">
-                <img class="thumb-fill gallery-trigger" src="./img/neurarchy/zayden-greendock-thumb.jpg"
-                  data-img="./img/neurarchy/zayden-greendock.jpg" data-alt="Retrato de Zayden Greendock"
-                  data-title="Zayden Greendock" data-gallery="people" alt="Retrato de Zayden Greendock" width="112"
-                  height="112" loading="lazy" decoding="async" role="button" tabindex="0">
-              </div>
-              <div class="flex-grow-1">
-                <h4 class="h6 mb-1" itemprop="name">Zayden Greendock</h4>
-                <p class="small mb-1"><strong itemprop="jobTitle">Diretor de P&D</strong></p>
-                <p class="small text-secondary mb-2" itemprop="description">
-                  Produtos avançados (ex.: exoesqueleto) e integração com o ecossistema Solomon.
-                </p>
-                <button type="button" class="btn btn-sm btn-outline-primary gallery-trigger"
-                  data-img="./img/neurarchy/zayden-greendock.jpg" data-alt="Retrato de Zayden Greendock"
-                  data-title="Zayden Greendock" data-gallery="people">Ver maior</button>
-              </div>
-            </div>
-          </article>
-
-          <!-- Nathan Theodore -->
-          <article class="col" itemscope itemtype="https://schema.org/Person">
-            <div class="h-100 p-3 border rounded-3 bg-white shadow-sm d-flex gap-3 align-items-stretch">
-              <div class="thumb-col">
-                <img class="thumb-fill gallery-trigger" src="./img/neurarchy/nathan-theodore-thumb.jpg"
-                  data-img="./img/neurarchy/nathan-theodore.jpg" data-alt="Retrato de Nathan Theodore"
-                  data-title="Nathan Theodore" data-gallery="people" alt="Retrato de Nathan Theodore" width="112"
-                  height="112" loading="lazy" decoding="async" role="button" tabindex="0">
-              </div>
-              <div class="flex-grow-1">
-                <h4 class="h6 mb-1" itemprop="name">Nathan Theodore</h4>
-                <p class="small mb-1"><strong itemprop="jobTitle">CTO (Diretor de Tecnologia)</strong></p>
-                <p class="small text-secondary mb-2" itemprop="description">
-                  Lidera pesquisas e o desenvolvimento do implante neural Solomon; mentor técnico da equipe.
-                </p>
-                <button type="button" class="btn btn-sm btn-outline-primary gallery-trigger"
-                  data-img="./img/neurarchy/nathan-theodore.jpg" data-alt="Retrato de Nathan Theodore"
-                  data-title="Nathan Theodore" data-gallery="people">Ver maior</button>
-              </div>
-            </div>
-          </article>
-
-          <!-- Benaia Leone -->
-          <article class="col" itemscope itemtype="https://schema.org/Person">
-            <div class="h-100 p-3 border rounded-3 bg-white shadow-sm d-flex gap-3 align-items-stretch">
-              <div class="thumb-col">
-                <img class="thumb-fill gallery-trigger" src="./img/neurarchy/benaia-leone-thumb.jpg"
-                  data-img="./img/neurarchy/benaia-leone.jpg" data-alt="Retrato de Benaia Leone"
-                  data-title="Benaia Leone" data-gallery="people" alt="Retrato de Benaia Leone" width="112" height="112"
-                  loading="lazy" decoding="async" role="button" tabindex="0">
-              </div>
-              <div class="flex-grow-1">
-                <h4 class="h6 mb-1" itemprop="name">Benaia Leone</h4>
-                <p class="small mb-1"><strong itemprop="jobTitle">Operações de Segurança</strong></p>
-                <p class="small text-secondary mb-2" itemprop="description">
-                  Proteção executiva e resposta em campo; coordena evacuação e rotas.
-                </p>
-                <button type="button" class="btn btn-sm btn-outline-primary gallery-trigger"
-                  data-img="./img/neurarchy/benaia-leone.jpg" data-alt="Retrato de Benaia Leone"
-                  data-title="Benaia Leone" data-gallery="people">Ver maior</button>
-              </div>
-            </div>
-          </article>
-
-          <!-- Huram El-Khoury -->
-          <article class="col" itemscope itemtype="https://schema.org/Person">
-            <div class="h-100 p-3 border rounded-3 bg-white shadow-sm d-flex gap-3 align-items-stretch">
-              <div class="thumb-col">
-                <img class="thumb-fill gallery-trigger" src="./img/neurarchy/huram-el-khoury-thumb.jpg"
-                  data-img="./img/neurarchy/huram-el-khoury.jpg" data-alt="Retrato de Huram El-Khoury"
-                  data-title="Huram El-Khoury" data-gallery="people" alt="Retrato de Huram El-Khoury" width="112"
-                  height="112" loading="lazy" decoding="async" role="button" tabindex="0">
-              </div>
-              <div class="flex-grow-1">
-                <h4 class="h6 mb-1" itemprop="name">Huram El-Khoury</h4>
-                <p class="small mb-1"><strong itemprop="jobTitle">Executivo • Cedrus (subsidiária)</strong></p>
-                <p class="small text-secondary mb-2" itemprop="description">
-                  Nanotecnologia e tecnologias incorporadas; demonstrações e suporte em campo.
-                </p>
-                <button type="button" class="btn btn-sm btn-outline-primary gallery-trigger"
-                  data-img="./img/neurarchy/huram-el-khoury.jpg" data-alt="Retrato de Huram El-Khoury"
-                  data-title="Huram El-Khoury" data-gallery="people">Ver maior</button>
-              </div>
-            </div>
-          </article>
-
-        </div>
-      </article>
-
-    </section>
-
-    <section class="card-custom banner-adonijah" aria-label="Banner: Grupo Adonijah">
-      <div class="adonijah-illustration" role="img" aria-label="Imagem representando o grupo hacker Adonijah.">
+    <section id="explore-universo" class="universe-entry" aria-labelledby="titulo-explore-universo">
+      <div class="universe-entry-heading">
+        <p class="universe-eyebrow">Além das páginas</p>
+        <h2 id="titulo-explore-universo">Explore o universo</h2>
+        <p>Escolha por onde começar a descobrir Cânticos de Machina.</p>
       </div>
-
-      <div class="adonijah-text quote-hero">
-        <blockquote class="mb-2">
-          <span class="quote-mark" aria-hidden="true">“</span>
-          Eu anseio por uma Humanidade com a mente livre, mas muitos rejeitam essa liberdade, preferindo a falsa
-          segurança oferecida por manipuladores. Não enxergam o perigo que está bem diante de seus olhos. Por isso,
-          é meu dever expor essa ameaça, mesmo que isso exija alguns sacrifícios em nome de um bem maior.
-        </blockquote>
-        <figcaption class="who">— Adonijah</figcaption>
+      <div class="universe-links">
+        <a class="universe-link" href="./protagonistas.html">
+          <i class="bi bi-people universe-icon" aria-hidden="true"></i>
+          <h3>Protagonistas</h3>
+          <p>Conheça Daniel, Samui, Zuba e Natali e os mistérios que conectam seus destinos.</p>
+          <span class="universe-link-label">Explorar protagonistas <i class="bi bi-arrow-right" aria-hidden="true"></i></span>
+        </a>
+        <a class="universe-link" href="./neurarchy.html">
+          <i class="bi bi-cpu universe-icon" aria-hidden="true"></i>
+          <h3>Neurarchy</h3>
+          <p>Explore a empresa por trás do implante Solomon e as pessoas que moldam seu futuro.</p>
+          <span class="universe-link-label">Explorar neurarchy <i class="bi bi-arrow-right" aria-hidden="true"></i></span>
+        </a>
+        <a class="universe-link" href="./locais.html">
+          <i class="bi bi-geo-alt universe-icon" aria-hidden="true"></i>
+          <h3>Locais</h3>
+          <p>Visite as cidades, os burgos e as paisagens que dão vida ao universo da saga.</p>
+          <span class="universe-link-label">Explorar locais <i class="bi bi-arrow-right" aria-hidden="true"></i></span>
+        </a>
       </div>
     </section>
+
+
+
+<!-- NEURARCHY -->
+
+
+
 
     <!-- UNIVERSO -->
-    <section id="universo" class="card-custom" aria-labelledby="titulo-universo">
-      <h2 id="titulo-universo"><i class="bi bi-geo-alt-fill" aria-hidden="true"></i> Universo — Localidades</h2>
-      <p class="mb-4">Conheça os cenários onde a fé encontra a tecnologia em <em>Cânticos de Machina – Primavera
-          Artificial</em>. Explore cidades e burgos que moldam as jornadas dos personagens.</p>
 
-      <div class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-3">
-
-
-        <!-- Montdave -->
-        <article class="col">
-          <div class="h-100 p-3 border rounded-3 bg-white shadow-sm d-flex gap-3 align-items-stretch">
-            <div class="thumb-col lg">
-              <img class="thumb-fill gallery-trigger" src="./img/localidades/montdave-thumb.jpg"
-                data-img="./img/localidades/montdave.jpg" data-alt="Vista industrial de Montdave" data-title="Montdave"
-                data-gallery="places" alt="Vista industrial de Montdave" role="button" tabindex="0" width="132"
-                height="132" loading="lazy" decoding="async">
-            </div>
-            <div class="flex-grow-1">
-              <h3 class="h5 mb-2">Montdave</h3>
-              <p class="mb-2">Capital e Motor industrial do estado de Kingsdawn.</p>
-              <button type="button" class="btn btn-sm btn-outline-primary mt-2 gallery-trigger"
-                data-img="./img/localidades/montdave.jpg" data-alt="Vista industrial de Montdave" data-title="Montdave"
-                data-gallery="places">Ver maior</button>
-            </div>
-          </div>
-        </article>
-
-        <!-- Nearpalace -->
-        <article class="col">
-          <div class="h-100 p-3 border rounded-3 bg-white shadow-sm d-flex gap-3 align-items-stretch">
-            <div class="thumb-col lg">
-              <img class="thumb-fill gallery-trigger" src="./img/localidades/nearpalace-thumb.jpg"
-                data-img="./img/localidades/nearpalace.jpg" data-alt="Bairro nobre de Nearpalace"
-                data-title="Nearpalace" data-gallery="places" alt="Bairro nobre de Nearpalace" role="button"
-                tabindex="0" width="132" height="132" loading="lazy" decoding="async">
-            </div>
-            <div class="flex-grow-1">
-              <h3 class="h5 mb-2">Nearpalace</h3>
-              <p class="mb-2">Burgo nobre de Montdave onde moram as pessoas mais ricas da cidade.</p>
-              <button type="button" class="btn btn-sm btn-outline-primary mt-2 gallery-trigger"
-                data-img="./img/localidades/nearpalace.jpg" data-alt="Bairro nobre de Nearpalace"
-                data-title="Nearpalace" data-gallery="places">Ver maior</button>
-            </div>
-          </div>
-        </article>
-
-        <!-- Philston -->
-        <article class="col">
-          <div class="h-100 p-3 border rounded-3 bg-white shadow-sm d-flex gap-3 align-items-stretch">
-            <div class="thumb-col lg">
-              <img class="thumb-fill gallery-trigger" src="./img/localidades/philston-thumb.jpg"
-                data-img="./img/localidades/philston.jpg" data-alt="Vista ilustrada de Philston" data-title="Philston"
-                data-gallery="places" alt="Vista ilustrada de Philston" role="button" tabindex="0" width="132"
-                height="132" loading="lazy" decoding="async">
-            </div>
-            <div class="flex-grow-1">
-              <h3 class="h5 mb-2">Philston</h3>
-              <p class="mb-2">Cidade de imigrantes e refugiados da Tecno-Guerra, feita de burgos multiculturais.</p>
-              <button type="button" class="btn btn-sm btn-outline-primary mt-2 gallery-trigger"
-                data-img="./img/localidades/philston.jpg" data-alt="Vista ilustrada de Philston" data-title="Philston"
-                data-gallery="places">Ver maior</button>
-            </div>
-          </div>
-        </article>
-
-        <!-- Maria Del Carmen -->
-        <article class="col">
-          <div class="h-100 p-3 border rounded-3 bg-white shadow-sm d-flex gap-3 align-items-stretch">
-            <div class="thumb-col lg">
-              <img class="thumb-fill gallery-trigger" src="./img/localidades/maria-del-carmen-thumb.jpg"
-                data-img="./img/localidades/maria-del-carmen.jpg" data-alt="Cenas festivas em Maria Del Carmen"
-                data-title="Maria Del Carmen" data-gallery="places" alt="Cenas festivas em Maria Del Carmen"
-                role="button" tabindex="0" width="132" height="132" loading="lazy" decoding="async">
-            </div>
-            <div class="flex-grow-1">
-              <h3 class="h5 mb-2">Maria Del Carmen</h3>
-              <p class="mb-2">Burgo hispano-latino de Philston. Tradições que conectam passado e futuro.</p>
-              <button type="button" class="btn btn-sm btn-outline-primary mt-2 gallery-trigger"
-                data-img="./img/localidades/maria-del-carmen.jpg" data-alt="Cenas festivas em Maria Del Carmen"
-                data-title="Maria Del Carmen" data-gallery="places">Ver maior</button>
-            </div>
-          </div>
-        </article>
-
-        <!-- Tamura -->
-        <article class="col">
-          <div class="h-100 p-3 border rounded-3 bg-white shadow-sm d-flex gap-3 align-items-stretch">
-            <div class="thumb-col lg">
-              <img class="thumb-fill gallery-trigger" src="./img/localidades/tamura-thumb.jpg"
-                data-img="./img/localidades/tamura.jpg" data-alt="Lanternas e dojô em Tamura" data-title="Tamura"
-                data-gallery="places" alt="Lanternas e dojô em Tamura" role="button" tabindex="0" width="132"
-                height="132" loading="lazy" decoding="async">
-            </div>
-            <div class="flex-grow-1">
-              <h3 class="h5 mb-2">Tamura</h3>
-              <p class="mb-2">Bairro de forte presença asiática. Dojôs, lanternas, especiarias e arquiteturas
-                históricas.</p>
-              <button type="button" class="btn btn-sm btn-outline-primary mt-2 gallery-trigger"
-                data-img="./img/localidades/tamura.jpg" data-alt="Lanternas e dojô em Tamura" data-title="Tamura"
-                data-gallery="places">Ver maior</button>
-            </div>
-          </div>
-        </article>
-
-        <!-- Yellen -->
-        <article class="col">
-          <div class="h-100 p-3 border rounded-3 bg-white shadow-sm d-flex gap-3 align-items-stretch">
-            <div class="thumb-col lg">
-              <img class="thumb-fill gallery-trigger" src="./img/localidades/yellen-thumb.jpg"
-                data-img="./img/localidades/yellen.jpg" data-alt="Quadra pública e ruas de Yellen" data-title="Yellen"
-                data-gallery="places" alt="Quadra pública e ruas de Yellen" role="button" tabindex="0" width="132"
-                height="132" loading="lazy" decoding="async">
-            </div>
-            <div class="flex-grow-1">
-              <h3 class="h5 mb-2">Yellen</h3>
-              <p class="mb-2">Burgo dominado por gangues e o crime, mas com uma vizinhança unida.</p>
-              <button type="button" class="btn btn-sm btn-outline-primary mt-2 gallery-trigger"
-                data-img="./img/localidades/yellen.jpg" data-alt="Quadra pública e ruas de Yellen" data-title="Yellen"
-                data-gallery="places">Ver maior</button>
-            </div>
-          </div>
-        </article>
-
-        <!-- Gihon Lakes -->
-        <article class="col">
-          <div class="h-100 p-3 border rounded-3 bg-white shadow-sm d-flex gap-3 align-items-stretch">
-            <div class="thumb-col lg">
-              <img class="thumb-fill gallery-trigger" src="./img/localidades/gihon-lakes-thumb.jpg"
-                data-img="./img/localidades/gihon-lakes.jpg" data-alt="Paisagem serrana de Gihon Lakes"
-                data-title="Gihon Lakes" data-gallery="places" alt="Paisagem serrana de Gihon Lakes" role="button"
-                tabindex="0" width="132" height="132" loading="lazy" decoding="async">
-            </div>
-            <div class="flex-grow-1">
-              <h3 class="h5 mb-2">Gihon Lakes</h3>
-              <p class="mb-2">Cidade pequena serrana onde o frio domina quase o ano inteiro.</p>
-              <button type="button" class="btn btn-sm btn-outline-primary mt-2 gallery-trigger"
-                data-img="./img/localidades/gihon-lakes.jpg" data-alt="Paisagem serrana de Gihon Lakes"
-                data-title="Gihon Lakes" data-gallery="places">Ver maior</button>
-            </div>
-          </div>
-        </article>
-
-
-        <!-- Tairo -->
-        <article class="col">
-          <div class="h-100 p-3 border rounded-3 bg-white shadow-sm d-flex gap-3 align-items-stretch">
-            <div class="thumb-col lg">
-              <img class="thumb-fill gallery-trigger" src="./img/localidades/tairo-thumb.jpg"
-                data-img="./img/localidades/tairo.jpg" data-alt="Campus e parque tecnológico de Tairo"
-                data-title="Tairo" data-gallery="places" alt="Campus e parque tecnológico de Tairo" role="button"
-                tabindex="0" width="132" height="132" loading="lazy" decoding="async">
-            </div>
-            <div class="flex-grow-1">
-              <h3 class="h5 mb-2">Tairo</h3>
-              <p class="mb-2">Centro universitário e polo tecnológico, próximo ao Deserto de Yehuda.</p>
-              <button type="button" class="btn btn-sm btn-outline-primary mt-2 gallery-trigger"
-                data-img="./img/localidades/tairo.jpg" data-alt="Campus e parque tecnológico de Tairo"
-                data-title="Tairo" data-gallery="places">Ver maior</button>
-            </div>
-          </div>
-        </article>
-
-        <!-- Deserto de Yehuda -->
-        <article class="col">
-          <div class="h-100 p-3 border rounded-3 bg-white shadow-sm d-flex gap-3 align-items-stretch">
-            <div class="thumb-col lg">
-              <img class="thumb-fill gallery-trigger" src="./img/localidades/deserto-yehuda-thumb.jpg"
-                data-img="./img/localidades/deserto-yehuda.jpg" data-alt="Dunas e horizonte no Deserto de Yehuda"
-                data-title="Deserto de Yehuda" data-gallery="places" alt="Dunas e horizonte no Deserto de Yehuda"
-                role="button" tabindex="0" width="132" height="132" loading="lazy" decoding="async">
-            </div>
-            <div class="flex-grow-1">
-              <div class="d-flex align-items-center justify-content-between mb-1">
-                <h3 class="h5 mb-0">Deserto de Yehuda</h3>
-              </div>
-              <p class="mb-2">Faixa árida próxima a Tairo, território dos nômades de Quedar.</p>
-              <button type="button" class="btn btn-sm btn-outline-primary mt-2 gallery-trigger"
-                data-img="./img/localidades/deserto-yehuda.jpg" data-alt="Dunas e horizonte no Deserto de Yehuda"
-                data-title="Deserto de Yehuda" data-gallery="places">Ver maior</button>
-            </div>
-          </div>
-        </article>
-
-      </div>
-
-    </section>
 
     <!-- BANNER 2 — Guitarrista / Cântico Novo -->
     <section class="card-custom banner-guitarrista" aria-label="Banner: Cântico Novo">
@@ -1313,29 +829,36 @@
       <h2 id="titulo-sobre"><i class="bi bi-person-fill" aria-hidden="true"></i> Sobre o Autor</h2>
       <div class="row align-items-center">
         <div class="col-md-5 col-lg-4 col-xl-3 text-center mb-4 mb-md-0">
-          <img src="./img/foto-perfil.jpg" alt="Foto do escritor de ficção cristã C. E. Gomes" class="avatar mx-auto"
+          <img src="./img/cadu-gomes.png" alt="Foto do escritor de ficção cristã C. E. Gomes" class="avatar mx-auto"
             loading="lazy" decoding="async" />
         </div>
         <div class="col-md-7 col-lg-8 col-xl-9">
           <h4><strong class="text-dark text-opacity-75">C. E. Gomes</strong></h4>
 
-          <p>Escritor brasileiro de ficção cristã e científica, mestre em Engenharia de Sistemas e Computação pela UFRJ.
-            Apaixonado por tecnologia, música e literatura,
-            encontrei na escrita um caminho para unir essas paixões em histórias que misturam fé, ciência e suspense.
+          <p>Sou escritor brasileiro e mestre em Engenharia de Sistemas e Computação. Apaixonado por tecnologia,
+            música e literatura, encontrei na escrita uma forma de unir imaginação, fé e algumas das inquietações do
+            nosso tempo.
           </p>
 
-          <p>Carioca, cresci cercado pelo universo da tecnologia, mas foi na ficção que descobri um espaço para refletir
-            sobre os dilemas da nossa geração: inteligência artificial, implantes neurais, limites da ciência… e, claro,
-            como tudo isso se conecta com a fé e o futuro da humanidade.
+          <p>Carioca, cresci cercado pelo universo da tecnologia, mas foi na ficção que encontrei espaço para explorar
+            outros mundos e, ao mesmo tempo, refletir sobre o nosso: as escolhas que fazemos, os limites da ciência,
+            a natureza humana, a sociedade e o futuro que estamos construindo.
+          </p>
+
+          <p>Minhas histórias transitam por gêneros como ficção científica, fantasia, romance e distopia, misturando
+            aventura, suspense, emoção e referências bíblicas. Minha fé cristã está presente como parte essencial do
+            que escrevo, especialmente em temas como propósito, redenção, amor e esperança. Ao mesmo tempo, busco criar
+            histórias que também conversem com quem simplesmente gosta de uma boa ficção e de questões que continuam
+            na cabeça depois da última página.
           </p>
 
           <p>Quando não estou escrevendo, provavelmente estou ouvindo música, programando, lendo, cantando ou atuando na
-            liderança de jovens da minha igreja. Meu primeiro livro, Cânticos de Machina – Primavera Artificial, nasceu
-            dessa mistura de paixões: tecnologia, Deus e imaginar histórias.
+            liderança de jovens da minha igreja.
           </p>
-          <a class="btn btn-outline-primary mt-3" href="https://scholar.google.com.br/citations?user=11ORDMIAAAAJ"
+          <p class="text-secondary small mb-0">Na minha bio, você encontra artigos, outros livros e minhas redes sociais.</p>
+          <a class="btn btn-outline-primary mt-3" href="https://carlosgomes85.github.io/bio/"
             target="_blank" rel="noopener">
-            <i class="bi bi-box-arrow-up-right" aria-hidden="true"></i> Ver Artigos Científicos Publicados
+            <i class="bi bi-box-arrow-up-right" aria-hidden="true"></i> Conheça minha bio
           </a>
         </div>
       </div>
@@ -1642,46 +1165,9 @@
   }
   </script>
 
-  <script type="application/ld+json">
-{
-  "@context":"https://schema.org",
-  "@type":"ItemList",
-  "name":"Localidades do Universo - Cânticos de Machina",
-  "itemListElement":[
-    {"@type":"ListItem","position":1,"item":{"@type":"Place","name":"Philston","description":"Cidade de imigrantes formada por burgos e tradições vivas."}},
-    {"@type":"ListItem","position":2,"item":{"@type":"Place","name":"Maria Del Carmen","description":"Burgo latino de Philston; palco do Jolgório e do Lamento."}},
-    {"@type":"ListItem","position":3,"item":{"@type":"Place","name":"Tamura","description":"Burgo de herança asiática; lanternas, especiarias e dojô."}},
-    {"@type":"ListItem","position":4,"item":{"@type":"Place","name":"Yellen","description":"Burgo sob pressão do crime, com forte laço comunitário."}},
-    {"@type":"ListItem","position":5,"item":{"@type":"Place","name":"Gihon Lakes","description":"Cidade serrana vizinha; palco de um evento marcante."}},
-    {"@type":"ListItem","position":6,"item":{"@type":"Place","name":"Montdave","description":"Polo industrial histórico; influência regional."}},
-    {"@type":"ListItem","position":7,"item":{"@type":"Place","name":"Nearpalace","description":"Bairro nobre de Montdave; mansões e shows."}},
-    {"@type":"ListItem","position":8,"item":{"@type":"Place","name":"Tairo","description":"Cidade universitária conectada à indústria."}},
-    {"@type":"ListItem","position":9,"item":{"@type":"Place","name":"Deserto de Yehuda","description":"Faixa árida próxima a Tairo; território dos nômades de Quedar."}}
-  ]
-}
-</script>
 
-  <script type="application/ld+json">
-{
-  "@context":"https://schema.org",
-  "@type":"Organization",
-  "name":"Neurarchy",
-  "url":"https://www.canticosdemachina.com.br/",
-  "logo":"https://www.canticosdemachina.com.br/favicon.ico",
-  "member":[
-    {"@type":"Person","name":"Elizabeth Sabra","jobTitle":"CEO, Co-fundadora"},
-    {"@type":"Person","name":"Nathan Theodore","jobTitle":"CTO"},
-    {"@type":"Person","name":"John Abraham","jobTitle":"Chefe de Segurança"},
-    {"@type":"Person","name":"Benaia Leone","jobTitle":"Operações de Segurança"},
-    {"@type":"Person","name":"Reyna González","alternateName":"Reyna Gonzalez","jobTitle":"Diretora de Segurança Cibernética"},
-    {"@type":"Person","name":"Abigail Saidov","jobTitle":"Diretora de Marketing"},
-    {"@type":"Person","name":"Zayden Greendock","jobTitle":"Diretor de Desenvolvimento & Engenharia"},
-    {"@type":"Person","name":"Abiathar Cohen","jobTitle":"Diretor de Estratégia"},
-    {"@type":"Person","name":"Huram El-Khoury","jobTitle":"Executivo, Cedrus (subsidiária)"},
-    {"@type":"Person","name":"Lilyandra Sunamaj","alternateName":"Lily","jobTitle":"Interfaces & Experiência Neural"}
-  ]
-}
-</script>
+
+
 
   <script type="application/ld+json">
 {
@@ -1715,29 +1201,6 @@
   }
 }
 </script>
-
-  <div class="modal fade" id="imgModal" tabindex="-1" aria-labelledby="imgModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-xl">
-      <div class="modal-content bg-dark text-white position-relative">
-        <button class="modal-nav-btn modal-nav-prev" type="button" aria-label="Imagem anterior">
-          <i class="bi bi-chevron-left"></i>
-        </button>
-        <button class="modal-nav-btn modal-nav-next" type="button" aria-label="Próxima imagem">
-          <i class="bi bi-chevron-right"></i>
-        </button>
-
-        <div class="modal-header border-0">
-          <h5 class="modal-title" id="imgModalLabel">Visualização</h5>
-          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Fechar"></button>
-        </div>
-
-        <div class="modal-body p-0">
-          <img id="imgModalPicture" src="" alt="" class="d-block" loading="eager">
-          <figcaption id="imgModalCaption" class="p-3 small text-secondary"></figcaption>
-        </div>
-      </div>
-    </div>
-  </div>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
   <script src="./js/app.js" defer></script>

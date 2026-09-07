@@ -1,3 +1,64 @@
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.card-carousel').forEach(track => {
+    const controls = document.querySelector(`[data-carousel-controls="${track.id}"]`);
+    if (!controls) return;
+    const slides = Array.from(track.children);
+    const previous = controls.querySelector('[data-direction="-1"]');
+    const next = controls.querySelector('[data-direction="1"]');
+    const status = controls.querySelector('.card-carousel-status');
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    const update = () => {
+      const bounds = track.getBoundingClientRect();
+      const visible = slides.map((slide, index) => ({ bounds: slide.getBoundingClientRect(), index }))
+        .filter(slide => slide.bounds.right > bounds.left + 5 && slide.bounds.left < bounds.right - 5);
+      previous.disabled = track.scrollLeft <= 2;
+      next.disabled = track.scrollLeft >= track.scrollWidth - track.clientWidth - 2;
+      if (visible.length) {
+        const first = visible[0].index + 1;
+        const last = visible[visible.length - 1].index + 1;
+        status.textContent = `${first === last ? first : `${first}–${last}`} de ${slides.length}`;
+      }
+    };
+    const move = direction => {
+      const step = slides.length > 1
+        ? slides[1].getBoundingClientRect().left - slides[0].getBoundingClientRect().left
+        : track.clientWidth;
+      track.scrollBy({ left: direction * step, behavior: reducedMotion.matches ? 'instant' : 'smooth' });
+    };
+    previous.addEventListener('click', () => move(-1));
+    next.addEventListener('click', () => move(1));
+    track.addEventListener('keydown', event => {
+      if (event.target !== track || !['ArrowLeft', 'ArrowRight'].includes(event.key)) return;
+      event.preventDefault();
+      move(event.key === 'ArrowLeft' ? -1 : 1);
+    });
+    let scrollTimer;
+    track.addEventListener('scroll', () => {
+      clearTimeout(scrollTimer);
+      scrollTimer = setTimeout(update, 120);
+    }, { passive: true });
+    new ResizeObserver(update).observe(track);
+    controls.hidden = false;
+    update();
+  });
+});
+
+// Preserva os links antigos para as seções que agora têm páginas próprias.
+if (window.location.pathname === '/' || window.location.pathname.endsWith('/index.html')) {
+  const universePages = {
+    '#protagonistas': 'protagonistas.html#protagonistas',
+    '#neurarchy': 'neurarchy.html#neurarchy',
+    '#neurarchy-pessoas': 'neurarchy.html#neurarchy-pessoas',
+    '#universo': 'locais.html#universo'
+  };
+  const followUniverseLink = () => {
+    const destination = universePages[window.location.hash];
+    if (destination) window.location.replace('./' + destination);
+  };
+  followUniverseLink();
+  window.addEventListener('hashchange', followUniverseLink);
+}
+
 document.addEventListener('DOMContentLoaded', function () {
       const cards = document.querySelectorAll(".card-custom");
       const observer = new IntersectionObserver((entries) => {
@@ -13,6 +74,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 document.addEventListener('DOMContentLoaded', function () {
       const modalEl = document.getElementById('imgModal');
+      if (!modalEl || !window.bootstrap) return;
       const modalImg = document.getElementById('imgModalPicture');
       const modalTitle = document.getElementById('imgModalLabel');
       const modalCaption = document.getElementById('imgModalCaption');
