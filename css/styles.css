@@ -2535,6 +2535,310 @@ body.universe-page { padding-bottom: 0; }
       color: #04130a;
     }
 
+    /* CTAs de compra: acabamento mais leve, sem perder contraste sobre o banner. */
+    .parallax-header .cta-wrap .btn-primary,
+    #livro [role="group"] .btn-primary {
+      position: relative;
+      min-height: 54px;
+      padding: .8rem 1.35rem;
+      border: 1px solid rgba(219, 226, 255, .72) !important;
+      border-radius: 13px !important;
+      background: linear-gradient(180deg, rgba(248, 250, 255, .96), rgba(225, 231, 255, .91)) !important;
+      color: #131a32 !important;
+      box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, .95),
+        0 8px 18px rgba(2, 6, 23, .22) !important;
+      text-shadow: none;
+      transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease, background .2s ease;
+    }
+
+    .parallax-header .cta-wrap .btn-primary i,
+    #livro [role="group"] .btn-primary i {
+      color: #596ce0;
+      transition: color .2s ease, transform .2s ease;
+    }
+
+    .parallax-header .cta-wrap .btn-primary:hover,
+    .parallax-header .cta-wrap .btn-primary:focus-visible,
+    #livro [role="group"] .btn-primary:hover,
+    #livro [role="group"] .btn-primary:focus-visible {
+      border-color: rgba(199, 210, 254, .98) !important;
+      background: linear-gradient(180deg, #ffffff, #eef2ff) !important;
+      color: #0b1020 !important;
+      transform: translateY(-3px);
+      box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 1),
+        0 13px 26px rgba(2, 6, 23, .3),
+        0 0 0 3px rgba(142, 162, 255, .14) !important;
+    }
+
+    .parallax-header .cta-wrap .btn-primary:hover i,
+    .parallax-header .cta-wrap .btn-primary:focus-visible i,
+    #livro [role="group"] .btn-primary:hover i,
+    #livro [role="group"] .btn-primary:focus-visible i {
+      color: #394cc4;
+      transform: scale(1.08);
+    }
+
+    .parallax-header .cta-wrap .btn-primary:active,
+    #livro [role="group"] .btn-primary:active {
+      transform: translateY(-1px);
+      box-shadow: 0 7px 16px rgba(2, 6, 23, .24) !important;
+    }
+
+    @media (max-width: 767.98px) {
+      .parallax-header .cta-wrap .btn-primary,
+      #livro [role="group"] .btn-primary {
+        min-height: 50px;
+        padding-inline: 1rem;
+      }
+    }
+
+    /* Fundo mais discreto para deixar o conteúdo e os CTAs respirarem. */
+    .bg-pattern {
+      opacity: .62;
+      background:
+        radial-gradient(circle at 1px 1px, rgba(142, 162, 255, .07) 1px, transparent 1px) 0 0/24px 24px,
+        radial-gradient(circle at 20% 10%, rgba(142, 162, 255, .09), transparent 36%),
+        radial-gradient(circle at 82% 8%, rgba(245, 158, 11, .045), transparent 30%),
+        linear-gradient(180deg, #060a15 0%, #0a0f1d 48%, #0d1522 100%);
+    }
+
+    /* Plataformas de avaliação: cartões claros, compactos e fluidos. */
+    #avaliacoes [role="group"] {
+      margin-inline: 0;
+    }
+
+    #avaliacoes [role="group"] .col {
+      min-width: 0;
+    }
+
+    #avaliacoes [role="group"] .btn-primary {
+      min-height: 52px;
+      padding: .75rem 1rem !important;
+      border: 1px solid rgba(177, 190, 242, .38) !important;
+      border-radius: 12px !important;
+      background: linear-gradient(180deg, rgba(230, 235, 255, .96), rgba(201, 211, 246, .9)) !important;
+      color: #18203a !important;
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, .72), 0 7px 16px rgba(2, 6, 23, .18) !important;
+      font-size: clamp(.85rem, 1.4vw, .98rem);
+      line-height: 1.25;
+      white-space: normal;
+      transition: transform .2s ease, box-shadow .2s ease, background .2s ease, border-color .2s ease;
+    }
+
+    #avaliacoes [role="group"] .btn-primary:hover,
+    #avaliacoes [role="group"] .btn-primary:focus-visible {
+      background: linear-gradient(180deg, #f8faff, #e5eaff) !important;
+      border-color: rgba(199, 210, 254, .9) !important;
+      color: #0b1020 !important;
+      transform: translateY(-2px);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, .92), 0 11px 22px rgba(2, 6, 23, .26), 0 0 0 3px rgba(142, 162, 255, .12) !important;
+    }
+
+    /* Perguntas frequentes: área de toque confortável e quebra segura em mobile. */
+    #faq .accordion-item {
+      border-radius: 12px !important;
+      margin-bottom: .75rem;
+      overflow: hidden;
+      box-shadow: 0 8px 20px rgba(2, 6, 23, .2) !important;
+    }
+
+    #faq .accordion-button {
+      min-height: 58px;
+      padding: .9rem 1.1rem;
+      gap: .75rem;
+      color: #edf2ff !important;
+      background: linear-gradient(180deg, rgba(27, 39, 69, .88), rgba(18, 28, 52, .88)) !important;
+      font-size: clamp(.9rem, 1.6vw, 1rem);
+      line-height: 1.4;
+      text-align: left;
+      white-space: normal;
+    }
+
+    #faq .accordion-button::after {
+      flex: 0 0 auto;
+      margin-left: auto;
+    }
+
+    #faq .accordion-button:hover,
+    #faq .accordion-button:focus-visible {
+      background: linear-gradient(180deg, rgba(38, 52, 88, .96), rgba(24, 36, 65, .96)) !important;
+    }
+
+    #faq .accordion-button:not(.collapsed) {
+      color: #ffffff !important;
+      background: linear-gradient(135deg, rgba(93, 111, 194, .42), rgba(42, 49, 91, .9)) !important;
+    }
+
+    #faq .accordion-body {
+      padding: 1rem 1.1rem 1.15rem;
+      line-height: 1.7;
+      background: rgba(12, 18, 36, .72) !important;
+    }
+
+    #faq .accordion-body .d-flex {
+      display: grid !important;
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 190px), 1fr));
+      align-items: stretch;
+    }
+
+    #faq .accordion-body .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      padding: .65rem .85rem;
+      border-radius: 10px !important;
+      line-height: 1.25;
+      white-space: normal;
+    }
+
+    @media (max-width: 575.98px) {
+      #avaliacoes [role="group"] .btn-primary {
+        min-height: 48px;
+        padding: .65rem .75rem !important;
+      }
+
+      #faq .accordion-button {
+        min-height: 54px;
+        padding: .8rem .85rem;
+        font-size: .9rem;
+      }
+
+      #faq .accordion-body {
+        padding: .9rem .85rem 1rem;
+      }
+
+      #faq .accordion-body .d-flex {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Refinamento final dos botões do FAQ e das plataformas de avaliação. */
+    #faq .accordion-body .d-flex {
+      gap: .6rem !important;
+      margin-top: 1rem !important;
+      padding-top: .85rem;
+      border-top: 1px solid rgba(142, 162, 255, .14);
+    }
+
+    #faq .accordion-body .btn-primary {
+      min-height: 42px;
+      border: 1px solid rgba(142, 162, 255, .28) !important;
+      border-radius: 9px !important;
+      background: rgba(142, 162, 255, .12) !important;
+      color: #dce4ff !important;
+      font-size: .8rem;
+      font-weight: 600;
+      box-shadow: none !important;
+      transition: background .18s ease, border-color .18s ease, color .18s ease, transform .18s ease;
+    }
+
+    #faq .accordion-body .btn-primary i {
+      color: #aebcff;
+      margin-right: .25rem;
+    }
+
+    #faq .accordion-body .btn-primary:hover,
+    #faq .accordion-body .btn-primary:focus-visible {
+      background: rgba(142, 162, 255, .25) !important;
+      border-color: rgba(174, 188, 255, .68) !important;
+      color: #ffffff !important;
+      transform: translateY(-1px);
+      box-shadow: 0 6px 14px rgba(2, 6, 23, .2) !important;
+    }
+
+    #avaliacoes [role="group"] .btn-primary {
+      position: relative;
+      overflow: hidden;
+      background:
+        linear-gradient(180deg, rgba(238, 242, 255, .98), rgba(211, 219, 251, .93)) !important;
+      border-color: rgba(177, 190, 242, .48) !important;
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, .82), 0 5px 13px rgba(2, 6, 23, .16) !important;
+    }
+
+    #avaliacoes [role="group"] .btn-primary::before {
+      content: "";
+      position: absolute;
+      inset: 0 auto 0 0;
+      width: 3px;
+      background: linear-gradient(180deg, #788cff, #586be0);
+      opacity: .8;
+    }
+
+    #avaliacoes [role="group"] .btn-primary:hover,
+    #avaliacoes [role="group"] .btn-primary:focus-visible {
+      background: linear-gradient(180deg, #ffffff, #eaf0ff) !important;
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, .96), 0 9px 18px rgba(2, 6, 23, .22), 0 0 0 3px rgba(142, 162, 255, .1) !important;
+    }
+
+    @media (max-width: 575.98px) {
+      #faq .accordion-body .btn-primary {
+        min-height: 44px;
+        font-size: .82rem;
+      }
+    }
+
+    /* Navbar ligeiramente mais compacta, mantendo a leitura e a área de toque. */
+    .navbar-brand img {
+      width: clamp(145px, 16vw, 198px);
+      margin: 4px 0;
+    }
+
+    .navbar-nav .nav-link {
+      padding-top: .4rem !important;
+      padding-bottom: .4rem !important;
+    }
+
+    @media (max-width: 991.98px) {
+      .navbar {
+        min-height: 70px;
+      }
+
+      .navbar .container {
+        padding-top: .25rem;
+        padding-bottom: .25rem;
+      }
+
+      .navbar-brand img {
+        width: clamp(164px, 42vw, 205px);
+        margin: 2px 0;
+      }
+
+      .navbar-nav {
+        padding-top: .5rem;
+        padding-bottom: .2rem;
+      }
+
+      .navbar-nav .nav-link {
+        padding-top: .6rem !important;
+        padding-bottom: .6rem !important;
+      }
+    }
+
+    /* Pequeno ajuste adicional de altura do cabeçalho. */
+    .navbar-brand img {
+      width: clamp(140px, 15.5vw, 190px);
+      margin-block: 2px;
+    }
+
+    @media (max-width: 991.98px) {
+      .navbar {
+        min-height: 66px;
+      }
+
+      .navbar .container {
+        padding-top: .15rem;
+        padding-bottom: .15rem;
+      }
+
+      .navbar-brand img {
+        width: clamp(158px, 40vw, 198px);
+        margin-block: 1px;
+      }
+    }
+
     .site-footer {
       border-top: 1px solid rgba(142, 162, 255, .16);
     }
