@@ -2936,3 +2936,154 @@ body.universe-page { padding-bottom: 0; }
         scroll-margin-top: 98px;
       }
     }
+
+    /* Ritmo de leitura: mais respiro entre seções e linhas mais confortáveis. */
+    :root {
+      --section-spacing: clamp(3.75rem, 7vw, 6.5rem);
+      --content-spacing: clamp(1.35rem, 2.4vw, 2rem);
+      --reading-width: 68ch;
+    }
+
+    main.container {
+      max-width: 1120px;
+      margin-top: clamp(3rem, 6vw, 5.5rem) !important;
+      margin-bottom: clamp(4.5rem, 8vw, 7rem) !important;
+    }
+
+    main.container > section {
+      margin-bottom: var(--section-spacing);
+    }
+
+    main.container > section:last-of-type {
+      margin-bottom: 0;
+    }
+
+    main.container > .card-custom:not(.banner-agur):not(.banner-lancamento):not(.banner-adonijah):not(.banner-guitarrista) {
+      padding: clamp(2rem, 4.5vw, 3.75rem);
+    }
+
+    main.container > .card-custom:not(.banner-agur):not(.banner-lancamento):not(.banner-adonijah):not(.banner-guitarrista) > h2 {
+      margin-bottom: var(--content-spacing);
+      padding-bottom: 1rem;
+    }
+
+    main.container > .card-custom:not(.banner-agur):not(.banner-lancamento):not(.banner-adonijah):not(.banner-guitarrista) > h2::after {
+      opacity: .78;
+    }
+
+    main.container p,
+    main.container li,
+    main.container .accordion-body {
+      line-height: 1.82;
+    }
+
+    main.container > .card-custom > p,
+    #livro .col-lg-8 > p,
+    #sobre .col-md-7 > p,
+    #sobre .col-lg-8 > p,
+    #sobre .col-xl-9 > p,
+    .section-lead,
+    .universe-entry-heading > p:last-child,
+    .universe-heading > p:last-of-type {
+      max-width: var(--reading-width);
+    }
+
+    #livro .col-lg-8 > p + p,
+    #sobre .col-md-7 > p + p,
+    #sobre .col-lg-8 > p + p,
+    #sobre .col-xl-9 > p + p {
+      margin-top: 1.15rem;
+    }
+
+    #livro h5 {
+      margin-top: 1.75rem;
+      margin-bottom: 1rem;
+    }
+
+    #livro .synopsis-flow {
+      gap: 1.15rem;
+    }
+
+    #livro .row.align-items-center.p-2 {
+      margin-top: clamp(1.75rem, 4vw, 3rem);
+      padding-top: clamp(1.5rem, 3vw, 2.25rem) !important;
+    }
+
+    .section-lead {
+      margin-bottom: clamp(1.75rem, 3.5vw, 2.75rem);
+    }
+
+    .reading-grid {
+      gap: clamp(1.25rem, 3vw, 2rem);
+    }
+
+    .reading-card {
+      padding: clamp(1.25rem, 2.5vw, 1.75rem);
+    }
+
+    .reading-card p + p {
+      margin-top: .9rem;
+    }
+
+    .universe-entry {
+      padding-block: clamp(.5rem, 2vw, 1.5rem);
+    }
+
+    .universe-entry-heading {
+      margin-bottom: clamp(1.75rem, 3.5vw, 2.75rem);
+    }
+
+    .universe-links {
+      gap: clamp(1rem, 2.5vw, 1.5rem);
+    }
+
+    .universe-link {
+      padding: clamp(1.4rem, 2.8vw, 2rem);
+    }
+
+    .universe-page .universe-heading {
+      margin-bottom: clamp(3rem, 6vw, 5rem);
+    }
+
+    .universe-page main.container > .card-custom {
+      margin-bottom: var(--section-spacing);
+    }
+
+    #faq .accordion-item + .accordion-item {
+      margin-top: .9rem;
+    }
+
+    #contato .row {
+      --bs-gutter-x: 1rem;
+      --bs-gutter-y: 1rem;
+    }
+
+    @media (max-width: 767.98px) {
+      :root {
+        --section-spacing: 3rem;
+        --content-spacing: 1.35rem;
+      }
+
+      main.container {
+        margin-top: 2.25rem !important;
+        margin-bottom: 4rem !important;
+      }
+
+      main.container > .card-custom:not(.banner-agur):not(.banner-lancamento):not(.banner-adonijah):not(.banner-guitarrista) {
+        padding: 1.5rem 1.2rem;
+      }
+
+      main.container > .card-custom:not(.banner-agur):not(.banner-lancamento):not(.banner-adonijah):not(.banner-guitarrista) > h2 {
+        padding-bottom: .8rem;
+      }
+
+      main.container p,
+      main.container li,
+      main.container .accordion-body {
+        line-height: 1.74;
+      }
+
+      .universe-page .universe-heading {
+        margin-bottom: 2.5rem;
+      }
+    }

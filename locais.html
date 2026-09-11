@@ -50,18 +50,19 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
   <link
-    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Orbitron:wght@400;500;700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&family=Italiana&display=swap"
     rel="stylesheet" />
   <link rel="stylesheet" href="./css/styles.css" />
+  <link rel="stylesheet" href="./css/editorial.css" />
 
 </head>
 
-<body class="universe-page">
+<body id="topo" data-design="editorial" class="universe-page">
   <a class="skip-link" href="#conteudo">Pular para o conteúdo principal</a>
   <div class="bg-pattern" aria-hidden="true"></div>
   <nav class="navbar" aria-label="Principal">
     <div class="container universe-navbar">
-      <a class="navbar-brand" href="./index.html" aria-label="Página inicial"><img src="./img/logo-nome.png" alt="Cânticos de Machina" decoding="async"></a>
+      <a class="navbar-brand wordmark" href="./index.html" aria-label="Cânticos de Machina — início"><span class="brand-symbol" aria-hidden="true">✳</span><span>CÂNTICOS<span class="brand-bottom">DE MACHINA</span></span></a>
       <a class="universe-home-link" href="./index.html"><i class="bi bi-arrow-left" aria-hidden="true"></i> Página inicial</a>
     </div>
   </nav>
@@ -265,31 +266,52 @@
       <a href="./index.html#explore-universo">Voltar à página inicial</a>
     </nav>
   </main>
-  <footer class="site-footer text-light" role="contentinfo">
+  <footer class="site-footer editorial-footer" role="contentinfo">
     <div class="container">
-      <p class="footer-title">Siga-nos nas redes sociais</p>
-
-      <nav class="footer-social" aria-label="Redes sociais">
-        <a class="footer-pill" href="https://www.instagram.com/carlosgomes85" target="_blank" rel="noopener">
+      <div class="footer-opening">
+        <div><p class="footer-kicker">A HISTÓRIA CONTINUA</p><h2>Há um universo inteiro<br>à sua <em>espera.</em></h2></div>
+        <a class="footer-explore" href="./index.html#explore-universo">Explore Cânticos de Machina <span aria-hidden="true">↗</span></a>
+      </div>
+      <div class="footer-columns">
+        <div class="footer-identity">
+          <a class="wordmark" href="./index.html" aria-label="Cânticos de Machina — início"><span class="brand-symbol" aria-hidden="true">✳</span><span>CÂNTICOS<span class="brand-bottom">DE MACHINA</span></span></a>
+          <p>Fé, tecnologia e as escolhas<br>que nos tornam humanos.</p>
+          <a class="footer-author" href="./index.html#sobre">Uma saga de C. E. Gomes <span aria-hidden="true">↗</span></a>
+        </div>
+        <nav class="footer-navigation" aria-label="Explore o site">
+          <h3>Explore</h3>
+          <a href="./index.html#livro">Primavera Artificial</a>
+          <a href="./protagonistas.html">Protagonistas</a>
+          <a href="./neurarchy.html">Neurarchy</a>
+          <a href="./locais.html">Locais</a>
+          <a href="./index.html#faq">Perguntas frequentes</a>
+        </nav>
+        <div class="footer-connect">
+          <h3>Acompanhe a história</h3>
+          <nav class="footer-network" aria-label="Redes sociais">
+        <a class="footer-network-link" href="https://www.instagram.com/carlosgomes85" target="_blank" rel="noopener">
           <i class="bi bi-instagram" aria-hidden="true"></i><span>Instagram</span>
         </a>
-        <a class="footer-pill" href="https://www.facebook.com/kdugomes" target="_blank" rel="noopener">
+        <a class="footer-network-link" href="https://www.facebook.com/kdugomes" target="_blank" rel="noopener">
           <i class="bi bi-facebook" aria-hidden="true"></i><span>Facebook</span>
         </a>
-        <a class="footer-pill" href="https://www.tiktok.com/@cadugomes85" target="_blank" rel="noopener">
+        <a class="footer-network-link" href="https://www.tiktok.com/@cadugomes85" target="_blank" rel="noopener">
           <i class="bi bi-tiktok" aria-hidden="true"></i><span>TikTok</span>
         </a>
-        <a class="footer-pill" href="https://www.threads.net/@carlosgomes85" target="_blank" rel="noopener">
+        <a class="footer-network-link" href="https://www.threads.net/@carlosgomes85" target="_blank" rel="noopener">
           <i class="bi bi-threads" aria-hidden="true"></i><span>Threads</span>
         </a>
-        <a class="footer-pill" href="https://www.linkedin.com/in/carlosgomes85/" target="_blank" rel="noopener">
+        <a class="footer-network-link" href="https://www.linkedin.com/in/carlosgomes85/" target="_blank" rel="noopener">
           <i class="bi bi-linkedin" aria-hidden="true"></i><span>LinkedIn</span>
         </a>
       </nav>
-
-      <p class="footer-copy">
-        &copy; 2025–2026 Carlos Eduardo Gomes — Todos os direitos reservados.
-      </p>
+          <a class="footer-contact" href="./index.html#contato">Entre em contato <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+      <div class="footer-baseline">
+        <p>© 2025–2026 Carlos Eduardo Gomes.<span> Todos os direitos reservados.</span></p>
+        <a href="#topo">Voltar ao topo <span aria-hidden="true">↑</span></a>
+      </div>
     </div>
   </footer>
 <script type="application/ld+json">
@@ -336,5 +358,13 @@
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
   <script src="./js/app.js" defer></script>
+  <nav class="reading-dock" aria-label="Comprar Primavera Artificial">
+    <span>Primavera Artificial<small>Escolha onde ler</small></span>
+    <div class="reading-dock-links">
+      <a href="https://www.amazon.com.br/dp/6552783329" target="_blank" rel="noopener"><span>Livro impresso ↗</span><small>Amazon</small></a>
+      <a href="https://www.amazon.com.br/dp/B0FL1GM5PG" target="_blank" rel="noopener"><span>E-book ↗</span><small>Kindle / Unlimited</small></a>
+      <a href="https://clubedeautores.com.br/livro/canticos-de-machina" target="_blank" rel="noopener"><span>Livro impresso ↗</span><small>Clube de Autores</small></a>
+    </div>
+  </nav>
 </body>
 </html>

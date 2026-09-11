@@ -1,4 +1,12 @@
 document.addEventListener('DOMContentLoaded', () => {
+  const navigation = document.getElementById('navbarNav');
+  navigation?.querySelectorAll('a[href^="#"]:not(.dropdown-toggle)').forEach(link => {
+    link.addEventListener('click', () => {
+      if (window.bootstrap && navigation.classList.contains('show')) {
+        bootstrap.Collapse.getOrCreateInstance(navigation).hide();
+      }
+    });
+  });
   document.querySelectorAll('.card-carousel').forEach(track => {
     const controls = document.querySelector(`[data-carousel-controls="${track.id}"]`);
     if (!controls) return;
