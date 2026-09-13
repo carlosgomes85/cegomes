@@ -814,7 +814,7 @@ body.universe-page { padding-bottom: 0; }
       #imgModal .modal-dialog {
         width: calc(100vw - 24px);
         max-width: calc(100vw - 24px);
-        --viewer-top-offset: 86px;
+        --viewer-top-offset: 64px;
         margin: var(--viewer-top-offset) auto 0;
       }
 
@@ -840,7 +840,7 @@ body.universe-page { padding-bottom: 0; }
 
     .quote-hero {
       position: relative;
-      background: linear-gradient(135deg, #0b2744 0%, #3b2db3 100%);
+      background: linear-gradient(135deg, #102d4a 0%, #34428f 100%);
       color: #fff;
       border-radius: 16px;
       padding: clamp(20px, 3.5vw, 40px);
@@ -1836,7 +1836,7 @@ body.universe-page { padding-bottom: 0; }
       margin-top: 1.25rem;
       padding: 1.1rem !important;
       border-radius: 8px;
-      background: linear-gradient(135deg, rgba(42, 43, 181, .06), rgba(245, 158, 11, .06));
+      background: linear-gradient(135deg, rgba(42, 43, 181, .06), rgba(227, 164, 200, .08));
       border: 1px solid rgba(42, 43, 181, .10);
     }
 
@@ -1943,14 +1943,14 @@ body.universe-page { padding-bottom: 0; }
     .gallery-trigger:hover.thumb-fill,
     .thumb-fill.gallery-trigger:hover {
       transform: scale(1.035);
-      filter: saturate(1.05) contrast(1.03);
+      filter: saturate(.94) contrast(1.01);
     }
 
     .banner-agur .agur-text.quote-hero,
     .banner-lancamento .lanc-text.quote-hero,
     .banner-adonijah .adonijah-text.quote-hero {
       background:
-        linear-gradient(135deg, rgba(6, 24, 44, .98), rgba(42, 43, 181, .98));
+        linear-gradient(135deg, rgba(10, 28, 49, .94), rgba(49, 64, 143, .92));
     }
 
     .banner-agur .agur-illustration,
