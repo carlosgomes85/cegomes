@@ -140,7 +140,7 @@ body[data-design] .video-subtitle { text-align:center; }
  body[data-design] .wordmark { font-size:14px; }
  .brand-symbol { font-size:35px; } .brand-bottom { font-size:9px; }
  .story-hero,.hero-layout { min-height:740px; }
- .hero-art { object-position:63% top; height:430px; }
+ .hero-art { object-position:63% top; height:560px; }
  .hero-shade { background:linear-gradient(0deg,#101311 35%,#101311c4 57%,#1013110d 100%); }
  .hero-copy { padding:280px 0 90px; }
  body[data-design] .story-hero h1 { font-size:58px; margin:20px 0; }
