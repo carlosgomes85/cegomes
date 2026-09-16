@@ -3,7 +3,7 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://www.canticosdemachina.com.br/</loc>
-    <lastmod>2026-09-07</lastmod>
+    <lastmod>2026-09-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.00</priority>
 
@@ -29,7 +29,7 @@
   </url>
   <url>
     <loc>https://www.canticosdemachina.com.br/protagonistas.html</loc>
-    <lastmod>2026-09-07</lastmod>
+    <lastmod>2026-09-16</lastmod>
     <!-- Protagonistas -->
     <image:image>
       <image:loc>https://www.canticosdemachina.com.br/img/protagonistas/daniel.png</image:loc>
@@ -54,10 +54,10 @@
   </url>
   <url>
     <loc>https://www.canticosdemachina.com.br/neurarchy.html</loc>
-    <lastmod>2026-09-07</lastmod>
+    <lastmod>2026-09-16</lastmod>
   </url>
   <url>
     <loc>https://www.canticosdemachina.com.br/locais.html</loc>
-    <lastmod>2026-09-07</lastmod>
+    <lastmod>2026-09-16</lastmod>
   </url>
 </urlset>

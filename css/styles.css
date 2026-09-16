@@ -74,6 +74,17 @@ body.universe-page { padding-bottom: 0; }
       box-shadow: 0 4px 12px rgba(0, 0, 0, .15)
     }
 
+    /* Mantém a navegação por teclado perceptível também em fundos escuros. */
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
+
     /* títulos & navegação */
     h1,
     h2,
