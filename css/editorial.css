@@ -4,6 +4,9 @@ body[data-design].universe-page .universe-heading { padding-top:42px; margin-bot
 body[data-design].universe-page .universe-heading h1 { font-size:clamp(36px,5vw,60px); }
 body[data-design].universe-page .universe-tab { border-radius:8px; font-size:13px; }
 body[data-design].universe-page .universe-tab[aria-current="page"] { background:#9ec6ff24; border-color:#6f9fdf; color:#9ec6ff; }
+body[data-design].universe-page .universe-spoiler-note { margin:24px 0 0; color:#89949d; font-size:12px; line-height:1.6; }
+body[data-design].universe-page .universe-book-cta { display:inline-flex; align-items:center; gap:12px; margin-top:16px; padding:11px 16px; border:1px solid #6f9fdf; border-radius:8px; color:#c8e0ff; font-size:12px; font-weight:600; text-decoration:none; transition:background .2s,border-color .2s,color .2s; }
+body[data-design].universe-page .universe-book-cta:hover { background:#9ec5ff18; border-color:var(--copper); color:var(--paper); }
 body[data-design].universe-page main.container > .card-custom:not(.banner-agur):not(.banner-lancamento):not(.banner-adonijah):not(.banner-guitarrista) { padding-top:40px!important; padding-bottom:45px!important; }
 body[data-design].universe-page main.container > .card-custom > h2 { font-size:clamp(26px,3vw,36px); margin-bottom:24px; }
 body[data-design].universe-page .bg-white { background:#192019!important; border-color:#343a33!important; box-shadow:none!important; }
@@ -84,9 +87,20 @@ body[data-design] .universe-link h3 { font-size:26px; font-weight:500; }
 body[data-design] .universe-link p { font-size:12px; margin-bottom:18px; color:#d3d6ce; }
 body[data-design] .universe-icon { display:none; }
 body[data-design] .universe-link-label { margin-top:0; color:var(--copper); font-size:11px; }
-body[data-design] #livro > .row:first-of-type { flex-direction:row-reverse; align-items:flex-start!important; --bs-gutter-x:4rem; }
-body[data-design] #livro .capa-livro { max-width:280px; border-radius:0!important; transform:rotate(-3deg); box-shadow:15px 20px 0 #242c22,0 30px 60px #0007; margin:25px 0 40px!important; }
+body[data-design] #livro > .book-reading-layout { flex-direction:row; align-items:flex-start!important; --bs-gutter-x:clamp(2rem,5vw,5rem); }
+body[data-design] #livro .capa-livro { max-width:280px; border-radius:0!important; transform:rotate(-3deg); box-shadow:15px 20px 0 #242c22,0 30px 60px #0007; margin:0 0 40px!important; }
 body[data-design] .price-note { color:#b8beac!important; background:transparent!important; border:0!important; font-size:12px!important; }
+body[data-design] #livro .book-intro { max-width:920px; margin-bottom:clamp(2.25rem,4vw,3.5rem); }
+body[data-design] #livro .synopsis-layout { margin-top:0; }
+body[data-design] #livro .synopsis-layout h5 { display:block; width:auto; padding:0; margin:0 0 18px; border:0; border-radius:0; background:transparent!important; color:var(--paper)!important; font-family:'Manrope',sans-serif; font-size:clamp(20px,2vw,28px); font-weight:600; letter-spacing:-.035em; text-transform:none; }
+body[data-design] #livro .synopsis-flow { padding:clamp(20px,2.4vw,30px) clamp(30px,4vw,52px); box-sizing:border-box; }
+@media(min-width:992px) {
+ body[data-design] #livro .book-reading-layout > .col-lg-4 { margin-top:0!important; }
+}
+@media(min-width:1200px) {
+ body[data-design] #livro .book-reading-layout .synopsis-flow { grid-template-columns:1fr; }
+}
+body[data-design] .rating-highlight { color:#d8c5a5; font-size:14px; letter-spacing:.01em; }
 body[data-design] .reading-card,body[data-design] .review-card,body[data-design] .char-card { background:#192019!important; border:1px solid var(--line)!important; border-radius:2px!important; box-shadow:none!important; color:var(--paper)!important; }
 body[data-design] .reading-kicker { color:var(--rose); }
 body[data-design] .reading-callout { border-left:2px solid var(--copper); background:#1b231c; padding:20px; }
@@ -147,11 +161,13 @@ body[data-design] #video > .text-center { margin-top:2.25rem!important; }
  body[data-design] .navbar-nav .nav-link { font-size:14px; padding:10px 0; }
  body[data-design] .navbar-nav .nav-buy { margin:6px 0; padding:12px; text-align:center; }
  .hero-shade { background:linear-gradient(90deg,#09100fe6,#09100f80),linear-gradient(0deg,#101311,transparent 60%); }
- body[data-design] #livro > .row:first-of-type { --bs-gutter-x:1.5rem; }
- body[data-design] #livro .col-lg-4 { order:-1; margin-bottom:40px; }
+ body[data-design] #livro > .book-reading-layout { --bs-gutter-x:1.5rem; }
+ body[data-design] #livro .book-reading-layout .col-lg-4 { order:-1; }
+ body[data-design] #livro .synopsis-layout { margin-top:36px; }
  body[data-design] .universe-link { min-height:300px; padding:20px; }
 }
 @media(max-width:767px) {
+ html, body { max-width:100%; overflow-x:clip; }
  body[data-design] .container { padding-inline:22px; }
  body[data-design] .navbar { padding:13px 0; }
  body[data-design] .wordmark { font-size:14px; }
@@ -181,9 +197,17 @@ body[data-design] #video > .text-center { margin-top:2.25rem!important; }
  body[data-design] .universe-link p { max-width:310px; }
  body[data-design] main.container p { font-size:14px; }
  body[data-design] .site-footer { padding-bottom:110px; }
+ body[data-design] .footer-opening,
+ body[data-design] .footer-columns,
+ body[data-design] .footer-baseline,
+ body[data-design] .footer-opening > *,
+ body[data-design] .footer-columns > *,
+ body[data-design] .footer-baseline > * { min-width:0; max-width:100%; }
+ body[data-design] .footer-explore { flex-wrap:wrap; max-width:100%; }
+ body[data-design] .contact-chip { box-sizing:border-box; width:100%; min-width:0; }
  .reading-dock { bottom:0; left:0; right:0; transform:none; box-sizing:border-box; width:100%; max-width:100vw; display:block; padding:10px 12px calc(10px + env(safe-area-inset-bottom, 0px)); border:0; border-top:1px solid #485043; border-radius:0; overflow:hidden; }
  .reading-dock > span { display:none; }
- .reading-dock-links { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:6px; width:100%; min-width:0; }
+ .reading-dock-links { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:6px; width:100%; min-width:0; max-width:100%; }
  body[data-design] .reading-dock a { box-sizing:border-box; min-width:0; max-width:100%; padding:9px 5px; text-align:center; font-size:12px; min-height:52px; overflow-wrap:anywhere; }
  .reading-dock small { font-size:10px; }
 }

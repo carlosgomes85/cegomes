@@ -238,7 +238,7 @@ body.universe-page { padding-bottom: 0; }
       content: "";
       position: absolute;
       inset: 0;
-      background: url("../img/banner.png") center/cover no-repeat;
+      background: url("../img/banner.jpg") center/cover no-repeat;
       transform: scale(1.08);
       z-index: -2
     }
