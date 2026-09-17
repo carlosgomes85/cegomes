@@ -87,6 +87,21 @@ body[data-design] .universe-link h3 { font-size:26px; font-weight:500; }
 body[data-design] .universe-link p { font-size:12px; margin-bottom:18px; color:#d3d6ce; }
 body[data-design] .universe-icon { display:none; }
 body[data-design] .universe-link-label { margin-top:0; color:var(--copper); font-size:11px; }
+/* Ordem editorial: primeiro a decisão de leitura, depois o aprofundamento no universo. */
+body[data-design] main.container { display:flex; flex-direction:column; }
+body[data-design] main.container > #livro { order:1; }
+body[data-design] main.container > #avaliacoes { order:2; }
+body[data-design] main.container > #video { order:3; }
+body[data-design] main.container > #faq { order:4; }
+body[data-design] main.container > #sobre { order:5; }
+body[data-design] main.container > #saga { order:6; }
+body[data-design] main.container > .banner-lancamento { order:7; }
+body[data-design] main.container > #simbologia { order:8; }
+body[data-design] main.container > .banner-agur { order:9; }
+body[data-design] main.container > #explore-universo { order:10; }
+body[data-design] main.container > .banner-guitarrista,
+body[data-design] main.container > .banner-adonijah { order:11; }
+body[data-design] main.container > #contato { order:12; }
 body[data-design] #livro > .book-reading-layout { flex-direction:row; align-items:flex-start!important; --bs-gutter-x:clamp(2rem,5vw,5rem); }
 body[data-design] #livro .capa-livro { max-width:280px; border-radius:0!important; transform:rotate(-3deg); box-shadow:15px 20px 0 #242c22,0 30px 60px #0007; margin:0 0 40px!important; }
 body[data-design] .price-note { color:#b8beac!important; background:transparent!important; border:0!important; font-size:12px!important; }
