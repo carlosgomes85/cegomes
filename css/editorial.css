@@ -63,6 +63,14 @@ body[data-design] .text-link { color:var(--paper); text-decoration:none; font-si
 .hero-bottom a span { padding-left:30px; }
 .theme-strip { display:flex; justify-content:space-around; gap:24px; padding:24px 32px; border-bottom:1px solid var(--line); border-top:1px solid var(--line); color:#c2c6b9; font-size:10px; letter-spacing:.17em; }
 .theme-strip i { color:var(--copper); font-style:normal; }
+.early-social-proof { border-bottom:1px solid var(--line); background:#151b16; }
+.early-social-proof-inner { display:flex; align-items:center; justify-content:space-between; gap:32px; padding-top:28px; padding-bottom:28px; }
+.early-social-proof-kicker { margin:0 0 8px; color:var(--rose); font-size:10px; font-weight:600; letter-spacing:.17em; }
+.early-social-proof blockquote { max-width:780px; margin:0; color:var(--paper); font-family:'Italiana',Georgia,serif; font-size:clamp(20px,2.3vw,30px); line-height:1.25; }
+.early-social-proof cite { display:block; margin-top:9px; color:#acb4a3; font-size:11px; font-style:normal; }
+.early-social-proof-link { flex:0 0 auto; border-bottom:1px solid var(--copper); color:var(--paper); font-size:12px; text-decoration:none; white-space:nowrap; }
+.early-social-proof-link:hover { border-color:var(--rose); color:var(--copper); }
+body[data-design] .audience-note { margin-top:24px; padding:16px 20px; border-left:2px solid var(--copper); background:#151b16; }
 body[data-design] main.container { margin-top:0!important; margin-bottom:0!important; }
 body[data-design] main.container > .card-custom:not(.banner-agur):not(.banner-lancamento):not(.banner-adonijah):not(.banner-guitarrista),body[data-design] .universe-entry { background:transparent!important; border:0!important; border-bottom:1px solid var(--line)!important; border-radius:0; box-shadow:none!important; padding:85px 0!important; margin:0; opacity:1; transform:none; }
 body[data-design] main.container > .card-custom > h2,body[data-design] .universe-entry h2 { font-size:clamp(32px,3.8vw,50px); font-weight:500; line-height:1.15; color:var(--paper)!important; border:0; padding-bottom:0!important; margin-bottom:32px; }
@@ -197,6 +205,9 @@ body[data-design] #video > .text-center { margin-top:2.25rem!important; }
  .hero-description { font-size:14px; } .hero-description br { display:none; }
  .eyebrow { font-size:8px; letter-spacing:.13em; }
  .hero-actions { gap:20px; margin-top:25px; }
+ .early-social-proof-inner { display:block; padding-top:24px; padding-bottom:24px; }
+ .early-social-proof blockquote { font-size:23px; }
+ .early-social-proof-link { display:inline-block; margin-top:16px; }
  .hero-byline { font-size:8px; margin-top:26px; }
  .hero-bottom { left:22px; right:22px; bottom:20px; }
  .hero-bottom > span { display:none; }
