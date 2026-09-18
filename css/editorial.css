@@ -48,6 +48,7 @@ body[data-design] .dropdown-item:hover { background:#30372f; }
 .eyebrow { font-size:10px; font-weight:600; letter-spacing:.19em; color:var(--rose); display:flex; align-items:center; gap:10px; }
 .eyebrow > span { width:6px; height:6px; background:var(--rose); border-radius:50%; }
 body[data-design] .story-hero h1 { font-size:clamp(64px,6.4vw,96px); font-weight:500; line-height:1.04; margin:30px 0; max-width:700px; color:var(--paper); }
+body[data-design] .story-hero h1 em { font-size:.82em; }
 body[data-design] h1 em,body[data-design] h2 em { font-family:'Italiana',Georgia,serif; font-weight:400; color:var(--copper); }
 .hero-description { color:#c4c9c0; font-size:16px; line-height:1.85; }
 .hero-actions { display:flex; align-items:center; flex-wrap:wrap; gap:25px; margin-top:34px; }
