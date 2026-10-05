@@ -206,3 +206,57 @@ document.addEventListener("DOMContentLoaded", () => {
 
       faders.forEach(el => appearOnScroll.observe(el));
     });
+
+// Movimento discreto para guiar a leitura, sem esconder conteúdo quando o JavaScript não estiver disponível.
+document.addEventListener('DOMContentLoaded', () => {
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+  const updateScrollState = () => {
+    document.body.classList.toggle('site-scrolled', window.scrollY > 16);
+  };
+
+  updateScrollState();
+  window.addEventListener('scroll', updateScrollState, { passive: true });
+
+  if (reducedMotion.matches || !('IntersectionObserver' in window)) return;
+
+  const introTargets = document.querySelectorAll('.hero-copy > *, .universe-heading > *');
+  introTargets.forEach((element, index) => {
+    element.classList.add('intro-reveal');
+    element.style.setProperty('--intro-delay', `${Math.min(index * 75, 375)}ms`);
+  });
+
+  const selector = [
+    'main > .card-custom',
+    'main > .universe-entry',
+    'main > section:not(.card-custom)',
+    'main .universe-link',
+    'main .row > .col',
+    'main .review-card',
+    'main .reading-card',
+    '.site-footer'
+  ].join(',');
+  const elements = [...new Set(document.querySelectorAll(selector))]
+    .filter(element => !element.closest('.modal'));
+
+  elements.forEach((element, index) => {
+    const rect = element.getBoundingClientRect();
+    if (rect.top < window.innerHeight * .88) {
+      element.classList.add('motion-visible');
+      return;
+    }
+    element.classList.add('motion-reveal');
+    element.style.setProperty('--motion-delay', `${Math.min((index % 4) * 55, 165)}ms`);
+  });
+
+  const observer = new IntersectionObserver((entries, activeObserver) => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add('motion-visible');
+      activeObserver.unobserve(entry.target);
+    });
+  }, { threshold: .08, rootMargin: '0px 0px -48px' });
+
+  document.documentElement.classList.add('motion-ready');
+  elements.filter(element => element.classList.contains('motion-reveal')).forEach(element => observer.observe(element));
+});
