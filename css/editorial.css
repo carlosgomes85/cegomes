@@ -393,3 +393,184 @@ body[data-design].conflict-page .conflict-question { border-bottom:0!important; 
 @media(max-width:991px) { .conflict-grid,.conflict-voices-grid { grid-template-columns:1fr; } .conflict-grid { padding-block:38px 56px; } .conflict-grid .conflict-neurarchy { grid-column:auto; padding:30px; } .conflict-voices { padding-bottom:56px; } .conflict-card { min-height:0; } }
 @media(max-width:600px) { .conflict-voices-grid .conflict-card { display:flex; } .conflict-image-single { max-width:280px; margin-top:22px; } .conflict-image-single img { height:auto; min-height:0; aspect-ratio:2/3; } }
 @media(max-width:420px) { .conflict-image-pair { grid-template-columns:1fr; } }
+
+/* Polimento visual: superfícies, ritmo e hierarquia compartilhados. */
+body[data-design] {
+  background:
+    radial-gradient(circle at 88% 10%, rgba(79, 174, 252, .09), transparent 23rem),
+    radial-gradient(circle at 12% 72%, rgba(236, 137, 193, .055), transparent 26rem),
+    var(--ink) !important;
+}
+
+body[data-design] .navbar {
+  border-bottom-color: rgba(160, 179, 160, .22);
+}
+
+body[data-design] .navbar-nav .nav-link {
+  position: relative;
+  padding-block: 10px;
+}
+
+@media (min-width: 992px) {
+  body[data-design] .navbar-nav .nav-link:not(.nav-buy)::after {
+    content: '';
+    position: absolute;
+    right: .5rem;
+    bottom: 3px;
+    left: .5rem;
+    height: 1px;
+    background: var(--copper);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform .2s ease;
+  }
+
+  body[data-design] .navbar-nav .nav-link:not(.nav-buy):hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+}
+
+body[data-design] .nav-buy,
+body[data-design] .editorial-button {
+  box-shadow: 0 8px 22px rgba(79, 174, 252, .12);
+}
+
+body[data-design] .nav-buy:hover {
+  border-color: var(--copper);
+  background: rgba(79, 174, 252, .09);
+}
+
+body[data-design] .hero-copy {
+  max-width: 760px;
+}
+
+body[data-design] .hero-description {
+  max-width: 48ch;
+}
+
+body[data-design] main.container > .card-custom > h2,
+body[data-design] .universe-entry h2 {
+  letter-spacing: -.045em;
+}
+
+body[data-design] .book-intro > p:first-child,
+body[data-design] .section-lead {
+  color: #dfe4dc;
+  font-size: clamp(1rem, 1.25vw, 1.12rem);
+}
+
+body[data-design] .synopsis-flow,
+body[data-design] .reading-callout {
+  background: linear-gradient(135deg, rgba(79, 174, 252, .07), rgba(255, 255, 255, .018));
+}
+
+body[data-design] .synopsis-flow {
+  border: 1px solid rgba(109, 135, 169, .25);
+  border-radius: 3px;
+}
+
+body[data-design] .universe-link,
+body[data-design] .reading-card,
+body[data-design] .review-card,
+body[data-design] .char-card {
+  position: relative;
+  overflow: hidden;
+}
+
+body[data-design] .universe-link::after,
+body[data-design] .reading-card::after,
+body[data-design] .review-card::after,
+body[data-design] .char-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-top: 1px solid rgba(255, 255, 255, .11);
+  pointer-events: none;
+}
+
+body[data-design] .universe-link {
+  background: linear-gradient(145deg, rgba(29, 39, 32, .95), rgba(18, 25, 21, .95)) !important;
+}
+
+body[data-design] .universe-link:hover {
+  background: linear-gradient(145deg, rgba(33, 49, 43, .98), rgba(18, 28, 25, .98)) !important;
+}
+
+body[data-design] .card-carousel {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(79, 174, 252, .65) transparent;
+}
+
+body[data-design] .card-carousel::-webkit-scrollbar { height: 7px; }
+body[data-design] .card-carousel::-webkit-scrollbar-thumb { background: rgba(79, 174, 252, .6); border-radius: 99px; }
+
+body[data-design] .accordion-button::after { filter: invert(84%) sepia(20%) saturate(900%) hue-rotate(170deg); }
+
+body[data-design] .footer-opening {
+  background: transparent;
+}
+
+/* O painel de Agur é deliberadamente retangular, como um registro editorial. */
+body[data-design] .banner-agur,
+body[data-design] .banner-agur .agur-illustration,
+body[data-design] .banner-agur .agur-text.quote-hero {
+  border-radius: 0 !important;
+}
+
+/* Encerramento limpo: a chamada respira sem competir com uma faixa de gradiente. */
+body[data-design] .footer-opening {
+  align-items: flex-end;
+  padding: 78px 0 58px;
+}
+
+body[data-design] .footer-opening > div:first-child {
+  padding: 0;
+  border: 0;
+  background: none;
+}
+
+body[data-design] .footer-opening .footer-kicker {
+  margin-bottom: 20px;
+}
+
+body[data-design] .footer-opening .footer-explore {
+  align-self: flex-end;
+  min-width: 246px;
+  justify-content: space-between;
+  padding: 15px 18px;
+  border: 1px solid rgba(111, 159, 223, .72);
+  background: rgba(79, 174, 252, .055);
+}
+
+body[data-design] .footer-opening .footer-explore:hover {
+  background: rgba(79, 174, 252, .13);
+  border-color: var(--copper);
+}
+
+@media (max-width: 991px) {
+  body[data-design] .navbar-collapse {
+    margin-top: 14px;
+    padding: 10px 16px 14px;
+    border: 1px solid var(--line);
+    background: rgba(18, 26, 21, .96);
+  }
+
+  body[data-design] .navbar-nav .nav-link {
+    border-bottom: 1px solid rgba(255, 255, 255, .06);
+  }
+
+  body[data-design] .navbar-nav .nav-buy { border-bottom: 1px solid #77786b; }
+}
+
+@media (max-width: 767px) {
+  body[data-design] .story-hero h1 { font-size: clamp(42px, 13vw, 58px); }
+  body[data-design] .hero-actions { align-items: stretch; }
+  body[data-design] .editorial-button { justify-content: space-between; width: 100%; }
+  body[data-design] .text-link { justify-content: center; width: 100%; }
+  body[data-design] .synopsis-flow { padding: 22px 20px; }
+  body[data-design] .theme-strip { overflow: hidden; justify-content:flex-start; white-space: nowrap; }
+  body[data-design] .footer-opening { align-items: flex-start; padding: 52px 0 36px; }
+  body[data-design] .footer-opening > div:first-child { width: 100%; padding: 0; }
+  body[data-design] .footer-opening .footer-explore { align-self: flex-start; min-width: 0; }
+}
